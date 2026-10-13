@@ -86,11 +86,14 @@ ln -s ~/grill-autopilot/skills/grill-autopilot ~/.codex/skills/grill-autopilot
 ├── issues/01-*.md …    # 每个 ticket 一个文件，Status 和 Comments 记录每次尝试
 └── brief.md            # 最终报告：完成项、blocked 项、假设、模型分工
 
-分支 autopilot/<slug>    # 集成分支，所有通过 review 的 ticket 都合并到这里
+分支 autopilot/<slug>/integration    # 集成分支，所有通过 review 的 ticket 都合并到这里
+分支 autopilot/<slug>/tickets/<NN>   # 每张 ticket 的分支，与 integration ref 可同时存在
 ../<repo>.autopilot-worktrees/   # 运行时的 worktree，合并后自动删除；blocked 的 ticket 保留分支
 ```
 
 你自己的 checkout 不会被改动。所有合并都在单独的集成 worktree 里进行。
+
+每次运行有独立 run ID；slug 是功能名，不是恢复授权。创建前会保存 base commit SHA，并检查实际 ref 的 Git 合法性、前缀冲突、已存在的分支和 worktree 路径。旧式 `autopilot/<slug>` 或同 slug 的残留现场会让新运行停止并报告冲突，保留已有 ref、文件和未提交修改。只有明确恢复同一次运行并核对现场后才可复用。命令与失败出口见 [Setup](skills/grill-autopilot/loop.md#setup)；可复现的 Git 行为证据见 [ticket 01 验证记录](docs/verification/reliability-hardening/01/README.md)。
 
 ## 它是怎么工作的
 
