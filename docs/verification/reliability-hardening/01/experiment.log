@@ -1,0 +1,656 @@
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w --version
+git version 2.50.1 (Apple Git-155)
+exit=0
+
+RED: old default integration ref blocks its ticket child
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo/.git/
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo config user.name 'Branch experiment'
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo config user.email experiment@example.invalid
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo config commit.gpgSign false
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo config core.hooksPath /dev/null
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo add payload.txt
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo commit -m 'fixture base'
+[base (root-commit) 7160243] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo rev-parse --verify 'base^{commit}'
+716024337ff92e995d9206d425d1854de37665f0
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo worktree add /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/demo-integration -b autopilot/demo 716024337ff92e995d9206d425d1854de37665f0
+Preparing worktree (new branch 'autopilot/demo')
+HEAD is now at 7160243 fixture base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo rev-parse --verify 'base^{commit}'
+716024337ff92e995d9206d425d1854de37665f0
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo 716024337ff92e995d9206d425d1854de37665f0
+refs/heads/base 716024337ff92e995d9206d425d1854de37665f0
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo
+HEAD 716024337ff92e995d9206d425d1854de37665f0
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/demo-integration
+HEAD 716024337ff92e995d9206d425d1854de37665f0
+branch refs/heads/autopilot/demo
+exit=0
+snapshot={"base": "716024337ff92e995d9206d425d1854de37665f0", "files": {"demo-integration/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664", "repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo 716024337ff92e995d9206d425d1854de37665f0\nrefs/heads/base 716024337ff92e995d9206d425d1854de37665f0", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo\nHEAD 716024337ff92e995d9206d425d1854de37665f0\nbranch refs/heads/base\n\nworktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/demo-integration\nHEAD 716024337ff92e995d9206d425d1854de37665f0\nbranch refs/heads/autopilot/demo"}
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo worktree add /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/demo-01 -b autopilot/demo/01 716024337ff92e995d9206d425d1854de37665f0
+Preparing worktree (new branch 'autopilot/demo/01')
+fatal: cannot lock ref 'refs/heads/autopilot/demo/01': 'refs/heads/autopilot/demo' exists; cannot create 'refs/heads/autopilot/demo/01'
+exit=255
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo rev-parse --verify 'base^{commit}'
+716024337ff92e995d9206d425d1854de37665f0
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo 716024337ff92e995d9206d425d1854de37665f0
+refs/heads/base 716024337ff92e995d9206d425d1854de37665f0
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo
+HEAD 716024337ff92e995d9206d425d1854de37665f0
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/demo-integration
+HEAD 716024337ff92e995d9206d425d1854de37665f0
+branch refs/heads/autopilot/demo
+exit=0
+snapshot={"base": "716024337ff92e995d9206d425d1854de37665f0", "files": {"demo-integration/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664", "repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo 716024337ff92e995d9206d425d1854de37665f0\nrefs/heads/base 716024337ff92e995d9206d425d1854de37665f0", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/repo\nHEAD 716024337ff92e995d9206d425d1854de37665f0\nbranch refs/heads/base\n\nworktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/red/demo-integration\nHEAD 716024337ff92e995d9206d425d1854de37665f0\nbranch refs/heads/autopilot/demo"}
+PASS: rejection left base, HEAD, refs, worktrees and file bytes unchanged
+
+GREEN: demo integration and both tickets coexist
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo/.git/
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo config user.name 'Branch experiment'
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo config user.email experiment@example.invalid
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo config commit.gpgSign false
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo config core.hooksPath /dev/null
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo add payload.txt
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo commit -m 'fixture base'
+[base (root-commit) 7160243] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo rev-parse --verify 'base^{commit}'
+716024337ff92e995d9206d425d1854de37665f0
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo check-ref-format --branch autopilot/demo/integration
+autopilot/demo/integration
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo check-ref-format --branch autopilot/demo/tickets/01
+autopilot/demo/tickets/01
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo check-ref-format --branch autopilot/demo/tickets/02
+autopilot/demo/tickets/02
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo for-each-ref '--format=%(refname:short)' refs/heads/
+base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo
+HEAD 716024337ff92e995d9206d425d1854de37665f0
+branch refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo worktree add /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/demo-integration -b autopilot/demo/integration 716024337ff92e995d9206d425d1854de37665f0
+Preparing worktree (new branch 'autopilot/demo/integration')
+HEAD is now at 7160243 fixture base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo worktree add /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/demo-01 -b autopilot/demo/tickets/01 716024337ff92e995d9206d425d1854de37665f0
+Preparing worktree (new branch 'autopilot/demo/tickets/01')
+HEAD is now at 7160243 fixture base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo worktree add /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/demo-02 -b autopilot/demo/tickets/02 716024337ff92e995d9206d425d1854de37665f0
+Preparing worktree (new branch 'autopilot/demo/tickets/02')
+HEAD is now at 7160243 fixture base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo for-each-ref '--format=%(refname:short)' refs/heads/
+autopilot/demo/integration
+autopilot/demo/tickets/01
+autopilot/demo/tickets/02
+base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo rev-parse base
+716024337ff92e995d9206d425d1854de37665f0
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+PASS: three default refs created; base SHA, checkout ref and content unchanged
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo merge-base --is-ancestor autopilot/demo/tickets/01 autopilot/demo/integration
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo worktree remove /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/demo-01
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo branch -d autopilot/demo/tickets/01
+Deleted branch autopilot/demo/tickets/01 (was 7160243).
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo merge-base --is-ancestor autopilot/demo/tickets/02 autopilot/demo/integration
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo worktree remove /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/demo-02
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo branch -d autopilot/demo/tickets/02
+Deleted branch autopilot/demo/tickets/02 (was 7160243).
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo rev-parse base
+716024337ff92e995d9206d425d1854de37665f0
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/green/repo rev-parse autopilot/demo/integration
+716024337ff92e995d9206d425d1854de37665f0
+exit=0
+PASS: cleanup commands delete the named ticket refs and preserve integration/base
+
+REJECT: old ref and dirty worktree retained
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo/.git/
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo config user.name 'Branch experiment'
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo config user.email experiment@example.invalid
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo config commit.gpgSign false
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo config core.hooksPath /dev/null
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo add payload.txt
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo commit -m 'fixture base'
+[base (root-commit) a4f0fb0] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo worktree add /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/demo-integration -b autopilot/demo a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+Preparing worktree (new branch 'autopilot/demo')
+HEAD is now at a4f0fb0 fixture base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo pack-refs --all
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/demo-integration
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/autopilot/demo
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"demo-integration/notes.txt": "cc849ae788adf7e15f506bb7123780fd5e4d6de541f895f8e9d137d8d3245d61", "demo-integration/payload.txt": "bdd1ce4a3ab4330d20446d33a1ca059f7a62b178ed6f801d86fa939bc142dbbe", "repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nrefs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base\n\nworktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/demo-integration\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/autopilot/demo"}
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo for-each-ref '--format=%(refname:short)' refs/heads/
+autopilot/demo
+base
+exit=0
+Protocol decision: CONFLICT autopilot/demo is an ancestor of all planned refs; stop before creation
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/demo-integration
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/autopilot/demo
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"demo-integration/notes.txt": "cc849ae788adf7e15f506bb7123780fd5e4d6de541f895f8e9d137d8d3245d61", "demo-integration/payload.txt": "bdd1ce4a3ab4330d20446d33a1ca059f7a62b178ed6f801d86fa939bc142dbbe", "repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nrefs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base\n\nworktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/old-ref/demo-integration\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/autopilot/demo"}
+PASS: rejection left base, HEAD, refs, worktrees and file bytes unchanged
+
+REJECT: missing-base
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo/.git/
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo config user.name 'Branch experiment'
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo config user.email experiment@example.invalid
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo config commit.gpgSign false
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo config core.hooksPath /dev/null
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo add payload.txt
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo commit -m 'fixture base'
+[base (root-commit) a4f0fb0] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo rev-parse --verify --end-of-options 'missing^{commit}'
+fatal: Needed a single revision
+exit=128
+Protocol decision: validation failed; stop before any branch/worktree creation
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/missing-base/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+PASS: rejection left base, HEAD, refs, worktrees and file bytes unchanged
+
+REJECT: invalid-slug
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo/.git/
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo config user.name 'Branch experiment'
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo config user.email experiment@example.invalid
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo config commit.gpgSign false
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo config core.hooksPath /dev/null
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo add payload.txt
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo commit -m 'fixture base'
+[base (root-commit) a4f0fb0] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo check-ref-format --branch autopilot/bad:slug/integration
+fatal: 'autopilot/bad:slug/integration' is not a valid branch name
+exit=128
+Protocol decision: validation failed; stop before any branch/worktree creation
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/invalid-slug/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+PASS: rejection left base, HEAD, refs, worktrees and file bytes unchanged
+
+REJECT: existing-ticket
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo/.git/
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo config user.name 'Branch experiment'
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo config user.email experiment@example.invalid
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo config commit.gpgSign false
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo config core.hooksPath /dev/null
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo add payload.txt
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo commit -m 'fixture base'
+[base (root-commit) a4f0fb0] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo branch autopilot/demo/tickets/01 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo/tickets/01 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo/tickets/01 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nrefs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo for-each-ref '--format=%(refname:short)' refs/heads/
+autopilot/demo/tickets/01
+base
+exit=0
+Protocol decision: CONFLICT autopilot/demo/tickets/01 is an exact/prefix conflict or residual same-slug ref; stop before creation
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo/tickets/01 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo/tickets/01 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nrefs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/existing-ticket/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+PASS: rejection left base, HEAD, refs, worktrees and file bytes unchanged
+
+REJECT: descendant-ref
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo/.git/
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo config user.name 'Branch experiment'
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo config user.email experiment@example.invalid
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo config commit.gpgSign false
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo config core.hooksPath /dev/null
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo add payload.txt
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo commit -m 'fixture base'
+[base (root-commit) a4f0fb0] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo branch autopilot/demo/integration/leftover a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo/integration/leftover a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo/integration/leftover a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nrefs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo for-each-ref '--format=%(refname:short)' refs/heads/
+autopilot/demo/integration/leftover
+base
+exit=0
+Protocol decision: CONFLICT autopilot/demo/integration/leftover is an exact/prefix conflict or residual same-slug ref; stop before creation
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo/integration/leftover a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo/integration/leftover a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nrefs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/descendant-ref/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+PASS: rejection left base, HEAD, refs, worktrees and file bytes unchanged
+
+REJECT: same-slug-residue
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo/.git/
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo config user.name 'Branch experiment'
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo config user.email experiment@example.invalid
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo config commit.gpgSign false
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo config core.hooksPath /dev/null
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo add payload.txt
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo commit -m 'fixture base'
+[base (root-commit) a4f0fb0] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo branch autopilot/demo/tickets/99 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo/tickets/99 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo/tickets/99 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nrefs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo for-each-ref '--format=%(refname:short)' refs/heads/
+autopilot/demo/tickets/99
+base
+exit=0
+Protocol decision: CONFLICT autopilot/demo/tickets/99 is an exact/prefix conflict or residual same-slug ref; stop before creation
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo rev-parse --verify 'base^{commit}'
+a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/autopilot/demo/tickets/99 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+refs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo
+HEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89
+branch refs/heads/base
+exit=0
+snapshot={"base": "a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "files": {"repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/autopilot/demo/tickets/99 a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nrefs/heads/base a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/same-slug-residue/repo\nHEAD a4f0fb0a5c6dce63ce761336ce02b6f7586f8a89\nbranch refs/heads/base"}
+PASS: rejection left base, HEAD, refs, worktrees and file bytes unchanged
+
+REJECT: occupied unregistered target path
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo/.git/
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo config user.name 'Branch experiment'
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo config user.email experiment@example.invalid
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo config commit.gpgSign false
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo config core.hooksPath /dev/null
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo add payload.txt
+
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo commit -m 'fixture base'
+[base (root-commit) b4202d1] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo rev-parse --verify 'base^{commit}'
+b4202d1dbf609fe6cd61bfcd370a1a70911a1dee
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo rev-parse --verify 'base^{commit}'
+b4202d1dbf609fe6cd61bfcd370a1a70911a1dee
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/base b4202d1dbf609fe6cd61bfcd370a1a70911a1dee
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo
+HEAD b4202d1dbf609fe6cd61bfcd370a1a70911a1dee
+branch refs/heads/base
+exit=0
+snapshot={"base": "b4202d1dbf609fe6cd61bfcd370a1a70911a1dee", "files": {"demo-01/notes.txt": "f599c14713e3ca85bae3ce158c70fe9d4fd35a411d555373e11e84e2a58b0f6d", "repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/base b4202d1dbf609fe6cd61bfcd370a1a70911a1dee", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo\nHEAD b4202d1dbf609fe6cd61bfcd370a1a70911a1dee\nbranch refs/heads/base"}
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo
+HEAD b4202d1dbf609fe6cd61bfcd370a1a70911a1dee
+branch refs/heads/base
+exit=0
+Protocol decision: CONFLICT target path exists; stop before creating integration or tickets
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo rev-parse --verify 'base^{commit}'
+b4202d1dbf609fe6cd61bfcd370a1a70911a1dee
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo for-each-ref '--format=%(refname) %(objectname)' refs/heads/
+refs/heads/base b4202d1dbf609fe6cd61bfcd370a1a70911a1dee
+exit=0
+$ git -C /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo
+HEAD b4202d1dbf609fe6cd61bfcd370a1a70911a1dee
+branch refs/heads/base
+exit=0
+snapshot={"base": "b4202d1dbf609fe6cd61bfcd370a1a70911a1dee", "files": {"demo-01/notes.txt": "f599c14713e3ca85bae3ce158c70fe9d4fd35a411d555373e11e84e2a58b0f6d", "repo/payload.txt": "43545873aa1aac9afd27e090e00911ef2dba2c83eb8b09cab82e3b0e89204664"}, "head": "refs/heads/base", "refs": "refs/heads/base b4202d1dbf609fe6cd61bfcd370a1a70911a1dee", "worktrees": "worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-branches-ws72o5_w/occupied-path/repo\nHEAD b4202d1dbf609fe6cd61bfcd370a1a70911a1dee\nbranch refs/heads/base"}
+PASS: rejection left base, HEAD, refs, worktrees and file bytes unchanged
+
+PASS: all real Git experiments and read-only rejection rehearsals

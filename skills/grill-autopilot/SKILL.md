@@ -35,7 +35,7 @@ Read and follow the companion `grilling` skill on the user's topic. Add these br
 - **Seams**: the public interfaces to test at, each with what it catches and misses. This replaces the seam check in to-spec and tdd.
 - **Slicing**: what may run in parallel, how small tickets should be, and which areas are off-limits.
 - **Commands**: the single-test-file command, the full test suite, and typecheck.
-- **Delivery**: the feature slug, the base branch, and the integration branch (recommend `autopilot/<slug>`). Ask whether to push and open a draft PR at the end (recommend: no, local branch only).
+- **Delivery**: the feature slug, the base branch, and the integration branch (recommend `autopilot/<slug>/integration`; tickets use `autopilot/<slug>/tickets/<NN>`). Assign a unique run ID separately from the slug. Apply the read-only branch preflight in [loop.md](loop.md#setup) to the known refs and paths before Go; report any invalid base/name or existing-run conflict. Ask whether to push and open a draft PR at the end (recommend: no, local branch only).
 
 Close with one question: "Shared understanding reached. From here I run unattended until the PR brief. Go?"
 
@@ -63,7 +63,7 @@ Done when: every ticket file exists and the whole set passes the self-check.
 
 ### 4. Implement loop
 
-Create the integration branch from the base branch, then run the loop in [loop.md](loop.md).
+Once the ticket set is known, complete the branch preflight in [loop.md](loop.md#setup) for every planned ref and worktree path before creating any of them. Save the resolved base SHA and create the integration worktree from that SHA, then run the loop. A new run stops on existing state; only an explicit resume of the same run may reconcile and reuse it.
 
 Done when: every ticket is `done` or `blocked`, and the full test suite and typecheck pass on the integration branch.
 
