@@ -65,7 +65,7 @@ Read and follow the companion `to-tickets` skill with these overrides:
 - Replace the human approval of ticket granularity and blocking edges, located by meaning as companions.md describes, with the self-check in [tickets.md](tickets.md).
 - The planner publishes to the original checkout's canonical `.scratch/<slug>/issues/<NN>-<slug>.md` paths. Freeze the spec and ticket task bodies using run-record.md before dispatch; mutable Status/Comments stay in these source ticket files.
 
-Done when: every ticket file exists, the whole set passes the self-check, and the record points to read-only spec/task snapshots with saved hashes.
+Done when: every ticket file exists and the recorded whole-set self-check passes [tickets.md](tickets.md), including coverage of every approved story and acceptance item (only spec-approved exclusions), concrete examples and business dependencies independently of Files isolation. Until then the set is not ready for dispatch. The record points to the coverage table and read-only spec/task snapshots with saved hashes.
 
 ### 4. Implement loop
 
