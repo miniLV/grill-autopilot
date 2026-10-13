@@ -1,0 +1,6 @@
+CASE .codex: empty directory install
+shell exit=1;  ln: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vps6k3pd/fixture home/.codex/skills/grill-autopilot: No such file or directory
+Traceback (most recent call last):
+  File "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/reliability-hardening-12/docs/verification/reliability-hardening/12/verify.py", line 52, in <module>
+    assert run(INSTALL, fixture_checkout, fixture_skills) == 0
+AssertionError
