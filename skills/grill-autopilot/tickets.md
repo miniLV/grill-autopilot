@@ -9,7 +9,7 @@ A ticket is **worker-grade** when the cheapest configured model can finish it fr
 - **Interface** names the exact signature, endpoint, or CLI shape the slice adds or changes.
 - **Examples** give concrete inputs and the literal expected outputs, at least one per acceptance item plus one edge case. They are the independent source of truth: the worker's tests assert them, and the reviewer checks the tests against them.
 - **Steps** are at most 5 imperative actions. Words such as "decide", "choose" or "design" mean the ticket is not worker-grade yet.
-- **Verify** gives the exact single-test-file command and the typecheck command from the grill.
+- **Verify** gives the exact single-test-file command and typecheck command from grill (or its agreed N/A reason). If the new test file does not yet exist, record the agreed existing seam baseline used before implementation.
 - **Context** holds pointers only: the spec section, plus 1–3 existing files to imitate.
 - Write real paths. Tickets run right away, so paths do not go stale; this replaces to-tickets' "avoid file paths" rule.
 
@@ -39,7 +39,7 @@ Steps:
   1. <imperative action>
 Verify:
   - <single-test-file command>
-  - <typecheck command>
+  - <typecheck command or agreed N/A with reason>
 Context: spec.md#<section>; prior art: <path>
 Do not: edit files outside Files · weaken, skip or delete assertions · add dependencies
 
