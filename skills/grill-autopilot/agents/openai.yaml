@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill Autopilot"
+  short_description: "Grill once, then spec, tickets and parallel implement on autopilot"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,18 @@
+# grill-autopilot: role -> model.
+# Override per repo with .grill-autopilot.yaml at the repo root; keys set there win.
+# Claude values are aliases (opus / sonnet / haiku) that follow new releases.
+# Codex values are model slugs; change one line when a new slug ships.
+# gpt-6-astra is the expensive Codex tier: name it here only when you want it.
+
+runtime: auto          # auto | claude | codex
+concurrency: 3         # max workers running at once
+retry:
+  worker: 2            # worker re-attempts after a failed review
+  escalate: 1          # escalate-role attempts after that; then the ticket is blocked
+
+# reviewer gates the output of worker and escalate: keep it at least as capable as both.
+roles:
+  planner:  { claude: opus,   codex: gpt-6.1-sol, effort: high }    # grill, spec, tickets, scheduling
+  reviewer: { claude: opus,   codex: gpt-6.1-sol, effort: high }    # per-ticket gate, final code-review
+  worker:   { claude: haiku,  codex: gpt-6-luna,  effort: medium }  # implements one ticket
+  escalate: { claude: sonnet, codex: gpt-6.1-sol, effort: high }    # retries a failed ticket, applies review fixes
