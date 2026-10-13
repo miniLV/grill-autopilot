@@ -4,7 +4,7 @@
 
 **Blocked by:** None (can start when execution is requested)
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P1 · 审查发现 1
 Spec decisions: D2
@@ -37,9 +37,9 @@ User stories: US1, US2
 
 ## Acceptance criteria
 
-- [ ] 默认命名在所有创建/清理示例一致。
-- [ ] 三个默认 ref 可同时存在，base ref 未变化。
-- [ ] 无效 base/ref 和已存在现场有明确的无修改失败出口。
+- [x] 默认命名在所有创建/清理示例一致。
+- [x] 三个默认 ref 可同时存在，base ref 未变化。
+- [x] 无效 base/ref 和已存在现场有明确的无修改失败出口。
 
 ## Verify
 
@@ -55,3 +55,5 @@ User stories: US1, US2
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-13：本次 implement-spec 执行已授权，使用 gpt-6.1-sol/high；候选 6664d5b，集成 b15a68e。临时 Git 实验由 worker、root 与 merger 各运行成功（exit 0），diff check 通过。证据：docs/verification/reliability-hardening/01/README.md。属于 Git 实验与协议演练，未称完整 runtime 验证。
