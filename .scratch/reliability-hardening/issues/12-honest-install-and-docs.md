@@ -4,7 +4,7 @@
 
 **Blocked by:** 03, 10, 11
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P2 · 审查发现 9 与发布建议
 Spec decisions: D1,D11
@@ -39,10 +39,10 @@ README的Quick start、输出、安全、限制、模型和收益段落，主ski
 
 ## Acceptance criteria
 
-- [ ] 安装没有owner占位符，缺目录与目标冲突可处理。
-- [ ] 宣传图不再覆盖或矛盾于文本契约。
-- [ ] 数字收益、验证状态、checkout和选模承诺准确。
-- [ ] 不写plexus，不改全局配置，不执行发布。
+- [x] 安装没有owner占位符，缺目录与目标冲突可处理。
+- [x] 宣传图不再覆盖或矛盾于文本契约。
+- [x] 数字收益、验证状态、checkout和选模承诺准确。
+- [x] 不写plexus，不改全局配置，不执行发布。
 
 ## Verify
 
@@ -58,3 +58,5 @@ README的Quick start、输出、安全、限制、模型和收益段落，主ski
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-14：完成并独立验收；candidate `a2cfcb3ce3df47e759f73615394674c5996de5e5`，merge `bd3bd3a368645958cab383936ffb748dc61178d6`。真实临时目录安装/卸载 28 次操作，root 和 merger 重跑 Verify exit 0；Mermaid 实际渲染并独立视觉检查可读。缺目录、重复自有链接和外部文件/链接冲突均覆盖，旧卸载误删已纠正；五张 PNG 历史保留但 README 不再引用，未实测收益声明删除，模型/证据矩阵与有限失败契约一致。初次渲染参数错误和 merger 目录链接检查误判均保留并纠正，最终检查 exit 0。证据 `docs/verification/reliability-hardening/12/`；真实模型端到端仍待 13。无全局配置/安装写入，无 push/PR。
