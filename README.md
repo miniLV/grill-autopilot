@@ -43,7 +43,7 @@ implement-spec 已经会按依赖图并行派子代理，也会用 worktree，�
 
 - [Claude Code](https://code.claude.com) 或 [Codex CLI](https://github.com/openai/codex)。
 - 已安装 [mattpocock/skills](https://github.com/mattpocock/skills#installation-30-second-setup)，用 plugin 或 `npx skills` 安装都可以。grill-autopilot 会用到其中的 `grilling`、`to-spec`、`to-tickets`、`tdd`、`code-review` 和 `setup-matt-pocock-skills`。
-- 一个 git 仓库，工作区干净，并且能用命令跑单个测试文件、全量测试和 typecheck。
+- 一个 git 仓库，tracked 源码状态干净，并且能用命令跑单个测试文件、全量测试和 typecheck。已有无关 untracked 文件会记录并保留。
 
 ### 2. 安装
 
@@ -82,8 +82,11 @@ ln -s ~/grill-autopilot/skills/grill-autopilot ~/.codex/skills/grill-autopilot
 
 ```text
 .scratch/<slug>/
-├── spec.md             # 问题、方案、用户故事、实现与测试决策，以及 autopilot 期间做的假设
+├── spec.md             # 派发前确认的规格；后续假设记入 run record
 ├── issues/01-*.md …    # 每个 ticket 一个文件，Status 和 Comments 记录每次尝试
+├── runs/<run-id>/
+│   ├── run.md          # 唯一运行记录：身份、路径、角色、尝试、SHA、事件与证据
+│   └── snapshots/      # spec 与 ticket 任务正文的只读快照，不含可变 Status/Comments
 └── brief.md            # 最终报告：完成项、blocked 项、假设、模型分工
 
 分支 autopilot/<slug>/integration    # 集成分支，所有通过 review 的 ticket 都合并到这里
@@ -91,7 +94,7 @@ ln -s ~/grill-autopilot/skills/grill-autopilot ~/.codex/skills/grill-autopilot
 ../<repo>.autopilot-worktrees/   # 运行时的 worktree，合并后自动删除；blocked 的 ticket 保留分支
 ```
 
-你自己的 checkout 不会被改动。所有合并都在单独的集成 worktree 里进行。
+原 checkout 允许 planner 写本次运行明确拥有的 tracker 资料；源码修改和合并都在专用 worktree 里进行。运行前后核对原 checkout 的 ref、base SHA、tracked diff 和无关 untracked 文件；不会把整个 `.scratch/` 都当作可覆盖的目录。worker/reviewer 通过 canonical 绝对路径读同一份快照，无需把未提交运行资料写入 base。路径、权限和字段见 [run record 契约](skills/grill-autopilot/run-record.md)。
 
 每次运行有独立 run ID；slug 是功能名，不是恢复授权。创建前会保存 base commit SHA，并检查实际 ref 的 Git 合法性、前缀冲突、已存在的分支和 worktree 路径。旧式 `autopilot/<slug>` 或同 slug 的残留现场会让新运行停止并报告冲突，保留已有 ref、文件和未提交修改。只有明确恢复同一次运行并核对现场后才可复用。命令与失败出口见 [Setup](skills/grill-autopilot/loop.md#setup)；可复现的 Git 行为证据见 [ticket 01 验证记录](docs/verification/reliability-hardening/01/README.md)。
 
@@ -142,10 +145,10 @@ roles:
 
 ## 安全边界
 
-- 只在集成分支和 ticket 分支上提交，不碰 base 分支，也不改你的工作区。
+- 只在专用集成/ticket worktree 提交产品修改；planner 独占写原 checkout 内本 run 明确拥有的 tracker 资料。保留 base ref、原 checkout 的源码和无关文件，并在 brief 附上前后核对证据。
 - 只有你在 grill 里选了推送才会推送，从不 force-push。
 - 某个角色配置的模型不可用时，直接停下并报告，不会偷偷换成别的模型。
-- 没法在不问人的情况下决定的事，会记成 spec 里的假设或一个 blocked 的 ticket，并写进 brief。
+- 派发后新假设和事件记入 run record；需要扩大范围则 block，并写进 brief，保持已分发的 spec/ticket 题目不变。
 
 ## 已知限制
 

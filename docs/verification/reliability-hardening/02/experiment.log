@@ -1,0 +1,123 @@
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git --version
+git version 2.50.1 (Apple Git-155)
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original/.git/
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git config user.name 'Input experiment'
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git config user.email experiment@example.invalid
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git config commit.gpgSign false
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git config core.hooksPath /dev/null
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git add payload.txt
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git commit -m 'fixture base'
+[base (root-commit) 200e937] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git rev-parse base
+200e9376e72ee18704077879f2a6efdfa34e3e23
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git ls-files --others --exclude-standard -z
+stdout_json="user-notes.bin\u0000"
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git rev-parse base
+200e9376e72ee18704077879f2a6efdfa34e3e23
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git diff --binary
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git diff --cached --binary
+
+exit=0
+original_state={"base_sha": "200e9376e72ee18704077879f2a6efdfa34e3e23", "head": "refs/heads/base", "non_run_untracked": {"user-notes.bin": "0587436fec3d54a94cd7fce9c4124d17b6674d771a73e20c061390112e857fb7"}, "payload": "f14dcc9940d1f311a0aadf6bb5c08acfad19d699521c7e2a5ea7d6e9e5fdbc0c", "staged_diff": "", "tracked_diff": ""}
+owned_tracker_files=[".scratch/demo/issues/01-export.md", ".scratch/demo/runs/demo-inputs-01/run.md", ".scratch/demo/runs/demo-inputs-01/snapshots/spec.md", ".scratch/demo/runs/demo-inputs-01/snapshots/tickets/01.md", ".scratch/demo/spec.md"]
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/worker -b autopilot/demo/tickets/01 200e9376e72ee18704077879f2a6efdfa34e3e23
+Preparing worktree (new branch 'autopilot/demo/tickets/01')
+HEAD is now at 200e937 fixture base
+exit=0
+RED: checkout-relative tracker input is absent
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/worker) cat .scratch/demo/spec.md
+cat: .scratch/demo/spec.md: No such file or directory
+exit=1
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/worker) cat .scratch/demo/issues/01-export.md
+cat: .scratch/demo/issues/01-export.md: No such file or directory
+exit=1
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/reviewer -b autopilot/demo/tickets/02 200e9376e72ee18704077879f2a6efdfa34e3e23
+Preparing worktree (new branch 'autopilot/demo/tickets/02')
+HEAD is now at 200e937 fixture base
+exit=0
+RED: checkout-relative tracker input is absent
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/reviewer) cat .scratch/demo/spec.md
+cat: .scratch/demo/spec.md: No such file or directory
+exit=1
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/reviewer) cat .scratch/demo/issues/01-export.md
+cat: .scratch/demo/issues/01-export.md: No such file or directory
+exit=1
+GREEN: canonical absolute snapshots are readable
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/worker) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'import hashlib,json,pathlib,sys
+paths=[pathlib.Path(p) for p in sys.argv[1:]]
+assert all(p.is_absolute() and p == p.resolve() for p in paths)
+print(json.dumps([{"path":str(p),"sha256":hashlib.sha256(p.read_bytes()).hexdigest(),"text":p.read_text()} for p in paths],sort_keys=True))
+' /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original/.scratch/demo/runs/demo-inputs-01/snapshots/spec.md /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original/.scratch/demo/runs/demo-inputs-01/snapshots/tickets/01.md
+[{"path": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original/.scratch/demo/runs/demo-inputs-01/snapshots/spec.md", "sha256": "a5f1bece055ef541a6cc9c02c99fea00d2f1252eaaa01e54a6a3a7fad27d06a5", "text": "# Demo spec\n\nExport the literal value 42.\n"}, {"path": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original/.scratch/demo/runs/demo-inputs-01/snapshots/tickets/01.md", "sha256": "6c9f3ccbe379ba1e11af9f511d7b98ff3206f831581f5f84ef930e79223a7d39", "text": "# 01: Export value\n\nFiles: payload.txt\nExample: export() -> 42\nVerify: python3 -m unittest\n"}]
+exit=0
+GREEN: canonical absolute snapshots are readable
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/reviewer) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'import hashlib,json,pathlib,sys
+paths=[pathlib.Path(p) for p in sys.argv[1:]]
+assert all(p.is_absolute() and p == p.resolve() for p in paths)
+print(json.dumps([{"path":str(p),"sha256":hashlib.sha256(p.read_bytes()).hexdigest(),"text":p.read_text()} for p in paths],sort_keys=True))
+' /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original/.scratch/demo/runs/demo-inputs-01/snapshots/spec.md /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original/.scratch/demo/runs/demo-inputs-01/snapshots/tickets/01.md
+[{"path": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original/.scratch/demo/runs/demo-inputs-01/snapshots/spec.md", "sha256": "a5f1bece055ef541a6cc9c02c99fea00d2f1252eaaa01e54a6a3a7fad27d06a5", "text": "# Demo spec\n\nExport the literal value 42.\n"}, {"path": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original/.scratch/demo/runs/demo-inputs-01/snapshots/tickets/01.md", "sha256": "6c9f3ccbe379ba1e11af9f511d7b98ff3206f831581f5f84ef930e79223a7d39", "text": "# 01: Export value\n\nFiles: payload.txt\nExample: export() -> 42\nVerify: python3 -m unittest\n"}]
+exit=0
+PASS: both real worktrees read identical canonical spec/task bytes and hashes
+PASS: planner status/event rehearsal preserves frozen spec/task
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git ls-files --others --exclude-standard -z
+stdout_json=".scratch/demo/issues/01-export.md\u0000.scratch/demo/runs/demo-inputs-01/run.md\u0000.scratch/demo/runs/demo-inputs-01/snapshots/spec.md\u0000.scratch/demo/runs/demo-inputs-01/snapshots/tickets/01.md\u0000.scratch/demo/spec.md\u0000user-notes.bin\u0000"
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git rev-parse base
+200e9376e72ee18704077879f2a6efdfa34e3e23
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git diff --binary
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git diff --cached --binary
+
+exit=0
+original_state={"base_sha": "200e9376e72ee18704077879f2a6efdfa34e3e23", "head": "refs/heads/base", "non_run_untracked": {"user-notes.bin": "0587436fec3d54a94cd7fce9c4124d17b6674d771a73e20c061390112e857fb7"}, "payload": "f14dcc9940d1f311a0aadf6bb5c08acfad19d699521c7e2a5ea7d6e9e5fdbc0c", "staged_diff": "", "tracked_diff": ""}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/worker) git status --porcelain
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/reviewer) git status --porcelain
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/original
+HEAD 200e9376e72ee18704077879f2a6efdfa34e3e23
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/reviewer
+HEAD 200e9376e72ee18704077879f2a6efdfa34e3e23
+branch refs/heads/autopilot/demo/tickets/02
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-inputs-ollteb8t/worker
+HEAD 200e9376e72ee18704077879f2a6efdfa34e3e23
+branch refs/heads/autopilot/demo/tickets/01
+exit=0
+PASS: original ref, base SHA, tracked/staged diff and unrelated untracked bytes unchanged
+PASS: real Git input experiment and explicitly identified planner rehearsal
