@@ -2,6 +2,8 @@
 
 Read before a worker merges integration tip, before filling a reviewer packet, and for every ticket PASS, merge conflict or failed integration check. This is the transaction authority for [loop.md](loop.md); [run-record.md](run-record.md) owns its fields, [runtimes.md](runtimes.md) owns activity and bounded command waits, and [failures.md](failures.md) owns budgets/terminal exits. Explicit recovery still starts in [resume.md](resume.md). The planner executes this protocol with existing Git/host tools, without a second scheduler.
 
+Ticket candidate review and ordinary merge verification here do not qualify the final delivered tip. After the loop, [final-review.md](final-review.md) requires exact-tip suite/typecheck and both Standards/Spec reviews, including after final corrections.
+
 Command examples are templates: pass refs and canonical paths as literal argv values through the host, or use correct shell escaping for each value. Git-valid names can contain shell syntax; raw substitution inside quote characters is insufficient. Resolve and merge immutable commit SHAs as below.
 
 ## Worker tip merge

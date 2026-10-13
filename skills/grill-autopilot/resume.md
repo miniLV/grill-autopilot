@@ -12,6 +12,8 @@ Enter only for `/grill-autopilot resume <run-id>`. The planner uses existing Git
 
 Done when: each pending attempt and interrupted operation has an attributable continuation/terminal decision, or recovery has stopped with preserved state and a failed brief. Ambiguous host/Git/ownership or fingerprint/input drift stops new execution and **all cleanup**. Use failures.md to block affected unfinished tickets, stop only qualified owned resources where possible, retain done evidence and report unconfirmed activity/resources. If tracker write ownership is unqualified, preserve it and show those decisions directly rather than overwriting it.
 
+For an interrupted final stage, return to [final-review.md](final-review.md) after this reconciliation. Retain final correction counts and all saved deadlines; qualify both-axis verdicts and check evidence for the exact current tip against the original saved base SHA. Historical final PASS/checks or a terminal status alone cannot qualify changed content or replay delivery.
+
 ## Decisions at the interrupted stage
 
 | Observed facts | Resume decision |

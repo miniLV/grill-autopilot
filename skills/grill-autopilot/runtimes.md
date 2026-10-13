@@ -39,6 +39,8 @@ CLI fallback is eligible **only** when an exposed tool lacks a required capabili
 
 A finished worker first yields its result, then passes inactivity/release reconciliation; only then can its confirmed available slot start the waiting reviewer. Prioritize waiting reviews over new workers. Complete/release reviewers and escalate roles by the same rule. A capacity rejection queues the role and records the rejection; retry start only after new host evidence of available capacity, never a repeated spawn loop. If no child can release capacity, or release/availability cannot be established, stop new dispatch and report the unsupported route with retained identities/worktrees. Final review can run its two seats sequentially when only one slot is available.
 
+[final-review.md](final-review.md) applies this lifecycle contract to each Standards/Spec seat, final check and sole escalate writer in a correction round. Reconcile inactivity/release before changing from review to correction or back; unsafe resources close failed through failures.md rather than launching another final role.
+
 ## Claude Code
 
 Inspect the Agent/SendMessage/status/wait/stop schema actually exposed by the current host. Do not infer it from Claude CLI help. If Agent accepts `model`, `effort` and `run_in_background`, use the configured alias/effort and background execution; otherwise apply the fallback gate rather than inventing parameters.
