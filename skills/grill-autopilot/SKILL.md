@@ -34,7 +34,7 @@ Read and follow the companion `grilling` skill on the user's topic. Add these br
 
 - **Seams**: the public interfaces to test at, each with what it catches and misses. This replaces the seam check in to-spec and tdd.
 - **Slicing**: what may run in parallel, how small tickets should be, and which areas are off-limits.
-- **Commands**: the single-test-file command, the full test suite, and typecheck.
+- **Commands**: initialization command(s) for each new worktree, or explicit `None`; the single-ticket Verify command, full suite, and typecheck. Record an inapplicable check as `N/A` with a reason agreed here, rather than an invented pass; applicable behavior checks must still run. Choose an existing baseline check at the agreed seam if a ticket's new test file will not exist yet. Record these choices in run-record.md. Known missing tools/credentials are preparation blockers before Go; a failed or unavailable check is not `N/A`.
 - **Delivery**: the feature slug, the base branch, and the integration branch (recommend `autopilot/<slug>/integration`; tickets use `autopilot/<slug>/tickets/<NN>`). Assign a unique run ID separately from the slug. Apply the read-only branch preflight in [loop.md](loop.md#setup) to the known refs and paths before Go; report any invalid base/name or existing-run conflict. Ask whether to push and open a draft PR at the end (recommend: no, local branch only).
 
 Close with one question: "Shared understanding reached. From here I run unattended until the PR brief. Go?"
@@ -63,21 +63,21 @@ Done when: every ticket file exists, the whole set passes the self-check, and th
 
 ### 4. Implement loop
 
-Once the ticket set is known, complete the branch preflight in [loop.md](loop.md#setup) for every planned ref and worktree path before creating any of them. Save the resolved base SHA and create the integration worktree from that SHA, then run the loop. A new run stops on existing state; only an explicit resume of the same run may reconcile and reuse it.
+Once the ticket set is known, complete the branch preflight in [loop.md](loop.md#setup) for every planned ref and worktree path before creating any of them. Save the resolved base SHA, create the integration worktree from that SHA, and pass its environment preparation gate before dispatching implementation. Each ticket worktree passes its own gate. A new run stops on existing state; only an explicit resume of the same run may reconcile and reuse it.
 
-Done when: every ticket is `done` or `blocked`, and the full test suite and typecheck pass on the integration branch.
+Done when: every ticket is `done` or `blocked`, and the full test suite and applicable typecheck pass on the integration branch (an agreed `N/A` remains recorded with its reason).
 
 ### 5. Final review
 
-Read and follow the companion `code-review` skill, and spawn its two review sub-agents on the reviewer role. Use the base branch as the fixed point and the recorded canonical spec snapshot as the spec; all child pointers follow run-record.md. Send all findings to one escalate-role subagent to fix on the integration branch, then rerun the full suite and typecheck.
+Read and follow the companion `code-review` skill, and spawn its two review sub-agents on the reviewer role. Use the base branch as the fixed point and the recorded canonical spec snapshot as the spec; all child pointers follow run-record.md. Send all findings to one escalate-role subagent to fix on the integration branch, then rerun the full suite and applicable typecheck.
 
-Done when: the review has run, its fixes are committed, and the suite is green. If the suite stays red after the fix, record the failure in the brief.
+Done when: the review has run, its fixes are committed, and the suite and applicable typecheck are green. Retain an agreed typecheck `N/A` as such. If the suite stays red after the fix, record the failure in the brief.
 
 ### 6. PR brief
 
 The planner compares the original checkout with its baseline using run-record.md, records the evidence, writes the original checkout's canonical `.scratch/<slug>/brief.md`, and shows it to the user:
 
-- **Result**: integration branch, `git diff <base>...<integration> --stat`, suite status.
+- **Result**: integration branch, `git diff <base>...<integration> --stat`, suite/typecheck status (including an agreed N/A reason).
 - **Done**: each done ticket by title, with its attempts and the model that finished it.
 - **Blocked**: each blocked ticket with the reviewer's last reasons. Write "none" if empty.
 - **Assumptions**: assumptions from the frozen spec plus later run-record entries.

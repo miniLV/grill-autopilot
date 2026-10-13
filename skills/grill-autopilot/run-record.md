@@ -61,10 +61,18 @@ roles:
   reviewer: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
   escalate: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
 commands:
-  initialization: {command: <agreed command or explicit None>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}
+  initialization: {command: <agreed command(s) or explicit None>, cwd: <canonical path>, result: <exit/evidence, skipped for explicit None, or not-recorded reason>}
   ticket_verify: [{command: <exact command>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}]
+  ticket_baseline: [{command: <agreed existing baseline if the new Verify file is absent>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}]
   full_suite: {command: <exact command>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}
-  typecheck: {command: <exact command>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}
+  typecheck: {command: <exact command or agreed N/A>, reason: <agreed N/A reason; otherwise None>, cwd: <canonical path>, result: <exit/evidence, N/A with reason, or not-recorded reason>}
+preparations:
+  - worktree: <canonical integration/ticket path>
+    starting_sha: <SHA checked before implementation>
+    initialization: <command result/log path, or skipped for explicit None>
+    generated_paths: [<canonical expected preparation output paths>]
+    baselines: [{command: <exact stage baseline/check>, result: <exit and evidence path or agreed N/A with reason>}]
+    status: <ready/environment-error/not-recorded reason>
 push_selected: <true/false from grill>
 inputs:
   spec: {source: <canonical path>, snapshot: <canonical path>, sha256: <hash>}

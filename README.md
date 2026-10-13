@@ -43,7 +43,7 @@ implement-spec 已经会按依赖图并行派子代理，也会用 worktree，�
 
 - [Claude Code](https://code.claude.com) 或 [Codex CLI](https://github.com/openai/codex)。
 - 已安装 [mattpocock/skills](https://github.com/mattpocock/skills#installation-30-second-setup)，用 plugin 或 `npx skills` 安装都可以。grill-autopilot 会用到其中的 `grilling`、`to-spec`、`to-tickets`、`tdd`、`code-review` 和 `setup-matt-pocock-skills`。
-- 一个 git 仓库，tracked 源码状态干净，并且能用命令跑单个测试文件、全量测试和 typecheck。已有无关 untracked 文件会记录并保留。
+- 一个 git 仓库，tracked 源码状态干净，明确初始化命令（或 `None`）、单票检查、全量测试和 typecheck（不适用则约定 `N/A` 及理由）。已有无关 untracked 文件会记录并保留。
 
 ### 2. 安装
 
@@ -74,7 +74,7 @@ ln -s ~/grill-autopilot/skills/grill-autopilot ~/.codex/skills/grill-autopilot
 ```
 
 1. agent 先列出本次每个角色用的模型，然后开始一轮一轮提问，每个问题都附带推荐答案。
-2. 最后一轮会确认测试 seam、拆分原则、测试命令、分支名，以及结束时要不要推送。
+2. 最后一轮会确认测试 seam、拆分原则、初始化与检查命令（包括 `None`/`N/A` 的明确选择）、分支名，以及结束时要不要推送。
 3. 你回答 "Go" 之后就可以离开。之后它不会再问你任何问题。
 4. 回来看 `.scratch/<slug>/brief.md`。
 
@@ -103,6 +103,7 @@ ln -s ~/grill-autopilot/skills/grill-autopilot ~/.codex/skills/grill-autopilot
 ![并行实现循环](docs/images/implement-loop.png)
 
 - **派发**：从依赖图里取出可以开工的 ticket，最多同时 3 个；改动文件重叠的 ticket 不会同时跑。
+- **准备**：每个集成/ticket worktree 单独初始化并运行本阶段基线，原 checkout 的 ignored 依赖不会自动带过去。初始化/原始基线失败记录为环境错误，保留现场与命令证据，在环境修好前不进入实现、不消耗实现重试次数。
 - **实现**：每个 worker 在自己的 worktree 里，按 ticket 里写死的示例值先写测试再实现，只能改 ticket 声明的文件。
 - **把关**：reviewer 核对验收条件、文件范围，检查测试断言是否和示例值一致、有没有被放宽，然后只回一行 `PASS` 或 `FAIL`。
 - **合并**：通过后合并到集成分支并重新验证，删除 worktree，把 ticket 标记为 done。

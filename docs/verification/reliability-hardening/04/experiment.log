@@ -1,0 +1,171 @@
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original/.git/
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git config user.name 'Bootstrap experiment'
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git config user.email experiment@example.invalid
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git config commit.gpgSign false
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git config core.hooksPath /dev/null
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git add .
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git commit -m 'bootstrap fixture base'
+[base (root-commit) 6608584] bootstrap fixture base
+ 5 files changed, 22 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 business.py
+ create mode 100644 check_baseline.py
+ create mode 100644 dependencies.lock
+ create mode 100644 initialize.py
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git rev-parse base
+660858415794647863326844e5812f9022ed59fb
+exit=0
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "bf77ec0838d8dfa1ed80f63b43368aff0b0250a8ad545538be6fede8edb5d1e2", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 initialize.py
+prepared existing fixture lock dependency
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 check_baseline.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git check-ignore .deps/fixture_dep.py
+.deps/fixture_dep.py
+exit=0
+FACT: original ignored dependency exists=True
+
+INTEGRATION and TICKET: missing ignored dependency, then initialization and green baseline
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/integration -b autopilot/demo/integration base
+Preparing worktree (new branch 'autopilot/demo/integration')
+HEAD is now at 6608584 bootstrap fixture base
+exit=0
+FACT: new worktree dependency exists=False
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "bf77ec0838d8dfa1ed80f63b43368aff0b0250a8ad545538be6fede8edb5d1e2", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 check_baseline.py
+Traceback (most recent call last):
+  File "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/integration/check_baseline.py", line 5, in <module>
+    from business import export
+  File "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/integration/business.py", line 1, in <module>
+    from fixture_dep import VALUE
+ModuleNotFoundError: No module named 'fixture_dep'
+exit=1
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 initialize.py
+prepared existing fixture lock dependency
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 check_baseline.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+exit=0
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "bf77ec0838d8dfa1ed80f63b43368aff0b0250a8ad545538be6fede8edb5d1e2", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/integration) git status --porcelain
+
+exit=0
+PLANNER REHEARSAL: {"preparation":"ready","implementation_attempts":0,"reason":"gate completed; no worker was dispatched"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-01 -b autopilot/demo/tickets/01 base
+Preparing worktree (new branch 'autopilot/demo/tickets/01')
+HEAD is now at 6608584 bootstrap fixture base
+exit=0
+FACT: new worktree dependency exists=False
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "bf77ec0838d8dfa1ed80f63b43368aff0b0250a8ad545538be6fede8edb5d1e2", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-01) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 check_baseline.py
+Traceback (most recent call last):
+  File "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-01/check_baseline.py", line 5, in <module>
+    from business import export
+  File "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-01/business.py", line 1, in <module>
+    from fixture_dep import VALUE
+ModuleNotFoundError: No module named 'fixture_dep'
+exit=1
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-01) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 initialize.py
+prepared existing fixture lock dependency
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-01) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 check_baseline.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+exit=0
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "bf77ec0838d8dfa1ed80f63b43368aff0b0250a8ad545538be6fede8edb5d1e2", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-01) git status --porcelain
+
+exit=0
+PLANNER REHEARSAL: {"preparation":"ready","implementation_attempts":0,"reason":"gate completed; no worker was dispatched"}
+
+INIT EXIT 7: stop before baseline/implementation; no business repair
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-init-7 -b autopilot/demo/tickets/02 base
+Preparing worktree (new branch 'autopilot/demo/tickets/02')
+HEAD is now at 6608584 bootstrap fixture base
+exit=0
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "bf77ec0838d8dfa1ed80f63b43368aff0b0250a8ad545538be6fede8edb5d1e2", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-init-7) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'import sys; print('"'"'fixture initialization failure'"'"'); sys.exit(7)'
+fixture initialization failure
+exit=7
+PLANNER REHEARSAL: {"preparation":"environment-error","operation":"initialization","exit":7,"implementation_attempts":0,"handoff":"command evidence retained; no worker or baseline call"}
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "bf77ec0838d8dfa1ed80f63b43368aff0b0250a8ad545538be6fede8edb5d1e2", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-init-7) git status --porcelain
+
+exit=0
+
+BASELINE RED: seed a pre-existing defect before the preparation experiment
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-baseline-red -b autopilot/demo/tickets/03 base
+Preparing worktree (new branch 'autopilot/demo/tickets/03')
+HEAD is now at 6608584 bootstrap fixture base
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-baseline-red) git add business.py
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-baseline-red) git commit -m 'seed pre-existing red baseline'
+[autopilot/demo/tickets/03 cb4866e] seed pre-existing red baseline
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "09be15ea054b5f575d5ff6641b0393330241c971259c225bdfc7709cdbb05b7a", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-baseline-red) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 initialize.py
+prepared existing fixture lock dependency
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-baseline-red) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 check_baseline.py
+F
+======================================================================
+FAIL: test_export_literal (__main__.Baseline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-baseline-red/check_baseline.py", line 8, in test_export_literal
+    self.assertEqual(export(), 42)
+AssertionError: 41 != 42
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+exit=1
+PLANNER REHEARSAL: {"preparation":"environment-error","operation":"baseline","exit":1,"implementation_attempts":0,"handoff":"pre-existing baseline defect preserved; business repair not attempted"}
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "09be15ea054b5f575d5ff6641b0393330241c971259c225bdfc7709cdbb05b7a", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/ticket-baseline-red) git status --porcelain
+
+exit=0
+PASS: initialization and baseline failures preserve all tracked fixture bytes
+CHECK CHOICE REHEARSAL: {"typecheck":"N/A","reason":"standard-library Python fixture with an artificial local module; no configured static-type checker/contract","behavior_tests":"check_baseline.py executed, not waived"}
+CHECK CHOICE REHEARSAL: {"initialization":"None only for an already runnable environment","effect":"skip initialization process, still require applicable baseline behavior checks"}
+tracked_content={".gitignore": "0572832eb6ecab28ff4a6a38432fa51326e71ed54ca6bdd825c36d4005c1b1eb", "business.py": "bf77ec0838d8dfa1ed80f63b43368aff0b0250a8ad545538be6fede8edb5d1e2", "check_baseline.py": "a155ca3ec7a7b8d56a6128036b9ce8dae33fd63a55a8a3a7ec40eb96bdedc7e1", "dependencies.lock": "ea1cfbe4f1c7bd96978b2d909eab316d3262c5ef21736359d0494637e005e590", "initialize.py": "1deea14d1586914437074fae69f9a4b6a8e1923ce018f0b2d9e3c0c0c34b5898"}
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git symbolic-ref HEAD
+refs/heads/base
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git rev-parse base
+660858415794647863326844e5812f9022ed59fb
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-bootstrap-s51yadnx/original) git status --porcelain
+
+exit=0
+PASS: real Git/command experiment; preparation/counter/check-choice records are planner rehearsals, not runtime automation

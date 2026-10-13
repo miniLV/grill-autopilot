@@ -18,13 +18,22 @@ The planner keeps pointers and **verdicts** in its context; the durable run reco
 - **Integration worktree**: after the complete preflight passes, run `git worktree add <root>/<slug>-integration -b <integration-branch> <base-sha>`. Every merge and every suite run happens here; source changes stay in dedicated worktrees, while the original checkout holds only owned run data. Recheck the target ref/path immediately before each creation; for later dispatches, check the new target's name, ref prefix conflicts and occupied path, while retaining the already recorded integration/ticket state of this run. If Git reports a race or another creation error, stop, report and retain any state already created by this run for reconciliation.
 - **Ticket status**: `ready-for-agent` → `claimed` → `in-review` → `done` or `blocked`. Only the planner updates the mutable source ticket's Status/Comments and mirrors its events in the run record. The dispatched task snapshot stays fixed.
 
+### Environment preparation gate
+
+The planner prepares **each** newly created integration/ticket worktree before dispatching implementation; ignored dependencies in the original checkout are not inherited. In that worktree's canonical directory:
+
+1. Save the intended initialization choice and evidence destination in the run record. Run the agreed initialization command(s) in order; explicit `None` skips only initialization, not baseline checks. Installing the dependencies already pinned by the existing lockfile is preparation. Changing dependency declarations or the lockfile is implementation and still requires ticket Files/scope authorization; preparation does not grant it.
+2. After initialization succeeds, run the stage's baseline: integration uses the full suite and applicable typecheck; a ticket uses its agreed existing seam/Verify baseline and applicable typecheck at its starting integration SHA. A new test file that does not exist yet uses the agreed existing baseline command, recorded during grill. Preserve `N/A` and its reason for genuinely inapplicable checks; a missing tool, credential or dependency is an error. Applicable behavior checks remain mandatory.
+3. Record commands, canonical cwd, starting SHA, initialization outputs/generated paths, exit codes, baseline results and log pointers through run-record.md's command/preparation fields. Only successful initialization (or explicit `None`) plus passing applicable baselines marks that worktree ready for implementation. Its worker implementation counter remains unchanged until implementation starts.
+4. Initialization failure, missing credentials and pre-existing baseline failure are **environment errors**, separate from implementation `FAIL`. Preserve the worktree and command evidence, hold affected implementation, and hand the environment error to the planner's failure handling; an integration preparation error stops new implementation dispatch. Do not ask a worker to repair business code or spend implementation retries on this gate. After the environment is repaired, rerun the gate before implementation. This gate does not define a new general retry/termination budget.
+
 ## Each dispatch
 
 1. **Pick.** Take frontier tickets in number order. Skip a ticket whose Files overlap the Files of any `claimed` or `in-review` ticket. Stop at `concurrency` running workers.
-2. **Dispatch.** Recheck the new ticket's target as Setup describes, save the starting integration SHA, then create its worktree at that SHA and spawn a worker in the background (see [runtimes.md](runtimes.md)). A retry or explicit reconciled resume uses its recorded worktree instead of creating another one. Set the ticket to `claimed`. Send the worker packet below.
-3. **Review.** When the worker reports `DONE`, set the ticket to `in-review` and spawn a reviewer with the reviewer packet below. When it reports `STUCK`, treat that as a `FAIL` with its reason. A material scope-expansion report follows run-record.md's blocked path instead of changing the task on retry.
+2. **Dispatch.** Recheck the new ticket's target as Setup describes, save the starting integration SHA, then create its worktree at that SHA and pass its environment gate before spawning a worker (see [runtimes.md](runtimes.md)). A retry or explicit reconciled resume uses its recorded worktree instead of creating another one; check its recorded preparation and rerun the gate if the environment changed. Set the ticket to `claimed`. Send the worker packet below.
+3. **Review.** When the worker reports `DONE`, set the ticket to `in-review` and spawn a reviewer with the reviewer packet below. A worker-reported `ENVIRONMENT_ERROR` follows the environment gate's evidence/handoff path rather than implementation FAIL/retry accounting. When it reports `STUCK`, treat that as a `FAIL` with its reason. A material scope-expansion report follows run-record.md's blocked path instead of changing the task on retry.
 4. **On PASS**:
-   - In the integration worktree, run `git merge --no-ff <ticket-branch>`, then the ticket's Verify commands and typecheck.
+   - In the integration worktree, run `git merge --no-ff <ticket-branch>`, then the ticket's applicable Verify commands and typecheck (retain any agreed `N/A` reason).
    - If the merge conflicts or a check goes red, run `git merge --abort` (or `git reset --hard ORIG_HEAD` after a red check) and treat it as a `FAIL` with that reason.
    - Otherwise remove the ticket worktree, delete the merged branch, and set the ticket to `done`.
 5. **On FAIL**, count the ticket's attempts:
@@ -34,7 +43,7 @@ The planner keeps pointers and **verdicts** in its context; the durable run reco
    - Every ticket that is blocked by a blocked ticket, directly or not, also becomes `blocked`, with the reason "upstream <NN> blocked".
 6. **Refill.** After every `done` or `blocked`, recompute the frontier and dispatch again.
 
-The loop ends when no ticket is `ready-for-agent`, `claimed` or `in-review`. Then run the full suite and typecheck in the integration worktree.
+The loop ends when no ticket is `ready-for-agent`, `claimed` or `in-review`. Then run the full suite and applicable typecheck in the integration worktree; retain an agreed `N/A` with its reason.
 
 ## Worker packet
 
@@ -51,15 +60,19 @@ External/run Context: <canonical absolute pointers or None>
 Log capture: <canonical absolute log path; planner/host writes>
 Worktree: <canonical absolute path>    Branch: <ticket-branch>    Integration branch: <integration-branch>
 Starting integration SHA: <integration-sha>
+Preparation evidence: <canonical absolute record/log pointers for this worktree and starting SHA>
+Initialization choice: <agreed commands or explicit None>
+Baseline commands: <agreed existing baseline and applicable typecheck, or N/A with reason>
 <Reviewer reasons from the last attempt, if any>
 
 1. Confirm the assigned branch, worktree and starting integration SHA match the planner's recorded state. If they differ or unexpected edits are present, preserve the worktree and report STUCK; the planner reconciles it before retrying.
 2. Verify the snapshot hashes and read the frozen task/spec; resolve repository Files/Context under the assigned worktree. Report missing/changed inputs or scope expansion to the planner. The mutable tracker and run record are read only.
-3. Read and follow the tdd skill at <canonical absolute tdd SKILL.md path>, at the ticket's seam. The seam is already agreed, so do not ask the user to confirm it. For each Example, write a test asserting its literal expected output, see it fail, then make it pass.
-4. Edit only the paths under Files. Run every Verify command until all pass.
+3. Confirm this worktree's initialization and applicable baseline checks passed at the recorded starting SHA before TDD. If evidence is absent/stale or an environment failure appears, preserve it and report ENVIRONMENT_ERROR; stop implementation rather than fixing business code. Once the gate is satisfied, read and follow the tdd skill at <canonical absolute tdd SKILL.md path>, at the agreed seam. The seam is already agreed; do not ask to confirm it. For each Example, write a test asserting its literal expected output, see it fail, then make it pass.
+4. Edit only the paths under Files. Run applicable Verify commands until all pass; retain agreed N/A reasons. Preparation installs existing locked dependencies; dependency declaration changes still require this ticket's authorization.
 5. Commit on <ticket-branch>, then merge the <integration-branch> tip into it and rerun Verify.
 6. Reply with one line only:
    DONE <commit sha> <changed paths, comma-separated>
+   or ENVIRONMENT_ERROR <command and exit code/missing prerequisite reason>
    or STUCK <one-sentence reason>
 ```
 
@@ -83,7 +96,7 @@ Check each item:
 1. Every Acceptance item is met.
 2. Every changed path is listed under Files.
 3. The tests assert the ticket's Examples with the same literal values. No assertion is weakened, skipped or deleted.
-4. Every Verify command passes when you run it in the worktree.
+4. Every applicable Verify command passes when you run it in the worktree; any N/A has the reason agreed in grill.
 5. Nothing outside the ticket's scope changed.
 
 Reply with one line only:
