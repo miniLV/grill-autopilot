@@ -15,7 +15,7 @@ A ticket is **worker-grade** when the cheapest configured model can finish it fr
 
 ## Self-check
 
-This replaces to-tickets' user quiz. Check every ticket, fix what fails, and repeat until all pass:
+This replaces to-tickets' human approval of ticket granularity and blocking edges, located by meaning rather than step number (see [companions.md](companions.md)). Check every ticket, fix what fails, and repeat until all pass:
 
 - [ ] Every template field is filled.
 - [ ] Every acceptance item has at least one example with literal values.
