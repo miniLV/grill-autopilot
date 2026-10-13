@@ -4,7 +4,7 @@
 
 **Blocked by:** None (can start when execution is requested)
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P2 · 审查发现 8
 Spec decisions: D4
@@ -38,9 +38,9 @@ User stories: US5, US6
 
 ## Acceptance criteria
 
-- [ ] 所有依赖来自同一个完整根目录。
-- [ ] 优先级、歧义、缺失辅助文件与指纹漂移均有明确处理。
-- [ ] 步骤覆盖以语义为准，说明不再把名称存在等同兼容。
+- [x] 所有依赖来自同一个完整根目录。
+- [x] 优先级、歧义、缺失辅助文件与指纹漂移均有明确处理。
+- [x] 步骤覆盖以语义为准，说明不再把名称存在等同兼容。
 
 ## Verify
 
@@ -56,3 +56,5 @@ User stories: US5, US6
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-13：gpt-6.1-sol/high 候选 f69c32c，集成 61c1175。四布局构造/检查 exit 0；root 独立核对 D4 手动结论通过，merger 复验通过；实际 companion 只读捕获十个 hash，Git 来源不可用如实记录。证据：docs/verification/reliability-hardening/03/README.md。未声明真实 runtime 或任意上游版本兼容。
