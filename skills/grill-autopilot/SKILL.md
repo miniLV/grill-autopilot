@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "A new topic or requirement"
 ---
 
-One human checkpoint, then **autopilot**. The grill is the only conversation; after the user confirms it, every step runs to the **PR brief** without asking anything.
+One human checkpoint, then **autopilot**. The grill is the only conversation; after the user confirms it, continue to the **PR brief** without asking anything. Handleable failures also end with a brief under [failures.md](failures.md), with bounded attempts and preserved work.
 
 Work is split by **role**, never by hard-coded model:
 
@@ -25,6 +25,8 @@ The tracker is always local markdown under the original checkout's `.scratch/<sl
 Read [companions.md](companions.md) and select one complete collection: adjacent skills, then project skills/plugins, then user skills/plugins. Check all six skills, local-tracker helpers, necessary relative references and the current semantic contracts before Go. Record canonical paths, source facts and content hashes; resolve same-tier fingerprint ambiguity with the user before Go. An explicit resume checks the saved fingerprint and preserves the run on drift.
 
 Read [config.yaml](config.yaml), then `.grill-autopilot.yaml` at the repo root if it exists (its keys win). Read [runtimes.md](runtimes.md)'s shared contract and matching adapter. Inspect current host schema/help and record capability, authorization and capacity evidence. Resolve every role's requested model/effort separately from trusted observations (`match`, `mismatch`, `unknown`); the planner keeps its current session model. Unsupported required capabilities or a rejected route stop preparation.
+
+Read [failures.md](failures.md) before preparation/dispatch. Apply its single logical-attempt, retry and terminal-result authority to all roles and commands; on a handled preparation stop, use its brief exit even if no run data exists yet.
 
 Done when: one complete contract-eligible companion collection is selected with fingerprint/contract evidence ready to record once the run ID is known, you have shown the user the requested/observed model and effort plus status for all four roles, disclosed unknown model/capacity and lifecycle limitations before Go, established a permitted route for required capabilities, and the repo's tracked source state is clean. If source changes are present, ask the user to commit or stash before you go on. Run-owned tracker data is the documented write exception; preserve and inventory unrelated untracked files as run-record.md requires.
 
@@ -65,31 +67,32 @@ Done when: every ticket file exists, the whole set passes the self-check, and th
 
 Once the ticket set is known, complete the branch preflight in [loop.md](loop.md#setup) for every planned ref and worktree path before creating any of them. Save the resolved base SHA, create the integration worktree from that SHA, and pass its environment preparation gate before dispatching implementation. Each ticket worktree passes its own gate. A new run stops on existing state; only an explicit resume of the same run may reconcile and reuse it.
 
-Done when: every ticket is `done` or `blocked`, and the full test suite and applicable typecheck pass on the integration branch (an agreed `N/A` remains recorded with its reason).
+Done when: every ticket is `done` or `blocked`, and integration suite/typecheck results are recorded, including red or an agreed `N/A` reason. Safe runs proceed to final review with those results; handled unsafe stops go directly to the brief under failures.md.
 
 ### 5. Final review
 
-Read and follow the companion `code-review` skill, and start its two review sub-agents on the reviewer role within runtimes.md's all-role capacity and lifecycle contract (sequentially if only one slot is available). Use the base branch as the fixed point and the recorded canonical spec snapshot as the spec; all child pointers follow run-record.md. Send all findings to one escalate-role subagent to fix on the integration branch, then rerun the full suite and applicable typecheck.
+When resource safety and the required route permit it, read and follow the companion `code-review` skill, and start its two review sub-agents on the reviewer role within runtimes.md's all-role capacity and lifecycle contract (sequentially if only one slot is available). Use the base branch as the fixed point and the recorded canonical spec snapshot as the spec; all child pointers follow run-record.md. Include final check failures and known blocked requirements, distinguishing undelivered scope from findings in the integrated work. Send actionable findings/check failures to the bounded final correction pass in failures.md, then rerun the full suite and applicable typecheck. A green initial review/check needs no fix call.
 
-Done when: the review has run, its fixes are committed, and the suite and applicable typecheck are green. Retain an agreed typecheck `N/A` as such. If the suite stays red after the fix, record the failure in the brief.
+Done when: the finite final review/correction/check pass is recorded, or its handled stop is recorded, with remaining findings and check status ready for result classification. Red, unavailable review or exhausted correction does not prevent the brief. Retain an agreed typecheck `N/A` as such.
 
 ### 6. PR brief
 
 The planner compares the original checkout with its baseline using run-record.md, records the evidence, writes the original checkout's canonical `.scratch/<slug>/brief.md`, and shows it to the user:
 
-- **Result**: integration branch, `git diff <base>...<integration> --stat`, suite/typecheck status (including an agreed N/A reason).
+- **Result**: `success`, `partial` or `failed` under failures.md, stop reason if any, integration branch, `git diff <base>...<integration> --stat`, final review and suite/typecheck status (including an agreed N/A reason or unavailable evidence).
 - **Done**: each done ticket by title, with its attempts and the model that finished it.
-- **Blocked**: each blocked ticket with the reviewer's last reasons. Write "none" if empty.
+- **Blocked**: each blocked ticket with its last classified reason and available reviewer findings. Write "none" if empty.
 - **Assumptions**: assumptions from the frozen spec plus later run-record entries.
 - **Roles and runtime**: requested/observed model and effort plus match/mismatch/unknown for each role and finishing attempt; capability/capacity evidence and any retained identities or unconfirmed stop/resource release. Unknown values remain unknown.
 - **Record and preservation**: canonical run-record path, snapshot and check evidence, and original-checkout comparison (including any drift).
+- **Budgets and errors**: separate worker/escalate, per-attempt infrastructure retries/aggregate, reviewer and run-level final-fix counts; exhausted budgets, last findings and resources not fully stopped. List missing blocked requirements explicitly for partial delivery.
 
-Push and open a draft PR only if the user chose that in step 1.
+Push and open a draft PR only for `success` if the user chose that in step 1. `partial`/`failed` stay local.
 
-Done when: the brief is shown. Stop here; the user decides what happens next.
+Done when: the terminal phase/result and brief are saved and shown, including on every handleable stop. For pre-record preparation stops, follow failures.md's direct brief exception. Stop here; the user decides what happens next.
 
 ## Guardrails
 
 - Commit product changes only to integration/ticket branches in their assigned worktrees. The planner may write only this run's manifest-owned tracker resources in the original checkout; preserve its source, branch, base ref and unrelated files, and compare them at closeout as run-record.md requires.
-- Push only when the user chose that in step 1. Never force-push.
+- Apply failures.md's result/delivery gate before push. Never force-push.
 - Follow runtimes.md for capability/fallback, model observations and all-role capacity. A rejected route or observed child model/effort mismatch stops that role and preserves its work; missing actual metadata remains disclosed unknown. Keep the planner's current session model.
