@@ -4,7 +4,7 @@
 
 **Blocked by:** 02
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P1 · 审查发现 2
 Spec decisions: D6
@@ -38,10 +38,10 @@ Implement loop 的 FAIL/PASS 路径、worker retry 起点、两个 Runtime adapt
 
 ## Acceptance criteria
 
-- [ ] blocked 不再要求删除 worktree。
-- [ ] 未提交 tracked/untracked 修改都有保全规则。
-- [ ] 清理前所有权、活动状态、merged 和 clean 条件缺一不可。
-- [ ] 重试/恢复不再使用无条件破坏性 reset。
+- [x] blocked 不再要求删除 worktree。
+- [x] 未提交 tracked/untracked 修改都有保全规则。
+- [x] 清理前所有权、活动状态、merged 和 clean 条件缺一不可。
+- [x] 重试/恢复不再使用无条件破坏性 reset。
 
 ## Verify
 
@@ -57,3 +57,5 @@ Implement loop 的 FAIL/PASS 路径、worker retry 起点、两个 Runtime adapt
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-14：gpt-6.1-sol/high 候选 5a1dc44，集成 95b55c9。worker/root/merger 的真实 Git 现场保留/清理实验 exit 0，D6 与 diff check 通过。证据：docs/verification/reliability-hardening/05/README.md；locked 普通删除退出 128，现场保留。所有权/活动/停止/brief 仍为明确标记的演练。
