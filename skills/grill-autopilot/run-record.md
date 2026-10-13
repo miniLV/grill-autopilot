@@ -20,6 +20,8 @@ Fill every file/directory pointer in both packets with a canonical absolute path
 
 The Markdown record may use this YAML block plus append-only event prose. Fill each field; retain explicit unknown/not-recorded reasons. Role observations and command results are facts recorded by the planner, not assumed from configuration. Use [runtimes.md](runtimes.md) for capability, fallback, model-status and activity/capacity semantics; distinguish released execution capacity from retained identity metadata. [failures.md](failures.md) defines when counters change, per-logical-attempt infrastructure limits, terminal transitions and result classification. Record each invocation and its old/new counts so aggregate infrastructure totals cannot renew an attempt's allowance. Companion selection, necessary reference closure and fingerprint checks are defined in [companions.md](companions.md).
 
+[integration.md](integration.md) qualifies candidate/review evidence and serializes integration. Store the transaction on the consuming review attempt: its ID/status, exact merge-before/after SHAs, baseline/diagnostics, declared generated artifacts and rollback observations. Other attempts point to that evidence instead of copying mutable transaction facts. Save artifact ownership **before** checks, and intent **before** merge/abort/rollback; append outcomes without erasing failed SHA/check evidence. Successful `integration_checks` and `done` follow the completed transaction, never the reviewer PASS alone.
+
 ```yaml
 run_id: <unique execution id>
 slug: <feature slug>
@@ -130,9 +132,18 @@ tickets:
         invocations:
           - {number: <initial 1 or infrastructure retry 2>, planned_at: <UTC timestamp>, started_at: <timestamp/not-started/unknown>, ended_at: <timestamp/unknown>, identity: <agent/session/PID or reason>, classification: <runtime classification>, reason: <detail>, counts_before: <relevant counters>, counts_after: <reconciled counters>, remaining_seconds: <at decision>, evidence: [<canonical paths>]}
         candidate_sha: <SHA or not-recorded reason>
+        review_base_sha: <fixed integration tip the worker merged, with evidence, or not-recorded reason>
         reviewed_sha: <SHA or not-recorded reason>
+        review_evidence: <canonical captured fixed-base/candidate verdict/check log or not-recorded reason>
         merge_before_sha: <SHA or not-recorded reason>
         merge_after_sha: <SHA or not-recorded reason>
+        integration_transaction:
+          id: <run/ticket/review-attempt identity or not-applicable>
+          status: <queued/merging/checking/verified/aborted/rolled-back/unsafe or not-applicable>
+          baseline_evidence: <canonical pre-merge ref/HEAD/status/diff/untracked/ignored inventory log>
+          generated_artifacts: [{path: <exact canonical path declared before check>, baseline: <absent or attributable owned content/type/hash evidence>, producer: <command>, expected: <content/type/effect>, observed: <content/type/hash evidence or not-recorded>, cleanup: <targeted action/exit/evidence or preserved reason>}]
+          diagnostics: [<canonical merge/check/conflict/state evidence paths>]
+          rollback: {target_sha: <same recorded merge_before_sha or not-applicable>, operation: <abort/reset-to-recorded-SHA/not-permitted>, result: <exit and exact restored ref/HEAD/content evidence or preserved reason>}
         integration_checks: [{sha: <exact checked integration commit>, command: <exact applicable Verify/typecheck command or agreed N/A>, cwd: <canonical integration worktree>, started_at: <UTC>, ended_at: <UTC>, exit: <code or N/A with agreed reason>, log: <canonical captured output path>}]
         verdict: <observed verdict or not-recorded reason>
         evidence: [<canonical log/check/result paths>]
