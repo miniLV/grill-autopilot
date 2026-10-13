@@ -4,7 +4,7 @@
 
 **Blocked by:** 02
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P2 · 审查发现 6
 Spec decisions: D5
@@ -38,9 +38,9 @@ User stories: US7
 
 ## Acceptance criteria
 
-- [ ] Commands 包含初始化、单票检查、full suite 与 typecheck/N/A 的明确选择。
-- [ ] 两个种类 worktree 都有初始化和基线门槛。
-- [ ] 环境失败不计为实现失败，且有证据可交接。
+- [x] Commands 包含初始化、单票检查、full suite 与 typecheck/N/A 的明确选择。
+- [x] 两个种类 worktree 都有初始化和基线门槛。
+- [x] 环境失败不计为实现失败，且有证据可交接。
 
 ## Verify
 
@@ -56,3 +56,5 @@ User stories: US7
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-14：gpt-6.1-sol/high 候选 1165333，集成 aac7199。worker/root/merger 的真实 Git/命令初始化实验 exit 0，D5 协议审查与 diff check 通过。证据：docs/verification/reliability-hardening/04/README.md。计数/None/N/A 为明确标记的 planner 演练，真实 runtime 处理尚未验证。
