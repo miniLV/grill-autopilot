@@ -34,16 +34,23 @@ The planner prepares **each** newly created integration/ticket worktree before d
 3. **Review.** When the worker reports `DONE`, set the ticket to `in-review` and spawn a reviewer with the reviewer packet below. A worker-reported `ENVIRONMENT_ERROR` follows the environment gate's evidence/handoff path rather than implementation FAIL/retry accounting. When it reports `STUCK`, treat that as a `FAIL` with its reason. A material scope-expansion report follows run-record.md's blocked path instead of changing the task on retry.
 4. **On PASS**:
    - In the integration worktree, run `git merge --no-ff <ticket-branch>`, then the ticket's applicable Verify commands and typecheck (retain any agreed `N/A` reason).
-   - If the merge conflicts or a check goes red, run `git merge --abort` (or `git reset --hard ORIG_HEAD` after a red check) and treat it as a `FAIL` with that reason.
-   - Otherwise remove the ticket worktree, delete the merged branch, and set the ticket to `done`.
+   - If the merge conflicts or a check goes red, retain diagnostics and treat it as a `FAIL` with that reason. Use `git merge --abort` for a conflict, or `git reset --hard ORIG_HEAD` after a red check only when the integration worktree is confirmed clean. Dirty work is preserved and affected integration stops for reconciliation rather than being reset.
+   - Otherwise record the verified result and set the ticket to `done`, then apply the retention/cleanup gate below. Cleanup is separate from that result.
 5. **On FAIL**, count the ticket's attempts:
-   - While attempts ≤ `retry.worker`, send a worker back to the same worktree with the reviewer's reasons appended to the packet.
+   - While attempts ≤ `retry.worker`, retain the previous attempt's HEAD, tracked diff/untracked inventory and diagnostics; reconcile ownership and activity before sending a worker back to that same worktree with the reviewer's reasons appended. Known edits from the previous attempt are continuation state, not permission to reset it.
    - Then, for up to `retry.escalate` more attempts, use the escalate role instead.
-   - After that, set the ticket to `blocked` with the last reasons. Remove its worktree but keep its branch for the human.
+   - After that, set the ticket to `blocked` with the last reasons and retain its worktree, branch and all committed/uncommitted files. Follow the retention/handoff rules below for any remaining run-owned agents.
    - Every ticket that is blocked by a blocked ticket, directly or not, also becomes `blocked`, with the reason "upstream <NN> blocked".
 6. **Refill.** After every `done` or `blocked`, recompute the frontier and dispatch again.
 
 The loop ends when no ticket is `ready-for-agent`, `claimed` or `in-review`. Then run the full suite and applicable typecheck in the integration worktree; retain an agreed `N/A` with its reason.
+
+## Retention and cleanup gate
+
+- **Blocked/failed handoff:** retain the entire ticket worktree and branch, including tracked, untracked and ignored files, along with attempt/log evidence. A branch contains committed objects, not the uncommitted worktree. Stop this run's still-active agents/processes that could write there using the runtime's available stop/liveness tools before handing it back. If stop/activity cannot be confirmed, retain the possibly active worktree and disclose that fact; never stop unrelated agents. The planner records the canonical path, branch/HEAD, dirty inventory, diagnostics and activity state in the run record and brief.
+- **Successful cleanup:** require all four facts immediately before deleting anything: the ticket has a recorded verified integration result and its current branch tip is merged into integration (`git merge-base --is-ancestor <ticket-branch> <integration-branch>`); its canonical worktree/branch registration matches this run's recorded ownership; every agent/process using it is inactive; and `git -C <ticket-worktree> status --porcelain --untracked-files=all` is empty. A missing/unknown fact, active agent, ownership mismatch or dirty state means skip deletion and record the reason. A retry or resumed attempt keeps its existing state; no cleanup/reset is used to manufacture a clean start.
+- **Delete only the eligible ticket:** save the cleanup intent/evidence in the run record, run `git worktree remove "<canonical ticket-worktree>"`, and only after that succeeds run `git -C "<canonical integration-worktree>" branch -d "<recorded ticket-branch>"`. Use the actual recorded branch (default `autopilot/<slug>/tickets/<NN>`). Keep the integration worktree for inspection and the tracker/log evidence for the brief.
+- **Cleanup failure:** save the command, exit code, retained paths/refs and diagnostic as a cleanup warning and continue to the brief. Use ordinary non-force commands; preserve a refusal instead of forcing removal/deletion or unlocking someone else's worktree. If worktree removal failed, retain the branch; if only branch deletion failed, report that remaining ref. A warning or skipped cleanup does not erase the ticket's verified result or change `done` to `blocked`.
 
 ## Worker packet
 
@@ -63,9 +70,10 @@ Starting integration SHA: <integration-sha>
 Preparation evidence: <canonical absolute record/log pointers for this worktree and starting SHA>
 Initialization choice: <agreed commands or explicit None>
 Baseline commands: <agreed existing baseline and applicable typecheck, or N/A with reason>
+Attempt context: <new/retry/explicit resume>    Previous attempt evidence: <canonical pointers or None>
 <Reviewer reasons from the last attempt, if any>
 
-1. Confirm the assigned branch, worktree and starting integration SHA match the planner's recorded state. If they differ or unexpected edits are present, preserve the worktree and report STUCK; the planner reconciles it before retrying.
+1. Confirm the assigned worktree/branch and this run's ownership. For a new worktree, verify its clean starting state at the recorded integration SHA. For retry/explicit resume, verify the recorded previous HEAD and tracked/untracked state and continue known prior-attempt edits; do not reset it to the current integration tip. Any unexpected state is preserved and reported STUCK for planner reconciliation.
 2. Verify the snapshot hashes and read the frozen task/spec; resolve repository Files/Context under the assigned worktree. Report missing/changed inputs or scope expansion to the planner. The mutable tracker and run record are read only.
 3. Confirm this worktree's initialization and applicable baseline checks passed at the recorded starting SHA before TDD. If evidence is absent/stale or an environment failure appears, preserve it and report ENVIRONMENT_ERROR; stop implementation rather than fixing business code. Once the gate is satisfied, read and follow the tdd skill at <canonical absolute tdd SKILL.md path>, at the agreed seam. The seam is already agreed; do not ask to confirm it. For each Example, write a test asserting its literal expected output, see it fail, then make it pass.
 4. Edit only the paths under Files. Run applicable Verify commands until all pass; retain agreed N/A reasons. Preparation installs existing locked dependencies; dependency declaration changes still require this ticket's authorization.

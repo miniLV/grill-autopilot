@@ -91,7 +91,7 @@ ln -s ~/grill-autopilot/skills/grill-autopilot ~/.codex/skills/grill-autopilot
 
 分支 autopilot/<slug>/integration    # 集成分支，所有通过 review 的 ticket 都合并到这里
 分支 autopilot/<slug>/tickets/<NN>   # 每张 ticket 的分支，与 integration ref 可同时存在
-../<repo>.autopilot-worktrees/   # 运行时的 worktree，合并后自动删除；blocked 的 ticket 保留分支
+../<repo>.autopilot-worktrees/   # blocked 保留完整 worktree/分支；成功票通过清理门槛才删除，集成 worktree 保留
 ```
 
 原 checkout 允许 planner 写本次运行明确拥有的 tracker 资料；源码修改和合并都在专用 worktree 里进行。运行前后核对原 checkout 的 ref、base SHA、tracked diff 和无关 untracked 文件；不会把整个 `.scratch/` 都当作可覆盖的目录。worker/reviewer 通过 canonical 绝对路径读同一份快照，无需把未提交运行资料写入 base。路径、权限和字段见 [run record 契约](skills/grill-autopilot/run-record.md)。
@@ -106,8 +106,8 @@ ln -s ~/grill-autopilot/skills/grill-autopilot ~/.codex/skills/grill-autopilot
 - **准备**：每个集成/ticket worktree 单独初始化并运行本阶段基线，原 checkout 的 ignored 依赖不会自动带过去。初始化/原始基线失败记录为环境错误，保留现场与命令证据，在环境修好前不进入实现、不消耗实现重试次数。
 - **实现**：每个 worker 在自己的 worktree 里，按 ticket 里写死的示例值先写测试再实现，只能改 ticket 声明的文件。
 - **把关**：reviewer 核对验收条件、文件范围，检查测试断言是否和示例值一致、有没有被放宽，然后只回一行 `PASS` 或 `FAIL`。
-- **合并**：通过后合并到集成分支并重新验证，删除 worktree，把 ticket 标记为 done。
-- **失败**：带着 review 意见重做；次数用完就标记 blocked，依赖它的 ticket 也一起 blocked，其余 ticket 照常进行。
+- **合并**：通过后合并到集成分支并重新验证，先记录 done；仅在分支已合入、现场 clean、属于本 run 且没有活跃 agent 时清理该票。删除失败记 cleanup warning，保留已验证结果和集成 worktree，继续 brief。
+- **失败**：带着 review 意见在原现场重做，保留前一次未提交修改；次数用完标记 blocked，保留 tracked/untracked 文件、worktree、分支和诊断，先停止本 run 的写入 agent，brief 列出路径和 dirty/活动状态。依赖它的票也 blocked，其余票继续。无法确认活动或所有权的现场保留，不强制删除或 reset。
 - **收尾**：全量 code-review → 修复 → 跑全量测试 → 写 brief。
 
 细节见 [`skills/grill-autopilot/loop.md`](skills/grill-autopilot/loop.md) 和 [`tickets.md`](skills/grill-autopilot/tickets.md)。
