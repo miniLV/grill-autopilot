@@ -4,7 +4,7 @@
 
 **Blocked by:** 05, 07
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P1 · 审查发现 4 的集成事务
 Spec decisions: D9
@@ -38,10 +38,10 @@ Implement loop 的 worker/reviewer packets、On PASS 与合并失败路径。
 
 ## Acceptance criteria
 
-- [ ] verdict可追溯到不可变候选，stale PASS无效。
-- [ ] done出现在merge和验证成功之后。
-- [ ] 恢复目标不依赖ORIG_HEAD。
-- [ ] 并行worker不导致并行merge事务，冲突现场可解释。
+- [x] verdict可追溯到不可变候选，stale PASS无效。
+- [x] done出现在merge和验证成功之后。
+- [x] 恢复目标不依赖ORIG_HEAD。
+- [x] 并行worker不导致并行merge事务，冲突现场可解释。
 
 ## Verify
 
@@ -57,3 +57,5 @@ Implement loop 的 worker/reviewer packets、On PASS 与合并失败路径。
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-14：gpt-6.1-sol/high 候选 3ca81b7，集成 7d366bc。worker/root/merger 真实 Git 集成实验 exit 0，diff check 通过；按固定已合入 tip 审查、stale PASS、精确 SHA 回滚、未知修改保存和串行集成均已核对。证据：docs/verification/reliability-hardening/09/README.md。PASS/状态/队列/brief 仍为手动演练，无端到端声明。
