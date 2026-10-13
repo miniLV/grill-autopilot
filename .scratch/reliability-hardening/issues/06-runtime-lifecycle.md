@@ -4,7 +4,7 @@
 
 **Blocked by:** 02
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P2 · 审查发现 7
 Spec decisions: D7
@@ -38,10 +38,10 @@ Runtime adapters 的公共说明和两种宿主实现、主 skill 的角色准�
 
 ## Acceptance criteria
 
-- [ ] 两个 runtime 使用相同的能力与结果语义。
-- [ ] 有界等待、取消不支持与资源释放有明确出口。
-- [ ] 容量管理包含 reviewer/escalate，拒绝时不会无限 spawn。
-- [ ] 模型差异与未知项不被隐藏。
+- [x] 两个 runtime 使用相同的能力与结果语义。
+- [x] 有界等待、取消不支持与资源释放有明确出口。
+- [x] 容量管理包含 reviewer/escalate，拒绝时不会无限 spawn。
+- [x] 模型差异与未知项不被隐藏。
 
 ## Verify
 
@@ -57,3 +57,5 @@ Runtime adapters 的公共说明和两种宿主实现、主 skill 的角色准�
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-14：gpt-6.1-sol/high 候选 ce4f188，集成 000100f。root 核对 schema、四例 D7 协议演练及初始化计时修正通过；worker/root/merger 九条版本/help 命令全部 exit 0，diff check 通过。证据：docs/verification/reliability-hardening/06/README.md。实际模型/effort unknown，slot 释放、取消与 CLI 模型运行未验证。
