@@ -1,5 +1,7 @@
 # Ticket 07 protocol walkthroughs
 
+Historical evidence (pre-D10): row 5a's one-fix policy and deferred final-gate statements remain the original ticket 07 observations, superseded by [ticket 10's walkthroughs](../10/scenarios.md). These old rows do not verify the new default.
+
 Approved seam: one skill run's input → Git/worktree state, ticket state and brief. These are manual protocol decisions, not a shadow scheduler, prose-matching tests or evidence of model obedience.
 
 ## RED: clean integration baseline `d195c61`

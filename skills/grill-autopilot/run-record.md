@@ -22,6 +22,8 @@ The Markdown record may use this YAML block plus append-only event prose. Fill e
 
 [integration.md](integration.md) qualifies candidate/review evidence and serializes integration. Store the transaction on the consuming review attempt: its ID/status, exact merge-before/after SHAs, baseline/diagnostics, declared generated artifacts and rollback observations. Other attempts point to that evidence instead of copying mutable transaction facts. Save artifact ownership **before** checks, and intent **before** merge/abort/rollback; append outcomes without erasing failed SHA/check evidence. Successful `integration_checks` and `done` follow the completed transaction, never the reviewer PASS alone.
 
+[final-review.md](final-review.md) qualifies final checks and both review axes against the current integration SHA and saved run `base_sha`. Keep append-only check/review histories and invalidations below; summary statuses derive from qualified current entries, never replace their evidence. Capture state before/after checks and reviews, including declared artifact ownership/cleanup under integration.md. Record each axis as its own bounded attempt with lifecycle/infrastructure facts; final corrections are run-level escalate attempts with the same fields and source boundaries.
+
 ```yaml
 run_id: <unique execution id>
 slug: <feature slug>
@@ -88,12 +90,17 @@ preparations:
     baselines: [{command: <exact stage baseline/check>, result: <exit and evidence path or agreed N/A with reason>}]
     status: <ready/environment-error/not-recorded reason>
 push_selected: <true/false from grill>
-budgets: {worker_extra: <configured retry.worker>, escalate_total: <configured retry.escalate>, infrastructure_extra_per_attempt: <configured retry.infrastructure>, attempt_seconds: <configured timeouts.attempt_seconds>, final_fix_limit: <limit from final-review protocol>}
+budgets: {worker_extra: <configured retry.worker>, escalate_total: <configured retry.escalate>, infrastructure_extra_per_attempt: <configured retry.infrastructure>, attempt_seconds: <configured timeouts.attempt_seconds>, final_fix_limit: <configured retry.final_review; total correction rounds>}
 closeout:
-  counters: {reviewer: <logical final-review calls>, infrastructure: <extra final-stage invocations>, final_fix: <final correction calls>}
+  counters: {reviewer: <logical final-review axis calls>, infrastructure: <extra final-stage invocations>, final_fix: <started logical correction rounds>}
+  delivered_sha: <current qualified integration commit or not-qualified reason>
+  review_base_sha: <same saved run base_sha, never moving base ref>
+  checks: [{attempt_id: <id>, sha: <exact integration commit>, kind: <suite/typecheck>, command: <exact command/agreed N/A>, cwd: <canonical integration worktree>, started_at: <UTC>, ended_at: <UTC>, exit: <code/N/A with agreed reason>, log: <canonical captured output>, state_evidence: <before/after SHA/ref/content/inventory/artifact evidence>, qualification: <current/historical/invalid with reason>}]
+  reviews: [{attempt_id: <axis attempt id>, axis: <Standards/Spec>, base_sha: <saved run base_sha>, reviewed_sha: <exact integration commit>, verdict: <PASS/FAIL/unavailable>, findings: [<findings>], evidence: <canonical full verdict/check/input log>, state_evidence: <unchanged clean tip/content and lifecycle evidence>, qualification: <current/historical/invalid with reason>}]
+  invalidations: [{at: <UTC>, old_sha: <SHA>, observed_sha: <SHA/unknown>, reason: <tip/content/evidence change>, evidence: <canonical observation path>}]
   final_suite: <pass/fail/unavailable/N/A with agreed reason and evidence>
   final_typecheck: <pass/fail/unavailable/N/A with agreed reason and evidence>
-  final_review: <PASS/FAIL/unavailable with evidence>
+  final_review: <PASS only when both axes qualify current delivered_sha; otherwise FAIL/unavailable with evidence>
   remaining_findings: [<unresolved findings>]
   undelivered_requirements: [<blocked ticket/scope/reason>]
   attempts: [<same attempt/invocation fields below, role final-review/final-fix/final-verification/integration-preparation>]

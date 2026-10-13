@@ -12,7 +12,7 @@ Work is split by **role**, never by hard-coded model:
 - **planner**: this session. Grills, writes the spec and tickets, schedules the loop.
 - **worker**: implements one ticket in its own worktree.
 - **reviewer**: gates each ticket before merge, and runs the final code-review.
-- **escalate**: retries a ticket the worker failed.
+- **escalate**: retries a ticket the worker failed and performs bounded final corrections.
 
 The tracker is always local markdown under the original checkout's `.scratch/<slug>/` (conventions in the `issue-tracker-local.md` file of the companion `setup-matt-pocock-skills`), whatever `docs/agents/` says. Before the first tracker write and before filling any child packet, read [run-record.md](run-record.md): it defines planner ownership, canonical paths, frozen inputs and the minimum run record.
 
@@ -75,15 +75,15 @@ Done when: every ticket is `done` or `blocked`, and integration suite/typecheck 
 
 ### 5. Final review
 
-When resource safety and the required route permit it, read and follow the companion `code-review` skill, and start its two review sub-agents on the reviewer role within runtimes.md's all-role capacity and lifecycle contract (sequentially if only one slot is available). Use the base branch as the fixed point and the recorded canonical spec snapshot as the spec; all child pointers follow run-record.md. Include final check failures and known blocked requirements, distinguishing undelivered scope from findings in the integrated work. Send actionable findings/check failures to the bounded final correction pass in failures.md, then rerun the full suite and applicable typecheck. A green initial review/check needs no fix call.
+Read [final-review.md](final-review.md) and follow its exact-tip check, two-axis review and bounded correction gate. It uses the run's saved base SHA and frozen spec, qualifies both Standards and Spec verdicts, and rechecks each corrected SHA before delivery. Known blocked requirements are undelivered scope; remaining findings still gate delivery.
 
-Done when: the finite final review/correction/check pass is recorded, or its handled stop is recorded, with remaining findings and check status ready for result classification. Red, unavailable review or exhausted correction does not prevent the brief. Retain an agreed typecheck `N/A` as such.
+Done when: final-review.md's current-tip qualification or finite failed stop is recorded, with both-axis verdicts, check evidence and remaining findings ready for result classification. Every handled stop proceeds to the brief.
 
 ### 6. PR brief
 
 The planner compares the original checkout with its baseline using run-record.md, records the evidence, writes the original checkout's canonical `.scratch/<slug>/brief.md`, and shows it to the user:
 
-- **Result**: `success`, `partial` or `failed` under failures.md, stop reason if any, integration branch, `git diff <base>...<integration> --stat`, final review and suite/typecheck status (including an agreed N/A reason or unavailable evidence).
+- **Result**: `success`, `partial` or `failed` under failures.md, stop reason if any, integration branch and delivered SHA, `git diff <saved-base-sha>...<delivered-sha> --stat`, both Standards/Spec verdicts with reviewed/base SHAs and evidence, and suite/typecheck statuses with checked SHAs/evidence (including an agreed N/A reason or unavailable evidence). Apply final-review.md's unchanged-tip gate before delivery.
 - **Done**: each done ticket by title, with its attempts and the model that finished it.
 - **Blocked**: each blocked ticket with its last classified reason and available reviewer findings. Write "none" if empty.
 - **Assumptions**: assumptions from the frozen spec plus later run-record entries.

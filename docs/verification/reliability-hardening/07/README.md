@@ -1,5 +1,7 @@
 # Ticket 07: bounded failures and terminal briefs
 
+Historical evidence (pre-D10): the one-correction walkthrough below describes ticket 07's intermediate policy at its recorded SHA. Ticket 10 supersedes that limit and final gate; see [its verification](../10/README.md). Old walkthroughs/logs are preserved and do not test the new two-round default.
+
 Scope: D7/D8 failure accounting and closeout. This is a documentation contract walkthrough at the approved seam (skill-run input → Git/worktree state, ticket state and brief), **not** a runtime smoke run or scheduler test. Assigned branch `codex/reliability-hardening/tickets/07` started clean at integration `d195c61a44d86f2d5743a0819acc912c65894eb8`; tracker blockers 04, 05 and 06 were `done`. Client date: 2026-10-14, Asia/Shanghai.
 
 [scenarios.md](scenarios.md) preserves the baseline RED gaps and the revised GREEN event/count/next-state/result decisions. The five ticket examples are rows 1–5, including invalid-result and unsafe-stop variants; rows 6–24 cover environment gates, launch/capability/model/capacity failures, reviewer exit/unobservable result, saved deadline, final-role/check failures, cleanup, normal success, preparation stops, pending waits and crash/configuration limits. Each row was manually followed through the product pointers and counter definitions. GREEN means the documentation now supplies the decision; it does not mean a model obeyed it.
