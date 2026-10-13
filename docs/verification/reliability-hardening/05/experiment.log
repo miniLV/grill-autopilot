@@ -1,0 +1,213 @@
+client_date=2026-10-14 Asia/Shanghai (supplied context; not a log timestamp)
+actual_started_at_utc=2026-10-13T16:43:06.344931+00:00
+2026-10-13T16:43:06.345613+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original/.git/
+exit=0
+2026-10-13T16:43:06.358531+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git config user.name 'Retention experiment'
+
+exit=0
+2026-10-13T16:43:06.365560+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T16:43:06.372891+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T16:43:06.379254+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T16:43:06.386337+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git add payload.txt
+
+exit=0
+2026-10-13T16:43:06.393783+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git commit -m 'retention fixture base'
+[base (root-commit) aacddcb] retention fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+2026-10-13T16:43:06.406775+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git rev-parse base
+aacddcb748d2b69948c3268a063d36d9ca35b1b0
+exit=0
+2026-10-13T16:43:06.413689+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/integration -b autopilot/demo/integration aacddcb748d2b69948c3268a063d36d9ca35b1b0
+Preparing worktree (new branch 'autopilot/demo/integration')
+HEAD is now at aacddcb retention fixture base
+exit=0
+
+BLOCKED: preserve tracked and untracked dirty work, not just the branch
+2026-10-13T16:43:06.431751+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01 -b autopilot/demo/tickets/01 aacddcb748d2b69948c3268a063d36d9ca35b1b0
+Preparing worktree (new branch 'autopilot/demo/tickets/01')
+HEAD is now at aacddcb retention fixture base
+exit=0
+2026-10-13T16:43:06.449881+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01) git rev-parse autopilot/demo/tickets/01
+aacddcb748d2b69948c3268a063d36d9ca35b1b0
+exit=0
+2026-10-13T16:43:06.456870+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01) git status --porcelain --untracked-files=all
+ M payload.txt
+?? notes.txt
+exit=0
+retained_state={"branch_sha": "aacddcb748d2b69948c3268a063d36d9ca35b1b0", "files": {"notes.txt": "2e1ad293fdbedee282ff7dbddd22a3bc68267e04d4fbdaab80d83fbbcbe86683", "payload.txt": "d15a880f53d13f12ea16dc0983b620818ed4a2c7eb0bdb0aaaeaa5f3ddd8eced"}, "status": "M payload.txt\n?? notes.txt"}
+2026-10-13T16:43:06.464346+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git show autopilot/demo/tickets/01:payload.txt
+base content
+exit=0
+2026-10-13T16:43:06.470941+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git cat-file -e autopilot/demo/tickets/01:notes.txt
+fatal: path 'notes.txt' does not exist in 'autopilot/demo/tickets/01'
+exit=128
+FACT: branch objects have old tracked content and no notes; dirty files live only in worktree
+RED: original blocked-removal instruction cannot remove this dirty tree without force
+2026-10-13T16:43:06.477442+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree remove /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01
+fatal: '/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01' contains modified or untracked files, use --force to delete it
+exit=128
+2026-10-13T16:43:06.488197+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01) git rev-parse autopilot/demo/tickets/01
+aacddcb748d2b69948c3268a063d36d9ca35b1b0
+exit=0
+2026-10-13T16:43:06.494534+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01) git status --porcelain --untracked-files=all
+ M payload.txt
+?? notes.txt
+exit=0
+retained_state={"branch_sha": "aacddcb748d2b69948c3268a063d36d9ca35b1b0", "files": {"notes.txt": "2e1ad293fdbedee282ff7dbddd22a3bc68267e04d4fbdaab80d83fbbcbe86683", "payload.txt": "d15a880f53d13f12ea16dc0983b620818ed4a2c7eb0bdb0aaaeaa5f3ddd8eced"}, "status": "M payload.txt\n?? notes.txt"}
+PLANNER REHEARSAL: blocked retains canonical worktree/branch, dirty inventory and evidence; no agent was launched
+
+SUCCESS: actual clean merged ticket cleanup keeps integration
+2026-10-13T16:43:06.501725+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/success-02 -b autopilot/demo/tickets/02 aacddcb748d2b69948c3268a063d36d9ca35b1b0
+Preparing worktree (new branch 'autopilot/demo/tickets/02')
+HEAD is now at aacddcb retention fixture base
+exit=0
+2026-10-13T16:43:06.518439+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/success-02) git add payload.txt
+
+exit=0
+2026-10-13T16:43:06.526290+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/success-02) git commit -m 'fixture ticket candidate'
+[autopilot/demo/tickets/02 e19524a] fixture ticket candidate
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T16:43:06.538932+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/integration) git merge --no-ff autopilot/demo/tickets/02 -m 'fixture integration'
+Merge made by the 'ort' strategy.
+ payload.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T16:43:06.555956+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'payload.txt'"'"').read_text() == '"'"'integrated content\n'"'"''
+
+exit=0
+2026-10-13T16:43:06.571049+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/integration) git rev-parse HEAD
+b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+exit=0
+2026-10-13T16:43:06.578307+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git merge-base --is-ancestor autopilot/demo/tickets/02 autopilot/demo/integration
+
+exit=0
+2026-10-13T16:43:06.585242+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/success-02) git status --porcelain --untracked-files=all
+
+exit=0
+PLANNER REHEARSAL: done is recorded from merge/check evidence; run ownership and inactivity are stipulated, not host observations
+2026-10-13T16:43:06.592765+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree remove /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/success-02
+
+exit=0
+2026-10-13T16:43:06.604096+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/integration) git branch -d autopilot/demo/tickets/02
+Deleted branch autopilot/demo/tickets/02 (was e19524a).
+exit=0
+2026-10-13T16:43:06.611920+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git show-ref --verify refs/heads/autopilot/demo/tickets/02
+fatal: 'refs/heads/autopilot/demo/tickets/02' - not a valid ref
+exit=128
+2026-10-13T16:43:06.618728+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/integration) git rev-parse HEAD
+b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+exit=0
+PASS: clean merged ticket path/ref removed; verified integration path/SHA retained
+
+SKIP rehearsal: active agent flag
+2026-10-13T16:43:06.624997+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/active-03 -b autopilot/demo/tickets/03 b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+Preparing worktree (new branch 'autopilot/demo/tickets/03')
+HEAD is now at b169c8d fixture integration
+exit=0
+2026-10-13T16:43:06.641729+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git merge-base --is-ancestor autopilot/demo/tickets/03 autopilot/demo/integration
+
+exit=0
+2026-10-13T16:43:06.648598+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/active-03) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T16:43:06.656144+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git rev-parse autopilot/demo/tickets/03
+b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+exit=0
+PLANNER REHEARSAL: skip deletion for active agent flag; no cleanup command issued
+2026-10-13T16:43:06.662620+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git rev-parse autopilot/demo/tickets/03
+b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+exit=0
+
+SKIP rehearsal: ownership not established
+2026-10-13T16:43:06.669043+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/unowned-04 -b autopilot/demo/tickets/04 b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+Preparing worktree (new branch 'autopilot/demo/tickets/04')
+HEAD is now at b169c8d fixture integration
+exit=0
+2026-10-13T16:43:06.686478+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git merge-base --is-ancestor autopilot/demo/tickets/04 autopilot/demo/integration
+
+exit=0
+2026-10-13T16:43:06.693945+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/unowned-04) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T16:43:06.701031+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git rev-parse autopilot/demo/tickets/04
+b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+exit=0
+PLANNER REHEARSAL: skip deletion for ownership not established; no cleanup command issued
+2026-10-13T16:43:06.707158+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git rev-parse autopilot/demo/tickets/04
+b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+exit=0
+
+CLEANUP WARNING: locked clean/merged fixture refuses non-force removal
+2026-10-13T16:43:06.713079+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/locked-05 -b autopilot/demo/tickets/05 b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+Preparing worktree (new branch 'autopilot/demo/tickets/05')
+HEAD is now at b169c8d fixture integration
+exit=0
+2026-10-13T16:43:06.731089+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git merge-base --is-ancestor autopilot/demo/tickets/05 autopilot/demo/integration
+
+exit=0
+2026-10-13T16:43:06.738339+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/locked-05) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T16:43:06.745968+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree lock /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/locked-05 --reason 'fixture cleanup failure'
+
+exit=0
+2026-10-13T16:43:06.753930+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree remove /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/locked-05
+fatal: cannot remove a locked working tree, lock reason: fixture cleanup failure
+use 'remove -f -f' to override or unlock first
+exit=128
+PLANNER REHEARSAL: cleanup warning; prior verified result remains done; do not force, unlock or delete branch
+2026-10-13T16:43:06.761340+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git rev-parse autopilot/demo/tickets/05
+b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+exit=0
+2026-10-13T16:43:06.767807+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/integration) git rev-parse HEAD
+b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+exit=0
+2026-10-13T16:43:06.774318+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01) git rev-parse autopilot/demo/tickets/01
+aacddcb748d2b69948c3268a063d36d9ca35b1b0
+exit=0
+2026-10-13T16:43:06.781431+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01) git status --porcelain --untracked-files=all
+ M payload.txt
+?? notes.txt
+exit=0
+retained_state={"branch_sha": "aacddcb748d2b69948c3268a063d36d9ca35b1b0", "files": {"notes.txt": "2e1ad293fdbedee282ff7dbddd22a3bc68267e04d4fbdaab80d83fbbcbe86683", "payload.txt": "d15a880f53d13f12ea16dc0983b620818ed4a2c7eb0bdb0aaaeaa5f3ddd8eced"}, "status": "M payload.txt\n?? notes.txt"}
+2026-10-13T16:43:06.790736+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git rev-parse base
+aacddcb748d2b69948c3268a063d36d9ca35b1b0
+exit=0
+2026-10-13T16:43:06.797360+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/original
+HEAD aacddcb748d2b69948c3268a063d36d9ca35b1b0
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/active-03
+HEAD b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+branch refs/heads/autopilot/demo/tickets/03
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/blocked-01
+HEAD aacddcb748d2b69948c3268a063d36d9ca35b1b0
+branch refs/heads/autopilot/demo/tickets/01
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/integration
+HEAD b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+branch refs/heads/autopilot/demo/integration
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/locked-05
+HEAD b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+branch refs/heads/autopilot/demo/tickets/05
+locked fixture cleanup failure
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-retain-mfdrnhpu/unowned-04
+HEAD b169c8d5377d0d40b2ac6cfc3c12f66ae7bd7ce6
+branch refs/heads/autopilot/demo/tickets/04
+exit=0
+actual_finished_at_utc=2026-10-13T16:43:06.813792+00:00
+PASS: actual Git preservation/cleanup checks; ownership/activity/warning verdicts are labeled protocol rehearsals
