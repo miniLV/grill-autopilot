@@ -1,0 +1,3 @@
+baseline uninstall exit=0
+foreign files remaining= 0
+RED: both unrelated regular files were removed; expected preservation. fixture removed.

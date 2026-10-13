@@ -1,0 +1,47 @@
+CASE .codex: empty directory install
+shell exit=0;
+CASE owned repeated install
+shell exit=0; Already installed: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+CASE owned uninstall and absent uninstall
+shell exit=0;
+shell exit=0; Not installed: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+CASE conflicting file: install + uninstall preserve
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+CASE conflicting directory: install + uninstall preserve
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+CASE conflicting foreign-link: install + uninstall preserve
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+CASE conflicting dangling-link: install + uninstall preserve
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/grill-autopilot
+CASE owned dangling uninstall
+shell exit=0;
+CASE missing source install refuses
+shell exit=1;  Missing skill source: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.codex/skills/missing-checkout/skills/grill-autopilot
+CASE .claude: empty directory install
+shell exit=0;
+CASE owned repeated install
+shell exit=0; Already installed: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+CASE owned uninstall and absent uninstall
+shell exit=0;
+shell exit=0; Not installed: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+CASE conflicting file: install + uninstall preserve
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+CASE conflicting directory: install + uninstall preserve
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+CASE conflicting foreign-link: install + uninstall preserve
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+CASE conflicting dangling-link: install + uninstall preserve
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+shell exit=1;  Conflict; preserved: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/grill-autopilot
+CASE owned dangling uninstall
+shell exit=0;
+CASE missing source install refuses
+shell exit=1;  Missing skill source: /var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/grill-autopilot-12-vf76d525/fixture home/.claude/skills/missing-checkout/skills/grill-autopilot
+PASS: 28 shell operations; both runtime directories; fixture removed on exit

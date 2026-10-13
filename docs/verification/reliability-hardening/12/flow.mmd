@@ -1,0 +1,17 @@
+flowchart TD
+    A[准备：companion、能力、模型与检查命令] --> B[Grill：确认 seam、范围与 Go]
+    B --> C[保存 run record、spec 与 ticket 快照]
+    C --> D[初始化独立 worktree，检查基线]
+    D --> E[按依赖和容量派发 worker]
+    E --> F[按候选 SHA 逐票 review]
+    F --> G[串行 merge、Verify 与状态记录]
+    G --> H[当前 tip 全量检查与双轴 review]
+    H --> I[brief：success / partial / failed]
+    D -. 环境错误 .-> J[有限重试或停止，保留现场]
+    F -. FAIL 或异常 .-> J
+    G -. 冲突或验证失败 .-> J
+    J -->|其余票结束且资源安全| H
+    H -. 有 findings 且预算剩余 .-> K[修复后重跑检查并复审新 SHA]
+    K --> H
+    J -. 失败停止或资源不安全 .-> I
+    I --> L[仅 success 且事先授权才 push / draft PR]
