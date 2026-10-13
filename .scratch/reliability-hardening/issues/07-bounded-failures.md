@@ -4,7 +4,7 @@
 
 **Blocked by:** 04, 05, 06
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P1 · 审查发现 4
 Spec decisions: D7,D8
@@ -39,10 +39,10 @@ Implement loop 的派发、review、FAIL 与结束规则，主 skill 各步骤�
 
 ## Acceptance criteria
 
-- [ ] 所有已列错误均有有限状态出口和证据记录。
-- [ ] 实现、基础设施和最终修复计数不混用。
-- [ ] 终态准确，full suite 红色不会阻断 brief。
-- [ ] partial/failed 不自动推送，活跃资源不被误清理。
+- [x] 所有已列错误均有有限状态出口和证据记录。
+- [x] 实现、基础设施和最终修复计数不混用。
+- [x] 终态准确，full suite 红色不会阻断 brief。
+- [x] partial/failed 不自动推送，活跃资源不被误清理。
 
 ## Verify
 
@@ -58,3 +58,5 @@ Implement loop 的派发、review、FAIL 与结束规则，主 skill 各步骤�
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-14：gpt-6.1-sol/high 候选 11ba513，集成 6ffa530。root 核对 24 个 D7/D8 场景通过；当前交付提交 PASS 和 ticket Verify 分类两处说明已修正；merger 确认文档与候选逐字相同，33 个本地文件链接存在，diff check 通过。证据：docs/verification/reliability-hardening/07/README.md。属于手动协议验证，不称真实 runtime 测试。
