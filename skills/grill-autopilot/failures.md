@@ -1,0 +1,53 @@
+# Bounded failures and closeout
+
+Read this before preparation/dispatch and whenever a role, command, review or final check fails, stalls or cannot be observed. This is the authority for retry accounting, terminal ticket transitions and run results. [runtimes.md](runtimes.md) defines classifications, permitted routes, model facts, activity and resource release; [run-record.md](run-record.md) defines durable fields and ownership. Use those facts, rather than inferring safety from a verdict.
+
+## Logical attempts and counts
+
+Validate configured retry budgets as finite nonnegative integers and the timeout as a finite positive duration before dispatch; invalid values stop preparation with a failed brief. Save the logical attempt ID, stage, start, deadline, budget and evidence destination **before** initialization or the first external call. `timeouts.attempt_seconds` defaults to **1800**; preparation, capacity waiting and execution share that attempt's deadline. Reviewers and final checks have their own recorded attempts/deadlines. Use bounded waits for commands too. A host wait yielding before the deadline is pending, not a failure or a new attempt.
+
+| Counter | Meaning and default limit |
+| --- | --- |
+| Ticket `worker` | Prepared worker execution started on distinct logical implementation attempts. Initial execution + `retry.worker = 2` extra business retries = **3 total**. |
+| Ticket `escalate` | Distinct escalate implementation attempts after worker business failures exhaust that limit; `retry.escalate = 1` means **1 total**. |
+| Attempt `infrastructure_retries` | Extra infrastructure invocations for the **same logical attempt**, at most `retry.infrastructure = 1`. Initial invocation + one extra = **2 total**. Retain the deadline, implementation charge, candidate/worktree and previous evidence. |
+| Ticket/run `infrastructure` | Aggregate of the above extra invocations for reporting, not the per-attempt allowance. |
+| Ticket/run `reviewer` | Logical review calls, counted separately from implementation and infrastructure retries. Every candidate from worker or escalate goes through review. |
+| Run `final_fix` | Final correction calls, separate from all ticket counters. The final-review step currently permits at most **one** correction call; its initial review is not a correction. |
+
+Persist intended counter changes before launch and reconcile them with the observed outcome afterward. Charge worker/escalate once when its prepared implementation execution starts; rejected launch or failed preparation charges neither. Infrastructure re-entry never charges it again. Record unknown launch/activity rather than pretending nothing started. Preparation and `ENVIRONMENT_ERROR` are not business failures; they never buy or consume an extra implementation attempt. Final work belongs to run-level attempts, not an arbitrary ticket.
+
+A business retry starts a new logical attempt/deadline only after a valid implementation failure decision. Before any retry, capture HEAD, tracked/untracked state, logs and identity; confirm inactivity, safe continuation and capacity using runtimes.md. Retain known edits in the same worktree. Repeat only the failed infrastructure operation or safely continue that logical attempt; an operation with unknown effects requires reconciliation, not blind replay. Infrastructure retries cannot reset the clock, renew business budgets or bypass a rejected route.
+
+## Event → next state
+
+Record the event's classification, reason, counter changes, remaining budget/time and next state before the next operation. Every row also uses the stop/handoff procedure below when it cannot continue.
+
+| Event | Finite decision |
+| --- | --- |
+| Completed worker `STUCK`, reviewer `FAIL`, or ticket implementation/Verify failure | Business failure. If worker count < 3 under defaults, schedule the next worker attempt; else if escalate count < 1, schedule escalate; else block. Use configured limits as defined above. A new candidate always returns to `in-review`; neither retry nor escalation grants PASS. |
+| Transient start/tool/transport error, `abnormal-exit`, `invalid-result` or `unobservable-result` | Preserve complete available result/exit evidence. Only with a permitted route, confirmed inactivity, safe continuation, available capacity and time left, spend the same attempt's extra infrastructure retry. No valid result means no DONE/PASS. A second such failure, exhausted allowance or deadline ends the attempt and blocks the affected ticket; it does **not** fall through to business retry/escalation. Final-stage exhaustion records failed closeout. |
+| `timeout` at the recorded deadline, including reviewer/preparation/command timeout | Request stop and reconcile through runtimes.md. The expired attempt has no retry time left: block its ticket, even if infrastructure allowance remains. A reviewer leaves `in-review`. Final/integration-stage timeout stops that stage and records failed closeout. |
+| Initialization failure, missing credentials, pre-existing baseline red, or worker `ENVIRONMENT_ERROR` | Preserve environment evidence; do not repair business code or charge another implementation. A demonstrably transient infrastructure cause may use the same attempt's infrastructure allowance while time remains. Missing credentials, persistent baseline failure or unresolved environment error blocks the ticket immediately. Unresolved integration preparation failure stops implementation dispatch and closes failed. A later explicit repaired run/resume must pass the gate again. |
+| `policy-rejected`, `model-unavailable`, `permission-denied`, observed model/effort mismatch, or ambiguous rejection | No automatic retry, model substitution or fallback bypass. Stop the affected role and block its ticket; if a required run-wide route is unavailable, stop dispatch and close failed. Independent tickets may proceed only when their routes and resources remain safe and available. |
+| `capability-missing` | Use only runtimes.md's allowed fallback gate. If it cannot supply the required capability, block the affected ticket or close failed for a required run-wide capability; no spawn retry loop. |
+| `capacity-rejected` | Queue without charging implementation/infrastructure. Retry start only on new availability evidence within the same deadline. Deadline expiry blocks the affected ticket. No child able to release capacity or unobservable required availability stops dispatch and closes failed; no permanent queue. |
+| Material scope expansion, changed/missing frozen inputs, unexpected ownership/Git state | Preserve evidence, block affected tickets and stop operations that rely on those facts. Scope expansion alone can leave safe independent tickets running. Uncertain ownership/state that prevents safe continuation closes failed; ordinary retry does not repair authorization or evidence. |
+| Cancel unsupported/unconfirmed, unknown liveness, or resources cannot be safely stopped | Stop new dispatch **and all cleanup**. Retain every possibly writable worktree, branch, dirty file and identity; record failed with resources not fully stopped. Do not start final reviewers/fixers in that state. |
+| Cleanup refusal after verified integration | Record a warning and retained paths. Use the cleanup gate in loop.md; it does not erase done/PASS or prevent the brief. |
+
+Only the first row spends business retries. Blocked tickets propagate `upstream <NN> blocked` to all dependent unfinished tickets; stop/reconcile any affected owned execution before handoff. Recompute the frontier and continue independent tickets when safe. On budget exhaustion or a handled run stop, **every** affected `claimed`/`in-review` ticket becomes `blocked` with its last reason, rather than remaining pending. A run-wide stop blocks all unfinished tickets; retain `done` results. Terminal ticket status does not assert that a resource stopped—record activity separately.
+
+## Stop, final checks and brief
+
+1. Save the stop reason, intended terminal transitions and evidence. Request stop of affected run-owned execution and perform bounded liveness/release reconciliation via runtimes.md. Preserve work using loop.md's handoff gate. If safety cannot be established, record resource uncertainty and proceed directly to the brief; no further dispatch or cleanup.
+2. When safe tickets have reached `done`/`blocked`, capture full suite and applicable typecheck results on integration using a bounded final-verification attempt. Agreed `N/A` keeps its reason; errors or unrun checks are not passes. A red suite is evidence for final review/correction, **not** a condition that traps the run in the implement step. Run final review and its bounded correction pass once when safe and available, then capture checks and remaining findings. If a role/check cannot run or a correction fails to resolve the red/findings, close failed. Never repeat final review/fix indefinitely to obtain green.
+3. Classify the result using the table below, save terminal phase/result and comparisons, and write/show the brief in SKILL.md step 6 on **every handleable stop**, even with no done tickets or a red check. Include stop reason, last findings, counters/budgets, check status, preserved paths and any unconfirmed resources. If preparation stops before run-data creation, show that brief with known facts and `not-created`/`unknown` paths; do not invent a saved record or write outside run-record ownership. A process crash/power loss cannot guarantee immediate writing; a later explicit resume must record the interruption before reconciliation.
+
+| Result | Required facts |
+| --- | --- |
+| `success` | All tickets done; final suite/applicable typecheck pass; final review PASS for the **current delivered integration commit**, with no unresolved findings. |
+| `partial` | At least one done and at least one blocked; checks pass and final review PASS covers the **current delivered integration commit** for the remaining integrated scope. List blocked requirements as undelivered scope. |
+| `failed` | No done tickets, final check failure/unavailability, unresolved final findings/missing PASS, or unsafe continuation/recovery/resource stop. This overrides the other rows. |
+
+A PASS for an older commit cannot qualify after a final fix changes integration. Push/draft PR is eligible only for `success` **and** prior user opt-in. Partial/failed results are local handoffs. Cleanup warnings alone do not change a verified result. The brief still records unavailable evidence as unknown, rather than claiming a full spec or runtime pass.

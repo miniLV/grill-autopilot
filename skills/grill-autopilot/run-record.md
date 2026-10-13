@@ -18,13 +18,15 @@ Fill every file/directory pointer in both packets with a canonical absolute path
 
 ## Minimum record template
 
-The Markdown record may use this YAML block plus append-only event prose. Fill each field; retain explicit unknown/not-recorded reasons. Role observations and command results are facts recorded by the planner, not assumed from configuration. Use [runtimes.md](runtimes.md) for capability, fallback, model-status and activity/capacity semantics; distinguish released execution capacity from retained identity metadata. Companion selection, necessary reference closure and fingerprint checks are defined in [companions.md](companions.md).
+The Markdown record may use this YAML block plus append-only event prose. Fill each field; retain explicit unknown/not-recorded reasons. Role observations and command results are facts recorded by the planner, not assumed from configuration. Use [runtimes.md](runtimes.md) for capability, fallback, model-status and activity/capacity semantics; distinguish released execution capacity from retained identity metadata. [failures.md](failures.md) defines when counters change, per-logical-attempt infrastructure limits, terminal transitions and result classification. Record each invocation and its old/new counts so aggregate infrastructure totals cannot renew an attempt's allowance. Companion selection, necessary reference closure and fingerprint checks are defined in [companions.md](companions.md).
 
 ```yaml
 run_id: <unique execution id>
 slug: <feature slug>
-phase: <current phase>
-result: <recorded result, or not-final while running>
+phase: <current phase, or terminal after closeout>
+result: <success/partial/failed, or not-final while running>
+stop_reason: <classification/reason or None>
+resources_fully_stopped: <true/false/unknown with evidence/reason>
 started_at: <UTC timestamp>
 updated_at: <UTC timestamp>
 original_checkout: <canonical absolute path>
@@ -84,6 +86,15 @@ preparations:
     baselines: [{command: <exact stage baseline/check>, result: <exit and evidence path or agreed N/A with reason>}]
     status: <ready/environment-error/not-recorded reason>
 push_selected: <true/false from grill>
+budgets: {worker_extra: <configured retry.worker>, escalate_total: <configured retry.escalate>, infrastructure_extra_per_attempt: <configured retry.infrastructure>, attempt_seconds: <configured timeouts.attempt_seconds>, final_fix_limit: <limit from final-review protocol>}
+closeout:
+  counters: {reviewer: <logical final-review calls>, infrastructure: <extra final-stage invocations>, final_fix: <final correction calls>}
+  final_suite: <pass/fail/unavailable/N/A with agreed reason and evidence>
+  final_typecheck: <pass/fail/unavailable/N/A with agreed reason and evidence>
+  final_review: <PASS/FAIL/unavailable with evidence>
+  remaining_findings: [<unresolved findings>]
+  undelivered_requirements: [<blocked ticket/scope/reason>]
+  attempts: [<same attempt/invocation fields below, role final-review/final-fix/final-verification/integration-preparation>]
 inputs:
   spec: {source: <canonical path>, snapshot: <canonical path>, sha256: <hash>}
   tickets: {<NN>: {source: <canonical mutable tracker path>, snapshot: <canonical frozen task path>, sha256: <hash>}}
@@ -94,10 +105,17 @@ tickets:
     branch: <actual branch>
     worktree: <canonical absolute path>
     starting_integration_sha: <saved SHA>
-    counters: {worker: <count>, escalate: <count>, infrastructure: <count>, reviewer: <count>, final_review: <count>}
+    counters: {worker: <logical implementation starts>, escalate: <logical implementation starts>, infrastructure: <aggregate extra invocations>, reviewer: <logical review calls>}
+    blocked_reason: <last classification/reason or None>
+    blocked_by: [<upstream blocked ticket IDs>]
     attempts:
       - attempt_id: <unique id within run>
-        role: <worker/reviewer/escalate>
+        role: <worker/reviewer/escalate/preparation>
+        status: <planned/active/completed/terminated>
+        implementation_started: <true/false/unknown with evidence>
+        infrastructure_retries: <extra invocations used for this logical attempt>
+        remaining_budget: <recorded business/infrastructure allowance at decision>
+        next_state: <claimed/in-review/done/blocked or final stage/brief>
         agent_id: <host id or unknown/not-recorded reason>
         process_id: <PID or unknown/not-recorded reason>
         requested: {model: <model>, effort: <effort>}
@@ -105,9 +123,12 @@ tickets:
         model_status: <match/mismatch/unknown; with trusted evidence/reason>
         lifecycle: {launch: <classification>, result: <classification>, activity: <active/inactive/unknown>, stop: <confirmed/unsupported/not-requested/unknown>, capacity_release: <confirmed/unsupported/unknown>, identity_metadata: <retained/deleted/unknown>, evidence: [<canonical paths/reasons>]}
         deadline: <UTC timestamp from attempt_seconds; preparation included>
+        logical_started_at: <UTC timestamp saved before preparation/first call>
         planned_at: <UTC timestamp>
         started_at: <UTC timestamp or not-recorded reason>
         ended_at: <UTC timestamp or not-recorded reason>
+        invocations:
+          - {number: <initial 1 or infrastructure retry 2>, planned_at: <UTC timestamp>, started_at: <timestamp/not-started/unknown>, ended_at: <timestamp/unknown>, identity: <agent/session/PID or reason>, classification: <runtime classification>, reason: <detail>, counts_before: <relevant counters>, counts_after: <reconciled counters>, remaining_seconds: <at decision>, evidence: [<canonical paths>]}
         candidate_sha: <SHA or not-recorded reason>
         reviewed_sha: <SHA or not-recorded reason>
         merge_before_sha: <SHA or not-recorded reason>

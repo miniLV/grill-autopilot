@@ -9,8 +9,9 @@ concurrency: 3         # worker ceiling; ALL child roles also consume host slots
 timeouts:
   attempt_seconds: 1800 # bounded wait deadline includes preparation and role execution
 retry:
-  worker: 2            # worker re-attempts after a failed review
-  escalate: 1          # escalate-role attempts after that; then the ticket is blocked
+  worker: 2            # extra business retries after initial worker: 3 total by default
+  escalate: 1          # total escalate implementation attempts after worker exhaustion
+  infrastructure: 1    # extra retry of SAME logical attempt; deadline/counters do not reset
 
 # reviewer gates the output of worker and escalate: keep it at least as capable as both.
 roles:
