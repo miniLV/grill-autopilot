@@ -1,0 +1,1947 @@
+client_date=2026-10-14 Asia/Shanghai; timestamps below are actual UTC
+No host/model review dispatched. PASS, done, rejection, queue and failure verdicts are MANUAL protocol decisions.
+
+CASE exact-rollback
+2026-10-13T17:29:00.722616+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original/.git/
+exit=0
+2026-10-13T17:29:00.734538+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git config user.name 'Integration experiment'
+
+exit=0
+2026-10-13T17:29:00.742610+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:29:00.749826+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:29:00.756984+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:29:00.763865+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:00.771732+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git commit -m 'fixture base'
+[base (root-commit) 3a30e17] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shared.txt
+exit=0
+2026-10-13T17:29:00.784787+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git rev-parse HEAD
+3a30e17e5d7d55ab88f73d621edd969a29bdc6d2
+exit=0
+2026-10-13T17:29:00.792043+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration -b integration 3a30e17e5d7d55ab88f73d621edd969a29bdc6d2
+Preparing worktree (new branch 'integration')
+HEAD is now at 3a30e17 fixture base
+exit=0
+2026-10-13T17:29:00.808912+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/a -b a 3a30e17e5d7d55ab88f73d621edd969a29bdc6d2
+Preparing worktree (new branch 'a')
+HEAD is now at 3a30e17 fixture base
+exit=0
+2026-10-13T17:29:00.827269+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/b -b b 3a30e17e5d7d55ab88f73d621edd969a29bdc6d2
+Preparing worktree (new branch 'b')
+HEAD is now at 3a30e17 fixture base
+exit=0
+2026-10-13T17:29:00.845071+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/c -b c 3a30e17e5d7d55ab88f73d621edd969a29bdc6d2
+Preparing worktree (new branch 'c')
+HEAD is now at 3a30e17 fixture base
+exit=0
+2026-10-13T17:29:00.863256+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/a) git add -- a.txt
+
+exit=0
+2026-10-13T17:29:00.871798+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/a) git commit -m 'candidate A'
+[a edce0ee] candidate A
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:00.885184+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/a) git rev-parse HEAD
+edce0ee92b8b3ce4364ac717f6052621b699079f
+exit=0
+2026-10-13T17:29:00.893182+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/b) git add -- b.txt
+
+exit=0
+2026-10-13T17:29:00.901449+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/b) git commit -m 'candidate B'
+[b 85c85c6] candidate B
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+exit=0
+2026-10-13T17:29:00.914934+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/b) git rev-parse HEAD
+85c85c6f654fbc2765fa7a705b680b5d6ab287be
+exit=0
+2026-10-13T17:29:00.922536+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/c) git add -- c.txt
+
+exit=0
+2026-10-13T17:29:00.930225+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/c) git commit -m 'candidate C'
+[c ebd7caa] candidate C
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+exit=0
+2026-10-13T17:29:00.943186+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/c) git rev-parse HEAD
+ebd7caa4da6fd9afbd143c04a9d3ea9a32d78960
+exit=0
+MANUAL PREMISE: fixed base=3a30e17e5d7d55ab88f73d621edd969a29bdc6d2; PASS SHA/evidence qualified for the chosen candidates
+2026-10-13T17:29:00.950367+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+3a30e17e5d7d55ab88f73d621edd969a29bdc6d2
+exit=0
+saved_merge_before_sha=3a30e17e5d7d55ab88f73d621edd969a29bdc6d2
+2026-10-13T17:29:00.956835+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git merge --no-ff edce0ee92b8b3ce4364ac717f6052621b699079f -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ a.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:00.973649+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7928d66ff80e026ff1f7432b7a5511c3c9e96266
+exit=0
+2026-10-13T17:29:00.980704+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git merge-base --is-ancestor edce0ee92b8b3ce4364ac717f6052621b699079f 7928d66ff80e026ff1f7432b7a5511c3c9e96266
+
+exit=0
+2026-10-13T17:29:00.987831+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7928d66ff80e026ff1f7432b7a5511c3c9e96266
+exit=0
+2026-10-13T17:29:00.994230+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.000847+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.008579+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.015694+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.023416+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "7928d66ff80e026ff1f7432b7a5511c3c9e96266", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:01.030145+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+PASS: integrated content
+exit=0
+2026-10-13T17:29:01.044760+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7928d66ff80e026ff1f7432b7a5511c3c9e96266
+exit=0
+2026-10-13T17:29:01.052145+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.058546+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.066315+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.073244+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.080313+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "7928d66ff80e026ff1f7432b7a5511c3c9e96266", "staged": "", "status": "", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "7928d66ff80e026ff1f7432b7a5511c3c9e96266", "staged": "", "status": "", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration", "exit": 0, "sha": "7928d66ff80e026ff1f7432b7a5511c3c9e96266"}
+2026-10-13T17:29:01.087456+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7928d66ff80e026ff1f7432b7a5511c3c9e96266
+exit=0
+2026-10-13T17:29:01.093967+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.100362+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.107440+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.114062+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.121715+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "7928d66ff80e026ff1f7432b7a5511c3c9e96266", "staged": "", "status": "", "unstaged": ""}
+MANUAL DECISION: A done only now; A transaction complete
+2026-10-13T17:29:01.128850+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7928d66ff80e026ff1f7432b7a5511c3c9e96266
+exit=0
+saved_merge_before_sha=7928d66ff80e026ff1f7432b7a5511c3c9e96266
+2026-10-13T17:29:01.135250+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git merge --no-ff 85c85c6f654fbc2765fa7a705b680b5d6ab287be -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ b.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+exit=0
+2026-10-13T17:29:01.153746+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7ca7d89aae5783086e57a6355ac75df17f2945b8
+exit=0
+2026-10-13T17:29:01.161262+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git merge-base --is-ancestor 85c85c6f654fbc2765fa7a705b680b5d6ab287be 7ca7d89aae5783086e57a6355ac75df17f2945b8
+
+exit=0
+2026-10-13T17:29:01.169037+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git update-ref ORIG_HEAD 3a30e17e5d7d55ab88f73d621edd969a29bdc6d2
+
+exit=0
+2026-10-13T17:29:01.177911+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse ORIG_HEAD
+3a30e17e5d7d55ab88f73d621edd969a29bdc6d2
+exit=0
+2026-10-13T17:29:01.185358+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7ca7d89aae5783086e57a6355ac75df17f2945b8
+exit=0
+2026-10-13T17:29:01.192475+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.199559+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.207629+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.215260+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.223223+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "7ca7d89aae5783086e57a6355ac75df17f2945b8", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:01.230430+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError
+exit=1
+2026-10-13T17:29:01.246125+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7ca7d89aae5783086e57a6355ac75df17f2945b8
+exit=0
+2026-10-13T17:29:01.254226+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.261093+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.269148+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.276380+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.284087+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "7ca7d89aae5783086e57a6355ac75df17f2945b8", "staged": "", "status": "", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "7ca7d89aae5783086e57a6355ac75df17f2945b8", "staged": "", "status": "", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration", "exit": 1, "sha": "7ca7d89aae5783086e57a6355ac75df17f2945b8"}
+2026-10-13T17:29:01.291447+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7ca7d89aae5783086e57a6355ac75df17f2945b8
+exit=0
+2026-10-13T17:29:01.298975+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.306042+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.314006+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.321705+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.329140+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "7ca7d89aae5783086e57a6355ac75df17f2945b8", "staged": "", "status": "", "unstaged": ""}
+MANUAL DECISION: red B check + safe clean ownership => rollback exact recorded target; B never done
+2026-10-13T17:29:01.336645+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git reset --hard 7928d66ff80e026ff1f7432b7a5511c3c9e96266
+HEAD is now at 7928d66 recorded candidate integration
+exit=0
+2026-10-13T17:29:01.345952+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7928d66ff80e026ff1f7432b7a5511c3c9e96266
+exit=0
+2026-10-13T17:29:01.353548+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.360511+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.368298+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.375485+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.382921+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "7928d66ff80e026ff1f7432b7a5511c3c9e96266", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:01.390382+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7928d66ff80e026ff1f7432b7a5511c3c9e96266
+exit=0
+2026-10-13T17:29:01.397285+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git merge-base --is-ancestor edce0ee92b8b3ce4364ac717f6052621b699079f 7928d66ff80e026ff1f7432b7a5511c3c9e96266
+
+exit=0
+2026-10-13T17:29:01.404543+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git rev-parse HEAD
+7928d66ff80e026ff1f7432b7a5511c3c9e96266
+exit=0
+2026-10-13T17:29:01.411234+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git merge-base --is-ancestor 85c85c6f654fbc2765fa7a705b680b5d6ab287be 7928d66ff80e026ff1f7432b7a5511c3c9e96266
+
+exit=1
+2026-10-13T17:29:01.419238+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/b) git rev-parse HEAD
+85c85c6f654fbc2765fa7a705b680b5d6ab287be
+exit=0
+2026-10-13T17:29:01.426553+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/exact-rollback/integration) git cat-file -t 7ca7d89aae5783086e57a6355ac75df17f2945b8
+commit
+exit=0
+FACT: exact restored SHA/content preserve A; B candidate/failed merge object retained
+
+CASE known-artifact
+2026-10-13T17:29:01.433896+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original/.git/
+exit=0
+2026-10-13T17:29:01.444942+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git config user.name 'Integration experiment'
+
+exit=0
+2026-10-13T17:29:01.452763+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:29:01.460362+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:29:01.467725+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:29:01.475109+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:01.483239+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git commit -m 'fixture base'
+[base (root-commit) 327785c] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shared.txt
+exit=0
+2026-10-13T17:29:01.497685+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git rev-parse HEAD
+327785c1912696d298a51d435fcbe2d41d2e75d1
+exit=0
+2026-10-13T17:29:01.504919+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration -b integration 327785c1912696d298a51d435fcbe2d41d2e75d1
+Preparing worktree (new branch 'integration')
+HEAD is now at 327785c fixture base
+exit=0
+2026-10-13T17:29:01.523049+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/a -b a 327785c1912696d298a51d435fcbe2d41d2e75d1
+Preparing worktree (new branch 'a')
+HEAD is now at 327785c fixture base
+exit=0
+2026-10-13T17:29:01.542027+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/b -b b 327785c1912696d298a51d435fcbe2d41d2e75d1
+Preparing worktree (new branch 'b')
+HEAD is now at 327785c fixture base
+exit=0
+2026-10-13T17:29:01.561676+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/c -b c 327785c1912696d298a51d435fcbe2d41d2e75d1
+Preparing worktree (new branch 'c')
+HEAD is now at 327785c fixture base
+exit=0
+2026-10-13T17:29:01.580836+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/a) git add -- a.txt
+
+exit=0
+2026-10-13T17:29:01.589899+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/a) git commit -m 'candidate A'
+[a 26d4465] candidate A
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:01.604157+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/a) git rev-parse HEAD
+26d4465d25100a34bc414c382735b3b03b999982
+exit=0
+2026-10-13T17:29:01.611792+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/b) git add -- b.txt
+
+exit=0
+2026-10-13T17:29:01.621041+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/b) git commit -m 'candidate B'
+[b e805d5d] candidate B
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+exit=0
+2026-10-13T17:29:01.635455+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/b) git rev-parse HEAD
+e805d5d81341e86d20cb951a21a3c7a32219c5a6
+exit=0
+2026-10-13T17:29:01.643048+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/c) git add -- c.txt
+
+exit=0
+2026-10-13T17:29:01.651420+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/c) git commit -m 'candidate C'
+[c f12d755] candidate C
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+exit=0
+2026-10-13T17:29:01.665522+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/c) git rev-parse HEAD
+f12d755fdd1f1658b3f25f77699f09d73306b6e9
+exit=0
+MANUAL PREMISE: fixed base=327785c1912696d298a51d435fcbe2d41d2e75d1; PASS SHA/evidence qualified for the chosen candidates
+2026-10-13T17:29:01.672828+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+327785c1912696d298a51d435fcbe2d41d2e75d1
+exit=0
+saved_merge_before_sha=327785c1912696d298a51d435fcbe2d41d2e75d1
+2026-10-13T17:29:01.679841+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git merge --no-ff 26d4465d25100a34bc414c382735b3b03b999982 -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ a.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:01.698734+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+f6205d5f1f881e20d9287e160b142117a25d6efb
+exit=0
+2026-10-13T17:29:01.706028+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git merge-base --is-ancestor 26d4465d25100a34bc414c382735b3b03b999982 f6205d5f1f881e20d9287e160b142117a25d6efb
+
+exit=0
+2026-10-13T17:29:01.713268+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+f6205d5f1f881e20d9287e160b142117a25d6efb
+exit=0
+2026-10-13T17:29:01.720436+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.727657+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.736264+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.743662+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.751527+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f6205d5f1f881e20d9287e160b142117a25d6efb", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:01.758936+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+PASS: integrated content
+exit=0
+2026-10-13T17:29:01.774383+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+f6205d5f1f881e20d9287e160b142117a25d6efb
+exit=0
+2026-10-13T17:29:01.782071+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.789605+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.797686+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.804710+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.811940+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f6205d5f1f881e20d9287e160b142117a25d6efb", "staged": "", "status": "", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f6205d5f1f881e20d9287e160b142117a25d6efb", "staged": "", "status": "", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration", "exit": 0, "sha": "f6205d5f1f881e20d9287e160b142117a25d6efb"}
+2026-10-13T17:29:01.820280+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+f6205d5f1f881e20d9287e160b142117a25d6efb
+exit=0
+2026-10-13T17:29:01.828804+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.836225+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.845389+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.854185+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.863290+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f6205d5f1f881e20d9287e160b142117a25d6efb", "staged": "", "status": "", "unstaged": ""}
+MANUAL DECISION: A done only now; A transaction complete
+2026-10-13T17:29:01.871642+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+f6205d5f1f881e20d9287e160b142117a25d6efb
+exit=0
+saved_merge_before_sha=f6205d5f1f881e20d9287e160b142117a25d6efb
+2026-10-13T17:29:01.879397+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git merge --no-ff e805d5d81341e86d20cb951a21a3c7a32219c5a6 -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ b.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+exit=0
+2026-10-13T17:29:01.900552+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+acca019c3e16e266139a785c0523c5f34f9944bc
+exit=0
+2026-10-13T17:29:01.908232+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git merge-base --is-ancestor e805d5d81341e86d20cb951a21a3c7a32219c5a6 acca019c3e16e266139a785c0523c5f34f9944bc
+
+exit=0
+DECLARED BEFORE CHECK: known-output.txt absent; owned producer and literal content captured
+2026-10-13T17:29:01.916034+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+acca019c3e16e266139a785c0523c5f34f9944bc
+exit=0
+2026-10-13T17:29:01.923407+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.930333+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:01.938506+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:01.945892+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:01.953774+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "acca019c3e16e266139a785c0523c5f34f9944bc", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:01.960869+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; Path('"'"'known-output.txt'"'"').write_text('"'"'owned generated output\n'"'"'); assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError
+exit=1
+2026-10-13T17:29:01.976573+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+acca019c3e16e266139a785c0523c5f34f9944bc
+exit=0
+2026-10-13T17:29:01.984088+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:01.991499+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git status --porcelain --untracked-files=all
+?? known-output.txt
+exit=0
+2026-10-13T17:29:01.999834+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.006957+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.014499+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "known-output.txt": "3add6607be268bf142373bc58aa31f79fd990788b477ae4356dac91940794931", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "acca019c3e16e266139a785c0523c5f34f9944bc", "staged": "", "status": "?? known-output.txt", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; Path('\"'\"'known-output.txt'\"'\"').write_text('\"'\"'owned generated output\\n'\"'\"'); assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "known-output.txt": "3add6607be268bf142373bc58aa31f79fd990788b477ae4356dac91940794931", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "acca019c3e16e266139a785c0523c5f34f9944bc", "staged": "", "status": "?? known-output.txt", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration", "exit": 1, "sha": "acca019c3e16e266139a785c0523c5f34f9944bc"}
+MANUAL OWNERSHIP: no other writer stipulated; remove exact owned artifact after capture
+2026-10-13T17:29:02.022069+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+acca019c3e16e266139a785c0523c5f34f9944bc
+exit=0
+2026-10-13T17:29:02.028664+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.036182+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:02.045799+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.054791+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.064153+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "acca019c3e16e266139a785c0523c5f34f9944bc", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:02.073196+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+acca019c3e16e266139a785c0523c5f34f9944bc
+exit=0
+2026-10-13T17:29:02.081734+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.090003+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:02.099671+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.108189+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.116741+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "acca019c3e16e266139a785c0523c5f34f9944bc", "staged": "", "status": "", "unstaged": ""}
+MANUAL DECISION: red B check + safe clean ownership => rollback exact recorded target; B never done
+2026-10-13T17:29:02.125082+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git reset --hard f6205d5f1f881e20d9287e160b142117a25d6efb
+HEAD is now at f6205d5 recorded candidate integration
+exit=0
+2026-10-13T17:29:02.135013+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+f6205d5f1f881e20d9287e160b142117a25d6efb
+exit=0
+2026-10-13T17:29:02.142946+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.150074+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:02.157544+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.164441+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.171678+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f6205d5f1f881e20d9287e160b142117a25d6efb", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:02.178615+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+f6205d5f1f881e20d9287e160b142117a25d6efb
+exit=0
+2026-10-13T17:29:02.186078+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git merge-base --is-ancestor 26d4465d25100a34bc414c382735b3b03b999982 f6205d5f1f881e20d9287e160b142117a25d6efb
+
+exit=0
+2026-10-13T17:29:02.193863+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git rev-parse HEAD
+f6205d5f1f881e20d9287e160b142117a25d6efb
+exit=0
+2026-10-13T17:29:02.200435+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git merge-base --is-ancestor e805d5d81341e86d20cb951a21a3c7a32219c5a6 f6205d5f1f881e20d9287e160b142117a25d6efb
+
+exit=1
+2026-10-13T17:29:02.207738+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/b) git rev-parse HEAD
+e805d5d81341e86d20cb951a21a3c7a32219c5a6
+exit=0
+2026-10-13T17:29:02.214572+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/known-artifact/integration) git cat-file -t acca019c3e16e266139a785c0523c5f34f9944bc
+commit
+exit=0
+FACT: exact restored SHA/content preserve A; B candidate/failed merge object retained
+
+CASE unknown-user-file
+2026-10-13T17:29:02.222331+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original/.git/
+exit=0
+2026-10-13T17:29:02.233764+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git config user.name 'Integration experiment'
+
+exit=0
+2026-10-13T17:29:02.240836+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:29:02.247744+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:29:02.254947+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:29:02.261778+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:02.269477+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git commit -m 'fixture base'
+[base (root-commit) 7cd7016] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shared.txt
+exit=0
+2026-10-13T17:29:02.283136+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git rev-parse HEAD
+7cd70165dab4f934b712853c3f8f897ac8175312
+exit=0
+2026-10-13T17:29:02.290242+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration -b integration 7cd70165dab4f934b712853c3f8f897ac8175312
+Preparing worktree (new branch 'integration')
+HEAD is now at 7cd7016 fixture base
+exit=0
+2026-10-13T17:29:02.308376+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/a -b a 7cd70165dab4f934b712853c3f8f897ac8175312
+Preparing worktree (new branch 'a')
+HEAD is now at 7cd7016 fixture base
+exit=0
+2026-10-13T17:29:02.327246+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/b -b b 7cd70165dab4f934b712853c3f8f897ac8175312
+Preparing worktree (new branch 'b')
+HEAD is now at 7cd7016 fixture base
+exit=0
+2026-10-13T17:29:02.346119+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/c -b c 7cd70165dab4f934b712853c3f8f897ac8175312
+Preparing worktree (new branch 'c')
+HEAD is now at 7cd7016 fixture base
+exit=0
+2026-10-13T17:29:02.365107+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/a) git add -- a.txt
+
+exit=0
+2026-10-13T17:29:02.376286+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/a) git commit -m 'candidate A'
+[a 8a57013] candidate A
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:02.391642+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/a) git rev-parse HEAD
+8a57013de3309959f46c2a871b5a217fa51dee7c
+exit=0
+2026-10-13T17:29:02.398943+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/b) git add -- b.txt
+
+exit=0
+2026-10-13T17:29:02.406689+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/b) git commit -m 'candidate B'
+[b 7413e2d] candidate B
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+exit=0
+2026-10-13T17:29:02.420096+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/b) git rev-parse HEAD
+7413e2d991439d787f3f6e313126d4ade22a2580
+exit=0
+2026-10-13T17:29:02.427185+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/c) git add -- c.txt
+
+exit=0
+2026-10-13T17:29:02.434974+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/c) git commit -m 'candidate C'
+[c 40510d0] candidate C
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+exit=0
+2026-10-13T17:29:02.448693+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/c) git rev-parse HEAD
+40510d0743a4ecd3ad01fda9ed01a3bba554c77a
+exit=0
+MANUAL PREMISE: fixed base=7cd70165dab4f934b712853c3f8f897ac8175312; PASS SHA/evidence qualified for the chosen candidates
+2026-10-13T17:29:02.455830+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+7cd70165dab4f934b712853c3f8f897ac8175312
+exit=0
+saved_merge_before_sha=7cd70165dab4f934b712853c3f8f897ac8175312
+2026-10-13T17:29:02.462473+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git merge --no-ff 8a57013de3309959f46c2a871b5a217fa51dee7c -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ a.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:02.480608+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+86a1308e6de1957b084e78bcde881c223348a10b
+exit=0
+2026-10-13T17:29:02.487867+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git merge-base --is-ancestor 8a57013de3309959f46c2a871b5a217fa51dee7c 86a1308e6de1957b084e78bcde881c223348a10b
+
+exit=0
+2026-10-13T17:29:02.495039+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+86a1308e6de1957b084e78bcde881c223348a10b
+exit=0
+2026-10-13T17:29:02.501617+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.508057+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:02.515679+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.522961+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.530004+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "86a1308e6de1957b084e78bcde881c223348a10b", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:02.536904+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+PASS: integrated content
+exit=0
+2026-10-13T17:29:02.553241+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+86a1308e6de1957b084e78bcde881c223348a10b
+exit=0
+2026-10-13T17:29:02.560954+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.567758+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:02.575872+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.583385+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.591024+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "86a1308e6de1957b084e78bcde881c223348a10b", "staged": "", "status": "", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "86a1308e6de1957b084e78bcde881c223348a10b", "staged": "", "status": "", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration", "exit": 0, "sha": "86a1308e6de1957b084e78bcde881c223348a10b"}
+2026-10-13T17:29:02.598233+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+86a1308e6de1957b084e78bcde881c223348a10b
+exit=0
+2026-10-13T17:29:02.604977+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.611559+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:02.619579+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.626854+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.634175+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "86a1308e6de1957b084e78bcde881c223348a10b", "staged": "", "status": "", "unstaged": ""}
+MANUAL DECISION: A done only now; A transaction complete
+2026-10-13T17:29:02.641156+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+86a1308e6de1957b084e78bcde881c223348a10b
+exit=0
+saved_merge_before_sha=86a1308e6de1957b084e78bcde881c223348a10b
+2026-10-13T17:29:02.648318+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git merge --no-ff 7413e2d991439d787f3f6e313126d4ade22a2580 -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ b.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+exit=0
+2026-10-13T17:29:02.668842+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+fd693c9f8474374a2201d9307049336f8d5eebf9
+exit=0
+2026-10-13T17:29:02.677543+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git merge-base --is-ancestor 7413e2d991439d787f3f6e313126d4ade22a2580 fd693c9f8474374a2201d9307049336f8d5eebf9
+
+exit=0
+DECLARED BEFORE CHECK: known-output.txt absent; owned producer and literal content captured
+2026-10-13T17:29:02.686726+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+fd693c9f8474374a2201d9307049336f8d5eebf9
+exit=0
+2026-10-13T17:29:02.694060+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.700764+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:02.708039+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.714809+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.722287+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "fd693c9f8474374a2201d9307049336f8d5eebf9", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:02.728788+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; Path('"'"'known-output.txt'"'"').write_text('"'"'owned generated output\n'"'"'); Path('"'"'user-notes.txt'"'"').write_text('"'"'unknown user work\n'"'"'); assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError
+exit=1
+2026-10-13T17:29:02.743905+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+fd693c9f8474374a2201d9307049336f8d5eebf9
+exit=0
+2026-10-13T17:29:02.751175+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.757809+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git status --porcelain --untracked-files=all
+?? known-output.txt
+?? user-notes.txt
+exit=0
+2026-10-13T17:29:02.765379+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.772051+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.779154+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "known-output.txt": "3add6607be268bf142373bc58aa31f79fd990788b477ae4356dac91940794931", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac", "user-notes.txt": "61358f211435dbffc552079cc8e57e9d365eff044956df7db6b7f4e3d782c8cc"}, "ignored": "", "ref": "refs/heads/integration", "sha": "fd693c9f8474374a2201d9307049336f8d5eebf9", "staged": "", "status": "?? known-output.txt\n?? user-notes.txt", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; Path('\"'\"'known-output.txt'\"'\"').write_text('\"'\"'owned generated output\\n'\"'\"'); Path('\"'\"'user-notes.txt'\"'\"').write_text('\"'\"'unknown user work\\n'\"'\"'); assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "known-output.txt": "3add6607be268bf142373bc58aa31f79fd990788b477ae4356dac91940794931", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac", "user-notes.txt": "61358f211435dbffc552079cc8e57e9d365eff044956df7db6b7f4e3d782c8cc"}, "ignored": "", "ref": "refs/heads/integration", "sha": "fd693c9f8474374a2201d9307049336f8d5eebf9", "staged": "", "status": "?? known-output.txt\n?? user-notes.txt", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration", "exit": 1, "sha": "fd693c9f8474374a2201d9307049336f8d5eebf9"}
+MANUAL OWNERSHIP: no other writer stipulated; remove exact owned artifact after capture
+2026-10-13T17:29:02.786503+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+fd693c9f8474374a2201d9307049336f8d5eebf9
+exit=0
+2026-10-13T17:29:02.792883+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.799288+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git status --porcelain --untracked-files=all
+?? user-notes.txt
+exit=0
+2026-10-13T17:29:02.806662+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.813199+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.820181+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac", "user-notes.txt": "61358f211435dbffc552079cc8e57e9d365eff044956df7db6b7f4e3d782c8cc"}, "ignored": "", "ref": "refs/heads/integration", "sha": "fd693c9f8474374a2201d9307049336f8d5eebf9", "staged": "", "status": "?? user-notes.txt", "unstaged": ""}
+MANUAL DECISION: unknown file/edit => failed; preserve merge/state; no reset/clean
+2026-10-13T17:29:02.826660+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git rev-parse HEAD
+fd693c9f8474374a2201d9307049336f8d5eebf9
+exit=0
+2026-10-13T17:29:02.832531+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:02.838494+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git status --porcelain --untracked-files=all
+?? user-notes.txt
+exit=0
+2026-10-13T17:29:02.845682+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:02.852659+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:02.859516+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-user-file/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac", "user-notes.txt": "61358f211435dbffc552079cc8e57e9d365eff044956df7db6b7f4e3d782c8cc"}, "ignored": "", "ref": "refs/heads/integration", "sha": "fd693c9f8474374a2201d9307049336f8d5eebf9", "staged": "", "status": "?? user-notes.txt", "unstaged": ""}
+
+CASE unknown-tracked-edit
+2026-10-13T17:29:02.866096+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original/.git/
+exit=0
+2026-10-13T17:29:02.875750+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git config user.name 'Integration experiment'
+
+exit=0
+2026-10-13T17:29:02.882529+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:29:02.890587+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:29:02.901086+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:29:02.909366+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:02.917719+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git commit -m 'fixture base'
+[base (root-commit) 7cd7016] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shared.txt
+exit=0
+2026-10-13T17:29:02.930919+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git rev-parse HEAD
+7cd70165dab4f934b712853c3f8f897ac8175312
+exit=0
+2026-10-13T17:29:02.937871+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration -b integration 7cd70165dab4f934b712853c3f8f897ac8175312
+Preparing worktree (new branch 'integration')
+HEAD is now at 7cd7016 fixture base
+exit=0
+2026-10-13T17:29:02.954398+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/a -b a 7cd70165dab4f934b712853c3f8f897ac8175312
+Preparing worktree (new branch 'a')
+HEAD is now at 7cd7016 fixture base
+exit=0
+2026-10-13T17:29:02.971816+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/b -b b 7cd70165dab4f934b712853c3f8f897ac8175312
+Preparing worktree (new branch 'b')
+HEAD is now at 7cd7016 fixture base
+exit=0
+2026-10-13T17:29:02.989279+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/c -b c 7cd70165dab4f934b712853c3f8f897ac8175312
+Preparing worktree (new branch 'c')
+HEAD is now at 7cd7016 fixture base
+exit=0
+2026-10-13T17:29:03.007853+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/a) git add -- a.txt
+
+exit=0
+2026-10-13T17:29:03.016461+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/a) git commit -m 'candidate A'
+[a b76a38a] candidate A
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:03.029006+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/a) git rev-parse HEAD
+b76a38a54ef0053a30583ec9512bf7541902206f
+exit=0
+2026-10-13T17:29:03.035552+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/b) git add -- b.txt
+
+exit=0
+2026-10-13T17:29:03.042994+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/b) git commit -m 'candidate B'
+[b 75ecc9f] candidate B
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+exit=0
+2026-10-13T17:29:03.056122+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/b) git rev-parse HEAD
+75ecc9f2e4de78225ac4724b38f7c3bfaac5b530
+exit=0
+2026-10-13T17:29:03.063293+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/c) git add -- c.txt
+
+exit=0
+2026-10-13T17:29:03.070974+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/c) git commit -m 'candidate C'
+[c ad28fc0] candidate C
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+exit=0
+2026-10-13T17:29:03.083790+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/c) git rev-parse HEAD
+ad28fc0ef2549a7669e471e13d7f4d99bb2570ce
+exit=0
+MANUAL PREMISE: fixed base=7cd70165dab4f934b712853c3f8f897ac8175312; PASS SHA/evidence qualified for the chosen candidates
+2026-10-13T17:29:03.091036+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+7cd70165dab4f934b712853c3f8f897ac8175312
+exit=0
+saved_merge_before_sha=7cd70165dab4f934b712853c3f8f897ac8175312
+2026-10-13T17:29:03.097199+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git merge --no-ff b76a38a54ef0053a30583ec9512bf7541902206f -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ a.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:03.113895+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+cb116efff93aa56cb55abaafe8e24f7a2d724bca
+exit=0
+2026-10-13T17:29:03.121188+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git merge-base --is-ancestor b76a38a54ef0053a30583ec9512bf7541902206f cb116efff93aa56cb55abaafe8e24f7a2d724bca
+
+exit=0
+2026-10-13T17:29:03.128180+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+cb116efff93aa56cb55abaafe8e24f7a2d724bca
+exit=0
+2026-10-13T17:29:03.134546+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.140678+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:03.148232+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.155177+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.161871+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "cb116efff93aa56cb55abaafe8e24f7a2d724bca", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:03.168488+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+PASS: integrated content
+exit=0
+2026-10-13T17:29:03.183640+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+cb116efff93aa56cb55abaafe8e24f7a2d724bca
+exit=0
+2026-10-13T17:29:03.190798+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.197575+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:03.205052+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.211513+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.219066+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "cb116efff93aa56cb55abaafe8e24f7a2d724bca", "staged": "", "status": "", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "cb116efff93aa56cb55abaafe8e24f7a2d724bca", "staged": "", "status": "", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration", "exit": 0, "sha": "cb116efff93aa56cb55abaafe8e24f7a2d724bca"}
+2026-10-13T17:29:03.226910+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+cb116efff93aa56cb55abaafe8e24f7a2d724bca
+exit=0
+2026-10-13T17:29:03.233326+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.239697+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:03.246869+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.253997+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.260846+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "cb116efff93aa56cb55abaafe8e24f7a2d724bca", "staged": "", "status": "", "unstaged": ""}
+MANUAL DECISION: A done only now; A transaction complete
+2026-10-13T17:29:03.267159+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+cb116efff93aa56cb55abaafe8e24f7a2d724bca
+exit=0
+saved_merge_before_sha=cb116efff93aa56cb55abaafe8e24f7a2d724bca
+2026-10-13T17:29:03.273252+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git merge --no-ff 75ecc9f2e4de78225ac4724b38f7c3bfaac5b530 -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ b.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+exit=0
+2026-10-13T17:29:03.290934+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+f7c5e2a49594c2cf37b0c97ccc09188c5add81a6
+exit=0
+2026-10-13T17:29:03.297627+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git merge-base --is-ancestor 75ecc9f2e4de78225ac4724b38f7c3bfaac5b530 f7c5e2a49594c2cf37b0c97ccc09188c5add81a6
+
+exit=0
+DECLARED BEFORE CHECK: known-output.txt absent; owned producer and literal content captured
+2026-10-13T17:29:03.304442+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+f7c5e2a49594c2cf37b0c97ccc09188c5add81a6
+exit=0
+2026-10-13T17:29:03.310550+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.317095+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:03.324274+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.331055+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.337936+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f7c5e2a49594c2cf37b0c97ccc09188c5add81a6", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:03.344134+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; Path('"'"'known-output.txt'"'"').write_text('"'"'owned generated output\n'"'"'); Path('"'"'shared.txt'"'"').write_text('"'"'unknown tracked user work\n'"'"'); assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError
+exit=1
+2026-10-13T17:29:03.359067+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+f7c5e2a49594c2cf37b0c97ccc09188c5add81a6
+exit=0
+2026-10-13T17:29:03.366093+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.372722+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git status --porcelain --untracked-files=all
+ M shared.txt
+?? known-output.txt
+exit=0
+2026-10-13T17:29:03.380087+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.387283+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.394147+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --binary
+diff --git a/shared.txt b/shared.txt
+index df967b9..e961de0 100644
+--- a/shared.txt
++++ b/shared.txt
+@@ -1 +1 @@
+-base
++unknown tracked user work
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "known-output.txt": "3add6607be268bf142373bc58aa31f79fd990788b477ae4356dac91940794931", "shared.txt": "6ddc90ff0a8d5bbd38766d9fdbe7b7809055405c7f6b046b88113b0f7e0e3b1e"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f7c5e2a49594c2cf37b0c97ccc09188c5add81a6", "staged": "", "status": "M shared.txt\n?? known-output.txt", "unstaged": "diff --git a/shared.txt b/shared.txt\nindex df967b9..e961de0 100644\n--- a/shared.txt\n+++ b/shared.txt\n@@ -1 +1 @@\n-base\n+unknown tracked user work"}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; Path('\"'\"'known-output.txt'\"'\"').write_text('\"'\"'owned generated output\\n'\"'\"'); Path('\"'\"'shared.txt'\"'\"').write_text('\"'\"'unknown tracked user work\\n'\"'\"'); assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "known-output.txt": "3add6607be268bf142373bc58aa31f79fd990788b477ae4356dac91940794931", "shared.txt": "6ddc90ff0a8d5bbd38766d9fdbe7b7809055405c7f6b046b88113b0f7e0e3b1e"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f7c5e2a49594c2cf37b0c97ccc09188c5add81a6", "staged": "", "status": "M shared.txt\n?? known-output.txt", "unstaged": "diff --git a/shared.txt b/shared.txt\nindex df967b9..e961de0 100644\n--- a/shared.txt\n+++ b/shared.txt\n@@ -1 +1 @@\n-base\n+unknown tracked user work"}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration", "exit": 1, "sha": "f7c5e2a49594c2cf37b0c97ccc09188c5add81a6"}
+MANUAL OWNERSHIP: no other writer stipulated; remove exact owned artifact after capture
+2026-10-13T17:29:03.401425+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+f7c5e2a49594c2cf37b0c97ccc09188c5add81a6
+exit=0
+2026-10-13T17:29:03.407666+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.413794+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git status --porcelain --untracked-files=all
+ M shared.txt
+exit=0
+2026-10-13T17:29:03.421792+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.428148+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.434967+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --binary
+diff --git a/shared.txt b/shared.txt
+index df967b9..e961de0 100644
+--- a/shared.txt
++++ b/shared.txt
+@@ -1 +1 @@
+-base
++unknown tracked user work
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "6ddc90ff0a8d5bbd38766d9fdbe7b7809055405c7f6b046b88113b0f7e0e3b1e"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f7c5e2a49594c2cf37b0c97ccc09188c5add81a6", "staged": "", "status": "M shared.txt", "unstaged": "diff --git a/shared.txt b/shared.txt\nindex df967b9..e961de0 100644\n--- a/shared.txt\n+++ b/shared.txt\n@@ -1 +1 @@\n-base\n+unknown tracked user work"}
+MANUAL DECISION: unknown file/edit => failed; preserve merge/state; no reset/clean
+2026-10-13T17:29:03.441812+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git rev-parse HEAD
+f7c5e2a49594c2cf37b0c97ccc09188c5add81a6
+exit=0
+2026-10-13T17:29:03.448008+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.454262+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git status --porcelain --untracked-files=all
+ M shared.txt
+exit=0
+2026-10-13T17:29:03.461547+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.468157+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.474903+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/unknown-tracked-edit/integration) git diff --binary
+diff --git a/shared.txt b/shared.txt
+index df967b9..e961de0 100644
+--- a/shared.txt
++++ b/shared.txt
+@@ -1 +1 @@
+-base
++unknown tracked user work
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "b.txt": "5fec07e8633d11aca292405295616b0c2a6f34d214239371767fe0f916aab447", "shared.txt": "6ddc90ff0a8d5bbd38766d9fdbe7b7809055405c7f6b046b88113b0f7e0e3b1e"}, "ignored": "", "ref": "refs/heads/integration", "sha": "f7c5e2a49594c2cf37b0c97ccc09188c5add81a6", "staged": "", "status": "M shared.txt", "unstaged": "diff --git a/shared.txt b/shared.txt\nindex df967b9..e961de0 100644\n--- a/shared.txt\n+++ b/shared.txt\n@@ -1 +1 @@\n-base\n+unknown tracked user work"}
+
+CASE serialize-two-pass
+2026-10-13T17:29:03.482376+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original/.git/
+exit=0
+2026-10-13T17:29:03.492403+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git config user.name 'Integration experiment'
+
+exit=0
+2026-10-13T17:29:03.499007+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:29:03.505154+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:29:03.511495+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:29:03.518445+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:03.525609+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git commit -m 'fixture base'
+[base (root-commit) 16507a6] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shared.txt
+exit=0
+2026-10-13T17:29:03.538196+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git rev-parse HEAD
+16507a6686b01904efd0acb1419c3ed09e46645e
+exit=0
+2026-10-13T17:29:03.544603+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration -b integration 16507a6686b01904efd0acb1419c3ed09e46645e
+Preparing worktree (new branch 'integration')
+HEAD is now at 16507a6 fixture base
+exit=0
+2026-10-13T17:29:03.561223+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/a -b a 16507a6686b01904efd0acb1419c3ed09e46645e
+Preparing worktree (new branch 'a')
+HEAD is now at 16507a6 fixture base
+exit=0
+2026-10-13T17:29:03.578186+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/b -b b 16507a6686b01904efd0acb1419c3ed09e46645e
+Preparing worktree (new branch 'b')
+HEAD is now at 16507a6 fixture base
+exit=0
+2026-10-13T17:29:03.596182+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/c -b c 16507a6686b01904efd0acb1419c3ed09e46645e
+Preparing worktree (new branch 'c')
+HEAD is now at 16507a6 fixture base
+exit=0
+2026-10-13T17:29:03.613380+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/a) git add -- a.txt
+
+exit=0
+2026-10-13T17:29:03.621701+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/a) git commit -m 'candidate A'
+[a 92394a3] candidate A
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:03.634289+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/a) git rev-parse HEAD
+92394a36c526af39c447814a9acf28cff0e920aa
+exit=0
+2026-10-13T17:29:03.641087+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/b) git add -- b.txt
+
+exit=0
+2026-10-13T17:29:03.648679+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/b) git commit -m 'candidate B'
+[b a7e89d4] candidate B
+ 1 file changed, 1 insertion(+)
+ create mode 100644 b.txt
+exit=0
+2026-10-13T17:29:03.661967+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/b) git rev-parse HEAD
+a7e89d482eccdb7e3f1bbf4780d1b5426550e711
+exit=0
+2026-10-13T17:29:03.668918+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/c) git add -- c.txt
+
+exit=0
+2026-10-13T17:29:03.676227+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/c) git commit -m 'candidate C'
+[c 5886f8d] candidate C
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+exit=0
+2026-10-13T17:29:03.689209+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/c) git rev-parse HEAD
+5886f8d4a0f930bf4cc9311659f9c041f8722aa4
+exit=0
+MANUAL PREMISE: fixed base=16507a6686b01904efd0acb1419c3ed09e46645e; PASS SHA/evidence qualified for the chosen candidates
+2026-10-13T17:29:03.695771+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git rev-parse HEAD
+16507a6686b01904efd0acb1419c3ed09e46645e
+exit=0
+saved_merge_before_sha=16507a6686b01904efd0acb1419c3ed09e46645e
+2026-10-13T17:29:03.701867+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git merge --no-ff 92394a36c526af39c447814a9acf28cff0e920aa -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ a.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:03.718552+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git rev-parse HEAD
+2c9f7a1b2d476fb3bead0cec6607b72cc82615d4
+exit=0
+2026-10-13T17:29:03.725775+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git merge-base --is-ancestor 92394a36c526af39c447814a9acf28cff0e920aa 2c9f7a1b2d476fb3bead0cec6607b72cc82615d4
+
+exit=0
+2026-10-13T17:29:03.732841+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git rev-parse HEAD
+2c9f7a1b2d476fb3bead0cec6607b72cc82615d4
+exit=0
+2026-10-13T17:29:03.739091+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.745085+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:03.752671+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.759192+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.765828+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "2c9f7a1b2d476fb3bead0cec6607b72cc82615d4", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:03.772152+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+PASS: integrated content
+exit=0
+2026-10-13T17:29:03.786689+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git rev-parse HEAD
+2c9f7a1b2d476fb3bead0cec6607b72cc82615d4
+exit=0
+2026-10-13T17:29:03.793593+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.799765+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:03.807138+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.813765+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.820815+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "2c9f7a1b2d476fb3bead0cec6607b72cc82615d4", "staged": "", "status": "", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "2c9f7a1b2d476fb3bead0cec6607b72cc82615d4", "staged": "", "status": "", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration", "exit": 0, "sha": "2c9f7a1b2d476fb3bead0cec6607b72cc82615d4"}
+2026-10-13T17:29:03.827146+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git rev-parse HEAD
+2c9f7a1b2d476fb3bead0cec6607b72cc82615d4
+exit=0
+2026-10-13T17:29:03.833044+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.839071+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:03.846027+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.852828+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.859672+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "2c9f7a1b2d476fb3bead0cec6607b72cc82615d4", "staged": "", "status": "", "unstaged": ""}
+MANUAL DECISION: A done only now; A transaction complete
+MANUAL QUEUE: A and C PASS at same base; C waited for A merge/check/result
+2026-10-13T17:29:03.866030+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git rev-parse HEAD
+2c9f7a1b2d476fb3bead0cec6607b72cc82615d4
+exit=0
+saved_merge_before_sha=2c9f7a1b2d476fb3bead0cec6607b72cc82615d4
+2026-10-13T17:29:03.871913+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git merge --no-ff 5886f8d4a0f930bf4cc9311659f9c041f8722aa4 -m 'recorded candidate integration'
+Merge made by the 'ort' strategy.
+ c.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+exit=0
+2026-10-13T17:29:03.889111+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git rev-parse HEAD
+8a3df6efc40e2b37e878eaed55bcbdc87a44c1cd
+exit=0
+2026-10-13T17:29:03.896420+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git merge-base --is-ancestor 5886f8d4a0f930bf4cc9311659f9c041f8722aa4 8a3df6efc40e2b37e878eaed55bcbdc87a44c1cd
+
+exit=0
+2026-10-13T17:29:03.903145+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git rev-parse HEAD
+8a3df6efc40e2b37e878eaed55bcbdc87a44c1cd
+exit=0
+2026-10-13T17:29:03.909126+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.915211+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:03.922675+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.929228+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.936080+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "c.txt": "93b9dce5518f6d00f6886824c998dd0ed0261265f98024842d7e116f40fde574", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "8a3df6efc40e2b37e878eaed55bcbdc87a44c1cd", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:03.942491+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+PASS: integrated content
+exit=0
+2026-10-13T17:29:03.957168+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git rev-parse HEAD
+8a3df6efc40e2b37e878eaed55bcbdc87a44c1cd
+exit=0
+2026-10-13T17:29:03.963979+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:03.970101+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:03.977297+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:03.984215+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:03.991081+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "c.txt": "93b9dce5518f6d00f6886824c998dd0ed0261265f98024842d7e116f40fde574", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "8a3df6efc40e2b37e878eaed55bcbdc87a44c1cd", "staged": "", "status": "", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "c.txt": "93b9dce5518f6d00f6886824c998dd0ed0261265f98024842d7e116f40fde574", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "8a3df6efc40e2b37e878eaed55bcbdc87a44c1cd", "staged": "", "status": "", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration", "exit": 0, "sha": "8a3df6efc40e2b37e878eaed55bcbdc87a44c1cd"}
+2026-10-13T17:29:03.997536+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/serialize-two-pass/integration) git merge-base --is-ancestor 92394a36c526af39c447814a9acf28cff0e920aa 8a3df6efc40e2b37e878eaed55bcbdc87a44c1cd
+
+exit=0
+MANUAL DECISION: C done; second transaction used updated pre-merge SHA
+
+CASE stale-pass-and-content
+2026-10-13T17:29:04.004410+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original/.git/
+exit=0
+2026-10-13T17:29:04.014246+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git config user.name 'Integration experiment'
+
+exit=0
+2026-10-13T17:29:04.021520+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:29:04.027961+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:29:04.034186+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:29:04.040715+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:04.047817+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git commit -m 'fixture base'
+[base (root-commit) 8890e25] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shared.txt
+exit=0
+2026-10-13T17:29:04.060992+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git rev-parse HEAD
+8890e2517057beee7a437416727e7127de001795
+exit=0
+2026-10-13T17:29:04.067803+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration -b integration 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'integration')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.083983+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a -b a 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'a')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.101355+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/b -b b 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'b')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.118392+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/c -b c 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'c')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.135945+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git add -- a.txt
+
+exit=0
+2026-10-13T17:29:04.144023+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git commit -m 'reviewed A'
+[a 83a1871] reviewed A
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:04.157258+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git rev-parse HEAD
+83a18719cc4e75c0d7a29bd9b51f01b1ccf47513
+exit=0
+2026-10-13T17:29:04.164026+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git diff 8890e2517057beee7a437416727e7127de001795...83a18719cc4e75c0d7a29bd9b51f01b1ccf47513
+diff --git a/a.txt b/a.txt
+new file mode 100644
+index 0000000..b9082bf
+--- /dev/null
++++ b/a.txt
+@@ -0,0 +1 @@
++A accepted
+exit=0
+2026-10-13T17:29:04.170872+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git rev-parse HEAD
+8890e2517057beee7a437416727e7127de001795
+exit=0
+2026-10-13T17:29:04.176777+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:04.183079+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:04.190314+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:04.197031+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:04.203697+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git diff --binary
+
+exit=0
+state={"files": {"shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "8890e2517057beee7a437416727e7127de001795", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:04.209935+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git add -- a.txt
+
+exit=0
+2026-10-13T17:29:04.217366+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git commit -m 'branch advances after PASS'
+[a d3bbc54] branch advances after PASS
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:29:04.230125+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git rev-parse HEAD
+d3bbc54e8e05cbf573e10c8a2bc5062e2d9dedbf
+exit=0
+MANUAL DECISION: reviewed SHA A != branch/worktree B => reject stale PASS; no merge
+2026-10-13T17:29:04.236410+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git rev-parse HEAD
+8890e2517057beee7a437416727e7127de001795
+exit=0
+2026-10-13T17:29:04.242359+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:04.248486+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:04.255680+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:04.262147+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:04.269101+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git diff --binary
+
+exit=0
+state={"files": {"shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "8890e2517057beee7a437416727e7127de001795", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:04.275439+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git diff 8890e2517057beee7a437416727e7127de001795...83a18719cc4e75c0d7a29bd9b51f01b1ccf47513
+diff --git a/a.txt b/a.txt
+new file mode 100644
+index 0000000..b9082bf
+--- /dev/null
++++ b/a.txt
+@@ -0,0 +1 @@
++A accepted
+exit=0
+2026-10-13T17:29:04.282366+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git rev-parse HEAD
+d3bbc54e8e05cbf573e10c8a2bc5062e2d9dedbf
+exit=0
+2026-10-13T17:29:04.288630+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git rev-parse HEAD
+d3bbc54e8e05cbf573e10c8a2bc5062e2d9dedbf
+exit=0
+2026-10-13T17:29:04.294791+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git symbolic-ref HEAD
+refs/heads/a
+exit=0
+2026-10-13T17:29:04.300707+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git status --porcelain --untracked-files=all
+ M a.txt
+exit=0
+2026-10-13T17:29:04.307733+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:04.314108+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:04.321306+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/a) git diff --binary
+diff --git a/a.txt b/a.txt
+index f3e5fd8..f4bfae7 100644
+--- a/a.txt
++++ b/a.txt
+@@ -1 +1 @@
+-B unreviewed
++uncommitted candidate movement
+exit=0
+state={"files": {"a.txt": "5d2d23c6b2e6352bff30d20daaf7e1ffe55cf875030dd16f97c061bc38335b68", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/a", "sha": "d3bbc54e8e05cbf573e10c8a2bc5062e2d9dedbf", "staged": "", "status": "M a.txt", "unstaged": "diff --git a/a.txt b/a.txt\nindex f3e5fd8..f4bfae7 100644\n--- a/a.txt\n+++ b/a.txt\n@@ -1 +1 @@\n-B unreviewed\n+uncommitted candidate movement"}
+MANUAL DECISION: unchanged HEAD with dirty candidate content still rejects PASS; preserve
+2026-10-13T17:29:04.328126+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git rev-parse HEAD
+8890e2517057beee7a437416727e7127de001795
+exit=0
+2026-10-13T17:29:04.334217+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:04.340122+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:04.347136+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:04.353971+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:04.360914+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/stale/integration) git diff --binary
+
+exit=0
+state={"files": {"shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/integration", "sha": "8890e2517057beee7a437416727e7127de001795", "staged": "", "status": "", "unstaged": ""}
+
+CASE worker-tip-success-new-candidate
+2026-10-13T17:29:04.367430+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original/.git/
+exit=0
+2026-10-13T17:29:04.377134+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git config user.name 'Integration experiment'
+
+exit=0
+2026-10-13T17:29:04.384353+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:29:04.391169+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:29:04.397537+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:29:04.403823+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:04.411067+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git commit -m 'fixture base'
+[base (root-commit) 8890e25] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shared.txt
+exit=0
+2026-10-13T17:29:04.423615+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git rev-parse HEAD
+8890e2517057beee7a437416727e7127de001795
+exit=0
+2026-10-13T17:29:04.430114+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/integration -b integration 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'integration')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.446051+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a -b a 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'a')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.463194+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/b -b b 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'b')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.480033+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/c -b c 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'c')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.497515+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git add -- a.txt
+
+exit=0
+2026-10-13T17:29:04.505453+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git commit -m 'worker candidate before tip merge'
+[a 920c482] worker candidate before tip merge
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+exit=0
+2026-10-13T17:29:04.518396+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git rev-parse HEAD
+920c4823c7d30b360f3010f48dfc438ef62f8572
+exit=0
+2026-10-13T17:29:04.525583+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/integration) git add -- c.txt
+
+exit=0
+2026-10-13T17:29:04.533014+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/integration) git commit -m 'integration advances independently'
+[integration d9db63f] integration advances independently
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+exit=0
+2026-10-13T17:29:04.545605+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/integration) git rev-parse HEAD
+d9db63f60745f8f723e7abc0c5d179a445df0a03
+exit=0
+2026-10-13T17:29:04.552628+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git merge --no-ff d9db63f60745f8f723e7abc0c5d179a445df0a03 -m 'worker merges fixed integration tip'
+Merge made by the 'ort' strategy.
+ c.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+exit=0
+2026-10-13T17:29:04.570185+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git rev-parse HEAD
+903db4c8489bd843d50d6e7b79ddf361d32920ed
+exit=0
+2026-10-13T17:29:04.577228+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git merge-base --is-ancestor d9db63f60745f8f723e7abc0c5d179a445df0a03 903db4c8489bd843d50d6e7b79ddf361d32920ed
+
+exit=0
+2026-10-13T17:29:04.584494+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git merge-base --is-ancestor 8890e2517057beee7a437416727e7127de001795 903db4c8489bd843d50d6e7b79ddf361d32920ed
+
+exit=0
+2026-10-13T17:29:04.591246+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git rev-parse HEAD
+903db4c8489bd843d50d6e7b79ddf361d32920ed
+exit=0
+2026-10-13T17:29:04.597327+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git symbolic-ref HEAD
+refs/heads/a
+exit=0
+2026-10-13T17:29:04.603385+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:04.610451+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:04.617136+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:04.623836+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "c.txt": "7cf319be245fa862f3ad9bdc04ec497582f65d574926bed6c0230a8f8fbd07c4", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/a", "sha": "903db4c8489bd843d50d6e7b79ddf361d32920ed", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:04.630101+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'a.txt'"'"').read_text() == '"'"'A accepted\n'"'"'; assert not Path('"'"'b.txt'"'"').exists() or Path('"'"'b.txt'"'"').read_text() == '"'"'B accepted\n'"'"'; print('"'"'PASS: integrated content'"'"')'
+PASS: integrated content
+exit=0
+2026-10-13T17:29:04.644894+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git rev-parse HEAD
+903db4c8489bd843d50d6e7b79ddf361d32920ed
+exit=0
+2026-10-13T17:29:04.652101+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git symbolic-ref HEAD
+refs/heads/a
+exit=0
+2026-10-13T17:29:04.658296+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:04.665399+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:04.672011+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:04.678534+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git diff --binary
+
+exit=0
+state={"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "c.txt": "7cf319be245fa862f3ad9bdc04ec497582f65d574926bed6c0230a8f8fbd07c4", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/a", "sha": "903db4c8489bd843d50d6e7b79ddf361d32920ed", "staged": "", "status": "", "unstaged": ""}
+real_check={"command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'a.txt'\"'\"').read_text() == '\"'\"'A accepted\\n'\"'\"'; assert not Path('\"'\"'b.txt'\"'\"').exists() or Path('\"'\"'b.txt'\"'\"').read_text() == '\"'\"'B accepted\\n'\"'\"'; print('\"'\"'PASS: integrated content'\"'\"')'", "content_state_after": {"files": {"a.txt": "4a01991e3e59391bbc8c4a25c388093e5a37fe7cf64fef79d4a48030f25730a7", "c.txt": "7cf319be245fa862f3ad9bdc04ec497582f65d574926bed6c0230a8f8fbd07c4", "shared.txt": "f34848ca92665c342abd5816c9e3eda0e82180671195362bcd0080544a3bc2ac"}, "ignored": "", "ref": "refs/heads/a", "sha": "903db4c8489bd843d50d6e7b79ddf361d32920ed", "staged": "", "status": "", "unstaged": ""}, "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a", "exit": 0, "sha": "903db4c8489bd843d50d6e7b79ddf361d32920ed"}
+2026-10-13T17:29:04.685263+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git diff d9db63f60745f8f723e7abc0c5d179a445df0a03...903db4c8489bd843d50d6e7b79ddf361d32920ed
+diff --git a/a.txt b/a.txt
+new file mode 100644
+index 0000000..b9082bf
+--- /dev/null
++++ b/a.txt
+@@ -0,0 +1 @@
++A accepted
+exit=0
+2026-10-13T17:29:04.692029+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-success/a) git diff --name-only d9db63f60745f8f723e7abc0c5d179a445df0a03...903db4c8489bd843d50d6e7b79ddf361d32920ed
+a.txt
+exit=0
+MANUAL DECISION: DONE new post-tip-merge SHA; review base fixed at merged tip; old PASS cannot cover new candidate
+
+CASE integration-conflict
+2026-10-13T17:29:04.698838+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original/.git/
+exit=0
+2026-10-13T17:29:04.708466+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git config user.name 'Integration experiment'
+
+exit=0
+2026-10-13T17:29:04.714973+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:29:04.721230+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:29:04.727432+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:29:04.733865+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:04.741228+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git commit -m 'fixture base'
+[base (root-commit) 8890e25] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shared.txt
+exit=0
+2026-10-13T17:29:04.753616+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git rev-parse HEAD
+8890e2517057beee7a437416727e7127de001795
+exit=0
+2026-10-13T17:29:04.760297+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration -b integration 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'integration')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.776497+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/a -b a 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'a')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.793348+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/b -b b 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'b')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.809991+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/c -b c 8890e2517057beee7a437416727e7127de001795
+Preparing worktree (new branch 'c')
+HEAD is now at 8890e25 fixture base
+exit=0
+2026-10-13T17:29:04.827522+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:04.835244+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git commit -m 'integration advances'
+[integration 4560358] integration advances
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:29:04.848256+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git rev-parse HEAD
+4560358c1329309d7e0abf135fa26bd507c90e76
+exit=0
+2026-10-13T17:29:04.855226+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/a) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:04.862597+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/a) git commit -m 'worker conflict candidate'
+[a 3b8756a] worker conflict candidate
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:29:04.875510+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/a) git rev-parse HEAD
+3b8756a589db2f4958b59420d246195d44ceddf0
+exit=0
+2026-10-13T17:29:04.882487+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git rev-parse HEAD
+4560358c1329309d7e0abf135fa26bd507c90e76
+exit=0
+2026-10-13T17:29:04.888843+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:04.895441+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:04.903216+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:04.910654+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:04.918109+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git diff --binary
+
+exit=0
+state={"files": {"shared.txt": "9f481ecd0d1cab374a0bed066c450e951aae1a66fa93027ddefc62da294f0aa7"}, "ignored": "", "ref": "refs/heads/integration", "sha": "4560358c1329309d7e0abf135fa26bd507c90e76", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:04.924551+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git merge --no-ff 3b8756a589db2f4958b59420d246195d44ceddf0 -m 'conflict intent'
+Auto-merging shared.txt
+CONFLICT (content): Merge conflict in shared.txt
+Automatic merge failed; fix conflicts and then commit the result.
+exit=1
+2026-10-13T17:29:04.937703+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git rev-parse HEAD
+4560358c1329309d7e0abf135fa26bd507c90e76
+exit=0
+2026-10-13T17:29:04.944276+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:04.950950+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git status --porcelain --untracked-files=all
+UU shared.txt
+exit=0
+2026-10-13T17:29:04.957950+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:04.964408+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git diff --cached --binary
+* Unmerged path shared.txt
+exit=0
+2026-10-13T17:29:04.971049+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git diff --binary
+diff --cc shared.txt
+index 721e3ef,19b1bcb..0000000
+--- a/shared.txt
++++ b/shared.txt
+@@@ -1,1 -1,1 +1,5 @@@
+++<<<<<<< HEAD
+ +integration content
+++=======
++ worker content
+++>>>>>>> 3b8756a589db2f4958b59420d246195d44ceddf0
+exit=0
+state={"files": {"shared.txt": "f2a31aca0012d930d20a98c314501ac50317b00b2d1f954179dee43d4dff2ac3"}, "ignored": "", "ref": "refs/heads/integration", "sha": "4560358c1329309d7e0abf135fa26bd507c90e76", "staged": "* Unmerged path shared.txt", "status": "UU shared.txt", "unstaged": "diff --cc shared.txt\nindex 721e3ef,19b1bcb..0000000\n--- a/shared.txt\n+++ b/shared.txt\n@@@ -1,1 -1,1 +1,5 @@@\n++<<<<<<< HEAD\n +integration content\n++=======\n+ worker content\n++>>>>>>> 3b8756a589db2f4958b59420d246195d44ceddf0"}
+2026-10-13T17:29:04.977805+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git rev-parse MERGE_HEAD
+3b8756a589db2f4958b59420d246195d44ceddf0
+exit=0
+2026-10-13T17:29:04.984340+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git ls-files -u
+100644 df967b96a579e45a18b8251732d16804b2e56a55 1	shared.txt
+100644 721e3ef00b9ddb34b5bf1e579b47f76619af897f 2	shared.txt
+100644 19b1bcb2e58479917fc1a5933d21d267948f1d68 3	shared.txt
+exit=0
+conflict_content_before_abort="<<<<<<< HEAD\nintegration content\n=======\nworker content\n>>>>>>> 3b8756a589db2f4958b59420d246195d44ceddf0\n"
+MANUAL SAFETY: clean baseline + no outside writer/unknown files => capture then abort
+2026-10-13T17:29:04.990500+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git merge --abort
+
+exit=0
+2026-10-13T17:29:04.998638+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git rev-parse HEAD
+4560358c1329309d7e0abf135fa26bd507c90e76
+exit=0
+2026-10-13T17:29:05.004732+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git symbolic-ref HEAD
+refs/heads/integration
+exit=0
+2026-10-13T17:29:05.010794+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:05.018402+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:05.024765+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:05.031256+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git diff --binary
+
+exit=0
+state={"files": {"shared.txt": "9f481ecd0d1cab374a0bed066c450e951aae1a66fa93027ddefc62da294f0aa7"}, "ignored": "", "ref": "refs/heads/integration", "sha": "4560358c1329309d7e0abf135fa26bd507c90e76", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:05.037415+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/integration-conflict/integration) git rev-parse --verify MERGE_HEAD
+fatal: Needed a single revision
+exit=128
+FACT: diagnostics retained above; exact baseline restored; MANUAL FAIL/STUCK, no blind retry
+
+CASE worker-tip-conflict
+2026-10-13T17:29:05.043454+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original/.git/
+exit=0
+2026-10-13T17:29:05.053299+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git config user.name 'Integration experiment'
+
+exit=0
+2026-10-13T17:29:05.059710+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:29:05.065950+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:29:05.072070+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:29:05.078415+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:05.086006+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git commit -m 'fixture base'
+[base (root-commit) 091c45c] fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shared.txt
+exit=0
+2026-10-13T17:29:05.098748+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git rev-parse HEAD
+091c45c927a6c5e24379167e83ce2d4935467ba7
+exit=0
+2026-10-13T17:29:05.104953+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/integration -b integration 091c45c927a6c5e24379167e83ce2d4935467ba7
+Preparing worktree (new branch 'integration')
+HEAD is now at 091c45c fixture base
+exit=0
+2026-10-13T17:29:05.121035+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a -b a 091c45c927a6c5e24379167e83ce2d4935467ba7
+Preparing worktree (new branch 'a')
+HEAD is now at 091c45c fixture base
+exit=0
+2026-10-13T17:29:05.138467+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/b -b b 091c45c927a6c5e24379167e83ce2d4935467ba7
+Preparing worktree (new branch 'b')
+HEAD is now at 091c45c fixture base
+exit=0
+2026-10-13T17:29:05.156781+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/c -b c 091c45c927a6c5e24379167e83ce2d4935467ba7
+Preparing worktree (new branch 'c')
+HEAD is now at 091c45c fixture base
+exit=0
+2026-10-13T17:29:05.174607+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/integration) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:05.183127+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/integration) git commit -m 'integration advances'
+[integration edef1f7] integration advances
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:29:05.196545+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/integration) git rev-parse HEAD
+edef1f742a7541cb68ceffd766c785cb21997ae0
+exit=0
+2026-10-13T17:29:05.203757+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git add -- shared.txt
+
+exit=0
+2026-10-13T17:29:05.211217+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git commit -m 'worker conflict candidate'
+[a 2695dec] worker conflict candidate
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:29:05.224246+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git rev-parse HEAD
+2695dece67803348a1270c42157cf1d0dbb5c80c
+exit=0
+2026-10-13T17:29:05.230864+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git rev-parse HEAD
+2695dece67803348a1270c42157cf1d0dbb5c80c
+exit=0
+2026-10-13T17:29:05.236980+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git symbolic-ref HEAD
+refs/heads/a
+exit=0
+2026-10-13T17:29:05.243122+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:05.250312+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:05.256906+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:05.263820+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git diff --binary
+
+exit=0
+state={"files": {"shared.txt": "04a0adf94628f300c712696349ae6f6b8419d3216858377be5f8902bc0eb9bad"}, "ignored": "", "ref": "refs/heads/a", "sha": "2695dece67803348a1270c42157cf1d0dbb5c80c", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:05.270536+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git merge --no-ff edef1f742a7541cb68ceffd766c785cb21997ae0 -m 'conflict intent'
+Auto-merging shared.txt
+CONFLICT (content): Merge conflict in shared.txt
+Automatic merge failed; fix conflicts and then commit the result.
+exit=1
+2026-10-13T17:29:05.283585+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git rev-parse HEAD
+2695dece67803348a1270c42157cf1d0dbb5c80c
+exit=0
+2026-10-13T17:29:05.290492+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git symbolic-ref HEAD
+refs/heads/a
+exit=0
+2026-10-13T17:29:05.296718+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git status --porcelain --untracked-files=all
+UU shared.txt
+exit=0
+2026-10-13T17:29:05.303579+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:05.309920+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git diff --cached --binary
+* Unmerged path shared.txt
+exit=0
+2026-10-13T17:29:05.316881+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git diff --binary
+diff --cc shared.txt
+index 19b1bcb,721e3ef..0000000
+--- a/shared.txt
++++ b/shared.txt
+@@@ -1,1 -1,1 +1,5 @@@
+++<<<<<<< HEAD
+ +worker content
+++=======
++ integration content
+++>>>>>>> edef1f742a7541cb68ceffd766c785cb21997ae0
+exit=0
+state={"files": {"shared.txt": "1057e54b32c5259f67fc39b742424ed31a118bbeaac398cc48fd45e31bada234"}, "ignored": "", "ref": "refs/heads/a", "sha": "2695dece67803348a1270c42157cf1d0dbb5c80c", "staged": "* Unmerged path shared.txt", "status": "UU shared.txt", "unstaged": "diff --cc shared.txt\nindex 19b1bcb,721e3ef..0000000\n--- a/shared.txt\n+++ b/shared.txt\n@@@ -1,1 -1,1 +1,5 @@@\n++<<<<<<< HEAD\n +worker content\n++=======\n+ integration content\n++>>>>>>> edef1f742a7541cb68ceffd766c785cb21997ae0"}
+2026-10-13T17:29:05.323712+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git rev-parse MERGE_HEAD
+edef1f742a7541cb68ceffd766c785cb21997ae0
+exit=0
+2026-10-13T17:29:05.329942+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git ls-files -u
+100644 df967b96a579e45a18b8251732d16804b2e56a55 1	shared.txt
+100644 19b1bcb2e58479917fc1a5933d21d267948f1d68 2	shared.txt
+100644 721e3ef00b9ddb34b5bf1e579b47f76619af897f 3	shared.txt
+exit=0
+conflict_content_before_abort="<<<<<<< HEAD\nworker content\n=======\nintegration content\n>>>>>>> edef1f742a7541cb68ceffd766c785cb21997ae0\n"
+MANUAL SAFETY: clean baseline + no outside writer/unknown files => capture then abort
+2026-10-13T17:29:05.336207+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git merge --abort
+
+exit=0
+2026-10-13T17:29:05.344326+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git rev-parse HEAD
+2695dece67803348a1270c42157cf1d0dbb5c80c
+exit=0
+2026-10-13T17:29:05.350863+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git symbolic-ref HEAD
+refs/heads/a
+exit=0
+2026-10-13T17:29:05.356976+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:29:05.363993+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git ls-files --others --ignored --exclude-standard
+
+exit=0
+2026-10-13T17:29:05.370427+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git diff --cached --binary
+
+exit=0
+2026-10-13T17:29:05.377073+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git diff --binary
+
+exit=0
+state={"files": {"shared.txt": "04a0adf94628f300c712696349ae6f6b8419d3216858377be5f8902bc0eb9bad"}, "ignored": "", "ref": "refs/heads/a", "sha": "2695dece67803348a1270c42157cf1d0dbb5c80c", "staged": "", "status": "", "unstaged": ""}
+2026-10-13T17:29:05.383797+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-integration-vrtldsbf/worker-tip-conflict/a) git rev-parse --verify MERGE_HEAD
+fatal: Needed a single revision
+exit=128
+FACT: diagnostics retained above; exact baseline restored; MANUAL FAIL/STUCK, no blind retry
+ALL REAL GIT/CHECK ASSERTIONS PASSED; protocol verdicts remain manual
