@@ -4,7 +4,7 @@
 
 **Blocked by:** 07
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P1 · 审查发现 4 的恢复分支
 Spec decisions: D8
@@ -38,9 +38,9 @@ User stories: US12
 
 ## Acceptance criteria
 
-- [ ] resume 只复用同一run身份，核对事实先于任何写操作。
-- [ ] 活跃、已合并、证据缺失与矛盾四种场景都有明确结果。
-- [ ] 中断后的保障范围与文档一致。
+- [x] resume 只复用同一run身份，核对事实先于任何写操作。
+- [x] 活跃、已合并、证据缺失与矛盾四种场景都有明确结果。
+- [x] 中断后的保障范围与文档一致。
 
 ## Verify
 
@@ -56,3 +56,5 @@ User stories: US12
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-14：gpt-6.1-sol/high 候选 58242a3，集成 774f525。worker/root/merger 四个真实 Git 恢复证据场景 exit 0，D8 协议核对及 diff check 通过。证据：docs/verification/reliability-hardening/08/README.md。宿主活动、状态补记和 brief 为手动演练，真实中断/恢复仍待 13。
