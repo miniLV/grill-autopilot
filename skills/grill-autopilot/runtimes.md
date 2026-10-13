@@ -4,6 +4,8 @@ Read this before Go and before starting, waiting on or releasing any role. The p
 
 ## Shared contract
 
+On explicit resume, use [resume.md](resume.md) before any start/continuation: query the saved identities through this contract and observe a still-active attempt within its saved deadline.
+
 Record the host/version, schema/help evidence, route authorization and **each** capability below as `supported`, `unsupported` or `unknown`, with its operation and limitations. Tool names are examples only when that schema is actually exposed. Before Go, disclose missing/unknown capabilities and any model/capacity uncertainty; missing required start/result/liveness/bounded-wait support blocks readiness unless an allowed fallback supplies it.
 
 | Operation | Completion criterion and unsupported exit |

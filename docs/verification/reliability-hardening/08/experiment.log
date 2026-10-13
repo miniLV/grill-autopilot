@@ -1,0 +1,587 @@
+client_date=2026-10-14 Asia/Shanghai (supplied context; not log timestamp)
+actual_started_at_utc=2026-10-13T17:15:31.714557+00:00
+No host dispatched. Identity, fingerprint, review PASS and resume decisions are manual protocol premises.
+
+CASE matching-evidence
+2026-10-13T17:15:31.715283+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original/.git/
+exit=0
+2026-10-13T17:15:31.728026+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git config user.name 'Resume experiment'
+
+exit=0
+2026-10-13T17:15:31.735094+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:15:31.741561+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:15:31.748366+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:15:31.755176+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git add payload.txt
+
+exit=0
+2026-10-13T17:15:31.762616+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git commit -m 'resume fixture base'
+[base (root-commit) 0788363] resume fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+2026-10-13T17:15:31.775738+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git rev-parse HEAD
+0788363bd26978c2f7e72f4a5008a1192f5d179f
+exit=0
+2026-10-13T17:15:31.782971+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration -b autopilot/demo/integration 0788363bd26978c2f7e72f4a5008a1192f5d179f
+Preparing worktree (new branch 'autopilot/demo/integration')
+HEAD is now at 0788363 resume fixture base
+exit=0
+2026-10-13T17:15:31.800496+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/ticket -b autopilot/demo/tickets/01 0788363bd26978c2f7e72f4a5008a1192f5d179f
+Preparing worktree (new branch 'autopilot/demo/tickets/01')
+HEAD is now at 0788363 resume fixture base
+exit=0
+2026-10-13T17:15:31.818296+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/ticket) git add payload.txt
+
+exit=0
+2026-10-13T17:15:31.826398+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/ticket) git commit -m candidate
+[autopilot/demo/tickets/01 979132e] candidate
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:15:31.839244+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/ticket) git rev-parse HEAD
+979132e7a8cc47ecd3a8e087eb17463790cea54f
+exit=0
+2026-10-13T17:15:31.845970+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) git merge --no-ff autopilot/demo/tickets/01 -m 'recorded integration intent'
+Merge made by the 'ort' strategy.
+ payload.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:15:31.863481+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) git rev-parse HEAD
+67714c3ee2315406ac16236133467a4db2ce0e72
+exit=0
+2026-10-13T17:15:31.870489+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) git rev-parse HEAD
+67714c3ee2315406ac16236133467a4db2ce0e72
+exit=0
+2026-10-13T17:15:31.876826+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:31.884485+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'payload.txt'"'"').read_text() == '"'"'candidate content\n'"'"'; print('"'"'PASS: candidate content'"'"')'
+PASS: candidate content
+exit=0
+2026-10-13T17:15:31.899084+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) git rev-parse HEAD
+67714c3ee2315406ac16236133467a4db2ce0e72
+exit=0
+2026-10-13T17:15:31.906222+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) git status --porcelain --untracked-files=all
+
+exit=0
+captured_check_log={"clean_before_after": true, "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'payload.txt'\"'\"').read_text() == '\"'\"'candidate content\\n'\"'\"'; print('\"'\"'PASS: candidate content'\"'\"')'", "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration", "ended_at": "2026-10-13T17:15:31.913505+00:00", "exit": 0, "log": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration-check.json", "output": "PASS: candidate content", "sha": "67714c3ee2315406ac16236133467a4db2ce0e72", "sha_after": "67714c3ee2315406ac16236133467a4db2ce0e72", "started_at": "2026-10-13T17:15:31.884466+00:00"}
+pending_record={"candidate_sha": "979132e7a8cc47ecd3a8e087eb17463790cea54f", "integration_checks": [{"clean_before_after": true, "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'payload.txt'\"'\"').read_text() == '\"'\"'candidate content\\n'\"'\"'; print('\"'\"'PASS: candidate content'\"'\"')'", "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration", "ended_at": "2026-10-13T17:15:31.913505+00:00", "exit": 0, "log": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration-check.json", "output": "PASS: candidate content", "sha": "67714c3ee2315406ac16236133467a4db2ce0e72", "sha_after": "67714c3ee2315406ac16236133467a4db2ce0e72", "started_at": "2026-10-13T17:15:31.884466+00:00"}], "merge_after_sha": "67714c3ee2315406ac16236133467a4db2ce0e72", "merge_before_sha": "0788363bd26978c2f7e72f4a5008a1192f5d179f", "reviewed_sha": "979132e7a8cc47ecd3a8e087eb17463790cea54f", "run_id": "fixture-08-matching-evidence", "status": "in-review", "verdict": "PASS (manual premise)"}
+2026-10-13T17:15:31.913869+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) git rev-parse HEAD
+67714c3ee2315406ac16236133467a4db2ce0e72
+exit=0
+2026-10-13T17:15:31.920352+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git merge-base --is-ancestor 979132e7a8cc47ecd3a8e087eb17463790cea54f 67714c3ee2315406ac16236133467a4db2ce0e72
+
+exit=0
+2026-10-13T17:15:31.927074+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git merge-base --is-ancestor 979132e7a8cc47ecd3a8e087eb17463790cea54f 67714c3ee2315406ac16236133467a4db2ce0e72
+
+exit=0
+2026-10-13T17:15:31.933501+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/ticket) git rev-parse HEAD
+979132e7a8cc47ecd3a8e087eb17463790cea54f
+exit=0
+2026-10-13T17:15:31.939481+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git for-each-ref '--format=%(refname) %(objectname)'
+refs/heads/autopilot/demo/integration 67714c3ee2315406ac16236133467a4db2ce0e72
+refs/heads/autopilot/demo/tickets/01 979132e7a8cc47ecd3a8e087eb17463790cea54f
+refs/heads/base 0788363bd26978c2f7e72f4a5008a1192f5d179f
+exit=0
+2026-10-13T17:15:31.945830+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original
+HEAD 0788363bd26978c2f7e72f4a5008a1192f5d179f
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration
+HEAD 67714c3ee2315406ac16236133467a4db2ce0e72
+branch refs/heads/autopilot/demo/integration
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/ticket
+HEAD 979132e7a8cc47ecd3a8e087eb17463790cea54f
+branch refs/heads/autopilot/demo/tickets/01
+exit=0
+2026-10-13T17:15:31.953017+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:31.960136+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/ticket) git status --porcelain --untracked-files=all
+
+exit=0
+MANUAL DECISION: matching current SHA/check/log => supplement done; no merge/dispatch
+2026-10-13T17:15:31.967338+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git for-each-ref '--format=%(refname) %(objectname)'
+refs/heads/autopilot/demo/integration 67714c3ee2315406ac16236133467a4db2ce0e72
+refs/heads/autopilot/demo/tickets/01 979132e7a8cc47ecd3a8e087eb17463790cea54f
+refs/heads/base 0788363bd26978c2f7e72f4a5008a1192f5d179f
+exit=0
+2026-10-13T17:15:31.973781+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original
+HEAD 0788363bd26978c2f7e72f4a5008a1192f5d179f
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration
+HEAD 67714c3ee2315406ac16236133467a4db2ce0e72
+branch refs/heads/autopilot/demo/integration
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/ticket
+HEAD 979132e7a8cc47ecd3a8e087eb17463790cea54f
+branch refs/heads/autopilot/demo/tickets/01
+exit=0
+2026-10-13T17:15:31.980508+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:31.987852+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/ticket) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:31.995173+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/matching-evidence/original) git rev-parse base
+0788363bd26978c2f7e72f4a5008a1192f5d179f
+exit=0
+PASS: real Git facts/checks and preserved pending record; status/brief decision remains a manual rehearsal
+
+CASE missing-evidence
+2026-10-13T17:15:32.001541+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original/.git/
+exit=0
+2026-10-13T17:15:32.011506+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git config user.name 'Resume experiment'
+
+exit=0
+2026-10-13T17:15:32.019179+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:15:32.026220+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:15:32.033555+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:15:32.040762+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git add payload.txt
+
+exit=0
+2026-10-13T17:15:32.048534+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git commit -m 'resume fixture base'
+[base (root-commit) 4e7a7f0] resume fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+2026-10-13T17:15:32.061636+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git rev-parse HEAD
+4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+2026-10-13T17:15:32.068768+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration -b autopilot/demo/integration 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+Preparing worktree (new branch 'autopilot/demo/integration')
+HEAD is now at 4e7a7f0 resume fixture base
+exit=0
+2026-10-13T17:15:32.086097+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/ticket -b autopilot/demo/tickets/01 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+Preparing worktree (new branch 'autopilot/demo/tickets/01')
+HEAD is now at 4e7a7f0 resume fixture base
+exit=0
+2026-10-13T17:15:32.105334+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/ticket) git add payload.txt
+
+exit=0
+2026-10-13T17:15:32.113947+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/ticket) git commit -m candidate
+[autopilot/demo/tickets/01 1bdf91f] candidate
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:15:32.128494+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/ticket) git rev-parse HEAD
+1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+exit=0
+2026-10-13T17:15:32.135718+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) git merge --no-ff autopilot/demo/tickets/01 -m 'recorded integration intent'
+Merge made by the 'ort' strategy.
+ payload.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:15:32.155115+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+pending_record={"candidate_sha": "1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91", "integration_checks": [], "merge_after_sha": "f91252699812b80ed2a19185cad8fc38d75965ba", "merge_before_sha": "4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2", "reviewed_sha": "1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91", "run_id": "fixture-08-missing-evidence", "status": "in-review", "verdict": "PASS (manual premise)"}
+2026-10-13T17:15:32.163048+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.169838+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git merge-base --is-ancestor 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91 f91252699812b80ed2a19185cad8fc38d75965ba
+
+exit=0
+2026-10-13T17:15:32.176945+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git merge-base --is-ancestor 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91 f91252699812b80ed2a19185cad8fc38d75965ba
+
+exit=0
+2026-10-13T17:15:32.184684+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/ticket) git rev-parse HEAD
+1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+exit=0
+2026-10-13T17:15:32.191518+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git for-each-ref '--format=%(refname) %(objectname)'
+refs/heads/autopilot/demo/integration f91252699812b80ed2a19185cad8fc38d75965ba
+refs/heads/autopilot/demo/tickets/01 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+refs/heads/base 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+2026-10-13T17:15:32.198552+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original
+HEAD 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration
+HEAD f91252699812b80ed2a19185cad8fc38d75965ba
+branch refs/heads/autopilot/demo/integration
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/ticket
+HEAD 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+branch refs/heads/autopilot/demo/tickets/01
+exit=0
+2026-10-13T17:15:32.205668+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.213438+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/ticket) git status --porcelain --untracked-files=all
+
+exit=0
+MANUAL DECISION: no current-SHA evidence => bounded reverify; no merge/dispatch
+2026-10-13T17:15:32.222141+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.228925+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.236807+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'payload.txt'"'"').read_text() == '"'"'candidate content\n'"'"'; print('"'"'PASS: candidate content'"'"')'
+PASS: candidate content
+exit=0
+2026-10-13T17:15:32.252637+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.260577+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) git status --porcelain --untracked-files=all
+
+exit=0
+captured_check_log={"clean_before_after": true, "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'payload.txt'\"'\"').read_text() == '\"'\"'candidate content\\n'\"'\"'; print('\"'\"'PASS: candidate content'\"'\"')'", "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration", "ended_at": "2026-10-13T17:15:32.268666+00:00", "exit": 0, "log": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/reverification.json", "output": "PASS: candidate content", "sha": "f91252699812b80ed2a19185cad8fc38d75965ba", "sha_after": "f91252699812b80ed2a19185cad8fc38d75965ba", "started_at": "2026-10-13T17:15:32.236785+00:00"}
+MANUAL DECISION: fresh unchanged current SHA/check/log => supplement done
+2026-10-13T17:15:32.268882+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git for-each-ref '--format=%(refname) %(objectname)'
+refs/heads/autopilot/demo/integration f91252699812b80ed2a19185cad8fc38d75965ba
+refs/heads/autopilot/demo/tickets/01 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+refs/heads/base 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+2026-10-13T17:15:32.275907+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original
+HEAD 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration
+HEAD f91252699812b80ed2a19185cad8fc38d75965ba
+branch refs/heads/autopilot/demo/integration
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/ticket
+HEAD 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+branch refs/heads/autopilot/demo/tickets/01
+exit=0
+2026-10-13T17:15:32.283724+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.292234+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/ticket) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.300756+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/missing-evidence/original) git rev-parse base
+4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+PASS: real Git facts/checks and preserved pending record; status/brief decision remains a manual rehearsal
+
+CASE older-check-sha
+2026-10-13T17:15:32.307941+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original/.git/
+exit=0
+2026-10-13T17:15:32.319618+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git config user.name 'Resume experiment'
+
+exit=0
+2026-10-13T17:15:32.327040+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:15:32.334102+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:15:32.341167+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:15:32.348551+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git add payload.txt
+
+exit=0
+2026-10-13T17:15:32.356650+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git commit -m 'resume fixture base'
+[base (root-commit) 4e7a7f0] resume fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+2026-10-13T17:15:32.370601+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git rev-parse HEAD
+4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+2026-10-13T17:15:32.377856+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration -b autopilot/demo/integration 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+Preparing worktree (new branch 'autopilot/demo/integration')
+HEAD is now at 4e7a7f0 resume fixture base
+exit=0
+2026-10-13T17:15:32.398481+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/ticket -b autopilot/demo/tickets/01 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+Preparing worktree (new branch 'autopilot/demo/tickets/01')
+HEAD is now at 4e7a7f0 resume fixture base
+exit=0
+2026-10-13T17:15:32.416765+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/ticket) git add payload.txt
+
+exit=0
+2026-10-13T17:15:32.425470+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/ticket) git commit -m candidate
+[autopilot/demo/tickets/01 1bdf91f] candidate
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:15:32.439123+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/ticket) git rev-parse HEAD
+1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+exit=0
+2026-10-13T17:15:32.445996+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git merge --no-ff autopilot/demo/tickets/01 -m 'recorded integration intent'
+Merge made by the 'ort' strategy.
+ payload.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:15:32.464451+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.471586+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.477993+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.485968+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'payload.txt'"'"').read_text() == '"'"'candidate content\n'"'"'; print('"'"'PASS: candidate content'"'"')'
+PASS: candidate content
+exit=0
+2026-10-13T17:15:32.501410+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.508864+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+captured_check_log={"clean_before_after": true, "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'payload.txt'\"'\"').read_text() == '\"'\"'candidate content\\n'\"'\"'; print('\"'\"'PASS: candidate content'\"'\"')'", "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration", "ended_at": "2026-10-13T17:15:32.516843+00:00", "exit": 0, "log": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration-check.json", "output": "PASS: candidate content", "sha": "f91252699812b80ed2a19185cad8fc38d75965ba", "sha_after": "f91252699812b80ed2a19185cad8fc38d75965ba", "started_at": "2026-10-13T17:15:32.485951+00:00"}
+2026-10-13T17:15:32.517156+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git add later.txt
+
+exit=0
+2026-10-13T17:15:32.525237+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git commit -m 'attributed later transaction'
+[autopilot/demo/integration 754e518] attributed later transaction
+ 1 file changed, 1 insertion(+)
+ create mode 100644 later.txt
+exit=0
+pending_record={"candidate_sha": "1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91", "integration_checks": [{"clean_before_after": true, "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'payload.txt'\"'\"').read_text() == '\"'\"'candidate content\\n'\"'\"'; print('\"'\"'PASS: candidate content'\"'\"')'", "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration", "ended_at": "2026-10-13T17:15:32.516843+00:00", "exit": 0, "log": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration-check.json", "output": "PASS: candidate content", "sha": "f91252699812b80ed2a19185cad8fc38d75965ba", "sha_after": "f91252699812b80ed2a19185cad8fc38d75965ba", "started_at": "2026-10-13T17:15:32.485951+00:00"}], "merge_after_sha": "f91252699812b80ed2a19185cad8fc38d75965ba", "merge_before_sha": "4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2", "reviewed_sha": "1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91", "run_id": "fixture-08-older-check-sha", "status": "in-review", "verdict": "PASS (manual premise)"}
+2026-10-13T17:15:32.540051+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git rev-parse HEAD
+754e5189d6532cbef337a8ebfc48341dd6f05d3d
+exit=0
+2026-10-13T17:15:32.547380+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git merge-base --is-ancestor 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91 754e5189d6532cbef337a8ebfc48341dd6f05d3d
+
+exit=0
+2026-10-13T17:15:32.554691+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git merge-base --is-ancestor 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91 f91252699812b80ed2a19185cad8fc38d75965ba
+
+exit=0
+2026-10-13T17:15:32.561434+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/ticket) git rev-parse HEAD
+1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+exit=0
+2026-10-13T17:15:32.567927+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git for-each-ref '--format=%(refname) %(objectname)'
+refs/heads/autopilot/demo/integration 754e5189d6532cbef337a8ebfc48341dd6f05d3d
+refs/heads/autopilot/demo/tickets/01 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+refs/heads/base 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+2026-10-13T17:15:32.574834+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original
+HEAD 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration
+HEAD 754e5189d6532cbef337a8ebfc48341dd6f05d3d
+branch refs/heads/autopilot/demo/integration
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/ticket
+HEAD 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+branch refs/heads/autopilot/demo/tickets/01
+exit=0
+2026-10-13T17:15:32.581822+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.589541+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/ticket) git status --porcelain --untracked-files=all
+
+exit=0
+MANUAL DECISION: no current-SHA evidence => bounded reverify; no merge/dispatch
+2026-10-13T17:15:32.597633+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git rev-parse HEAD
+754e5189d6532cbef337a8ebfc48341dd6f05d3d
+exit=0
+2026-10-13T17:15:32.604224+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.611884+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'payload.txt'"'"').read_text() == '"'"'candidate content\n'"'"'; print('"'"'PASS: candidate content'"'"')'
+PASS: candidate content
+exit=0
+2026-10-13T17:15:32.627478+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git rev-parse HEAD
+754e5189d6532cbef337a8ebfc48341dd6f05d3d
+exit=0
+2026-10-13T17:15:32.634810+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+captured_check_log={"clean_before_after": true, "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'payload.txt'\"'\"').read_text() == '\"'\"'candidate content\\n'\"'\"'; print('\"'\"'PASS: candidate content'\"'\"')'", "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration", "ended_at": "2026-10-13T17:15:32.642732+00:00", "exit": 0, "log": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/reverification.json", "output": "PASS: candidate content", "sha": "754e5189d6532cbef337a8ebfc48341dd6f05d3d", "sha_after": "754e5189d6532cbef337a8ebfc48341dd6f05d3d", "started_at": "2026-10-13T17:15:32.611865+00:00"}
+MANUAL DECISION: fresh unchanged current SHA/check/log => supplement done
+2026-10-13T17:15:32.642951+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git for-each-ref '--format=%(refname) %(objectname)'
+refs/heads/autopilot/demo/integration 754e5189d6532cbef337a8ebfc48341dd6f05d3d
+refs/heads/autopilot/demo/tickets/01 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+refs/heads/base 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+2026-10-13T17:15:32.650192+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original
+HEAD 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration
+HEAD 754e5189d6532cbef337a8ebfc48341dd6f05d3d
+branch refs/heads/autopilot/demo/integration
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/ticket
+HEAD 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+branch refs/heads/autopilot/demo/tickets/01
+exit=0
+2026-10-13T17:15:32.657513+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.665287+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/ticket) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.673120+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/older-check-sha/original) git rev-parse base
+4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+PASS: real Git facts/checks and preserved pending record; status/brief decision remains a manual rehearsal
+
+CASE inconsistent-branch-sha
+2026-10-13T17:15:32.679958+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git init -b base
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original/.git/
+exit=0
+2026-10-13T17:15:32.691754+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git config user.name 'Resume experiment'
+
+exit=0
+2026-10-13T17:15:32.699145+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git config user.email experiment@example.invalid
+
+exit=0
+2026-10-13T17:15:32.705936+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git config commit.gpgSign false
+
+exit=0
+2026-10-13T17:15:32.712381+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git config core.hooksPath /dev/null
+
+exit=0
+2026-10-13T17:15:32.719435+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git add payload.txt
+
+exit=0
+2026-10-13T17:15:32.727604+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git commit -m 'resume fixture base'
+[base (root-commit) 4e7a7f0] resume fixture base
+ 1 file changed, 1 insertion(+)
+ create mode 100644 payload.txt
+exit=0
+2026-10-13T17:15:32.741426+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git rev-parse HEAD
+4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+2026-10-13T17:15:32.748804+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration -b autopilot/demo/integration 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+Preparing worktree (new branch 'autopilot/demo/integration')
+HEAD is now at 4e7a7f0 resume fixture base
+exit=0
+2026-10-13T17:15:32.767377+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git worktree add /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket -b autopilot/demo/tickets/01 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+Preparing worktree (new branch 'autopilot/demo/tickets/01')
+HEAD is now at 4e7a7f0 resume fixture base
+exit=0
+2026-10-13T17:15:32.786738+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket) git add payload.txt
+
+exit=0
+2026-10-13T17:15:32.795461+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket) git commit -m candidate
+[autopilot/demo/tickets/01 1bdf91f] candidate
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:15:32.809480+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket) git rev-parse HEAD
+1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91
+exit=0
+2026-10-13T17:15:32.817018+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) git merge --no-ff autopilot/demo/tickets/01 -m 'recorded integration intent'
+Merge made by the 'ort' strategy.
+ payload.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+2026-10-13T17:15:32.835897+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.843452+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.850688+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.858883+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('"'"'payload.txt'"'"').read_text() == '"'"'candidate content\n'"'"'; print('"'"'PASS: candidate content'"'"')'
+PASS: candidate content
+exit=0
+2026-10-13T17:15:32.874945+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.882809+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+captured_check_log={"clean_before_after": true, "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'payload.txt'\"'\"').read_text() == '\"'\"'candidate content\\n'\"'\"'; print('\"'\"'PASS: candidate content'\"'\"')'", "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration", "ended_at": "2026-10-13T17:15:32.891024+00:00", "exit": 0, "log": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration-check.json", "output": "PASS: candidate content", "sha": "f91252699812b80ed2a19185cad8fc38d75965ba", "sha_after": "f91252699812b80ed2a19185cad8fc38d75965ba", "started_at": "2026-10-13T17:15:32.858857+00:00"}
+2026-10-13T17:15:32.891450+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket) git add payload.txt
+
+exit=0
+2026-10-13T17:15:32.900517+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket) git commit -m 'unattributed branch advance'
+[autopilot/demo/tickets/01 0e5b445] unattributed branch advance
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+exit=0
+pending_record={"candidate_sha": "1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91", "integration_checks": [{"clean_before_after": true, "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -c 'from pathlib import Path; assert Path('\"'\"'payload.txt'\"'\"').read_text() == '\"'\"'candidate content\\n'\"'\"'; print('\"'\"'PASS: candidate content'\"'\"')'", "cwd": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration", "ended_at": "2026-10-13T17:15:32.891024+00:00", "exit": 0, "log": "/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration-check.json", "output": "PASS: candidate content", "sha": "f91252699812b80ed2a19185cad8fc38d75965ba", "sha_after": "f91252699812b80ed2a19185cad8fc38d75965ba", "started_at": "2026-10-13T17:15:32.858857+00:00"}], "merge_after_sha": "f91252699812b80ed2a19185cad8fc38d75965ba", "merge_before_sha": "4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2", "reviewed_sha": "1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91", "run_id": "fixture-08-inconsistent-branch-sha", "status": "in-review", "verdict": "PASS (manual premise)"}
+2026-10-13T17:15:32.915951+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) git rev-parse HEAD
+f91252699812b80ed2a19185cad8fc38d75965ba
+exit=0
+2026-10-13T17:15:32.923680+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git merge-base --is-ancestor 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91 f91252699812b80ed2a19185cad8fc38d75965ba
+
+exit=0
+2026-10-13T17:15:32.930955+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git merge-base --is-ancestor 1bdf91ffc0bd90fc57ed49e7dc6acb2d9cdfdc91 f91252699812b80ed2a19185cad8fc38d75965ba
+
+exit=0
+2026-10-13T17:15:32.938084+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket) git rev-parse HEAD
+0e5b445c81ff080d9ac1d04aced2b602fd104545
+exit=0
+2026-10-13T17:15:32.944689+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git for-each-ref '--format=%(refname) %(objectname)'
+refs/heads/autopilot/demo/integration f91252699812b80ed2a19185cad8fc38d75965ba
+refs/heads/autopilot/demo/tickets/01 0e5b445c81ff080d9ac1d04aced2b602fd104545
+refs/heads/base 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+2026-10-13T17:15:32.952111+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original
+HEAD 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration
+HEAD f91252699812b80ed2a19185cad8fc38d75965ba
+branch refs/heads/autopilot/demo/integration
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket
+HEAD 0e5b445c81ff080d9ac1d04aced2b602fd104545
+branch refs/heads/autopilot/demo/tickets/01
+exit=0
+2026-10-13T17:15:32.959271+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:32.966987+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket) git status --porcelain --untracked-files=all
+ M payload.txt
+?? notes.txt
+exit=0
+2026-10-13T17:15:32.975343+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git merge-base --is-ancestor 0e5b445c81ff080d9ac1d04aced2b602fd104545 f91252699812b80ed2a19185cad8fc38d75965ba
+
+exit=1
+MANUAL DECISION: unexplainable branch SHA => failed brief, preserve dirt/refs; no reset/clean/reverify/dispatch
+2026-10-13T17:15:32.983418+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git for-each-ref '--format=%(refname) %(objectname)'
+refs/heads/autopilot/demo/integration f91252699812b80ed2a19185cad8fc38d75965ba
+refs/heads/autopilot/demo/tickets/01 0e5b445c81ff080d9ac1d04aced2b602fd104545
+refs/heads/base 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+2026-10-13T17:15:32.991050+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git worktree list --porcelain
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original
+HEAD 4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+branch refs/heads/base
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration
+HEAD f91252699812b80ed2a19185cad8fc38d75965ba
+branch refs/heads/autopilot/demo/integration
+
+worktree /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket
+HEAD 0e5b445c81ff080d9ac1d04aced2b602fd104545
+branch refs/heads/autopilot/demo/tickets/01
+exit=0
+2026-10-13T17:15:32.999006+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/integration) git status --porcelain --untracked-files=all
+
+exit=0
+2026-10-13T17:15:33.007333+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/ticket) git status --porcelain --untracked-files=all
+ M payload.txt
+?? notes.txt
+exit=0
+2026-10-13T17:15:33.015990+00:00 $ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-resume-i5lcmtme/inconsistent-branch-sha/original) git rev-parse base
+4e7a7f098eb14154679d3ba69bde7bef5ab6fbc2
+exit=0
+PASS: real Git facts/checks and preserved pending record; status/brief decision remains a manual rehearsal
+actual_finished_at_utc=2026-10-13T17:15:33.050464+00:00
+PASS: four fresh real Git fixtures; no production resume engine or runtime compliance claim

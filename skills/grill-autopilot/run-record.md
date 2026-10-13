@@ -1,6 +1,6 @@
 # Run record and frozen inputs
 
-Read this before the first tracker write, before filling a worker/reviewer packet, and when preparing the brief. This is the authority for run-data ownership, paths, snapshots and record fields. The runtime adapter supplies host facts; a saved status alone never proves that a process or Git operation completed.
+Read this before the first tracker write, before filling a worker/reviewer packet, and when preparing the brief. This is the authority for run-data ownership, paths, snapshots and record fields. The runtime adapter supplies host facts; a saved status alone never proves that a process or Git operation completed. [resume.md](resume.md) owns explicit recovery decisions, including qualification before any record append.
 
 ## Prepare and preserve
 
@@ -133,6 +133,7 @@ tickets:
         reviewed_sha: <SHA or not-recorded reason>
         merge_before_sha: <SHA or not-recorded reason>
         merge_after_sha: <SHA or not-recorded reason>
+        integration_checks: [{sha: <exact checked integration commit>, command: <exact applicable Verify/typecheck command or agreed N/A>, cwd: <canonical integration worktree>, started_at: <UTC>, ended_at: <UTC>, exit: <code or N/A with agreed reason>, log: <canonical captured output path>}]
         verdict: <observed verdict or not-recorded reason>
         evidence: [<canonical log/check/result paths>]
 events:
