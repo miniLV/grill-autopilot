@@ -18,7 +18,7 @@ Fill every file/directory pointer in both packets with a canonical absolute path
 
 ## Minimum record template
 
-The Markdown record may use this YAML block plus append-only event prose. Fill each field; retain explicit unknown/not-recorded reasons. Role observations and command results are facts recorded by the planner, not assumed from configuration. Companion selection, necessary reference closure and fingerprint checks are defined in [companions.md](companions.md).
+The Markdown record may use this YAML block plus append-only event prose. Fill each field; retain explicit unknown/not-recorded reasons. Role observations and command results are facts recorded by the planner, not assumed from configuration. Use [runtimes.md](runtimes.md) for capability, fallback, model-status and activity/capacity semantics; distinguish released execution capacity from retained identity metadata. Companion selection, necessary reference closure and fingerprint checks are defined in [companions.md](companions.md).
 
 ```yaml
 run_id: <unique execution id>
@@ -55,11 +55,18 @@ companion:
   skills: {<name>: <canonical SKILL.md path for each required companion>}
   helpers: {<relative name>: <canonical necessary helper path>}
   contract_evidence: <canonical semantic-check/candidate-selection evidence path>
+runtime:
+  host: <runtime/host name>
+  version: <observed version or unknown with reason>
+  schema_help_evidence: [<canonical evidence paths>]
+  route: {selected: <native/CLI/unavailable>, authorization: <policy/permission evidence>, reason: <capability gap or native route; no rejection bypass>}
+  capabilities: {start: <status/operation/limitation>, read_result: <status/operation/limitation>, is_alive: <status/operation/limitation>, bounded_wait: <status/operation/limitation>, cancel: <status/operation/limitation>, release: <status/operation/limitation>}
+  capacity: {limit: <observed total or unknown>, includes_planner: <true/false/unknown>, basis: <active-execution/retained-identities/unknown>, active_or_reserved: [<all role identities>], available: <observed count or unknown>, evidence: <canonical path/reason>}
 roles:
-  planner: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
-  worker: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
-  reviewer: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
-  escalate: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
+  planner: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, model_status: <match/mismatch/unknown>, evidence: <path/reason>}
+  worker: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, model_status: <match/mismatch/unknown>, evidence: <path/reason>}
+  reviewer: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, model_status: <match/mismatch/unknown>, evidence: <path/reason>}
+  escalate: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, model_status: <match/mismatch/unknown>, evidence: <path/reason>}
 commands:
   initialization: {command: <agreed command(s) or explicit None>, cwd: <canonical path>, result: <exit/evidence, skipped for explicit None, or not-recorded reason>}
   ticket_verify: [{command: <exact command>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}]
@@ -68,6 +75,9 @@ commands:
   typecheck: {command: <exact command or agreed N/A>, reason: <agreed N/A reason; otherwise None>, cwd: <canonical path>, result: <exit/evidence, N/A with reason, or not-recorded reason>}
 preparations:
   - worktree: <canonical integration/ticket path>
+    attempt_id: <preparation/role attempt identity; integration preparation included>
+    started_at: <UTC timestamp saved before initialization>
+    deadline: <UTC timestamp from attempt_seconds; retained through role launch>
     starting_sha: <SHA checked before implementation>
     initialization: <command result/log path, or skipped for explicit None>
     generated_paths: [<canonical expected preparation output paths>]
@@ -92,6 +102,9 @@ tickets:
         process_id: <PID or unknown/not-recorded reason>
         requested: {model: <model>, effort: <effort>}
         observed: {model: <model/unknown>, effort: <effort/unknown>}
+        model_status: <match/mismatch/unknown; with trusted evidence/reason>
+        lifecycle: {launch: <classification>, result: <classification>, activity: <active/inactive/unknown>, stop: <confirmed/unsupported/not-requested/unknown>, capacity_release: <confirmed/unsupported/unknown>, identity_metadata: <retained/deleted/unknown>, evidence: [<canonical paths/reasons>]}
+        deadline: <UTC timestamp from attempt_seconds; preparation included>
         planned_at: <UTC timestamp>
         started_at: <UTC timestamp or not-recorded reason>
         ended_at: <UTC timestamp or not-recorded reason>

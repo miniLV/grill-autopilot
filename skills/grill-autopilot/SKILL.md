@@ -24,9 +24,9 @@ The tracker is always local markdown under the original checkout's `.scratch/<sl
 
 Read [companions.md](companions.md) and select one complete collection: adjacent skills, then project skills/plugins, then user skills/plugins. Check all six skills, local-tracker helpers, necessary relative references and the current semantic contracts before Go. Record canonical paths, source facts and content hashes; resolve same-tier fingerprint ambiguity with the user before Go. An explicit resume checks the saved fingerprint and preserves the run on drift.
 
-Read [config.yaml](config.yaml), then `.grill-autopilot.yaml` at the repo root if it exists (its keys win). Detect the runtime as [runtimes.md](runtimes.md) describes and read that runtime's section. Resolve every role to a model and effort.
+Read [config.yaml](config.yaml), then `.grill-autopilot.yaml` at the repo root if it exists (its keys win). Read [runtimes.md](runtimes.md)'s shared contract and matching adapter. Inspect current host schema/help and record capability, authorization and capacity evidence. Resolve every role's requested model/effort separately from trusted observations (`match`, `mismatch`, `unknown`); the planner keeps its current session model. Unsupported required capabilities or a rejected route stop preparation.
 
-Done when: one complete contract-eligible companion collection is selected with fingerprint/contract evidence ready to record once the run ID is known, you have shown the user a one-line role table (`planner=… worker=… reviewer=… escalate=…`) and the repo's tracked source state is clean. If source changes are present, ask the user to commit or stash before you go on. Run-owned tracker data is the documented write exception; preserve and inventory unrelated untracked files as run-record.md requires.
+Done when: one complete contract-eligible companion collection is selected with fingerprint/contract evidence ready to record once the run ID is known, you have shown the user the requested/observed model and effort plus status for all four roles, disclosed unknown model/capacity and lifecycle limitations before Go, established a permitted route for required capabilities, and the repo's tracked source state is clean. If source changes are present, ask the user to commit or stash before you go on. Run-owned tracker data is the documented write exception; preserve and inventory unrelated untracked files as run-record.md requires.
 
 ### 1. Grill: the only checkpoint
 
@@ -69,7 +69,7 @@ Done when: every ticket is `done` or `blocked`, and the full test suite and appl
 
 ### 5. Final review
 
-Read and follow the companion `code-review` skill, and spawn its two review sub-agents on the reviewer role. Use the base branch as the fixed point and the recorded canonical spec snapshot as the spec; all child pointers follow run-record.md. Send all findings to one escalate-role subagent to fix on the integration branch, then rerun the full suite and applicable typecheck.
+Read and follow the companion `code-review` skill, and start its two review sub-agents on the reviewer role within runtimes.md's all-role capacity and lifecycle contract (sequentially if only one slot is available). Use the base branch as the fixed point and the recorded canonical spec snapshot as the spec; all child pointers follow run-record.md. Send all findings to one escalate-role subagent to fix on the integration branch, then rerun the full suite and applicable typecheck.
 
 Done when: the review has run, its fixes are committed, and the suite and applicable typecheck are green. Retain an agreed typecheck `N/A` as such. If the suite stays red after the fix, record the failure in the brief.
 
@@ -81,7 +81,7 @@ The planner compares the original checkout with its baseline using run-record.md
 - **Done**: each done ticket by title, with its attempts and the model that finished it.
 - **Blocked**: each blocked ticket with the reviewer's last reasons. Write "none" if empty.
 - **Assumptions**: assumptions from the frozen spec plus later run-record entries.
-- **Roles**: the role table from step 0.
+- **Roles and runtime**: requested/observed model and effort plus match/mismatch/unknown for each role and finishing attempt; capability/capacity evidence and any retained identities or unconfirmed stop/resource release. Unknown values remain unknown.
 - **Record and preservation**: canonical run-record path, snapshot and check evidence, and original-checkout comparison (including any drift).
 
 Push and open a draft PR only if the user chose that in step 1.
@@ -92,4 +92,4 @@ Done when: the brief is shown. Stop here; the user decides what happens next.
 
 - Commit product changes only to integration/ticket branches in their assigned worktrees. The planner may write only this run's manifest-owned tracker resources in the original checkout; preserve its source, branch, base ref and unrelated files, and compare them at closeout as run-record.md requires.
 - Push only when the user chose that in step 1. Never force-push.
-- If a role's model is unavailable, stop and report it. Never run that role's work on another model.
+- Follow runtimes.md for capability/fallback, model observations and all-role capacity. A rejected route or observed child model/effort mismatch stops that role and preserves its work; missing actual metadata remains disclosed unknown. Keep the planner's current session model.
