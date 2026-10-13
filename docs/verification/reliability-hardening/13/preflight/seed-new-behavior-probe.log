@@ -1,0 +1,6 @@
+cwd: /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/seed
+probe_exit: 0
+This read-only probe confirms intentional incomplete new behavior; it is not runtime/TDD evidence.
+normalize-space expected-red: incorrect-value
+zero-limit expected-red: NotImplementedError
+message expected-red: NotImplementedError

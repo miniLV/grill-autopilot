@@ -1,0 +1,122 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "933810ec433c74ab2f3e93be7a5377d9189f6cddb4e611e204225eb6d9ae16eb"
+  },
+  {
+    "path": "host/pre-record-stop-brief.md",
+    "sha256": "acaef6457bbf8eed76719f7e6b1b7a3af5544e381f72854460a3cf6aab513a33"
+  },
+  {
+    "path": "host/root-liveness-check.json",
+    "sha256": "39bc029582ab58c3c3c736ebbe079d75885f2da1fd6de4ad91213f0a7eb719ae"
+  },
+  {
+    "path": "host/root-post-rejection-preservation.json",
+    "sha256": "72b5085485869d7c1de8bcc3d4c815e693916d0923e828268891c7e5c4070720"
+  },
+  {
+    "path": "host/success-exit.json",
+    "sha256": "95a3d5d3bde91a2fce2105853c1cbbd90d9edf33f3af87a3e48efdec85016846"
+  },
+  {
+    "path": "host/success-launch.json",
+    "sha256": "4dd2011e0174264642b0e24d79d525e3a89b8e02a3b26a4df884bb106191ca93"
+  },
+  {
+    "path": "host/success.jsonl",
+    "sha256": "91587653ad52b460ee9d63539e0b21422e871713391514f77810df75299e37b7"
+  },
+  {
+    "path": "host/success.stderr",
+    "sha256": "f167a72152a6ed9c4a004697f3ad0ee2c4e40e8d9c9ed3e7f380aad6e2111eb1"
+  },
+  {
+    "path": "post-stop-preservation.json",
+    "sha256": "5c4f8e5378e94c12536c6d29755065807fd3d2585879f96a8a59c68d3d9fc686"
+  },
+  {
+    "path": "preflight/codex-version.log",
+    "sha256": "134d4e3aee2b431867acf904ed5880824058456142f1685b3b70c4c0761a84ff"
+  },
+  {
+    "path": "preflight/companion-contract.md",
+    "sha256": "50c6711b4b8decc9e9a73b7717192c7864588eecddc7fd0a60e6b81586b0b544"
+  },
+  {
+    "path": "preflight/companion-manifest.json",
+    "sha256": "c284b12d5055df09c512a17c9d1d8235db6a35b7e2d36e02990dab0608391c3a"
+  },
+  {
+    "path": "preflight/fault-baseline.log",
+    "sha256": "dcead639a24d18d3964f7fd5276ec7b84d4fcdcc427577bb355aef67cd56c0bb"
+  },
+  {
+    "path": "preflight/fault-full-suite.log",
+    "sha256": "c76c55cafe04a80705b16d47e8d2b257437c3d3a3b7df97eca137f7ff803f700"
+  },
+  {
+    "path": "preflight/fixtures.json",
+    "sha256": "284628b407e3f3f8cb7206ef36540db5bcfeb8414f9f129f60ffb3f56fb24525"
+  },
+  {
+    "path": "preflight/python-version.log",
+    "sha256": "b96f6ad308d0631adf2adea4344d1d922b24ba45fa7039dbf01f5e28e2ba4273"
+  },
+  {
+    "path": "preflight/recovery-baseline.log",
+    "sha256": "b5ed259e96f8680ce961143b0ec7444fac9645d3708ea727473bb6cfc9845838"
+  },
+  {
+    "path": "preflight/recovery-full-suite.log",
+    "sha256": "b5001bbe7627b318aa5ce866f64e0d5972b155236e6ad08744639d83df5956c7"
+  },
+  {
+    "path": "preflight/root-baseline-verify.json",
+    "sha256": "845c58045aa09f5eb5faa53b661a6933923e7d1a415b6a164a76a58d18524578"
+  },
+  {
+    "path": "preflight/seed-baseline.log",
+    "sha256": "3f6cd803a3531a6e864a71fb8dbac999e697653db6fc855ae26ca5279fd4b192"
+  },
+  {
+    "path": "preflight/seed-full-suite.log",
+    "sha256": "8333397ab7056382c2bee26b7f17c3f36d474c249c134b8506f8ff8dcde79a53"
+  },
+  {
+    "path": "preflight/seed-new-behavior-probe.log",
+    "sha256": "6d602ffd660d5ae5371c52b9b76aa327175f6f3edc64a2827453f168eb17c949"
+  },
+  {
+    "path": "preflight/success-baseline.log",
+    "sha256": "6720ccb0af1cea14830e16a4b498d65cd6158d458ce920ee540abdd819d90ea7"
+  },
+  {
+    "path": "preflight/success-full-suite.log",
+    "sha256": "b143b53761aed76b4f2da4c73df18991ef8f05a51f4cb702e9bf8b0889750cda"
+  },
+  {
+    "path": "prompts/fault-new-run.md",
+    "sha256": "f77b158c4dfc6c14acc2b9df4af759155e1ddb16cc8554b015fae1d7ca4bcdaf"
+  },
+  {
+    "path": "prompts/recovery-new-run.md",
+    "sha256": "949ebb95898d6aeaa0811395385d33be6510f342282906d0be7b433daffd48a9"
+  },
+  {
+    "path": "prompts/recovery-resume.md",
+    "sha256": "3b06c7d7d2e5b241ad87003015276820eae492160bbaeee9f95b396a6db3f63e"
+  },
+  {
+    "path": "prompts/success-new-run.md",
+    "sha256": "84b8913e308fbc03b85c99e63abc2cb2759e4d12ab581eb7ec0641b67ea029ab"
+  },
+  {
+    "path": "reproduction.log",
+    "sha256": "b9c4d5a63ac06af02ebe274374fd6bdb8b885e6c9bef3df31b524957e0fc0dec"
+  },
+  {
+    "path": "seed.json",
+    "sha256": "10ac6e915e8f242adbb97e864a5957d778ef28f19593df9993cc28c326818175"
+  }
+]

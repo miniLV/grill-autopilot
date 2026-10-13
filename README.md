@@ -180,15 +180,15 @@ roles:
 
 ## 当前验证范围
 
-截至本批 ticket 12；[ticket 13 真实试运行](.scratch/reliability-hardening/issues/13-real-runtime-smoke.md) 尚未执行。
+[ticket 13 真实试运行](docs/verification/reliability-hardening/13/README.md) 已准备 fixture 并尝试一次 Codex CLI 主机入口；所选账户拒绝请求的模型，完整成功、失败保存与恢复仍未验证，该验证票受阻。
 
 | 路径 | 已取得的证据 | 仍未验证 |
 | --- | --- | --- |
 | Codex native | [实际暴露的 schema](docs/verification/reliability-hardening/06/host-schema.md)，以及本批执行 child 的请求被接受；trusted actual model/effort 为 `unknown`。 | 完整 skill 成功、失败保留、恢复；真实取消/容量归还；schema 未暴露 metadata 删除工具。 |
-| Codex CLI fallback | [只读 version/help](docs/verification/reliability-hardening/06/cli-help.log)，记录版本 0.156.0 与 exec/resume 参数语法。 | 模型派发、结果/存活/取消/释放及端到端；help 不是运行成功证据。 |
+| Codex CLI（主机试运行；fallback 另按契约） | [version/help](docs/verification/reliability-hardening/06/cli-help.log) 与 [真实受拒 launch](docs/verification/reliability-hardening/13/README.md)：0.156.0 在本次 ChatGPT account 路由拒绝 gpt-6.1-sol/high，exit 1，owned 进程已退出；actual model/effort 为 `unknown`。 | 完整 skill 成功、dirty 工作保存、显式恢复；实际模型执行、取消/容量归还。7.454 秒仅为受拒 launch；metadata/传输 fallback 不表示换模型。 |
 | Claude native | 当前宿主未暴露 Claude Agent schema。 | 能力、actual model/effort 与完整运行均未验证。 |
 | Claude CLI fallback | 同份只读 help 记录版本 2.1.292，检查 agents/logs/stop/rm 语法。 | 模型派发和生命周期、完整运行；`rm` 可能删除 worktree，不用于常规释放。 |
-| 文档与临时 fixture | [验证目录](docs/verification/reliability-hardening/) 中分别标注 Git 操作、手动协议核对和只读捕获；[安装/渲染证据](docs/verification/reliability-hardening/12/README.md)。 | 不能由 fixture 或契约完整性推出 agent 会执行整个流程。 |
+| 文档与临时 fixture | [验证目录](docs/verification/reliability-hardening/) 中分别标注 Git 操作、手动协议核对和只读捕获；[安装/渲染证据](docs/verification/reliability-hardening/12/README.md)；[三个 smoke fixture 的既有 unittest 基线](docs/verification/reliability-hardening/13/README.md) 通过、源码 clean/base 不变。 | 新需求行为与完整 agent 流程未验证；基线通过不能推出端到端通过。 |
 
 这些是带日期的证据快照，不能证明所有宿主、模型或 companion 版本兼容。准备时仍需检查当前能力和授权；另一 runtime 无真实日志时保持未验证。
 

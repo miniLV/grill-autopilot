@@ -1,0 +1,3 @@
+argv: ["python3", "--version"]
+exit: 0
+Python 3.9.6

@@ -1,0 +1,29 @@
+[
+  {
+    "fixture": "success",
+    "head": "f25804b30642d78aa943a9e9f566759b886b27f6",
+    "ref": "refs/heads/main",
+    "status": "",
+    "branches": "refs/heads/main f25804b30642d78aa943a9e9f566759b886b27f6\n",
+    "worktrees": "worktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/success\nHEAD f25804b30642d78aa943a9e9f566759b886b27f6\nbranch refs/heads/main\n\n",
+    "run_record_created": false
+  },
+  {
+    "fixture": "fault",
+    "head": "a3a009c833fb0ee60e8be67188db53acdcf9d710",
+    "ref": "refs/heads/main",
+    "status": "",
+    "branches": "refs/heads/main a3a009c833fb0ee60e8be67188db53acdcf9d710\n",
+    "worktrees": "worktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/fault\nHEAD a3a009c833fb0ee60e8be67188db53acdcf9d710\nbranch refs/heads/main\n\n",
+    "run_record_created": false
+  },
+  {
+    "fixture": "recovery",
+    "head": "b49473a798be9570c70b2cdb35ad4cf77dcee329",
+    "ref": "refs/heads/main",
+    "status": "",
+    "branches": "refs/heads/main b49473a798be9570c70b2cdb35ad4cf77dcee329\n",
+    "worktrees": "worktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/recovery\nHEAD b49473a798be9570c70b2cdb35ad4cf77dcee329\nbranch refs/heads/main\n\n",
+    "run_record_created": false
+  }
+]

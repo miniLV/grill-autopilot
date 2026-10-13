@@ -1,0 +1,11 @@
+cwd: /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/recovery
+argv: ["python3", "-B", "-m", "unittest", "tests.test_baseline", "-v"]
+checked_sha: b49473a798be9570c70b2cdb35ad4cf77dcee329
+exit: 0
+test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

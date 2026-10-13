@@ -1,0 +1,10 @@
+2026-10-13T18:14:45.169438Z  WARN codex_models_manager::model_info: Unknown model gpt-6.1-sol is used. This will use fallback model metadata.
+2026-10-13T18:14:45.195827Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-13T18:14:45.195857Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-13T18:14:45.285782Z  WARN codex_models_manager::model_info: Unknown model gpt-5.6-luna is used. This will use fallback model metadata.
+2026-10-13T18:14:45.290240Z  WARN codex_models_manager::model_info: Unknown model gpt-6.1-sol is used. This will use fallback model metadata.
+2026-10-13T18:14:45.294830Z  WARN codex_models_manager::model_info: Unknown model gpt-6.1-sol is used. This will use fallback model metadata.
+2026-10-13T18:14:45.447459Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-13T18:14:45.447481Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-13T18:14:47.595706Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 426 Upgrade Required, url: ws://127.0.0.1:3425/backend-api/codex/responses
+2026-10-13T18:14:47.595780Z  WARN codex_core::client: falling back to HTTP

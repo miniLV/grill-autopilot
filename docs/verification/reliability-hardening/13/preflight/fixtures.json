@@ -1,0 +1,127 @@
+{
+  "created_at": "2026-10-13T18:10:31.617808+00:00",
+  "product_root": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/reliability-hardening-integration",
+  "product_sha": "815767d2f8658774778e59305b161c2396f2e21d",
+  "product_skill_sha256": "73f317eee366d3aa772fd31e7629d73725832a3ff6ea0eb2869f2105547a78f5",
+  "seed": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/seed",
+  "base_sha": "146ee2f80da6c7e89da7c13c5c6a345aa4650454",
+  "runs": {
+    "success": {
+      "checkout": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/success",
+      "run_id": "runtime-smoke13-success-20261014-01",
+      "slug": "smoke13-success",
+      "base_ref": "main",
+      "base_sha": "f25804b30642d78aa943a9e9f566759b886b27f6",
+      "integration_ref": "autopilot/smoke13-success/integration",
+      "integration_worktree": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/success.autopilot-worktrees/smoke13-success-integration",
+      "config": "runtime: codex\nconcurrency: 1\ntimeouts:\n  attempt_seconds: 900\nretry:\n  worker: 1\n  escalate: 1\n  infrastructure: 1\n  final_review: 1\nroles:\n  planner: {codex: gpt-6.1-sol, effort: high}\n  worker: {codex: gpt-6.1-sol, effort: high}\n  reviewer: {codex: gpt-6.1-sol, effort: high}\n  escalate: {codex: gpt-6.1-sol, effort: high}\n",
+      "baseline_commands": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "tests.test_baseline",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/preflight/success-baseline.log"
+        },
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/preflight/success-full-suite.log"
+        }
+      ],
+      "git_status": ""
+    },
+    "fault": {
+      "checkout": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/fault",
+      "run_id": "runtime-smoke13-fault-20261014-01",
+      "slug": "smoke13-fault",
+      "base_ref": "main",
+      "base_sha": "a3a009c833fb0ee60e8be67188db53acdcf9d710",
+      "integration_ref": "autopilot/smoke13-fault/integration",
+      "integration_worktree": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/fault.autopilot-worktrees/smoke13-fault-integration",
+      "config": "runtime: codex\nconcurrency: 1\ntimeouts:\n  attempt_seconds: 180\nretry:\n  worker: 0\n  escalate: 0\n  infrastructure: 0\n  final_review: 0\nroles:\n  planner: {codex: gpt-6.1-sol, effort: high}\n  worker: {codex: gpt-6.1-sol, effort: high}\n  reviewer: {codex: gpt-6.1-sol, effort: high}\n  escalate: {codex: gpt-6.1-sol, effort: high}\n",
+      "baseline_commands": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "tests.test_baseline",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/preflight/fault-baseline.log"
+        },
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/preflight/fault-full-suite.log"
+        }
+      ],
+      "git_status": ""
+    },
+    "recovery": {
+      "checkout": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/recovery",
+      "run_id": "runtime-smoke13-recovery-20261014-01",
+      "slug": "smoke13-recovery",
+      "base_ref": "main",
+      "base_sha": "b49473a798be9570c70b2cdb35ad4cf77dcee329",
+      "integration_ref": "autopilot/smoke13-recovery/integration",
+      "integration_worktree": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/recovery.autopilot-worktrees/smoke13-recovery-integration",
+      "config": "runtime: codex\nconcurrency: 1\ntimeouts:\n  attempt_seconds: 900\nretry:\n  worker: 1\n  escalate: 1\n  infrastructure: 1\n  final_review: 1\nroles:\n  planner: {codex: gpt-6.1-sol, effort: high}\n  worker: {codex: gpt-6.1-sol, effort: high}\n  reviewer: {codex: gpt-6.1-sol, effort: high}\n  escalate: {codex: gpt-6.1-sol, effort: high}\n",
+      "baseline_commands": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "tests.test_baseline",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/preflight/recovery-baseline.log"
+        },
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/preflight/recovery-full-suite.log"
+        }
+      ],
+      "git_status": ""
+    }
+  }
+}

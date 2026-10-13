@@ -1,0 +1,75 @@
+kind: fixture preparation reproduction only; no model launch
+new_lab: /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13-repro-check-20261014022144
+exit: 0
+Initialized empty Git repository in /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13-repro-check-20261014022144/seed/.git/
+[main (root-commit) 6b4ec9a] Seed legacy baseline
+ 12 files changed, 56 insertions(+)
+ create mode 120000 .agents/skills
+ create mode 100644 .gitignore
+ create mode 100644 CODING_STANDARDS.md
+ create mode 100644 README.md
+ create mode 100644 docs/agents/domain.md
+ create mode 100644 docs/agents/issue-tracker.md
+ create mode 100644 docs/agents/triage-labels.md
+ create mode 100644 limits.py
+ create mode 100644 message.py
+ create mode 100644 normalize.py
+ create mode 100644 tests/__init__.py
+ create mode 100644 tests/test_baseline.py
+[main 43170a8] Configure smoke
+ 1 file changed, 14 insertions(+)
+ create mode 100644 .grill-autopilot.yaml
+[main bafb554] Configure smoke
+ 1 file changed, 14 insertions(+)
+ create mode 100644 .grill-autopilot.yaml
+[main 43170a8] Configure smoke
+ 1 file changed, 14 insertions(+)
+ create mode 100644 .grill-autopilot.yaml
+Cloning into '/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13-repro-check-20261014022144/success'...
+done.
+test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+Cloning into '/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13-repro-check-20261014022144/fault'...
+done.
+test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+Cloning into '/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13-repro-check-20261014022144/recovery'...
+done.
+test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
