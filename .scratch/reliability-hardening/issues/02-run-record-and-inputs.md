@@ -4,7 +4,7 @@
 
 **Blocked by:** 01
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P2 · 审查发现 5
 Spec decisions: D3
@@ -38,10 +38,10 @@ User stories: US3, US4, US12
 
 ## Acceptance criteria
 
-- [ ] run record 包含 D3 所列身份、配置、路径、SHA 和尝试证据字段。
-- [ ] 两个 packet 不再依赖当前工作目录解析输入。
-- [ ] 源输入不可变、planner 单写状态的职责明确。
-- [ ] 用户源代码、base ref 和非运行资料保持不变。
+- [x] run record 包含 D3 所列身份、配置、路径、SHA 和尝试证据字段。
+- [x] 两个 packet 不再依赖当前工作目录解析输入。
+- [x] 源输入不可变、planner 单写状态的职责明确。
+- [x] 用户源代码、base ref 和非运行资料保持不变。
 
 ## Verify
 
@@ -57,3 +57,5 @@ User stories: US3, US4, US12
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-13：使用 gpt-6.1-sol/high 完成候选 f75aac7，集成 75b7ac1。worker/root/merger 的真实 Git 输入实验 exit 0；root 独立核对 D3 样例字段通过；diff check 通过。证据：docs/verification/reliability-hardening/02/README.md。仅 Git 实验与协议演练，runtime 遵守情况未验证。
