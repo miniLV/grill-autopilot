@@ -4,7 +4,7 @@
 
 **Blocked by:** 09
 
-**Status:** ready-for-agent
+**Status:** done
 
 Priority: P1 · 审查发现 3
 Spec decisions: D10
@@ -38,10 +38,10 @@ User stories: US15, US16
 
 ## Acceptance criteria
 
-- [ ] 每次最终修复都复审，不再存在审后直接交付路径。
-- [ ] 修复预算为有限的2轮，准确计数。
-- [ ] 最终tip与review/test证据一致。
-- [ ] 未解决项与blocked范围在brief清楚区分。
+- [x] 每次最终修复都复审，不再存在审后直接交付路径。
+- [x] 修复预算为有限的2轮，准确计数。
+- [x] 最终tip与review/test证据一致。
+- [x] 未解决项与blocked范围在brief清楚区分。
 
 ## Verify
 
@@ -57,3 +57,5 @@ User stories: US15, US16
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
+
+- 2026-10-14：gpt-6.1-sol/high 候选 a5c7885，集成 539d1ad。root 逐项核对 D10 四表通过；merger 确认最终门槛/场景与候选一致、66 个本地文件链接存在，diff check 通过。证据：docs/verification/reliability-hardening/10/README.md。仅手动协议验证，未执行真实模型最终审查或产品 suite。
