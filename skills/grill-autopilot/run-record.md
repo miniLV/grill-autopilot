@@ -1,0 +1,94 @@
+# Run record and frozen inputs
+
+Read this before the first tracker write, before filling a worker/reviewer packet, and when preparing the brief. This is the authority for run-data ownership, paths, snapshots and record fields. The runtime adapter supplies host facts; a saved status alone never proves that a process or Git operation completed.
+
+## Prepare and preserve
+
+1. Resolve the original checkout, tracker and companion paths to canonical absolute paths. The tracker stays at `<original-checkout>/.scratch/<slug>/`; this run's record is `runs/<run-id>/run.md` beneath it. For a new file, resolve its existing parent first and append the filename. Reject an intended tracker target whose existing content/ownership cannot be assigned to this run; an existing directory does not grant ownership of everything below it.
+2. Before the first write, capture the original checkout's symbolic ref (or detached HEAD SHA), selected base ref and SHA, `git diff --binary`, `git diff --cached --binary`, and `git ls-files --others --exclude-standard -z`. Store the raw diff/list evidence and an inventory of non-run untracked files with file type, mode and SHA-256 content hash (or symlink target). Keep an exact manifest of run-owned tracker files; exclude only these declared paths from later comparisons, never the whole `.scratch/` directory. Unrelated untracked files may remain; preserve them. Existing source changes still require the step 0 clean-source checkpoint.
+3. The planner alone writes the spec, ticket status/comments, snapshots, run record, assumptions and brief. Children read these resources; their product writes stay in their assigned worktree and declared Files. Planner/host captures child output into the run's log paths, so a child need not write into the original checkout. Declare each new tracker/log/evidence path in the ownership manifest before writing it.
+4. Once the spec and ticket set pass self-check, freeze one spec snapshot and each ticket's task body at `runs/<run-id>/snapshots/spec.md` and `snapshots/tickets/<NN>.md`. Exclude the mutable Status metadata and the entire Comments section from ticket snapshots; preserve all other task sections, including Context, Files, Examples, Verify and Acceptance. After freezing, retain the source spec and source task bodies too; only Status/Comments may change in source tickets. Set snapshots read-only (remove write permissions) and save SHA-256 hashes. Keep their paths and hashes fixed for the whole run, including retries and review. Permissions are an advisory guard; verify hashes before dispatch and at closeout. A changed/missing snapshot stops dispatch and is reported with the preserved evidence.
+5. Record new assumptions and events in the mutable run record, without rewriting frozen inputs or the distributed task. A material scope expansion is a blocked ticket: the child reports the reason, and the planner records it and updates mutable Status/Comments. It requires a separately agreed run; ordinary retry does not authorize changing the task.
+6. Before each external operation, save its intended stage, ticket/attempt identity, refs/paths and evidence destination. Afterward record the observed identifiers, times, SHAs, verdict and command result. Use `unknown` for unobservable facts and `not-recorded` with a reason for work not yet performed; do not turn missing evidence into PASS. Keep events with timestamps instead of overwriting attempt history. Recovery must reconcile records with Git/host facts; its decision rules belong to the recovery protocol.
+7. At closeout, compare the original checkout's ref, base ref SHA, both tracked diffs and all non-run untracked file entries against the baseline, excluding only manifest-owned tracker files. Report any drift and preserve the affected files. The brief links to the run record and evidence, so the user can locate both the baseline and final comparison.
+
+## Packet paths
+
+Fill every file/directory pointer in both packets with a canonical absolute path: frozen spec/task, mutable tracker ticket, run record, assigned worktree, required companion SKILL.md files, and log capture/evidence destinations. Paths with spaces must be quoted in commands. Children use the frozen task for requirements and the mutable tracker only for reading status; they return events to the planner instead of editing it. Repository-relative Files/Context entries inside the frozen task resolve under the explicitly assigned worktree, never the child's current directory. Run-data or external Context pointers are expanded to absolute paths by the planner and included in the packet.
+
+## Minimum record template
+
+The Markdown record may use this YAML block plus append-only event prose. Fill each field; retain explicit unknown/not-recorded reasons. Role observations and command results are facts recorded by the planner, not assumed from configuration. Companion fingerprints are recorded here; companion selection rules are defined elsewhere.
+
+```yaml
+run_id: <unique execution id>
+slug: <feature slug>
+phase: <current phase>
+result: <recorded result, or not-final while running>
+started_at: <UTC timestamp>
+updated_at: <UTC timestamp>
+original_checkout: <canonical absolute path>
+original_ref: <refs/heads/name or detached SHA>
+base_ref: <selected ref>
+base_sha: <resolved commit SHA>
+integration:
+  ref: <actual integration branch>
+  worktree: <canonical absolute path>
+  sha: <observed SHA or not-recorded reason>
+tracker: <canonical absolute directory>
+record: <canonical absolute run.md>
+brief: <canonical absolute brief.md>
+owned_tracker_files: [<exact canonical file paths, extended before writes>]
+baseline:
+  ref: <saved ref or detached SHA>
+  base_sha: <saved SHA>
+  tracked_diff: <canonical raw unstaged diff path>
+  staged_diff: <canonical raw staged diff path>
+  untracked_list: <canonical NUL-separated raw list path>
+  non_run_untracked: [{path: <canonical path>, type: <file/symlink>, mode: <mode>, sha256_or_target: <hash/target>}]
+closeout_comparison: <evidence path or not-recorded reason>
+companion:
+  root: <canonical source directory>
+  fingerprint: <source commit or file-hash manifest>
+  skills: {<name>: <canonical SKILL.md path for each required companion>}
+roles:
+  planner: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
+  worker: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
+  reviewer: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
+  escalate: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
+commands:
+  initialization: {command: <agreed command or explicit None>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}
+  ticket_verify: [{command: <exact command>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}]
+  full_suite: {command: <exact command>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}
+  typecheck: {command: <exact command>, cwd: <canonical path>, result: <exit/evidence or not-recorded reason>}
+push_selected: <true/false from grill>
+inputs:
+  spec: {source: <canonical path>, snapshot: <canonical path>, sha256: <hash>}
+  tickets: {<NN>: {source: <canonical mutable tracker path>, snapshot: <canonical frozen task path>, sha256: <hash>}}
+assumptions: [<new assumption, timestamp and reason; original assumptions stay in frozen spec>]
+tickets:
+  <NN>:
+    status: <mirrors mutable ticket Status>
+    branch: <actual branch>
+    worktree: <canonical absolute path>
+    starting_integration_sha: <saved SHA>
+    counters: {worker: <count>, escalate: <count>, infrastructure: <count>, reviewer: <count>, final_review: <count>}
+    attempts:
+      - attempt_id: <unique id within run>
+        role: <worker/reviewer/escalate>
+        agent_id: <host id or unknown/not-recorded reason>
+        process_id: <PID or unknown/not-recorded reason>
+        requested: {model: <model>, effort: <effort>}
+        observed: {model: <model/unknown>, effort: <effort/unknown>}
+        planned_at: <UTC timestamp>
+        started_at: <UTC timestamp or not-recorded reason>
+        ended_at: <UTC timestamp or not-recorded reason>
+        candidate_sha: <SHA or not-recorded reason>
+        reviewed_sha: <SHA or not-recorded reason>
+        merge_before_sha: <SHA or not-recorded reason>
+        merge_after_sha: <SHA or not-recorded reason>
+        verdict: <observed verdict or not-recorded reason>
+        evidence: [<canonical log/check/result paths>]
+events:
+  - {at: <UTC timestamp>, ticket: <NN/run>, attempt_id: <id/not-applicable>, operation: <intended/completed action>, outcome: <observed result>, evidence: <canonical path/reason>}
+```

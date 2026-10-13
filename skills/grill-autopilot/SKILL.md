@@ -14,7 +14,7 @@ Work is split by **role**, never by hard-coded model:
 - **reviewer**: gates each ticket before merge, and runs the final code-review.
 - **escalate**: retries a ticket the worker failed.
 
-The tracker is always local markdown under `.scratch/<slug>/` (conventions in the `issue-tracker-local.md` file of the companion `setup-matt-pocock-skills`), whatever `docs/agents/` says.
+The tracker is always local markdown under the original checkout's `.scratch/<slug>/` (conventions in the `issue-tracker-local.md` file of the companion `setup-matt-pocock-skills`), whatever `docs/agents/` says. Before the first tracker write and before filling any child packet, read [run-record.md](run-record.md): it defines planner ownership, canonical paths, frozen inputs and the minimum run record.
 
 **Companion skills** come from [mattpocock/skills](https://github.com/mattpocock/skills): `grilling`, `to-spec`, `to-tickets`, `tdd`, `code-review` and `setup-matt-pocock-skills`. Some of them are user-invoked, so read each one's `SKILL.md` and follow it rather than calling it by name.
 
@@ -26,7 +26,7 @@ Locate every companion skill's `SKILL.md`. Look first in this skill's parent dir
 
 Read [config.yaml](config.yaml), then `.grill-autopilot.yaml` at the repo root if it exists (its keys win). Detect the runtime as [runtimes.md](runtimes.md) describes and read that runtime's section. Resolve every role to a model and effort.
 
-Done when: every companion path is known, you have shown the user a one-line role table (`planner=… worker=… reviewer=… escalate=…`) and the repo is a git repo with a clean working tree. If the tree is dirty, ask the user to commit or stash before you go on.
+Done when: every companion path is known, you have shown the user a one-line role table (`planner=… worker=… reviewer=… escalate=…`) and the repo's tracked source state is clean. If source changes are present, ask the user to commit or stash before you go on. Run-owned tracker data is the documented write exception; preserve and inventory unrelated untracked files as run-record.md requires.
 
 ### 1. Grill: the only checkpoint
 
@@ -39,14 +39,14 @@ Read and follow the companion `grilling` skill on the user's topic. Add these br
 
 Close with one question: "Shared understanding reached. From here I run unattended until the PR brief. Go?"
 
-Done when: the user says yes. From this point on, ask nothing. An open question becomes a recorded assumption in the spec's Further Notes, or a blocked ticket.
+Done when: the user says yes. From this point on, ask nothing. An open question becomes a recorded assumption in the spec's Further Notes before freezing inputs, then in the run record afterward, or a blocked ticket.
 
 ### 2. Spec
 
 Read and follow the companion `to-spec` skill with these overrides:
 
 - Use the seams confirmed in step 1; skip asking the user about them.
-- Write the spec to `.scratch/<slug>/spec.md`. Do not apply a triage label.
+- The planner writes the spec to the original checkout's canonical `.scratch/<slug>/spec.md` path, after recording its baseline and owned paths as run-record.md requires. Do not apply a triage label.
 - List every autopilot assumption under Further Notes.
 
 Done when: `spec.md` exists with every template section filled.
@@ -57,9 +57,9 @@ Read and follow the companion `to-tickets` skill with these overrides:
 
 - Write **worker-grade** tickets as [tickets.md](tickets.md) defines. Its template replaces the local ticket template, and its path rule replaces the "avoid file paths" rule.
 - Replace step 4 (quiz the user) with the self-check in [tickets.md](tickets.md).
-- Publish to `.scratch/<slug>/issues/<NN>-<slug>.md`.
+- The planner publishes to the original checkout's canonical `.scratch/<slug>/issues/<NN>-<slug>.md` paths. Freeze the spec and ticket task bodies using run-record.md before dispatch; mutable Status/Comments stay in these source ticket files.
 
-Done when: every ticket file exists and the whole set passes the self-check.
+Done when: every ticket file exists, the whole set passes the self-check, and the record points to read-only spec/task snapshots with saved hashes.
 
 ### 4. Implement loop
 
@@ -69,19 +69,20 @@ Done when: every ticket is `done` or `blocked`, and the full test suite and type
 
 ### 5. Final review
 
-Read and follow the companion `code-review` skill, and spawn its two review sub-agents on the reviewer role. Use the base branch as the fixed point and `.scratch/<slug>/spec.md` as the spec. Send all findings to one escalate-role subagent to fix on the integration branch, then rerun the full suite and typecheck.
+Read and follow the companion `code-review` skill, and spawn its two review sub-agents on the reviewer role. Use the base branch as the fixed point and the recorded canonical spec snapshot as the spec; all child pointers follow run-record.md. Send all findings to one escalate-role subagent to fix on the integration branch, then rerun the full suite and typecheck.
 
 Done when: the review has run, its fixes are committed, and the suite is green. If the suite stays red after the fix, record the failure in the brief.
 
 ### 6. PR brief
 
-Write `.scratch/<slug>/brief.md` and show it to the user:
+The planner compares the original checkout with its baseline using run-record.md, records the evidence, writes the original checkout's canonical `.scratch/<slug>/brief.md`, and shows it to the user:
 
 - **Result**: integration branch, `git diff <base>...<integration> --stat`, suite status.
 - **Done**: each done ticket by title, with its attempts and the model that finished it.
 - **Blocked**: each blocked ticket with the reviewer's last reasons. Write "none" if empty.
-- **Assumptions**: every autopilot assumption from the spec.
+- **Assumptions**: assumptions from the frozen spec plus later run-record entries.
 - **Roles**: the role table from step 0.
+- **Record and preservation**: canonical run-record path, snapshot and check evidence, and original-checkout comparison (including any drift).
 
 Push and open a draft PR only if the user chose that in step 1.
 
@@ -89,6 +90,6 @@ Done when: the brief is shown. Stop here; the user decides what happens next.
 
 ## Guardrails
 
-- Commit only to the integration branch and the ticket branches. Leave the base branch and the user's working tree untouched.
+- Commit product changes only to integration/ticket branches in their assigned worktrees. The planner may write only this run's manifest-owned tracker resources in the original checkout; preserve its source, branch, base ref and unrelated files, and compare them at closeout as run-record.md requires.
 - Push only when the user chose that in step 1. Never force-push.
 - If a role's model is unavailable, stop and report it. Never run that role's work on another model.
