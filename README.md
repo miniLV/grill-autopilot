@@ -153,7 +153,7 @@ roles:
 ## 已知限制
 
 - **还没有大规模验证。** 收益是估算值，ticket 粒度的规则也需要更多真实项目来校准。
-- **依赖 mattpocock/skills 的 skill 名称和文件结构。** 上游改名或改结构时，step 0 会找不到依赖的 skill，并停下提示你。
+- **Companion 需要通过当前契约检查。** 按相邻、项目、用户三个层级选一套完整集合，检查必要辅助文件、步骤语义和模板；同级不同指纹先选择，缺失或不兼容则在 Go 前报告。恢复前核对来源和实际内容 hash，漂移时保留现场并停止。文件名存在不代表兼容任意上游版本，规则见 [companions.md](skills/grill-autopilot/companions.md)。
 - **需要能跑的测试命令。** 没有测试的仓库不适合这种自动化方式。
 - **ticket 只存本地 markdown。** 不会写入 GitHub Issues、Jira 等外部系统。
 - **Codex 适配**：优先用 multi-agent spawn 工具，按调用传 `model`；不支持时退回 `codex exec`，需要子进程能联网。

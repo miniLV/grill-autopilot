@@ -18,7 +18,7 @@ Fill every file/directory pointer in both packets with a canonical absolute path
 
 ## Minimum record template
 
-The Markdown record may use this YAML block plus append-only event prose. Fill each field; retain explicit unknown/not-recorded reasons. Role observations and command results are facts recorded by the planner, not assumed from configuration. Companion fingerprints are recorded here; companion selection rules are defined elsewhere.
+The Markdown record may use this YAML block plus append-only event prose. Fill each field; retain explicit unknown/not-recorded reasons. Role observations and command results are facts recorded by the planner, not assumed from configuration. Companion selection, necessary reference closure and fingerprint checks are defined in [companions.md](companions.md).
 
 ```yaml
 run_id: <unique execution id>
@@ -49,8 +49,12 @@ baseline:
 closeout_comparison: <evidence path or not-recorded reason>
 companion:
   root: <canonical source directory>
-  fingerprint: <source commit or file-hash manifest>
+  discovery_tier: <adjacent/project/user>
+  source_commit: <commit or unavailable with reason>
+  fingerprint: <canonical sorted content-hash manifest path; required even with a commit>
   skills: {<name>: <canonical SKILL.md path for each required companion>}
+  helpers: {<relative name>: <canonical necessary helper path>}
+  contract_evidence: <canonical semantic-check/candidate-selection evidence path>
 roles:
   planner: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}
   worker: {requested: {model: <model>, effort: <effort>}, observed: {model: <model/unknown>, effort: <effort/unknown>}, evidence: <path/reason>}

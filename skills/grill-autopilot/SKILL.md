@@ -22,11 +22,11 @@ The tracker is always local markdown under the original checkout's `.scratch/<sl
 
 ### 0. Resolve roles and companions
 
-Locate every companion skill's `SKILL.md`. Look first in this skill's parent directory (`../<name>/SKILL.md`), then search the agent's skill and plugin directories (for example `~/.claude/skills`, `~/.claude/plugins`, `~/.codex/skills`, `~/.codex/plugins`, `.claude/skills`, `.agents/skills`) for a `<name>/SKILL.md`. If one is missing, stop and tell the user to install mattpocock/skills.
+Read [companions.md](companions.md) and select one complete collection: adjacent skills, then project skills/plugins, then user skills/plugins. Check all six skills, local-tracker helpers, necessary relative references and the current semantic contracts before Go. Record canonical paths, source facts and content hashes; resolve same-tier fingerprint ambiguity with the user before Go. An explicit resume checks the saved fingerprint and preserves the run on drift.
 
 Read [config.yaml](config.yaml), then `.grill-autopilot.yaml` at the repo root if it exists (its keys win). Detect the runtime as [runtimes.md](runtimes.md) describes and read that runtime's section. Resolve every role to a model and effort.
 
-Done when: every companion path is known, you have shown the user a one-line role table (`planner=… worker=… reviewer=… escalate=…`) and the repo's tracked source state is clean. If source changes are present, ask the user to commit or stash before you go on. Run-owned tracker data is the documented write exception; preserve and inventory unrelated untracked files as run-record.md requires.
+Done when: one complete contract-eligible companion collection is selected with fingerprint/contract evidence ready to record once the run ID is known, you have shown the user a one-line role table (`planner=… worker=… reviewer=… escalate=…`) and the repo's tracked source state is clean. If source changes are present, ask the user to commit or stash before you go on. Run-owned tracker data is the documented write exception; preserve and inventory unrelated untracked files as run-record.md requires.
 
 ### 1. Grill: the only checkpoint
 
@@ -56,7 +56,7 @@ Done when: `spec.md` exists with every template section filled.
 Read and follow the companion `to-tickets` skill with these overrides:
 
 - Write **worker-grade** tickets as [tickets.md](tickets.md) defines. Its template replaces the local ticket template, and its path rule replaces the "avoid file paths" rule.
-- Replace step 4 (quiz the user) with the self-check in [tickets.md](tickets.md).
+- Replace the human approval of ticket granularity and blocking edges, located by meaning as companions.md describes, with the self-check in [tickets.md](tickets.md).
 - The planner publishes to the original checkout's canonical `.scratch/<slug>/issues/<NN>-<slug>.md` paths. Freeze the spec and ticket task bodies using run-record.md before dispatch; mutable Status/Comments stay in these source ticket files.
 
 Done when: every ticket file exists, the whole set passes the self-check, and the record points to read-only spec/task snapshots with saved hashes.

@@ -1,0 +1,113 @@
+CASE 1: six entries split across two incomplete project roots
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-a/skills/grilling/SKILL.md: '# Synthetic grilling\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-a/skills/to-spec/SKILL.md: '# Synthetic to-spec\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-a/skills/to-tickets/SKILL.md: '# Synthetic to-tickets\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-b/skills/tdd/SKILL.md: '# Synthetic tdd\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-b/skills/code-review/SKILL.md: '# Synthetic code-review\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-b/skills/setup-matt-pocock-skills/SKILL.md: '# Synthetic setup-matt-pocock-skills\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-b/skills/tdd/tests.md: '# Synthetic helper tdd/tests.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-b/skills/tdd/mocking.md: '# Synthetic helper tdd/mocking.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-b/skills/setup-matt-pocock-skills/issue-tracker-local.md: '# Synthetic helper setup-matt-pocock-skills/issue-tracker-local.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-b/skills/setup-matt-pocock-skills/triage-labels.md: '# Synthetic helper setup-matt-pocock-skills/triage-labels.md\n'
+INVENTORY /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-a/skills {"grilling/SKILL.md": "46e19fc2f1a16f96bce695c6d3fcd9558d6b814f343a092a7189af8813c4a3c9", "to-spec/SKILL.md": "ff3e2928a03cd98e6df5923d9beee9376260b6597eea480c8c38181d53aafd24", "to-tickets/SKILL.md": "4b8c1b92f946877592509ecfea1ff6d15630cf062e73fdc67a0dc18fc4d5e8dd"}
+INVENTORY /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/split/project/plugin-b/skills {"code-review/SKILL.md": "62d785cd6349d8be6c1b36f489f0d8f2bff4639df89fb35f533cd33d0420b329", "setup-matt-pocock-skills/SKILL.md": "e24284577c39fed81e268965c179059dbaae87082ada7c0ece0984be61822ecc", "setup-matt-pocock-skills/issue-tracker-local.md": "222b82ca1593784f83735f965485163a8cacbc09e7b6cb36edebc87a22bdd655", "setup-matt-pocock-skills/triage-labels.md": "ddcbb90b6fbf569c7b6492c7b48288e5a03bf0dcd75b27861a79c3f13f4cafd5", "tdd/SKILL.md": "4ad68c4f650193876d20b3f42a9f15f58d83c1fa0966c69e7bd8fe526eb0a19e", "tdd/mocking.md": "da579ec201e8470b646a98496387acd73da1078556cc2f9521e9cbcedf3a9d92", "tdd/tests.md": "e0148cb083b6edbcc57a4c2910c23f33285225411b27f2afbb2fc6eb33edb00f"}
+
+CASE 2: plugin set missing local-tracker helper
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills/grilling/SKILL.md: '# Synthetic grilling\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills/to-spec/SKILL.md: '# Synthetic to-spec\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills/to-tickets/SKILL.md: '# Synthetic to-tickets\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills/tdd/SKILL.md: '# Synthetic tdd\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills/code-review/SKILL.md: '# Synthetic code-review\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills/setup-matt-pocock-skills/SKILL.md: '# Synthetic setup-matt-pocock-skills\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills/tdd/tests.md: '# Synthetic helper tdd/tests.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills/tdd/mocking.md: '# Synthetic helper tdd/mocking.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills/setup-matt-pocock-skills/triage-labels.md: '# Synthetic helper setup-matt-pocock-skills/triage-labels.md\n'
+INVENTORY /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/missing/project/plugin/skills {"code-review/SKILL.md": "62d785cd6349d8be6c1b36f489f0d8f2bff4639df89fb35f533cd33d0420b329", "grilling/SKILL.md": "46e19fc2f1a16f96bce695c6d3fcd9558d6b814f343a092a7189af8813c4a3c9", "setup-matt-pocock-skills/SKILL.md": "e24284577c39fed81e268965c179059dbaae87082ada7c0ece0984be61822ecc", "setup-matt-pocock-skills/triage-labels.md": "ddcbb90b6fbf569c7b6492c7b48288e5a03bf0dcd75b27861a79c3f13f4cafd5", "tdd/SKILL.md": "4ad68c4f650193876d20b3f42a9f15f58d83c1fa0966c69e7bd8fe526eb0a19e", "tdd/mocking.md": "da579ec201e8470b646a98496387acd73da1078556cc2f9521e9cbcedf3a9d92", "tdd/tests.md": "e0148cb083b6edbcc57a4c2910c23f33285225411b27f2afbb2fc6eb33edb00f", "to-spec/SKILL.md": "ff3e2928a03cd98e6df5923d9beee9376260b6597eea480c8c38181d53aafd24", "to-tickets/SKILL.md": "4b8c1b92f946877592509ecfea1ff6d15630cf062e73fdc67a0dc18fc4d5e8dd"}
+
+CASE 3: two complete same-priority project plugin sets with different content
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/grilling/SKILL.md: '# Synthetic grilling\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/to-spec/SKILL.md: '# Synthetic to-spec\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/to-tickets/SKILL.md: '# Synthetic to-tickets\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/tdd/SKILL.md: '# Synthetic tdd\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/code-review/SKILL.md: '# Synthetic code-review\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/setup-matt-pocock-skills/SKILL.md: '# Synthetic setup-matt-pocock-skills\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/tdd/tests.md: '# Synthetic helper tdd/tests.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/tdd/mocking.md: '# Synthetic helper tdd/mocking.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/setup-matt-pocock-skills/issue-tracker-local.md: '# Synthetic helper setup-matt-pocock-skills/issue-tracker-local.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills/setup-matt-pocock-skills/triage-labels.md: '# Synthetic helper setup-matt-pocock-skills/triage-labels.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/grilling/SKILL.md: '# Synthetic grilling\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/to-spec/SKILL.md: '# Synthetic to-spec\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/to-tickets/SKILL.md: '# Synthetic to-tickets\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/tdd/SKILL.md: '# Synthetic tdd\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/code-review/SKILL.md: '# Synthetic code-review\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/setup-matt-pocock-skills/SKILL.md: '# Synthetic setup-matt-pocock-skills\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/tdd/tests.md: '# Synthetic helper tdd/tests.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/tdd/mocking.md: '# Synthetic helper tdd/mocking.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/setup-matt-pocock-skills/issue-tracker-local.md: '# Synthetic helper setup-matt-pocock-skills/issue-tracker-local.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/setup-matt-pocock-skills/triage-labels.md: '# Synthetic helper setup-matt-pocock-skills/triage-labels.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills/grilling/SKILL.md: '# Synthetic grilling\nDifferent layout-only payload; eligibility remains stipulated.\n'
+INVENTORY /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-a/skills {"code-review/SKILL.md": "62d785cd6349d8be6c1b36f489f0d8f2bff4639df89fb35f533cd33d0420b329", "grilling/SKILL.md": "46e19fc2f1a16f96bce695c6d3fcd9558d6b814f343a092a7189af8813c4a3c9", "setup-matt-pocock-skills/SKILL.md": "e24284577c39fed81e268965c179059dbaae87082ada7c0ece0984be61822ecc", "setup-matt-pocock-skills/issue-tracker-local.md": "222b82ca1593784f83735f965485163a8cacbc09e7b6cb36edebc87a22bdd655", "setup-matt-pocock-skills/triage-labels.md": "ddcbb90b6fbf569c7b6492c7b48288e5a03bf0dcd75b27861a79c3f13f4cafd5", "tdd/SKILL.md": "4ad68c4f650193876d20b3f42a9f15f58d83c1fa0966c69e7bd8fe526eb0a19e", "tdd/mocking.md": "da579ec201e8470b646a98496387acd73da1078556cc2f9521e9cbcedf3a9d92", "tdd/tests.md": "e0148cb083b6edbcc57a4c2910c23f33285225411b27f2afbb2fc6eb33edb00f", "to-spec/SKILL.md": "ff3e2928a03cd98e6df5923d9beee9376260b6597eea480c8c38181d53aafd24", "to-tickets/SKILL.md": "4b8c1b92f946877592509ecfea1ff6d15630cf062e73fdc67a0dc18fc4d5e8dd"}
+INVENTORY /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/ambiguous/project/plugin-b/skills {"code-review/SKILL.md": "62d785cd6349d8be6c1b36f489f0d8f2bff4639df89fb35f533cd33d0420b329", "grilling/SKILL.md": "fc080a6073e366f5faa1af6fdb03a6e2af13d324793214ed42655bfb4af6784a", "setup-matt-pocock-skills/SKILL.md": "e24284577c39fed81e268965c179059dbaae87082ada7c0ece0984be61822ecc", "setup-matt-pocock-skills/issue-tracker-local.md": "222b82ca1593784f83735f965485163a8cacbc09e7b6cb36edebc87a22bdd655", "setup-matt-pocock-skills/triage-labels.md": "ddcbb90b6fbf569c7b6492c7b48288e5a03bf0dcd75b27861a79c3f13f4cafd5", "tdd/SKILL.md": "4ad68c4f650193876d20b3f42a9f15f58d83c1fa0966c69e7bd8fe526eb0a19e", "tdd/mocking.md": "da579ec201e8470b646a98496387acd73da1078556cc2f9521e9cbcedf3a9d92", "tdd/tests.md": "e0148cb083b6edbcc57a4c2910c23f33285225411b27f2afbb2fc6eb33edb00f", "to-spec/SKILL.md": "ff3e2928a03cd98e6df5923d9beee9376260b6597eea480c8c38181d53aafd24", "to-tickets/SKILL.md": "4b8c1b92f946877592509ecfea1ff6d15630cf062e73fdc67a0dc18fc4d5e8dd"}
+
+CASE 4: selected set's helper content drifts while source commit stays fixed
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/grilling/SKILL.md: '# Synthetic grilling\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/to-spec/SKILL.md: '# Synthetic to-spec\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/to-tickets/SKILL.md: '# Synthetic to-tickets\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/tdd/SKILL.md: '# Synthetic tdd\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/code-review/SKILL.md: '# Synthetic code-review\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/setup-matt-pocock-skills/SKILL.md: '# Synthetic setup-matt-pocock-skills\nLayout-only payload; semantic eligibility is stipulated for this rehearsal.\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/tdd/tests.md: '# Synthetic helper tdd/tests.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/tdd/mocking.md: '# Synthetic helper tdd/mocking.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/setup-matt-pocock-skills/issue-tracker-local.md: '# Synthetic helper setup-matt-pocock-skills/issue-tracker-local.md\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/setup-matt-pocock-skills/triage-labels.md: '# Synthetic helper setup-matt-pocock-skills/triage-labels.md\n'
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git init -b source
+Initialized empty Git repository in /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/.git/
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git config user.name 'Layout rehearsal'
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git config user.email experiment@example.invalid
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git config commit.gpgSign false
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git config core.hooksPath /dev/null
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git add .
+
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git commit -m 'synthetic companion source'
+[source (root-commit) b77f17c] synthetic companion source
+ 10 files changed, 16 insertions(+)
+ create mode 100644 code-review/SKILL.md
+ create mode 100644 grilling/SKILL.md
+ create mode 100644 setup-matt-pocock-skills/SKILL.md
+ create mode 100644 setup-matt-pocock-skills/issue-tracker-local.md
+ create mode 100644 setup-matt-pocock-skills/triage-labels.md
+ create mode 100644 tdd/SKILL.md
+ create mode 100644 tdd/mocking.md
+ create mode 100644 tdd/tests.md
+ create mode 100644 to-spec/SKILL.md
+ create mode 100644 to-tickets/SKILL.md
+exit=0
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/run/snapshots/spec.md: '# Frozen spec\n'
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/run/snapshots/ticket.md: '# Frozen task\n'
+BEFORE source commit and content:
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git rev-parse HEAD
+b77f17c3d5f42fd4bf50fdf58d946cd6308ddf38
+exit=0
+INVENTORY /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills {"code-review/SKILL.md": "62d785cd6349d8be6c1b36f489f0d8f2bff4639df89fb35f533cd33d0420b329", "grilling/SKILL.md": "46e19fc2f1a16f96bce695c6d3fcd9558d6b814f343a092a7189af8813c4a3c9", "setup-matt-pocock-skills/SKILL.md": "e24284577c39fed81e268965c179059dbaae87082ada7c0ece0984be61822ecc", "setup-matt-pocock-skills/issue-tracker-local.md": "222b82ca1593784f83735f965485163a8cacbc09e7b6cb36edebc87a22bdd655", "setup-matt-pocock-skills/triage-labels.md": "ddcbb90b6fbf569c7b6492c7b48288e5a03bf0dcd75b27861a79c3f13f4cafd5", "tdd/SKILL.md": "4ad68c4f650193876d20b3f42a9f15f58d83c1fa0966c69e7bd8fe526eb0a19e", "tdd/mocking.md": "da579ec201e8470b646a98496387acd73da1078556cc2f9521e9cbcedf3a9d92", "tdd/tests.md": "e0148cb083b6edbcc57a4c2910c23f33285225411b27f2afbb2fc6eb33edb00f", "to-spec/SKILL.md": "ff3e2928a03cd98e6df5923d9beee9376260b6597eea480c8c38181d53aafd24", "to-tickets/SKILL.md": "4b8c1b92f946877592509ecfea1ff6d15630cf062e73fdc67a0dc18fc4d5e8dd"}
+INVENTORY /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/run/snapshots {"spec.md": "47bc974d90a6defa642b69ceae759b04b3de93c9a32f1fdefa84867447045e92", "ticket.md": "98aa6024c121e60c9a5480d60fc5e33a5e7e97f3cd86b329e13c2046a676a474"}
+WRITE /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills/tdd/tests.md: '# Synthetic helper tdd/tests.md\nChanged before resume.\n'
+AFTER source commit and content (intentionally preserved):
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git rev-parse HEAD
+b77f17c3d5f42fd4bf50fdf58d946cd6308ddf38
+exit=0
+$ (cwd=/private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills) git status --short
+ M tdd/tests.md
+exit=0
+INVENTORY /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/user/plugin/skills {"code-review/SKILL.md": "62d785cd6349d8be6c1b36f489f0d8f2bff4639df89fb35f533cd33d0420b329", "grilling/SKILL.md": "46e19fc2f1a16f96bce695c6d3fcd9558d6b814f343a092a7189af8813c4a3c9", "setup-matt-pocock-skills/SKILL.md": "e24284577c39fed81e268965c179059dbaae87082ada7c0ece0984be61822ecc", "setup-matt-pocock-skills/issue-tracker-local.md": "222b82ca1593784f83735f965485163a8cacbc09e7b6cb36edebc87a22bdd655", "setup-matt-pocock-skills/triage-labels.md": "ddcbb90b6fbf569c7b6492c7b48288e5a03bf0dcd75b27861a79c3f13f4cafd5", "tdd/SKILL.md": "4ad68c4f650193876d20b3f42a9f15f58d83c1fa0966c69e7bd8fe526eb0a19e", "tdd/mocking.md": "da579ec201e8470b646a98496387acd73da1078556cc2f9521e9cbcedf3a9d92", "tdd/tests.md": "947db36719acba7c6dc9277915a3cc40921e4e5f5e77290d90620ecc9ecd4705", "to-spec/SKILL.md": "ff3e2928a03cd98e6df5923d9beee9376260b6597eea480c8c38181d53aafd24", "to-tickets/SKILL.md": "4b8c1b92f946877592509ecfea1ff6d15630cf062e73fdc67a0dc18fc4d5e8dd"}
+INVENTORY /private/var/folders/v2/ckqz8nld0cj2s6xbr48rhvww0000gn/T/autopilot-companions-j315t6uh/drift/run/snapshots {"spec.md": "47bc974d90a6defa642b69ceae759b04b3de93c9a32f1fdefa84867447045e92", "ticket.md": "98aa6024c121e60c9a5480d60fc5e33a5e7e97f3cd86b329e13c2046a676a474"}
+Fixture construction/inspection complete (exit 0). Decisions require manual protocol review; no automatic resolver verdict.
