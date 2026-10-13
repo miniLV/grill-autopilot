@@ -78,6 +78,8 @@ ln -s ~/grill-autopilot/skills/grill-autopilot ~/.codex/skills/grill-autopilot
 3. 你回答 "Go" 之后就可以离开。之后它不会再问你任何问题。
 4. 回来看 `.scratch/<slug>/brief.md`。
 
+中断后显式输入 `/grill-autopilot resume <run-id>`。agent 先核对原 run record、输入/companion 指纹、宿主活动和 Git 现场，再继续原阶段；活跃 attempt 继续观察，已合并的候选按验证证据核对，歧义则保留现场并报告 failed。新议题不会因同 slug 自动进入恢复。主会话崩溃后不保证即时 brief 或后台自动续跑，规则见 [resume.md](skills/grill-autopilot/resume.md)。
+
 ## 运行后会留下什么
 
 ```text

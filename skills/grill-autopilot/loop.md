@@ -6,6 +6,8 @@ The planner keeps pointers and **verdicts** in its context; the durable run reco
 
 Before preparation/dispatch and on any error or stop, read [failures.md](failures.md). It is the single authority for logical attempts, business/infrastructure/final counters, finite exits from pending statuses, dependency blocking and result/brief rules. Adapter lifecycle facts remain in runtimes.md.
 
+An explicit `/grill-autopilot resume <run-id>` first follows [resume.md](resume.md), including already-merged evidence checks. Re-enter this loop only at the reconciled stage; a pending status or existing branch alone never authorizes replay.
+
 ## Setup
 
 - **Run data**: before any tracker write or packet, follow [run-record.md](run-record.md) to capture the original checkout baseline, declare owned tracker files and freeze inputs. The planner is the only tracker/record writer. Persist intended operations before host/Git calls and append observations afterward; preserve that evidence for the brief.
@@ -36,8 +38,9 @@ The planner prepares **each** newly created integration/ticket worktree before d
 3. **Review.** When the worker or escalate role reports `DONE`, capture its full result and model status, set the ticket to `in-review`, then confirm inactivity and release/availability through runtimes.md before starting the reviewer. Save the review's own logical attempt/deadline before its call; queue it ahead of new workers and count it against host slots. A mismatch cannot pass as DONE/PASS. Apply the same bounded wait, result, stop and release semantics to reviewers, escalate roles and final-review seats. Classify `ENVIRONMENT_ERROR`, `STUCK`, reviewer timeout/invalid/unobservable result and scope expansion through failures.md; failed review infrastructure must reach a terminal exit rather than remain `in-review` or charge a business retry.
 4. **On PASS**:
    - In the integration worktree, run `git merge --no-ff <ticket-branch>`, then the ticket's applicable Verify commands and typecheck (retain any agreed `N/A` reason).
+   - Capture integration HEAD and clean checked content before/after those checks in their logs; unchanged SHA/content is required for evidence to bind the successful result to that commit. Unexpected dirtiness/movement is preserved for reconciliation.
    - If the merge conflicts or a check goes red, retain diagnostics and treat it as a `FAIL` with that reason. Use `git merge --abort` for a conflict, or `git reset --hard ORIG_HEAD` after a red check only when the integration worktree is confirmed clean. Dirty work is preserved and affected integration stops for reconciliation rather than being reset.
-   - Otherwise record the verified result and set the ticket to `done`, then apply the retention/cleanup gate below. Cleanup is separate from that result.
+   - Otherwise record the verified result with the checked integration SHA, exact commands/cwd, exits and log evidence under run-record.md, then set the ticket to `done` and apply the retention/cleanup gate below. Cleanup is separate from that result.
 5. **On FAIL/error.** Apply failures.md's event decision and counter limits. For a permitted business retry, append the last reasons and preserve previous HEAD, tracked/untracked state and diagnostics in the same worktree; reconcile ownership/activity/capacity before continuing. After exhaustion, block and propagate dependencies. Environment, route and infrastructure errors use their own exits; they do not silently become implementation FAIL.
 6. **Refill.** After every completed role, reconcile its activity/capacity, handle queued reviews first, then recompute the frontier and dispatch only into confirmed available capacity. Record retained identities separately from released execution slots.
 

@@ -2,7 +2,7 @@
 name: grill-autopilot
 description: Grill a new topic once, then run spec, tickets and a parallel implement loop on autopilot, with models chosen per role.
 disable-model-invocation: true
-argument-hint: "A new topic or requirement"
+argument-hint: "A new topic or requirement, or resume <run-id>"
 ---
 
 One human checkpoint, then **autopilot**. The grill is the only conversation; after the user confirms it, continue to the **PR brief** without asking anything. Handleable failures also end with a brief under [failures.md](failures.md), with bounded attempts and preserved work.
@@ -19,6 +19,10 @@ The tracker is always local markdown under the original checkout's `.scratch/<sl
 **Companion skills** come from [mattpocock/skills](https://github.com/mattpocock/skills): `grilling`, `to-spec`, `to-tickets`, `tdd`, `code-review` and `setup-matt-pocock-skills`. Some of them are user-invoked, so read each one's `SKILL.md` and follow it rather than calling it by name.
 
 ## Steps
+
+### Entry: new run or explicit resume
+
+`/grill-autopilot resume <run-id>` enters [resume.md](resume.md) before step 0. Locate and qualify the original run record, then reconcile its saved inputs, companion fingerprint, host identities and Git facts before continuing at its recorded stage. Resume keeps the original run identity and approvals; it does not repeat grill, regenerate inputs or run new-run setup. An ordinary topic enters step 0; same-slug leftovers remain a new-run conflict, never implicit resume authorization.
 
 ### 0. Resolve roles and companions
 
