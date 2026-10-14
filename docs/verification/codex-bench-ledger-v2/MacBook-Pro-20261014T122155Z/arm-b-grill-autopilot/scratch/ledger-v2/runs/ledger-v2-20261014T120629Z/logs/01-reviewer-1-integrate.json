@@ -1,0 +1,9 @@
+{
+  "command": "git merge --no-ff -m 'Integrate ledger v2 ticket 01' 1fb64788888563f92c2cccd2d55fb651ddfdf281",
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T12:16:30.900148+00:00",
+  "ended_at": "2026-10-14T12:16:30.926142+00:00",
+  "exit": 0,
+  "stdout": "Merge made by the 'ort' strategy.\n ledger/money.py     | 20 ++++++++++++++++++++\n tests/test_money.py | 37 +++++++++++++++++++++++++++++++++++++\n 2 files changed, 57 insertions(+)\n create mode 100644 ledger/money.py\n create mode 100644 tests/test_money.py\n",
+  "stderr": ""
+}

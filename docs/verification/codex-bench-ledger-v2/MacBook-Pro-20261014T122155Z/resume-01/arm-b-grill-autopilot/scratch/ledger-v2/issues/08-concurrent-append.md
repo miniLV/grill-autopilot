@@ -1,0 +1,29 @@
+# 08: Concurrent append
+
+Status: blocked
+Blocked by: 07
+Implementer: escalate (concurrency and async timing)
+Files:
+  - ledger/store.py
+  - tests/test_store_concurrency.py
+Interface: load(path), save(path,entries), append(path,entry); flock lock file and os.replace
+Examples:
+  - AC8.1: Two processes that each call `append` 50 times at the same time leave exactly 100 entries in a valid JSON file.
+  - AC8.2: Writes are atomic: a reader never sees a partly written file. Use a lock file with `fcntl.flock` and replace the file with `os.replace`.
+  - Edge: missing /nonexistent/ledger.json -> []; v1 with one legacy12.50 plus two processes x50 -> 101 entries and byte-exact backup
+Verify:
+  - python3 -B -m unittest tests.test_store_concurrency -v
+  - N/A: typecheck; standard-library fixture with no type checker configured
+Context: spec.md#S8; prior art: ledger/store.py
+Do not: edit files outside Files · weaken, skip or delete assertions · add dependencies
+
+## Acceptance
+- [ ] AC8.1: Two processes that each call `append` 50 times at the same time leave exactly 100 entries in a valid JSON file.
+- [ ] AC8.2: Writes are atomic: a reader never sees a partly written file. Use a lock file with `fcntl.flock` and replace the file with `os.replace`.
+
+## Implementation context
+AC8.1 two simultaneous real subprocesses append Entry("2026-01-05",100,"food") 50 times each -> exactly100 entries, every amount100, valid version2 JSON. AC8.2 reader while repeated writes -> no partly-written/invalid JSON, final100. Stable lock file, hold lock across read-modify-write, atomic replacement; migration same lock. Avoid nested public lock acquisition; private unlocked helpers allowed. Real subprocess waits bounded. Public store seam.
+
+## Comments
+
+- 2026-10-14T12:43:50.739416+00:00: upstream 07 blocked; run-wide unsafe recovery stop; never dispatched

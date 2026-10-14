@@ -1,0 +1,8 @@
+Base9d5c4374ad0bc60e7bd6b09d99cf8356913d6533 candidateb49ad7acb7c9a24f8ebd9f8dbc9f04f6c320b01f cwd ledger-v2-03. hash task2fa5c3686f0248ba0b69a3359e5573a32cca4f33b95dc66d91d162f7afd43138 specf47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3 match. Objects verified and ancestor0. Before/after HEAD branch tip candidate/ref exact; status tracked/staged/ignored empty; pending markers absent. Whole diff two allowed new files57lines, every literal example direct public Entry/filter assertions; no weakening/dependencies/scope. Verify python3 -B -m unittest tests.test_query_filter -v exit0 full output:
+test_end_bound_is_inclusive (tests.test_query_filter.QueryFilterTest) ... ok
+test_filter_edges_preserve_order_and_apply_both_bounds (tests.test_query_filter.QueryFilterTest) ... ok
+test_reversed_bounds_raise_even_for_empty_entries (tests.test_query_filter.QueryFilterTest) ... ok
+test_start_bound_is_inclusive (tests.test_query_filter.QueryFilterTest) ... ok
+Ran 4 tests in 0.000s
+OK
+Typecheck N/A no checker, diff --check0. Supplemental ps -axo attempt127 denied operation; no fallback attempted, native list_agents and root establish no writer. Five gate checks PASS no findings. All Python commands inherited PYTHONDONTWRITEBYTECODE=1; full result separately saved.

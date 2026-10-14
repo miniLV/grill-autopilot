@@ -1,0 +1,9 @@
+{
+  "command": "python3 -B -m unittest tests.test_query_filter -v",
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T12:17:43.198683+00:00",
+  "ended_at": "2026-10-14T12:17:43.297224+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_end_bound_is_inclusive (tests.test_query_filter.QueryFilterTest.test_end_bound_is_inclusive) ... ok\ntest_filter_edges_preserve_order_and_apply_both_bounds (tests.test_query_filter.QueryFilterTest.test_filter_edges_preserve_order_and_apply_both_bounds) ... ok\ntest_reversed_bounds_raise_even_for_empty_entries (tests.test_query_filter.QueryFilterTest.test_reversed_bounds_raise_even_for_empty_entries) ... ok\ntest_start_bound_is_inclusive (tests.test_query_filter.QueryFilterTest.test_start_bound_is_inclusive) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+}

@@ -1,0 +1,9 @@
+{
+  "command": "git diff 9d5c4374ad0bc60e7bd6b09d99cf8356913d6533...d7166bf961d7bfd30d2634cbbd3d917352c6fdbe --stat",
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T12:43:50.954453+00:00",
+  "ended_at": "2026-10-14T12:43:50.966941+00:00",
+  "exit": 0,
+  "stdout": " ledger/categories.py       | 11 +++++++++++\n ledger/money.py            | 20 +++++++++++++++++++\n ledger/query.py            |  9 +++++++++\n tests/test_categories.py   | 27 ++++++++++++++++++++++++++\n tests/test_money.py        | 37 +++++++++++++++++++++++++++++++++++\n tests/test_query_filter.py | 48 ++++++++++++++++++++++++++++++++++++++++++++++\n 6 files changed, 152 insertions(+)\n",
+  "stderr": ""
+}

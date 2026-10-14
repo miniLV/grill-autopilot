@@ -1,0 +1,9 @@
+{
+  "command": "git merge --no-edit d7166bf961d7bfd30d2634cbbd3d917352c6fdbe",
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-07",
+  "started_at": "2026-10-14T12:20:47.782330+00:00",
+  "ended_at": "2026-10-14T12:20:47.812485+00:00",
+  "exit": 0,
+  "stdout": "Merge made by the 'ort' strategy.\n ledger/query.py            |  9 +++++++++\n tests/test_query_filter.py | 48 ++++++++++++++++++++++++++++++++++++++++++++++\n 2 files changed, 57 insertions(+)\n create mode 100644 ledger/query.py\n create mode 100644 tests/test_query_filter.py\n",
+  "stderr": ""
+}

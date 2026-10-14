@@ -1,0 +1,9 @@
+{
+  "command": "python3 -B -m unittest tests.test_categories -v",
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T12:17:08.030704+00:00",
+  "ended_at": "2026-10-14T12:17:08.116344+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_accepts_30_letters_and_rejects_31_with_original_text (tests.test_categories.CategoryTest.test_accepts_30_letters_and_rejects_31_with_original_text) ... ok\ntest_invalid_categories_raise_original_text_error (tests.test_categories.CategoryTest.test_invalid_categories_raise_original_text_error) ... ok\ntest_strips_lowercases_and_replaces_whitespace_runs (tests.test_categories.CategoryTest.test_strips_lowercases_and_replaces_whitespace_runs) ... ok\ntest_whitespace_character_runs_normalize_to_one_hyphen (tests.test_categories.CategoryTest.test_whitespace_character_runs_normalize_to_one_hyphen) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+}

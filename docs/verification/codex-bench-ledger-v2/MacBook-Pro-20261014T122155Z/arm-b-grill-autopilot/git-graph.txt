@@ -1,0 +1,26 @@
+*   e3b5ba6 Merge commit 'd7166bf961d7bfd30d2634cbbd3d917352c6fdbe' into autopilot/ledger-v2/tickets/07
+|\  
+* | 7406076 Migrate ledger storage to version 2 integer cents
+| | * 971bb37 Add sorted monthly ledger summaries
+| |/  
+| | *   2827517 Merge commit 'd7166bf961d7bfd30d2634cbbd3d917352c6fdbe' into autopilot/ledger-v2/tickets/05
+| | |\  
+| | |/  
+| |/|   
+| * | d7166bf Integrate ledger v2 ticket 03
+|/| | 
+| * | b49ad7a Add inclusive date filtering with preserved entry order
+* | |   35bda48 Integrate ledger v2 ticket 02
+|\ \ \  
+| * | | 4bc0636 Implement category normalization
+| |/ /  
+| | * 1d60cca Add stable CSV export with formatted amounts
+| |/  
+|/|   
+* |   0f82b40 Integrate ledger v2 ticket 01
+|\ \  
+| |/  
+|/|   
+| * 1fb6478 Implement exact money parsing and formatting
+|/  
+* 9d5c437 Seed ledger benchmark

@@ -1,0 +1,11 @@
+{
+  "source": "collaboration.list_agents + attributable final completion",
+  "identity": "/root/ticket07_escalate",
+  "status": "terminal completed; absent active tree",
+  "running": [
+    "/root",
+    "/root/ticket04_reviewer",
+    "/root/ticket05_reviewer"
+  ],
+  "available_slots": 1
+}

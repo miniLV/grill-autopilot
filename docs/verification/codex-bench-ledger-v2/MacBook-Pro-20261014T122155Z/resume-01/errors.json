@@ -1,0 +1,18 @@
+[
+  {
+    "type": "item.completed",
+    "item": {
+      "id": "item_0",
+      "type": "error",
+      "message": "Under-development features enabled: local_thread_store_compression. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/tyrion/.codex/config.toml."
+    }
+  },
+  {
+    "type": "item.completed",
+    "item": {
+      "id": "item_1",
+      "type": "error",
+      "message": "failed to parse plugin hooks config /Users/tyrion/.codex/plugins/cache/fast-jev-compaction/fast-jev-compaction/0.3.0/hooks/hooks.json: unknown field `modules`, expected `description` or `hooks` at line 2 column 11"
+    }
+  }
+]

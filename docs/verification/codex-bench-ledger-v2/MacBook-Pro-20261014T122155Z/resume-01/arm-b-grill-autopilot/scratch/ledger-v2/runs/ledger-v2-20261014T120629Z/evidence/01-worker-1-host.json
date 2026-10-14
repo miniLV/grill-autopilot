@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-14T12:13:47.212698+00:00",
+  "source": "collaboration.list_agents",
+  "inactive": [
+    "/root/ticket01_worker",
+    "/root/ticket02_worker"
+  ],
+  "running": [
+    "/root",
+    "/root/ticket03_escalate"
+  ],
+  "free_active_slots": 2,
+  "identity_deletion": "unsupported; retained",
+  "actual_model_effort": "unknown: metadata not supplied"
+}

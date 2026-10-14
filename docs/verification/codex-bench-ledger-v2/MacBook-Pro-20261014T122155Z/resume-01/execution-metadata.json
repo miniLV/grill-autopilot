@@ -1,0 +1,13 @@
+{
+  "run_id": "ledger-v2-20261014T120629Z",
+  "session_id": "01a13a4b-b25c-79b1-8af4-3c55e7bb8179",
+  "resume_requested_at": "2026-10-14T12:38:23.354455+00:00",
+  "cause": "usage-limit interrupted initial segment; user instructed continuation until testing completes",
+  "initial_exit": "1",
+  "initial_start": "2026-10-14T12:03:21Z",
+  "initial_end": "2026-10-14T12:21:55Z",
+  "initial_result_directory": "docs/verification/codex-bench-ledger-v2/MacBook-Pro-20261014T122155Z",
+  "resume_exit": 0,
+  "resume_end_observed_at": "2026-10-14T12:45:59.297535+00:00",
+  "outcome": "failed recovery: saved reviewer identities unavailable; 3 done, 6 blocked; final testing unrun"
+}

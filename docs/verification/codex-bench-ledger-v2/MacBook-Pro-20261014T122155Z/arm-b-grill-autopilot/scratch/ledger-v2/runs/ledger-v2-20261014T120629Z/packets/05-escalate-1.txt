@@ -1,0 +1,19 @@
+You are a worker. Implement exactly one ticket.
+Task: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/snapshots/tickets/05.md    Spec: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/snapshots/spec.md
+TDD skill: /Users/tyrion/.config/plexus/personal/skills/tdd/SKILL.md
+Context: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05/tests/test_csv_export.py; existing prior art under /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05/tests; run record read only /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/run.md
+Worktree: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05    Branch: autopilot/ledger-v2/tickets/05
+Starting SHA: 0f82b4023d244ac39aa894683709d6c7e1936da5
+Attempt: new    Previous attempt evidence: None
+
+1. Work only in the Worktree, on the Branch. HEAD must equal the Starting SHA. On retry, keep the edits already there; do not reset. If the state is different, stop and reply STUCK.
+2. Read the Task and Spec. Do not edit the tracker. If a needed change is outside Files, stop and reply STUCK.
+3. Follow the TDD skill at the agreed seam; do not ask to confirm it. For each Example, write a test that asserts its literal expected output, see it fail, then make it pass.
+4. Edit only the paths under Files. Run every Verify command until all pass. Do not add or change dependencies unless Files lists the dependency file. If a command fails because a tool, dependency or credential is missing, stop and reply ENVIRONMENT_ERROR.
+5. Commit all your changes on the Branch. Do not merge, rebase, reset or switch branches.
+6. Reply with one line only:
+   DONE <commit sha> <changed paths, comma-separated>
+   or ENVIRONMENT_ERROR <command and exit code/missing prerequisite reason>
+   or STUCK <one-sentence reason>
+
+The user is unavailable; no questions/approval waits. Set PYTHONDONTWRITEBYTECODE=1 for all Python commands and subprocesses, keep generated artifacts outside Worktree in temporary directories. Read tdd tests.md/mocking.md. Do not spawn children. Before the final one-line reply, send root a concise EVIDENCE message recording each red/green cycle command, exit and literal observed failure/success, plus final Verify output. Root captures it in /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/05-escalate-1-result.txt and related logs; you must not write logs in original checkout. Read/write only this worktree and read supplied tracker/companion paths; never inspect other benchmark directories. Your role route is {'model': 'gpt-6.1-sol', 'effort': 'high'}.

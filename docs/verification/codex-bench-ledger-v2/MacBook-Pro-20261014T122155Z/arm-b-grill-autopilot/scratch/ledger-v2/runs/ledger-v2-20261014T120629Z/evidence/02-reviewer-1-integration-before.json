@@ -1,0 +1,16 @@
+{
+  "head": "0f82b4023d244ac39aa894683709d6c7e1936da5",
+  "ref": "refs/heads/autopilot/ledger-v2/integration",
+  "status": "",
+  "tracked_diff": "",
+  "staged_diff": "",
+  "ignored": "",
+  "untracked": "",
+  "inventory": [],
+  "branch_tip": "0f82b4023d244ac39aa894683709d6c7e1936da5",
+  "pending_git": {
+    "MERGE_HEAD": false,
+    "CHERRY_PICK_HEAD": false,
+    "REVERT_HEAD": false
+  }
+}

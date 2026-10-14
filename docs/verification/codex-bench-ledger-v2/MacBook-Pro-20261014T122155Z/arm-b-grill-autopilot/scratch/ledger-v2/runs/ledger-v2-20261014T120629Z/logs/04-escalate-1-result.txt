@@ -1,0 +1,1 @@
+DONE 971bb373a3b98ac6f89a7857cc44e21d1712b55d ledger/query.py,tests/test_query_summary.py

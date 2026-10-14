@@ -1,0 +1,9 @@
+{
+  "command": "git branch -d autopilot/ledger-v2/tickets/01",
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T12:16:31.612295+00:00",
+  "ended_at": "2026-10-14T12:16:31.626497+00:00",
+  "exit": 0,
+  "stdout": "Deleted branch autopilot/ledger-v2/tickets/01 (was 1fb6478).\n",
+  "stderr": ""
+}

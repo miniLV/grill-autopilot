@@ -1,0 +1,150 @@
+{
+  "at": "2026-10-14T12:40:33.980347+00:00",
+  "registration": "worktree /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot\nHEAD 9d5c4374ad0bc60e7bd6b09d99cf8356913d6533\nbranch refs/heads/main\n\nworktree /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-04\nHEAD 971bb373a3b98ac6f89a7857cc44e21d1712b55d\nbranch refs/heads/autopilot/ledger-v2/tickets/04\n\nworktree /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05\nHEAD 2827517494c0190b35a1749c30bc1e86ee974703\nbranch refs/heads/autopilot/ledger-v2/tickets/05\n\nworktree /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-07\nHEAD e3b5ba6ba21b25f9281ec84e39f3d4fd41bd2fa1\nbranch refs/heads/autopilot/ledger-v2/tickets/07\n\nworktree /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration\nHEAD d7166bf961d7bfd30d2634cbbd3d917352c6fdbe\nbranch refs/heads/autopilot/ledger-v2/integration",
+  "observations": {
+    "integration": {
+      "state": {
+        "head": "d7166bf961d7bfd30d2634cbbd3d917352c6fdbe",
+        "ref": "refs/heads/autopilot/ledger-v2/integration",
+        "status": "",
+        "tracked_diff": "",
+        "staged_diff": "",
+        "ignored": "",
+        "untracked": "",
+        "inventory": [],
+        "branch_tip": "d7166bf961d7bfd30d2634cbbd3d917352c6fdbe",
+        "pending_git": {
+          "MERGE_HEAD": false,
+          "CHERRY_PICK_HEAD": false,
+          "REVERT_HEAD": false
+        }
+      },
+      "git_common_dir": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.git",
+      "registration_matches": true
+    },
+    "01": {
+      "worktree_absent": true,
+      "reason": "recorded successful own cleanup",
+      "cleanup": {
+        "worktree_exit": 0,
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/01-cleanup-worktree.json",
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/01-cleanup-branch.json"
+        ],
+        "branch_exit": 0
+      },
+      "candidate_integration_inclusion_exit": 0,
+      "done_evidence_qualified": "Historical verified result retained; earlier SHAs not claimed final/current suite"
+    },
+    "02": {
+      "worktree_absent": true,
+      "reason": "recorded successful own cleanup",
+      "cleanup": {
+        "worktree_exit": 0,
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/02-cleanup-worktree.json",
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/02-cleanup-branch.json"
+        ],
+        "branch_exit": 0
+      },
+      "candidate_integration_inclusion_exit": 0,
+      "done_evidence_qualified": "Historical verified result retained; earlier SHAs not claimed final/current suite"
+    },
+    "03": {
+      "worktree_absent": true,
+      "reason": "recorded successful own cleanup",
+      "cleanup": {
+        "worktree_exit": 0,
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/03-cleanup-worktree.json",
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/03-cleanup-branch.json"
+        ],
+        "branch_exit": 0
+      },
+      "candidate_integration_inclusion_exit": 0,
+      "done_evidence_qualified": "Historical verified result retained; earlier SHAs not claimed final/current suite"
+    },
+    "04": {
+      "state": {
+        "head": "971bb373a3b98ac6f89a7857cc44e21d1712b55d",
+        "ref": "refs/heads/autopilot/ledger-v2/tickets/04",
+        "status": "",
+        "tracked_diff": "",
+        "staged_diff": "",
+        "ignored": "",
+        "untracked": "",
+        "inventory": [],
+        "branch_tip": "971bb373a3b98ac6f89a7857cc44e21d1712b55d",
+        "pending_git": {
+          "MERGE_HEAD": false,
+          "CHERRY_PICK_HEAD": false,
+          "REVERT_HEAD": false
+        }
+      },
+      "git_common_dir": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.git",
+      "registration_matches": true,
+      "candidate_integration_inclusion_exit": 1
+    },
+    "05": {
+      "state": {
+        "head": "2827517494c0190b35a1749c30bc1e86ee974703",
+        "ref": "refs/heads/autopilot/ledger-v2/tickets/05",
+        "status": "",
+        "tracked_diff": "",
+        "staged_diff": "",
+        "ignored": "",
+        "untracked": "",
+        "inventory": [],
+        "branch_tip": "2827517494c0190b35a1749c30bc1e86ee974703",
+        "pending_git": {
+          "MERGE_HEAD": false,
+          "CHERRY_PICK_HEAD": false,
+          "REVERT_HEAD": false
+        }
+      },
+      "git_common_dir": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.git",
+      "registration_matches": true,
+      "candidate_integration_inclusion_exit": 1
+    },
+    "06": {
+      "worktree_absent": true,
+      "reason": "never-created",
+      "cleanup": null
+    },
+    "07": {
+      "state": {
+        "head": "e3b5ba6ba21b25f9281ec84e39f3d4fd41bd2fa1",
+        "ref": "refs/heads/autopilot/ledger-v2/tickets/07",
+        "status": "",
+        "tracked_diff": "",
+        "staged_diff": "",
+        "ignored": "",
+        "untracked": "",
+        "inventory": [],
+        "branch_tip": "e3b5ba6ba21b25f9281ec84e39f3d4fd41bd2fa1",
+        "pending_git": {
+          "MERGE_HEAD": false,
+          "CHERRY_PICK_HEAD": false,
+          "REVERT_HEAD": false
+        }
+      },
+      "git_common_dir": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.git",
+      "registration_matches": true,
+      "candidate_integration_inclusion_exit": 1
+    },
+    "08": {
+      "worktree_absent": true,
+      "reason": "never-created",
+      "cleanup": null
+    },
+    "09": {
+      "worktree_absent": true,
+      "reason": "never-created",
+      "cleanup": null
+    }
+  },
+  "frozen_inputs": "unchanged SHA256 and read-only snapshots; source task bodies unchanged",
+  "companion": "saved root/canonical mapping/hash closure unchanged; source still unavailable Git metadata",
+  "integration_movement": "none; recorded SHA matches clean current integration",
+  "product_mutations": "none"
+}

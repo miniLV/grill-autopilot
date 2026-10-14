@@ -1,0 +1,30 @@
+{
+  "base_sha": "9d5c4374ad0bc60e7bd6b09d99cf8356913d6533",
+  "branches": [
+    "autopilot/ledger-v2/integration",
+    "autopilot/ledger-v2/tickets/01",
+    "autopilot/ledger-v2/tickets/02",
+    "autopilot/ledger-v2/tickets/03",
+    "autopilot/ledger-v2/tickets/04",
+    "autopilot/ledger-v2/tickets/05",
+    "autopilot/ledger-v2/tickets/06",
+    "autopilot/ledger-v2/tickets/07",
+    "autopilot/ledger-v2/tickets/08",
+    "autopilot/ledger-v2/tickets/09"
+  ],
+  "paths": [
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-01",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-02",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-03",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-04",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-06",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-07",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-08",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-09"
+  ],
+  "existing_refs": "refs/heads/main 9d5c4374ad0bc60e7bd6b09d99cf8356913d6533\n",
+  "existing_worktrees": "worktree /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot\nHEAD 9d5c4374ad0bc60e7bd6b09d99cf8356913d6533\nbranch refs/heads/main\n\n",
+  "result": "PASS"
+}

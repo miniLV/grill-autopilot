@@ -1,0 +1,34 @@
+{
+  "before": {
+    "head": "35bda48aa7c00edfc4edbff3075a498fb7f2f8e1",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "tracked_diff": "",
+    "staged_diff": "",
+    "ignored": "",
+    "untracked": "",
+    "inventory": [],
+    "branch_tip": "35bda48aa7c00edfc4edbff3075a498fb7f2f8e1",
+    "pending_git": {
+      "MERGE_HEAD": false,
+      "CHERRY_PICK_HEAD": false,
+      "REVERT_HEAD": false
+    }
+  },
+  "after": {
+    "head": "35bda48aa7c00edfc4edbff3075a498fb7f2f8e1",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "tracked_diff": "",
+    "staged_diff": "",
+    "ignored": "",
+    "untracked": "",
+    "inventory": [],
+    "branch_tip": "35bda48aa7c00edfc4edbff3075a498fb7f2f8e1",
+    "pending_git": {
+      "MERGE_HEAD": false,
+      "CHERRY_PICK_HEAD": false,
+      "REVERT_HEAD": false
+    }
+  }
+}

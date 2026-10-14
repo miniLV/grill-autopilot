@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-14T12:43:50.736077+00:00",
+  "operations": [
+    {
+      "operation": "collaboration.interrupt_agent",
+      "target": "/root/ticket04_reviewer",
+      "result": {
+        "previous_status": "not_found"
+      }
+    },
+    {
+      "operation": "collaboration.interrupt_agent",
+      "target": "/root/ticket05_reviewer",
+      "result": {
+        "previous_status": "not_found"
+      }
+    },
+    {
+      "operation": "collaboration.interrupt_agent",
+      "target": "/root/ticket07_reviewer",
+      "result": {
+        "previous_status": "not_found"
+      }
+    }
+  ],
+  "after_query": {
+    "operation": "collaboration.list_agents",
+    "result": {
+      "agents": [
+        {
+          "agent_name": "/root",
+          "agent_status": "running"
+        }
+      ]
+    }
+  },
+  "classification": "unobservable saved identity/activity; unconfirmed stop",
+  "route_action": "no new execution/CLI fallback/cleanup",
+  "why_no_infrastructure_retry": "unchanged1-extra allowance and original deadlines remain but missing confirmed inactivity and safe release blocks retry gate",
+  "original_deadlines": {
+    "04": "2026-10-14T12:50:11.989267+00:00",
+    "05": "2026-10-14T12:49:35.330837+00:00",
+    "07": "2026-10-14T12:50:47.964497+00:00"
+  }
+}

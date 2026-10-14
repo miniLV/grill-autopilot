@@ -1,0 +1,8 @@
+Base9d5c4374ad0bc60e7bd6b09d99cf8356913d6533 candidate4bc063608ea85d70e2692db75b1fb739700d00ce cwd assigned ledger-v2-02. Hashes task9ef53c10136be5ccce1c04009a6440ae0b92322e73f0ba538ca6e36f03e6d993 specf47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3 match before/after. All git Verify/read subprocesses via PYTHONDONTWRITEBYTECODE=1 python3; preliminary python command failed1 pathlib unavailable corrected python3 exit0 (not repeated reviewer role invocation). Objects verified0, ancestor0, HEAD/branch candidate correct ref; before/after full ignored/untracked status/diffs empty; pending markers absent. Entire diff only allowed categories.py and test_categories.py, all four literal tests reviewed no assertion weakening/scope/dependency changes. Command PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_categories -v exit0 stdout empty full stderr:
+test_accepts_30_letters_and_rejects_31_with_original_text (tests.test_categories.CategoryTest) ... ok
+test_invalid_categories_raise_original_text_error (tests.test_categories.CategoryTest) ... ok
+test_strips_lowercases_and_replaces_whitespace_runs (tests.test_categories.CategoryTest) ... ok
+test_whitespace_character_runs_normalize_to_one_hyphen (tests.test_categories.CategoryTest) ... ok
+Ran 4 tests in 0.000s
+OK
+Diff --check0. Typecheck N/A configured fixture. list_agents no ticket02 writer, read-only reviewers. No findings. Exact final verdict saved separately.

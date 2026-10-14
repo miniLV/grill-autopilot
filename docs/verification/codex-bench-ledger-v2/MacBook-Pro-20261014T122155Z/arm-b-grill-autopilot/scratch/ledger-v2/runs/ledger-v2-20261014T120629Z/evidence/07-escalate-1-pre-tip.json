@@ -1,0 +1,20 @@
+{
+  "integration_tip": "d7166bf961d7bfd30d2634cbbd3d917352c6fdbe",
+  "done_sha": "7406076ba61faf9a9289cc0c14ba4b460ace37eb",
+  "state": {
+    "head": "7406076ba61faf9a9289cc0c14ba4b460ace37eb",
+    "ref": "refs/heads/autopilot/ledger-v2/tickets/07",
+    "status": "",
+    "tracked_diff": "",
+    "staged_diff": "",
+    "ignored": "",
+    "untracked": "",
+    "inventory": [],
+    "branch_tip": "7406076ba61faf9a9289cc0c14ba4b460ace37eb",
+    "pending_git": {
+      "MERGE_HEAD": false,
+      "CHERRY_PICK_HEAD": false,
+      "REVERT_HEAD": false
+    }
+  }
+}

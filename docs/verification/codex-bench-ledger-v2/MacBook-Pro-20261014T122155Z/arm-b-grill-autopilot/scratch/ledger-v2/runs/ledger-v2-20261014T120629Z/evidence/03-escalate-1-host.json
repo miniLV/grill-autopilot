@@ -1,0 +1,7 @@
+{
+  "source": "collaboration.list_agents",
+  "identity": "/root/ticket03_escalate",
+  "status": "completed",
+  "available_active_slots": 1,
+  "actual_model_effort": "unknown"
+}

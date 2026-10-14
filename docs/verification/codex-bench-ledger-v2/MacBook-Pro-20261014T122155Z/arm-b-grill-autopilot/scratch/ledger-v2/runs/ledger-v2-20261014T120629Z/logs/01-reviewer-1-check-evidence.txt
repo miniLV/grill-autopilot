@@ -1,0 +1,7 @@
+Reviewer base9d5c4374ad0bc60e7bd6b09d99cf8356913d6533 candidate1fb64788888563f92c2cccd2d55fb651ddfdf281; git/Verify cwd assigned ledger-v2-01. task576692aef9c27ae3886d8470436d3411a402663205cf4a3d5b1e4390edeb3e31 specf47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3 hash check0. git rev-parse both objects HEAD branch tip exactly supplied; symbolic ref correct; merge-base --is-ancestor exit0; before/after status,diffs,ignored/untracked empty; all Git commands0; pending MERGE/CHERRY/REVERT/index lock absent. Whole diff and log reviewed: two allowed new files money.py20lines/test_money.py37lines. Direct literal assertions all AC1.1-1.3 and edges; integer-only math; no weakening/dependencies/scope. PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_money -v exit0, full output:
+test_formats_cents_with_two_decimal_places (tests.test_money.MoneyTest) ... ok
+test_parses_decimal_amounts_to_cents (tests.test_money.MoneyTest) ... ok
+test_rejects_invalid_amounts_with_original_text (tests.test_money.MoneyTest) ... ok
+Ran 3 tests in 0.000s
+OK
+Typecheck N/A no checker. Supplemental probe exit0 rejects +3,+12.50, leading/trailing spaces,1e2,1,23,1,234,56 with original text invalid amount. Optional plus not required so no finding. Root packet and list_agents confirms worker inactive; only read-only reviewers. No blocking findings. Captured complete verdict separately; commands timestamps not supplied by reviewer.

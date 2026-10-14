@@ -1,0 +1,9 @@
+{
+  "command": "git worktree add /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-04 -b autopilot/ledger-v2/tickets/04 d7166bf961d7bfd30d2634cbbd3d917352c6fdbe",
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot",
+  "started_at": "2026-10-14T12:17:43.659857+00:00",
+  "ended_at": "2026-10-14T12:17:43.688116+00:00",
+  "exit": 0,
+  "stdout": "HEAD is now at d7166bf Integrate ledger v2 ticket 03\n",
+  "stderr": "Preparing worktree (new branch 'autopilot/ledger-v2/tickets/04')\n"
+}

@@ -1,0 +1,14 @@
+EVIDENCE ticket05 reviewer-1. Read-only review; nothing written. Repository cwd for all git/Verify/state commands: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05. Metadata read/hash cwd: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot. Python/subprocesses PYTHONDONTWRITEBYTECODE=1 python3 -B.
+Frozen snapshot hashes before/after shasum -a256: task08d0bb17d841ab2443522832cb4c49590a9bd7b38f9f4a6986f46ecdb7b067e2 specf47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3, both match, command exit0. Read ticket/fullspec/companions/DONE/tipmerge cat exits0.
+Base d7166bf961d7bfd30d2634cbbd3d917352c6fdbe, candidate2827517494c0190b35a1749c30bc1e86ee974703; rev-parse commit/head/branch exit0 exact objects; merge-base --is-ancestor0; symbolic-ref exact05branch. Whole58line diff reviewed only csv_io.py15lines/tests43lines. Every literal AC5.1/5.2 and empty/negative edge asserted; no weakening/dependencies/scope changes. diffname/check/log exits0. Connected money/model/store priorart read; float Entry annotation base content belongs07.
+Before/after exact state {"head":"2827517494c0190b35a1749c30bc1e86ee974703","ref":"refs/heads/autopilot/ledger-v2/tickets/05","branch_tip":"2827517494c0190b35a1749c30bc1e86ee974703","status":"","tracked_diff":"","staged_diff":"","ignored":"","untracked":"","pending_git":{"MERGE_HEAD":false,"CHERRY_PICK_HEAD":false,"REVERT_HEAD":false,"rebase-merge":false,"rebase-apply":false}}.
+Verify (twice incl between complete states) PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_csv_export -v exit0 both, full output:
+test_empty_and_negative_amount_without_note (tests.test_csv_export.CsvExportTest) ... ok
+test_header_amount_and_line_endings (tests.test_csv_export.CsvExportTest) ... ok
+test_sorted_dates_stable_equal_dates_and_csv_quoting (tests.test_csv_export.CsvExportTest) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+Typecheck N/A configured standard-library fixture. Standards/typeconfig rg exit1 no matches. Before list_agents root/completed04executor/reviewer05/running07executor otherworktree; after root/completed04executor/reviewer04/reviewer05; root confirmed05writerinactive. Checks/hashes unchanged. AC5.1/5.2 and literal examples meet gate, findings none. This was an EVIDENCE message, not the final PASS; final turn errored due usage. No PASS inferred. Reviewer command timestamps not supplied.

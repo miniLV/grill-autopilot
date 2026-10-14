@@ -1,0 +1,7 @@
+Codex session rollout-2026-10-14T20-20-57-01a13a5b-cf31-7021-92f5-a7e9f6f48700.jsonl
+  turns            5
+  context start    24.0K
+  context peak     33.4K  (7% of 475.0K)
+  context final    33.4K
+  input sent total 149.4K  (cache reads 92%)
+  growth           ▆▆███

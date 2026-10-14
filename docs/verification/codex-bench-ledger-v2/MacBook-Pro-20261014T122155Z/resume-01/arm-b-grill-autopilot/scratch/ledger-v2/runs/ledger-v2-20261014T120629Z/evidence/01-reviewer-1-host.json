@@ -1,0 +1,7 @@
+{
+  "source": "collaboration.list_agents",
+  "identity": "/root/ticket01_reviewer",
+  "status": "completed",
+  "available_slots": 1,
+  "models": "unknown"
+}

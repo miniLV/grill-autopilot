@@ -1,0 +1,29 @@
+# 09: CLI
+
+Status: ready-for-agent
+Blocked by: 01, 02, 03, 04, 05, 06, 07, 08
+Implementer: escalate (state shared across money/categories/query/csv_io/store)
+Files:
+  - ledger/cli.py
+  - tests/test_cli.py
+Interface: python3 -m ledger --file PATH add/list/summary [--start D] [--end D]/export/import CSV_PATH
+Examples:
+  - AC9.1: `add` parses the amount with `parse_amount` and the category with `normalize_category`. Invalid input prints `error: <message>` to stderr and exits 2.
+  - AC9.2: `summary [--start D] [--end D]` prints one line per month and category, such as `2026-01 food 15.00`, in sorted order.
+  - AC9.3: `export` prints the CSV to stdout. `import <csv-path>` appends all imported entries and exits 0; on `CsvImportError` it prints each error to stderr, adds nothing and exits 1.
+  - Edge: empty summary -> empty stdout exit0; reversed summary bounds -> stderr "error: start after end\n" exit2; header-only import -> exit0 no additions
+Verify:
+  - python3 -B -m unittest tests.test_cli -v
+  - N/A: typecheck; standard-library fixture with no type checker configured
+Context: spec.md#S9; prior art: ledger/cli.py
+Do not: edit files outside Files · weaken, skip or delete assertions · add dependencies
+
+## Acceptance
+- [ ] AC9.1: `add` parses the amount with `parse_amount` and the category with `normalize_category`. Invalid input prints `error: <message>` to stderr and exits 2.
+- [ ] AC9.2: `summary [--start D] [--end D]` prints one line per month and category, such as `2026-01 food 15.00`, in sorted order.
+- [ ] AC9.3: `export` prints the CSV to stdout. `import <csv-path>` appends all imported entries and exits 0; on `CsvImportError` it prints each error to stderr, adds nothing and exits 1.
+
+## Implementation context
+AC9.1 add abc food -> stderr "error: invalid amount: abc\n" exit2; amount1.00 category9lives -> "error: invalid category: 9lives\n" exit2; valid spaced Food Out stores food-out. AC9.2 Jan food1250+250 and Feb rent90000 -> "2026-01 food 15.00\n2026-02 rent 900.00\n"; --start Feb1 only Feb row; --end Jan31 only Jan row. AC9.3 export Jan5/1250/food/lunch -> exact header and formatted row LF; valid import exit0 appended; invalid lines2/4 -> both literal CSV errors stderr, exit1, file unchanged. Parse all before first write. Keep original add/list assertions. CLI agreed subprocess seam.
+
+## Comments

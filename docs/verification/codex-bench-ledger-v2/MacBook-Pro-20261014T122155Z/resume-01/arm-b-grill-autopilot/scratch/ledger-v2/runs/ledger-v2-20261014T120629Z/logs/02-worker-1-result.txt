@@ -1,0 +1,1 @@
+DONE 4bc063608ea85d70e2692db75b1fb739700d00ce ledger/categories.py, tests/test_categories.py

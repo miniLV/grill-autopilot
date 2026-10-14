@@ -1,0 +1,26 @@
+You are a reviewer. Gate one ticket. Read; do not edit anything.
+Task snapshot: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/snapshots/tickets/05.md    Spec snapshot: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/snapshots/spec.md
+Input SHA-256: task=08d0bb17d841ab2443522832cb4c49590a9bd7b38f9f4a6986f46ecdb7b067e2 spec=f47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3
+Mutable tracker ticket (read only): /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/05-csv-export.md
+Run record (read only): /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/run.md
+Companions: /Users/tyrion/.config/plexus/personal/skills/tdd/SKILL.md; /Users/tyrion/.config/plexus/personal/skills/code-review/SKILL.md
+External/run Context: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/05-escalate-1-done.json; /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/05-escalate-1-tip-merge.json
+Log capture: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/05-reviewer-1-result.txt (planner writes)
+Worktree: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05
+Branch: autopilot/ledger-v2/tickets/05
+Review base SHA: d7166bf961d7bfd30d2634cbbd3d917352c6fdbe
+Candidate SHA: 2827517494c0190b35a1749c30bc1e86ee974703
+Review evidence: /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/05-reviewer-1-result.txt
+Diff: git -C "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05" diff d7166bf961d7bfd30d2634cbbd3d917352c6fdbe...2827517494c0190b35a1749c30bc1e86ee974703
+
+Verify snapshot hashes; use frozen requirements. Resolve repository Files/Context under Worktree. Report to root; tracker and record read only. Resolve SHAs as commits, base ancestor candidate. Require HEAD and branch tip candidate, clean content and no active/unknown writer before/after checks. Save base/candidate, commands/cwd/exits, check output, N/A reason and before/after state in EVIDENCE message to root; planner captures it in declared log. Use PYTHONDONTWRITEBYTECODE=1 for all commands/subprocesses, no artifacts in worktree. No descendants or questions. Do not write log yourself.
+Check each item:
+1. Every Acceptance item is met.
+2. Every changed path listed under Files.
+3. Tests assert literal Examples; no assertions weakened, skipped or deleted. Representation literal float->cent adjustment in07 explicitly approved; preserve original behavioral assertion.
+4. Every applicable Verify passes when you run it in worktree; N/A reason no type checker configured.
+5. Nothing outside scope changed.
+
+Before final, send root EVIDENCE containing hash output, full Verify output/exits, before/after status and SHA and any findings. Then one-line only:
+PASS 2827517494c0190b35a1749c30bc1e86ee974703 /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/05-reviewer-1-result.txt
+or FAIL: numbered reasons under120 words.

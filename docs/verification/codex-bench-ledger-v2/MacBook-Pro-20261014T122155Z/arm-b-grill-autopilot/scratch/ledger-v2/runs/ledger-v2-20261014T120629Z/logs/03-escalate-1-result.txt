@@ -1,0 +1,1 @@
+DONE b49ad7acb7c9a24f8ebd9f8dbc9f04f6c320b01f ledger/query.py,tests/test_query_filter.py

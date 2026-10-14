@@ -1,0 +1,299 @@
+{
+  "observed_at": "2026-10-14T12:40:33.003801+00:00",
+  "tool": "collaboration.list_agents",
+  "response": {
+    "agents": [
+      {
+        "agent_name": "/root",
+        "agent_status": "running"
+      }
+    ]
+  },
+  "identities": [
+    {
+      "ticket": "01",
+      "attempt_id": "01-worker-1",
+      "identity": "/root/ticket01_worker",
+      "role": "worker",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-01",
+      "saved_status": "completed",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "completed",
+        "activity": "inactive",
+        "stop": "not-requested",
+        "capacity_release": "confirmed: list_agents terminal execution, active-execution slots",
+        "identity_metadata": "retained",
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/01-worker-1-host.json"
+        ]
+      },
+      "deadline": "2026-10-14T12:41:36.020461+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": true,
+      "historical_final_verdict": "DONE 1fb64788888563f92c2cccd2d55fb651ddfdf281 ledger/money.py, tests/test_money.py"
+    },
+    {
+      "ticket": "01",
+      "attempt_id": "01-reviewer-1",
+      "identity": "/root/ticket01_reviewer",
+      "role": "reviewer",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-01",
+      "saved_status": "completed",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "completed",
+        "activity": "inactive",
+        "stop": "not-requested",
+        "capacity_release": "confirmed: list_agents terminal execution, active-execution slots",
+        "identity_metadata": "retained",
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/01-reviewer-1-host.json"
+        ]
+      },
+      "deadline": "2026-10-14T12:43:47.636132+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": true,
+      "historical_final_verdict": "PASS 1fb64788888563f92c2cccd2d55fb651ddfdf281 /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/01-reviewer-1-result.txt"
+    },
+    {
+      "ticket": "02",
+      "attempt_id": "02-worker-1",
+      "identity": "/root/ticket02_worker",
+      "role": "worker",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-02",
+      "saved_status": "completed",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "completed",
+        "activity": "inactive",
+        "stop": "not-requested",
+        "capacity_release": "confirmed: list_agents terminal execution, active-execution slots",
+        "identity_metadata": "retained",
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/02-worker-1-host.json"
+        ]
+      },
+      "deadline": "2026-10-14T12:41:36.670244+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": true,
+      "historical_final_verdict": "DONE 4bc063608ea85d70e2692db75b1fb739700d00ce ledger/categories.py, tests/test_categories.py"
+    },
+    {
+      "ticket": "02",
+      "attempt_id": "02-reviewer-1",
+      "identity": "/root/ticket02_reviewer",
+      "role": "reviewer",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-02",
+      "saved_status": "completed",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "completed",
+        "activity": "inactive",
+        "stop": "not-requested",
+        "capacity_release": "confirmed: list_agents terminal execution, active-execution slots",
+        "identity_metadata": "retained",
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/02-reviewer-1-host.json"
+        ]
+      },
+      "deadline": "2026-10-14T12:44:08.150830+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": true,
+      "historical_final_verdict": "PASS 4bc063608ea85d70e2692db75b1fb739700d00ce /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/02-reviewer-1-result.txt"
+    },
+    {
+      "ticket": "03",
+      "attempt_id": "03-escalate-1",
+      "identity": "/root/ticket03_escalate",
+      "role": "escalate",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-03",
+      "saved_status": "completed",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "completed",
+        "activity": "inactive",
+        "stop": "not-requested",
+        "capacity_release": "confirmed: list_agents terminal execution, active-execution slots",
+        "identity_metadata": "retained",
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/03-escalate-1-host.json"
+        ]
+      },
+      "deadline": "2026-10-14T12:41:37.293269+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": true,
+      "historical_final_verdict": "DONE b49ad7acb7c9a24f8ebd9f8dbc9f04f6c320b01f ledger/query.py,tests/test_query_filter.py"
+    },
+    {
+      "ticket": "03",
+      "attempt_id": "03-reviewer-1",
+      "identity": "/root/ticket03_reviewer",
+      "role": "reviewer",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-03",
+      "saved_status": "completed",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "completed",
+        "activity": "inactive",
+        "stop": "not-requested",
+        "capacity_release": "confirmed: list_agents terminal execution, active-execution slots",
+        "identity_metadata": "retained",
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/03-reviewer-1-host.json"
+        ]
+      },
+      "deadline": "2026-10-14T12:45:06.187279+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": true,
+      "historical_final_verdict": "PASS b49ad7acb7c9a24f8ebd9f8dbc9f04f6c320b01f /Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/logs/03-reviewer-1-result.txt"
+    },
+    {
+      "ticket": "04",
+      "attempt_id": "04-escalate-1",
+      "identity": "/root/ticket04_escalate",
+      "role": "escalate",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-04",
+      "saved_status": "completed",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "completed",
+        "activity": "inactive",
+        "stop": "not-requested",
+        "capacity_release": "confirmed: list_agents terminal execution, active-execution slots",
+        "identity_metadata": "retained",
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/04-escalate-1-host.json"
+        ]
+      },
+      "deadline": "2026-10-14T12:47:43.646719+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": true,
+      "historical_final_verdict": "DONE 971bb373a3b98ac6f89a7857cc44e21d1712b55d ledger/query.py,tests/test_query_summary.py"
+    },
+    {
+      "ticket": "04",
+      "attempt_id": "04-reviewer-1",
+      "identity": "/root/ticket04_reviewer",
+      "role": "reviewer",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-04",
+      "saved_status": "active",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "not-recorded",
+        "activity": "active",
+        "stop": "not-requested",
+        "capacity_release": "not-yet",
+        "identity_metadata": "retained",
+        "evidence": []
+      },
+      "deadline": "2026-10-14T12:50:11.989267+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": false,
+      "historical_final_verdict": "not-recorded: pending"
+    },
+    {
+      "ticket": "05",
+      "attempt_id": "05-escalate-1",
+      "identity": "/root/ticket05_escalate",
+      "role": "escalate",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05",
+      "saved_status": "completed",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "completed",
+        "activity": "inactive",
+        "stop": "not-requested",
+        "capacity_release": "confirmed: list_agents terminal execution, active-execution slots",
+        "identity_metadata": "retained",
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/05-escalate-1-host.json"
+        ]
+      },
+      "deadline": "2026-10-14T12:46:31.639442+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": true,
+      "historical_final_verdict": "DONE 1d60cca0401ec422f03850c28229305dec6dbf23 ledger/csv_io.py,tests/test_csv_export.py"
+    },
+    {
+      "ticket": "05",
+      "attempt_id": "05-reviewer-1",
+      "identity": "/root/ticket05_reviewer",
+      "role": "reviewer",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-05",
+      "saved_status": "active",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "not-recorded",
+        "activity": "active",
+        "stop": "not-requested",
+        "capacity_release": "not-yet",
+        "identity_metadata": "retained",
+        "evidence": []
+      },
+      "deadline": "2026-10-14T12:49:35.330837+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": false,
+      "historical_final_verdict": "not-recorded: pending"
+    },
+    {
+      "ticket": "07",
+      "attempt_id": "07-escalate-1",
+      "identity": "/root/ticket07_escalate",
+      "role": "escalate",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-07",
+      "saved_status": "completed",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "completed",
+        "activity": "inactive",
+        "stop": "not-requested",
+        "capacity_release": "confirmed: list_agents terminal execution, active-execution slots",
+        "identity_metadata": "retained",
+        "evidence": [
+          "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/ledger-v2-20261014T120629Z/evidence/07-escalate-1-host.json"
+        ]
+      },
+      "deadline": "2026-10-14T12:47:08.459814+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": true,
+      "historical_final_verdict": "DONE 7406076ba61faf9a9289cc0c14ba4b460ace37eb ledger/models.py,ledger/store.py,ledger/cli.py,tests/test_store.py,tests/test_cli.py"
+    },
+    {
+      "ticket": "07",
+      "attempt_id": "07-reviewer-1",
+      "identity": "/root/ticket07_reviewer",
+      "role": "reviewer",
+      "worktree": "/Users/tyrion/autopilot-bench-ledger-v2-b-fixed-20261014T120228Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-07",
+      "saved_status": "active",
+      "saved_lifecycle": {
+        "launch": "completed: native spawn accepted",
+        "result": "not-recorded",
+        "activity": "active",
+        "stop": "not-requested",
+        "capacity_release": "not-yet",
+        "identity_metadata": "retained",
+        "evidence": []
+      },
+      "deadline": "2026-10-14T12:50:47.964497+00:00",
+      "current_query": "collaboration.list_agents entire current tree: only /root, saved identity absent",
+      "current_activity": "unknown: saved identity unavailable in current host",
+      "historical_result_available": false,
+      "historical_final_verdict": "not-recorded: pending"
+    }
+  ],
+  "current_capabilities": "same schemas start/read-result/list/bounded-wait/interrupt; no get historical result or agent-identity destruction API",
+  "model_observations": "remain unknown; no exact trusted model/effort metadata",
+  "capacity": "current list reports root only, but saved identities unreachable; availability for reconciliation-dependent retry unqualified"
+}
