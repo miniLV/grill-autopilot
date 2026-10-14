@@ -1,0 +1,5 @@
+# Read-only companion preparation
+
+The whole project `.agents/skills` symlink targets one complete collection. Required six skill bodies, active local tracker helper and its triage reference, TDD tests/mocking references, and domain consumer helper were read and hashed. Canonical targets remain inside the selected collection. Setup GitHub/GitLab templates are inactive for this local tracker; setup is not invoked.
+
+Grilling has prerequisite-aware rounds/shared-understanding; to-spec has the seven required template sections and seam confirmation; to-tickets has verifiable slices, blocking edges, granularity approval and local publication; TDD requires public seams/red before green; code-review has fixed-point Standards/Spec seats; setup has the active local tracker convention. Autopilot semantic overrides map to those meanings. No upstream/global file was edited. This is preflight inspection, not a runtime's eventual companion qualification; each actual entry must recompute the fingerprint and discovery evidence.

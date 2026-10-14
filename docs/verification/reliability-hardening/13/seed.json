@@ -1,0 +1,18 @@
+{
+  "files": {
+    ".gitignore": "__pycache__/\n*.py[cod]\n",
+    "CODING_STANDARDS.md": "# Fixture standards\n\nUse Python's standard library. Keep the three public function interfaces stable. Test observable values through public functions with unittest and literal expectations. Preserve baseline assertions. Avoid dependencies and unrelated code.\n\nRun Python with `-B` so behavior checks do not create bytecode artifacts.\n",
+    "README.md": "# Python standard-library smoke fixture\n\nLegacy baseline: `normalize_name(\"Ada\") == \"Ada\"`, `parse_limit(\"1\") == 1`. Whitespace normalization, general integer parsing and message rendering are intentionally incomplete.\n\nBaseline: `python3 -B -m unittest tests.test_baseline -v`\nFull suite: `python3 -B -m unittest discover -s tests -v`\nInitialization: None. Typecheck: N/A; this unannotated standard-library fixture has no static typechecker or typecheck configuration. Runtime behavior is checked by unittest.\n\nApproved slices: 01 edits normalize.py/tests/test_normalize.py, 02 edits limits.py/tests/test_limits.py, 03 edits message.py/tests/test_message.py and depends on 01/02. Fault-only tracked edits to normalize.py plus untracked fault-note.txt are declared within ticket 01's Files for that run. No push, PR or deployment.\n",
+    "docs/agents/domain.md": "# Domain docs\n\nSingle context. Read GLOSSARY.md or relevant docs/adr entries if present.\n",
+    "docs/agents/issue-tracker.md": "# Issue tracker\n\nUse local Markdown under `.scratch/<slug>/`: spec.md, issues/NN-title.md, Status lines and append-only Comments. The planner owns these run files.\n",
+    "docs/agents/triage-labels.md": "# Triage labels\n\nUse needs-triage, needs-info, ready-for-agent, ready-for-human, wontfix.\n",
+    "limits.py": "\"\"\"Public integer limit parsing seam.\"\"\"\n\ndef parse_limit(value):\n    if value == \"1\":\n        return 1\n    raise NotImplementedError(\"Only legacy limit 1 is implemented\")\n",
+    "message.py": "\"\"\"Public message formatting seam; implementation follows prerequisites.\"\"\"\n\ndef render_message(name, limit):\n    raise NotImplementedError(\"Message rendering is not implemented\")\n",
+    "normalize.py": "\"\"\"Public name normalization seam.\"\"\"\n\ndef normalize_name(value):\n    return value\n",
+    "tests/__init__.py": "",
+    "tests/test_baseline.py": "import unittest\n\nfrom normalize import normalize_name\nfrom limits import parse_limit\n\n\nclass LegacyBehaviorTests(unittest.TestCase):\n    def test_already_clean_name_is_preserved(self):\n        self.assertEqual(normalize_name(\"Ada\"), \"Ada\")\n\n    def test_legacy_limit_one_is_parsed(self):\n        self.assertEqual(parse_limit(\"1\"), 1)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+  },
+  "symlinks": {
+    ".agents/skills": "/Users/tyrion/.config/plexus/personal/skills"
+  }
+}

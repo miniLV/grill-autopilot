@@ -1,0 +1,75 @@
+kind: native fixture reconstruction/legacy baseline only; no model launch
+new_lab: /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13-repro-check-20261014103332
+exit: 0
+Initialized empty Git repository in /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13-repro-check-20261014103332/seed/.git/
+[main (root-commit) c5f0ebe] Seed legacy baseline
+ 12 files changed, 56 insertions(+)
+ create mode 120000 .agents/skills
+ create mode 100644 .gitignore
+ create mode 100644 CODING_STANDARDS.md
+ create mode 100644 README.md
+ create mode 100644 docs/agents/domain.md
+ create mode 100644 docs/agents/issue-tracker.md
+ create mode 100644 docs/agents/triage-labels.md
+ create mode 100644 limits.py
+ create mode 100644 message.py
+ create mode 100644 normalize.py
+ create mode 100644 tests/__init__.py
+ create mode 100644 tests/test_baseline.py
+[main ff25fac] Configure smoke
+ 1 file changed, 14 insertions(+)
+ create mode 100644 .grill-autopilot.yaml
+[main d0bff95] Configure smoke
+ 1 file changed, 14 insertions(+)
+ create mode 100644 .grill-autopilot.yaml
+[main 3a1483b] Configure smoke
+ 1 file changed, 14 insertions(+)
+ create mode 100644 .grill-autopilot.yaml
+Cloning into '/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13-repro-check-20261014103332/native-success-02'...
+done.
+test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+Cloning into '/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13-repro-check-20261014103332/native-fault-02'...
+done.
+test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+Cloning into '/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13-repro-check-20261014103332/native-recovery'...
+done.
+test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests) ... ok
+test_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

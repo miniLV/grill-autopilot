@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "tests.test_normalize",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02.autopilot-worktrees/smoke13-native-success-02-integration",
+  "started_at": "2026-10-14T01:59:55.597288+00:00",
+  "ended_at": "2026-10-14T01:59:55.669987+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_clean_name_is_preserved (tests.test_normalize.NormalizeNameTests.test_clean_name_is_preserved) ... ok\ntest_empty_name_is_preserved (tests.test_normalize.NormalizeNameTests.test_empty_name_is_preserved) ... ok\ntest_surrounding_spaces_are_removed (tests.test_normalize.NormalizeNameTests.test_surrounding_spaces_are_removed) ... ok\ntest_surrounding_tab_and_newline_are_removed (tests.test_normalize.NormalizeNameTests.test_surrounding_tab_and_newline_are_removed) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+}

@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "git",
+    "for-each-ref",
+    "--format=%(refname) %(objectname)",
+    "refs/heads/"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02",
+  "started_at": "2026-10-14T01:44:35.464761+00:00",
+  "ended_at": "2026-10-14T01:44:35.475281+00:00",
+  "exit": 0,
+  "stdout": "refs/heads/main 027989fc6b68f4572a52d3424ee9d624f83af6d7\n",
+  "stderr": ""
+}

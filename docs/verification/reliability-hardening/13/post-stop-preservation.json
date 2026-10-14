@@ -1,0 +1,275 @@
+{
+  "captured_at": "2026-10-13T18:17:18.658365+00:00",
+  "kind": "read-only post-rejection Git/content preservation check",
+  "fixtures": [
+    {
+      "name": "success",
+      "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/success",
+      "ref": "refs/heads/main",
+      "head": "f25804b30642d78aa943a9e9f566759b886b27f6",
+      "status": "",
+      "branch_refs": "refs/heads/main f25804b30642d78aa943a9e9f566759b886b27f6\n",
+      "worktrees": "worktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/success\nHEAD f25804b30642d78aa943a9e9f566759b886b27f6\nbranch refs/heads/main\n\n",
+      "tracked_seed_content": [
+        {
+          "path": ".gitignore",
+          "sha256": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b"
+        },
+        {
+          "path": "CODING_STANDARDS.md",
+          "sha256": "2c21f3082b028b75236e8c17d1aa4ccfecdc2b2d38f0174c7658f5305527e4d4"
+        },
+        {
+          "path": "README.md",
+          "sha256": "a9387084308fa2e5bcb1185493851e976ea8b40d075f75fe6cfd7821d1a686d1"
+        },
+        {
+          "path": "docs/agents/domain.md",
+          "sha256": "e25d6209aaedd0b4434ae05f63e6f5b4f87c01190266441086dbe97fb689c743"
+        },
+        {
+          "path": "docs/agents/issue-tracker.md",
+          "sha256": "dd6a21fa4af69ab053d9998d2031df52576151063b60cded6bf87a478e27d6c7"
+        },
+        {
+          "path": "docs/agents/triage-labels.md",
+          "sha256": "82a81ca789229829b1a979b32cee9c07e93dfa72f90214ec5a0d4128f1fa24d1"
+        },
+        {
+          "path": "limits.py",
+          "sha256": "a39178227dbcc2b91dd34e22e0bc839c1eda65e81109bd72fc9ada0e5bcc8089"
+        },
+        {
+          "path": "message.py",
+          "sha256": "4c825ec0c42663aee5786611a49d2b64b4b3aa649a0cf2e16c3f80272a9b82cb"
+        },
+        {
+          "path": "normalize.py",
+          "sha256": "97d7723d543073f834eace7815b339c43f8415ad8926db83502aa89fd826618e"
+        },
+        {
+          "path": "tests/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "tests/test_baseline.py",
+          "sha256": "302894233d59ad296831be6413d6fd1e80432d8c518634ac0b12a18f19eb3acd"
+        }
+      ],
+      "config_sha256": "3b2e4291f881f060a89b00e8d0b419d6afdd4b448ee3084fbdc60c84bfe846d9",
+      "scratch_exists": false,
+      "checks": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "tests.test_baseline",
+            "-v"
+          ],
+          "exit": 0,
+          "output": "test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok\ntest_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+        },
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "exit": 0,
+          "output": "test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests) ... ok\ntest_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+        }
+      ]
+    },
+    {
+      "name": "fault",
+      "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/fault",
+      "ref": "refs/heads/main",
+      "head": "a3a009c833fb0ee60e8be67188db53acdcf9d710",
+      "status": "",
+      "branch_refs": "refs/heads/main a3a009c833fb0ee60e8be67188db53acdcf9d710\n",
+      "worktrees": "worktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/fault\nHEAD a3a009c833fb0ee60e8be67188db53acdcf9d710\nbranch refs/heads/main\n\n",
+      "tracked_seed_content": [
+        {
+          "path": ".gitignore",
+          "sha256": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b"
+        },
+        {
+          "path": "CODING_STANDARDS.md",
+          "sha256": "2c21f3082b028b75236e8c17d1aa4ccfecdc2b2d38f0174c7658f5305527e4d4"
+        },
+        {
+          "path": "README.md",
+          "sha256": "a9387084308fa2e5bcb1185493851e976ea8b40d075f75fe6cfd7821d1a686d1"
+        },
+        {
+          "path": "docs/agents/domain.md",
+          "sha256": "e25d6209aaedd0b4434ae05f63e6f5b4f87c01190266441086dbe97fb689c743"
+        },
+        {
+          "path": "docs/agents/issue-tracker.md",
+          "sha256": "dd6a21fa4af69ab053d9998d2031df52576151063b60cded6bf87a478e27d6c7"
+        },
+        {
+          "path": "docs/agents/triage-labels.md",
+          "sha256": "82a81ca789229829b1a979b32cee9c07e93dfa72f90214ec5a0d4128f1fa24d1"
+        },
+        {
+          "path": "limits.py",
+          "sha256": "a39178227dbcc2b91dd34e22e0bc839c1eda65e81109bd72fc9ada0e5bcc8089"
+        },
+        {
+          "path": "message.py",
+          "sha256": "4c825ec0c42663aee5786611a49d2b64b4b3aa649a0cf2e16c3f80272a9b82cb"
+        },
+        {
+          "path": "normalize.py",
+          "sha256": "97d7723d543073f834eace7815b339c43f8415ad8926db83502aa89fd826618e"
+        },
+        {
+          "path": "tests/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "tests/test_baseline.py",
+          "sha256": "302894233d59ad296831be6413d6fd1e80432d8c518634ac0b12a18f19eb3acd"
+        }
+      ],
+      "config_sha256": "d13e983a2985eab4215b3616d567b0176d45c8a26f451245c99fb30ec1e644a4",
+      "scratch_exists": false,
+      "checks": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "tests.test_baseline",
+            "-v"
+          ],
+          "exit": 0,
+          "output": "test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok\ntest_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+        },
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "exit": 0,
+          "output": "test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests) ... ok\ntest_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+        }
+      ]
+    },
+    {
+      "name": "recovery",
+      "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/recovery",
+      "ref": "refs/heads/main",
+      "head": "b49473a798be9570c70b2cdb35ad4cf77dcee329",
+      "status": "",
+      "branch_refs": "refs/heads/main b49473a798be9570c70b2cdb35ad4cf77dcee329\n",
+      "worktrees": "worktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/recovery\nHEAD b49473a798be9570c70b2cdb35ad4cf77dcee329\nbranch refs/heads/main\n\n",
+      "tracked_seed_content": [
+        {
+          "path": ".gitignore",
+          "sha256": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b"
+        },
+        {
+          "path": "CODING_STANDARDS.md",
+          "sha256": "2c21f3082b028b75236e8c17d1aa4ccfecdc2b2d38f0174c7658f5305527e4d4"
+        },
+        {
+          "path": "README.md",
+          "sha256": "a9387084308fa2e5bcb1185493851e976ea8b40d075f75fe6cfd7821d1a686d1"
+        },
+        {
+          "path": "docs/agents/domain.md",
+          "sha256": "e25d6209aaedd0b4434ae05f63e6f5b4f87c01190266441086dbe97fb689c743"
+        },
+        {
+          "path": "docs/agents/issue-tracker.md",
+          "sha256": "dd6a21fa4af69ab053d9998d2031df52576151063b60cded6bf87a478e27d6c7"
+        },
+        {
+          "path": "docs/agents/triage-labels.md",
+          "sha256": "82a81ca789229829b1a979b32cee9c07e93dfa72f90214ec5a0d4128f1fa24d1"
+        },
+        {
+          "path": "limits.py",
+          "sha256": "a39178227dbcc2b91dd34e22e0bc839c1eda65e81109bd72fc9ada0e5bcc8089"
+        },
+        {
+          "path": "message.py",
+          "sha256": "4c825ec0c42663aee5786611a49d2b64b4b3aa649a0cf2e16c3f80272a9b82cb"
+        },
+        {
+          "path": "normalize.py",
+          "sha256": "97d7723d543073f834eace7815b339c43f8415ad8926db83502aa89fd826618e"
+        },
+        {
+          "path": "tests/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "tests/test_baseline.py",
+          "sha256": "302894233d59ad296831be6413d6fd1e80432d8c518634ac0b12a18f19eb3acd"
+        }
+      ],
+      "config_sha256": "3b2e4291f881f060a89b00e8d0b419d6afdd4b448ee3084fbdc60c84bfe846d9",
+      "scratch_exists": false,
+      "checks": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "tests.test_baseline",
+            "-v"
+          ],
+          "exit": 0,
+          "output": "test_already_clean_name_is_preserved (tests.test_baseline.LegacyBehaviorTests) ... ok\ntest_legacy_limit_one_is_parsed (tests.test_baseline.LegacyBehaviorTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+        },
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "exit": 0,
+          "output": "test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests) ... ok\ntest_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+        }
+      ]
+    }
+  ],
+  "product": {
+    "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/reliability-hardening-integration",
+    "sha": "815767d2f8658774778e59305b161c2396f2e21d",
+    "ref": "refs/heads/codex/reliability-hardening/integration",
+    "status": "",
+    "entry_sha256": "73f317eee366d3aa772fd31e7629d73725832a3ff6ea0eb2869f2105547a78f5",
+    "skill_files_unchanged_from_tested_sha": "",
+    "original_shared_checkout": {
+      "path": "/Users/tyrion/Github/grill-autopilot",
+      "head": "89246ffdcbc1efcdc2142610d7d52a62ac5520b4",
+      "ref": "refs/heads/master",
+      "status": ""
+    }
+  }
+}

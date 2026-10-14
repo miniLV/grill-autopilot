@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--check",
+    "027989fc6b68f4572a52d3424ee9d624f83af6d7...ce45d2be4f6709e71c8b7e5b85e7cd7b5ebfed53"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02.autopilot-worktrees/smoke13-native-success-02-integration",
+  "started_at": "2026-10-14T02:33:42.459817+00:00",
+  "ended_at": "2026-10-14T02:33:42.467655+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}

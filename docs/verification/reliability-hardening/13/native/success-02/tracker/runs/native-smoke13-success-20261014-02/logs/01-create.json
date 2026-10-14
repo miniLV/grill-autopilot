@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "git",
+    "worktree",
+    "add",
+    "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02.autopilot-worktrees/smoke13-native-success-02-01",
+    "-b",
+    "autopilot/smoke13-native-success-02/tickets/01",
+    "027989fc6b68f4572a52d3424ee9d624f83af6d7"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02",
+  "started_at": "2026-10-14T01:45:55.384642+00:00",
+  "ended_at": "2026-10-14T01:45:55.407781+00:00",
+  "exit": 0,
+  "stdout": "HEAD is now at 027989f Configure independent native success fixture\n",
+  "stderr": "Preparing worktree (new branch 'autopilot/smoke13-native-success-02/tickets/01')\n"
+}

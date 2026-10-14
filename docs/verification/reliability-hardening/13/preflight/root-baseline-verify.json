@@ -1,0 +1,20 @@
+[
+  {
+    "fixture": "success",
+    "base_sha": "f25804b30642d78aa943a9e9f566759b886b27f6",
+    "baseline_exit": 0,
+    "output": "test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests.test_already_clean_name_is_preserved) ... ok\ntest_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests.test_legacy_limit_one_is_parsed) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "fixture": "fault",
+    "base_sha": "a3a009c833fb0ee60e8be67188db53acdcf9d710",
+    "baseline_exit": 0,
+    "output": "test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests.test_already_clean_name_is_preserved) ... ok\ntest_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests.test_legacy_limit_one_is_parsed) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "fixture": "recovery",
+    "base_sha": "b49473a798be9570c70b2cdb35ad4cf77dcee329",
+    "baseline_exit": 0,
+    "output": "test_already_clean_name_is_preserved (test_baseline.LegacyBehaviorTests.test_already_clean_name_is_preserved) ... ok\ntest_legacy_limit_one_is_parsed (test_baseline.LegacyBehaviorTests.test_legacy_limit_one_is_parsed) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "git",
+    "merge",
+    "--no-ff",
+    "7fba33fa480640d4fc5977b689debda3e1e2873a",
+    "-m",
+    "Integrate verified native smoke ticket 02"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02.autopilot-worktrees/smoke13-native-success-02-integration",
+  "started_at": "2026-10-14T02:16:18.688926+00:00",
+  "ended_at": "2026-10-14T02:16:18.708959+00:00",
+  "exit": 0,
+  "stdout": "Merge made by the 'ort' strategy.\n limits.py            |  4 +---\n tests/test_limits.py | 26 ++++++++++++++++++++++++++\n 2 files changed, 27 insertions(+), 3 deletions(-)\n create mode 100644 tests/test_limits.py\n",
+  "stderr": ""
+}

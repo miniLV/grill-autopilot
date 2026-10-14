@@ -1,0 +1,142 @@
+{
+  "created_at": "2026-10-14T01:32:29.201971+00:00",
+  "stage": "preparation only; no actual native role launched by executor",
+  "product_root": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/reliability-hardening-integration",
+  "product_sha": "815767d2f8658774778e59305b161c2396f2e21d",
+  "product_skill_sha256": "73f317eee366d3aa772fd31e7629d73725832a3ff6ea0eb2869f2105547a78f5",
+  "seed": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/runtime-smoke13/seed",
+  "runs": {
+    "success": {
+      "name": "native-success",
+      "checkout": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success",
+      "run_id": "native-smoke13-success-20261014-01",
+      "slug": "smoke13-native-success",
+      "base_ref": "main",
+      "base_sha": "027989fc6b68f4572a52d3424ee9d624f83af6d7",
+      "integration_ref": "autopilot/smoke13-native-success/integration",
+      "integration_worktree": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success.autopilot-worktrees/smoke13-native-success-integration",
+      "ticket_worktree_pattern": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success.autopilot-worktrees/smoke13-native-success-<NN>",
+      "draft_root": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/drafts/native-success",
+      "config": "runtime: codex\nconcurrency: 1\ntimeouts:\n  attempt_seconds: 900\nretry:\n  worker: 1\n  escalate: 1\n  infrastructure: 1\n  final_review: 1\nroles:\n  planner: {codex: gpt-6.1-sol, effort: high}\n  worker: {codex: gpt-6.1-sol, effort: high}\n  reviewer: {codex: gpt-6.1-sol, effort: high}\n  escalate: {codex: gpt-6.1-sol, effort: high}\n",
+      "checks": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "tests.test_baseline",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-success-baseline.log"
+        },
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-success-full-suite.log"
+        }
+      ],
+      "git_status": "",
+      "source_tracker_created": false,
+      "runtime_started": false
+    },
+    "fault": {
+      "name": "native-fault",
+      "checkout": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault",
+      "run_id": "native-smoke13-fault-20261014-01",
+      "slug": "smoke13-native-fault",
+      "base_ref": "main",
+      "base_sha": "9ff1817467574ba9ffdcd5699b2dd22f827e570d",
+      "integration_ref": "autopilot/smoke13-native-fault/integration",
+      "integration_worktree": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault.autopilot-worktrees/smoke13-native-fault-integration",
+      "ticket_worktree_pattern": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault.autopilot-worktrees/smoke13-native-fault-<NN>",
+      "draft_root": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/drafts/native-fault",
+      "config": "runtime: codex\nconcurrency: 1\ntimeouts:\n  attempt_seconds: 180\nretry:\n  worker: 0\n  escalate: 0\n  infrastructure: 0\n  final_review: 0\nroles:\n  planner: {codex: gpt-6.1-sol, effort: high}\n  worker: {codex: gpt-6.1-sol, effort: high}\n  reviewer: {codex: gpt-6.1-sol, effort: high}\n  escalate: {codex: gpt-6.1-sol, effort: high}\n",
+      "checks": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "tests.test_baseline",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-fault-baseline.log"
+        },
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-fault-full-suite.log"
+        }
+      ],
+      "git_status": "",
+      "source_tracker_created": false,
+      "runtime_started": false
+    },
+    "recovery": {
+      "name": "native-recovery",
+      "checkout": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-recovery",
+      "run_id": "native-smoke13-recovery-20261014-01",
+      "slug": "smoke13-native-recovery",
+      "base_ref": "main",
+      "base_sha": "992582dd95acc490caccf760506cf01db957d277",
+      "integration_ref": "autopilot/smoke13-native-recovery/integration",
+      "integration_worktree": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-recovery.autopilot-worktrees/smoke13-native-recovery-integration",
+      "ticket_worktree_pattern": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-recovery.autopilot-worktrees/smoke13-native-recovery-<NN>",
+      "draft_root": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/drafts/native-recovery",
+      "config": "runtime: codex\nconcurrency: 1\ntimeouts:\n  attempt_seconds: 900\nretry:\n  worker: 1\n  escalate: 1\n  infrastructure: 1\n  final_review: 1\nroles:\n  planner: {codex: gpt-6.1-sol, effort: high}\n  worker: {codex: gpt-6.1-sol, effort: high}\n  reviewer: {codex: gpt-6.1-sol, effort: high}\n  escalate: {codex: gpt-6.1-sol, effort: high}\n",
+      "checks": [
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "tests.test_baseline",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-recovery-baseline.log"
+        },
+        {
+          "argv": [
+            "python3",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "exit": 0,
+          "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-recovery-full-suite.log"
+        }
+      ],
+      "git_status": "",
+      "source_tracker_created": false,
+      "runtime_started": false
+    }
+  }
+}
