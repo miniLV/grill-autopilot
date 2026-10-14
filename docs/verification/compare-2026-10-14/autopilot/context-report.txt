@@ -1,0 +1,12 @@
+Main window  aeac055d-09a7-45b7-b3de-00a6229faeef.jsonl
+  turns            18
+  context start    51.0K
+  context peak     94.1K
+  context final    94.1K
+  input sent total 1,382.2K  (cache reads 95%)
+  growth           ▄▅▅▅▆▆▆▆▇▇▇▇▇▇████
+
+Subagents (3), context that stayed out of the main window:
+  agent-a4e4880c3933bc86b      turns    6  peak     52.1K  sent     296.0K
+  agent-ac8894a88f9fda9ce      turns    5  peak     54.6K  sent     256.9K
+  agent-af9dcd531b7fd974e      turns    5  peak     51.0K  sent     243.7K

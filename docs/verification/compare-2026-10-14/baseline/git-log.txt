@@ -1,0 +1,5 @@
+* c55614c feat: add python -m textkit CLI (ticket 03)
+* 235de5f feat: add truncate (ticket 02)
+* 7415e2c feat: add slugify (ticket 01)
+* e544eda docs: add textkit-cli tickets
+* e8c4542 Seed textkit fixture

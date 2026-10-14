@@ -1,0 +1,10 @@
+*   659050c merge: ticket 02
+|\  
+| * f28b00f feat: add truncate (ticket 02)
+* |   7202c4f merge: ticket 01
+|\ \  
+| |/  
+|/|   
+| * b9b9527 feat: add slugify (ticket 01)
+|/  
+* e8c4542 Seed textkit fixture

@@ -1,0 +1,7 @@
+Main window  7f6022b3-1fd9-491a-bd8b-72145ee380f8.jsonl
+  turns            6
+  context start    50.8K
+  context peak     62.4K
+  context final    62.4K
+  input sent total 352.2K  (cache reads 89%)
+  growth           ▇█████

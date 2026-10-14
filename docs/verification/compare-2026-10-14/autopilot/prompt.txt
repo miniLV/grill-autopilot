@@ -1,0 +1,14 @@
+Non-interactive benchmark run. The user is unavailable: never ask questions and never wait for approval; every approval below is already granted.
+
+Read and follow /Users/tyrion.liang/GitHub/Tyrion-AI/grill-autopilot/skills/grill-autopilot/SKILL.md for the topic "textkit slug, trim and CLI" in this repository.
+
+The grill (step 1) is already complete. The user's agreed answers:
+- Spec: the approved spec is docs/specs/textkit-cli.md. In step 2, publish it verbatim as the run's spec.md instead of re-running to-spec; Further Notes: none.
+- Seams: the public functions slugify / truncate, and the CLI through subprocess.
+- Slicing: one ticket per user story; slug and trim may run in parallel; nothing is off-limits.
+- Commands: initialization None; single-ticket Verify `python3 -B -m unittest tests.<module> -v`; full suite `python3 -B -m unittest discover -s tests -v`; typecheck N/A because this stdlib-only fixture has no type checker.
+- Delivery: slug textkit-cli, base branch main, integration branch autopilot/textkit-cli/integration, no push, no PR.
+- Overrides: concurrency 2. Use config.yaml defaults otherwise.
+The user answered Go. In step 0, show the disclosures in your output but do not wait for confirmation.
+
+Run to the brief, then stop.

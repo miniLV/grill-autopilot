@@ -1,0 +1,8 @@
+Non-interactive benchmark run. The user is unavailable: never ask questions and never wait for approval; every approval below is already granted.
+
+Issue tracker: local markdown, see docs/agents/issue-tracker.md. Feature slug: textkit-cli.
+
+1. Read and follow ~/.claude/skills/to-tickets/SKILL.md on the approved spec docs/specs/textkit-cli.md. The user pre-approved your breakdown: skip the quiz and publish the tickets.
+2. Then read and follow ~/.claude/skills/implement-spec/SKILL.md for that spec and its tickets. Integration branch: textkit-cli/integration, created from main. Do not push or open a PR.
+
+Finish with a short report: integration branch, commits per ticket, final test result.

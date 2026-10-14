@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "A new topic or requirement, or resume <run-id>"
 ---
 
-One human checkpoint, then **autopilot** within the confirmed scope. After Go, use recorded assumptions or blocked tickets for new questions and continue to the **brief**. Handleable failures also end with a brief under [failures.md](failures.md), with bounded attempts and preserved work. A crashed session cannot guarantee an immediate brief or background continuation; explicit resume reconciles retained state first. This is a host-interpreted protocol, not an independent execution engine; current evidence and runtime limits are recorded in [the README](../../README.md#当前验证范围).
+One human checkpoint, then **autopilot** within the confirmed scope. After Go, use recorded assumptions or blocked tickets for new questions and continue to the **brief**. Handleable failures also end with a brief under [failures.md](failures.md), with bounded attempts and preserved work. A crashed session cannot guarantee an immediate brief or background continuation; explicit resume reconciles retained state first. This is a host-interpreted protocol, not an independent execution engine; current evidence and runtime limits are recorded in [the README](../../README.md#当前验证状态).
 
 Work is split by **role**, never by hard-coded model:
 

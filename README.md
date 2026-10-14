@@ -2,9 +2,29 @@
 
 **被 grill 一次，剩下的交给 autopilot。**
 
-一个入口串起需求澄清、spec、tickets、独立 worktree 实现与逐票 review。你确认范围后，agent 按角色请求模型，最后交付可追溯的 brief。
+**给谁用：** 已经在用 [mattpocock/skills](https://github.com/mattpocock/skills)（grilling → to-spec → to-tickets → implement-spec），希望说完 Go 就不再盯着的人。
 
-> 实验阶段：加固完成 12/13 票。单个真实 fixture 成功；dirty 故障保留和实际中断恢复仍待验证。
+**和直接用 implement-spec 比，多了什么：**
+- 只问你一次：grill 之后到 brief 不再提问。
+- 每票分级：简单票交给便宜模型（haiku / luna），复杂票直接交给强模型（sonnet / sol）。
+- 每票独立 worktree、独立分支和 commit，合并前都要经过强模型 review，失败时保留现场。
+
+### 实测：小任务上更贵，换来逐票 review 和可追溯
+
+2026-10-14 在一个 3 票的 Python 小样例上实测，Claude Code，主模型都是 Opus，两组共花 $1.98（[完整证据](docs/verification/compare-2026-10-14/README.md)）：
+
+| | 基线：to-tickets → 主会话直接实现 | grill-autopilot |
+| --- | --- | --- |
+| 实际花费 | **$0.47** | **$1.51**（Opus $1.49 · Haiku $0.02） |
+| 完成 | 3/3 票 | 2/3 票（预算 $1.80 用完，结果 partial） |
+| 每票成本 | $0.16 | $0.76 |
+| 独立 review | 无 | 有，Opus 审过 2 票 |
+| Haiku worker | — | 2/2 票一次通过 |
+
+- **便宜模型能干活**：分级后的票，Haiku 一次就过，两票共 $0.02。
+- **成本被固定开销吃掉**：99% 的钱花在 Opus 上，用于 planner 读协议、记账和 review。任务小时，这些开销比省下的钱多。
+- **省钱还没有被证明**：只有实现量远大于固定开销时才可能省钱，这一点还没测。
+- 注意：两组都跳过 grill 和 to-spec，拿到同一份 spec。基线读了 implement-spec，但看到 $1 预算上限后没开子代理、也没做 code-review，所以按 implement-spec 完整跑会比 $0.47 贵，具体多少未测。只测了一次，Codex 没测。
 
 ## 一张图看流程
 
@@ -108,16 +128,17 @@ git clone https://github.com/miniLV/grill-autopilot.git "$HOME/grill-autopilot"
 ```mermaid
 flowchart LR
     A["协议加固<br/>12 / 13 票完成"] ~~~ B["真实成功 fixture<br/>3 票 · 14 测试"]
-    B ~~~ C["仍未验证<br/>dirty 故障 · 实际中断恢复"]
+    B ~~~ D["成本对比<br/>Haiku 2/2 通过 · 小任务更贵"]
+    D ~~~ C["仍未验证<br/>大任务成本 · escalate 路径 · Codex<br/>dirty 故障 · 实际中断恢复"]
     classDef done fill:#eaf7ef,stroke:#5b9770,color:#20472d
     classDef pending fill:#fff4dc,stroke:#b38b37,color:#54421d
-    class A,B done
+    class A,B,D done
     class C pending
 ```
 
 2026-10-14：已交付协议在 [8d947f5](https://github.com/miniLV/grill-autopilot/commit/8d947f583d31f47dd19833fe36f612dd55f0fc08) 通过 Standards / Spec 双轴审查；8 组隔离 Git/layout/install 检查通过。真实 native 成功只覆盖一个 Python fixture；指定模型的新启动曾被拒绝，其他 runtime 的完整流程仍未验证。实际模型/effort 元数据、完整运行成本与速度收益保持 unknown。
 
-**下一步验收（未完成）**：在真实小仓库上，Claude Code（haiku / sonnet）与 Codex（luna / sol）各跑一次，≥3 票、并发 ≥2、至少一张 escalate 票；用下方工具量主窗口上下文和 token。若 planner 跳过 worktree / DONE 检查 / 合并，再把这些 Git 步骤抽成脚本。
+2026-10-14 [成本对比](docs/verification/compare-2026-10-14/README.md)：Haiku worker 和 DONE 检查、planner tip merge、逐票 review 在 Claude Code 上真实跑通；planner 没有跳过 worktree 或合并步骤。还没测的：更大的任务、escalate 路径、Codex。下一步先降低 planner 的固定开销，再测更大的任务。
 
 [执行索引](.scratch/reliability-hardening/README.md) · [真实试运行与缺口](docs/verification/reliability-hardening/13/README.md) · [全部验证证据](docs/verification/reliability-hardening/)
 
@@ -146,7 +167,7 @@ python3 tools/context-report.py ~/.codex/sessions/YYYY/MM/DD/rollout-<id>.jsonl
 
 ![子代理隔离上下文，worktree 隔离代码](docs/images/context-flow.png)
 
-[两个省钱杠杆](docs/images/levers.png)是估算示意，其中 −68% 未实测；以下一步验收的实测数据为准。
+[两个省钱杠杆](docs/images/levers.png)是早期估算示意，其中 −68% 没有被实测支持；以[成本对比](docs/verification/compare-2026-10-14/README.md)为准。
 
 ## 卸载
 
