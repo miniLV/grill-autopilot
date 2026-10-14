@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "tests.test_limits",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02.autopilot-worktrees/smoke13-native-success-02-integration",
+  "started_at": "2026-10-14T02:16:18.784272+00:00",
+  "ended_at": "2026-10-14T02:16:18.812640+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_empty_string_raises_value_error (tests.test_limits.ParseLimitTests) ... ok\ntest_invalid_string_raises_value_error (tests.test_limits.ParseLimitTests) ... ok\ntest_legacy_one_is_preserved (tests.test_limits.ParseLimitTests) ... ok\ntest_two_is_parsed (tests.test_limits.ParseLimitTests) ... ok\ntest_zero_is_parsed (tests.test_limits.ParseLimitTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+}

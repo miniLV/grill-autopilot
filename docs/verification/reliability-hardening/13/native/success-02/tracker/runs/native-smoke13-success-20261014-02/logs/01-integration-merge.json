@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "git",
+    "merge",
+    "--no-ff",
+    "-m",
+    "Merge smoke ticket 01",
+    "39bca54b7ce159b5e62ad4d842633a679b4d6ef5"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02.autopilot-worktrees/smoke13-native-success-02-integration",
+  "started_at": "2026-10-14T01:59:55.525827+00:00",
+  "ended_at": "2026-10-14T01:59:55.546398+00:00",
+  "exit": 0,
+  "stdout": "Merge made by the 'ort' strategy.\n normalize.py            |  2 +-\n tests/test_normalize.py | 21 +++++++++++++++++++++\n 2 files changed, 22 insertions(+), 1 deletion(-)\n create mode 100644 tests/test_normalize.py\n",
+  "stderr": ""
+}

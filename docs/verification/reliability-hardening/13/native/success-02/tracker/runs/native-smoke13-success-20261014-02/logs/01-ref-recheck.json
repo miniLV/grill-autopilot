@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "git",
+    "check-ref-format",
+    "--branch",
+    "autopilot/smoke13-native-success-02/tickets/01"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02",
+  "started_at": "2026-10-14T01:45:55.360079+00:00",
+  "ended_at": "2026-10-14T01:45:55.371116+00:00",
+  "exit": 0,
+  "stdout": "autopilot/smoke13-native-success-02/tickets/01\n",
+  "stderr": ""
+}

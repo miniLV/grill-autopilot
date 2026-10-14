@@ -1,10 +1,21 @@
-# 13: actual runtime smoke blocked at launch
+# 13: native fixture success; dirty fault and recovery remain blocked
 
-**BLOCKED-EVIDENCE — 2026-10-14, Asia/Shanghai.** Three independent Python standard-library fixtures were prepared. Only the success fixture's full-entry prompt was submitted to the actual Codex CLI. The account/model route rejected it before model or tool execution. Complete success, dirty fault preservation and explicit recovery remain unverified; this report does not mark ticket 13 done.
+**BLOCKED-EVIDENCE — 2026-10-14, Asia/Shanghai.** A later independently authorized [native skill run](native/README.md) completed this Python fixture: three tickets, 14 passing tests and both final review axes qualified at `ce45d2be4f6709e71c8b7e5b85e7cd7b5ebfed53`. Actual model/effort remain unknown. Dirty-fault preservation and actual interrupted resume remain unmet, so ticket 13 is not done and the whole product spec is not declared complete.
+
+The earlier CLI account/model rejection and first native preparation ordering failures are retained as history. Native success used an initially accepted worker plus retained identities; a later fresh native exact-model start was rejected before any dirty writes. Recovery stays preparation-only because controlled current-planner interruption/restart is unavailable without the still-pending human action. The [native terminal evidence and gaps](native/README.md) are the current outcome; the sections below preserve the separate CLI attempt unchanged.
+
+## Current acceptance outcome
+
+| Required outcome | Evidence-supported status |
+| --- | --- |
+| Actual full success | Passed for the single native Python fixture; exact final SHA, full suite, both axes and actual planner brief recorded. |
+| Actual controlled dirty tracked/untracked failure preservation | Unmet; native fresh-start rejection created no identity/dirty writes. Finite failed brief is real, but is a different failure path. |
+| Actual interrupted planner recovery without duplicate dispatch/merge | Unmet; prepared fixture only, no actual interruption or resume. |
+| Honest runtime/model/provenance matrix and preservation | Native continuation and fresh-start capabilities distinguished; actual models/effort/cost unknown; CLI history, native histories, retained integration and failed fixtures preserved. |
 
 The product under test was the repaired [SKILL.md](../../../../skills/grill-autopilot/SKILL.md) in the retained integration checkout, at commit `815767d2f8658774778e59305b161c2396f2e21d`, entry SHA-256 `73f317eee366d3aa772fd31e7629d73725832a3ff6ea0eb2869f2105547a78f5`. [fixtures.json](preflight/fixtures.json) records its canonical source path and each fixture's base, configuration and intended run identity. The old global/master skill was not used.
 
-## Actual launch and stop
+## Historical CLI launch and stop
 
 [Launch](host/success-launch.json), [complete JSONL](host/success.jsonl), [stderr](host/success.stderr) and [exit](host/success-exit.json) preserve the actual host evidence. The executable reported [codex-cli 0.156.0](preflight/codex-version.log). The executed argv was:
 
@@ -99,7 +110,7 @@ PY
 
 The four retained prompts describe the full approved entry/recovery requirements and this execution's canonical paths; they are evidence, not a generic runnable substitute for new-run qualification. Logs were inspected before inclusion; no auth/config files or credentials were copied. Local paths identify evidence sources. [Hashes](copied-evidence-sha256.json) bind copied inputs; [closeout](closeout.json) records final verification.
 
-## Acceptance and required next condition
+## CLI-stage acceptance snapshot and next condition
 
 | Ticket 13 criterion | Actual result |
 | --- | --- |
@@ -109,4 +120,4 @@ The four retained prompts describe the full approved entry/recovery requirements
 | Matrix changes follow evidence | CLI account rejection recorded; native/Claude complete flows remain unverified. |
 | Actual timing/cost only; no push/PR/publication | Launch 7.454 seconds only. Tokens, cache, billing and full-run timing unknown; no push/PR/publication. |
 
-The blocker is the selected required CLI/account model route. A new authorized smoke needs that exact requested route/model to become usable under permitted host/account configuration. No skill record exists to resume this attempt. Then obtain separate actual success, dirty-fault preservation and interrupted-resume evidence, including final SHA checks, reviews and skill-generated brief. No automatic retry, model substitution or permission change is authorized by this report.
+For this historical CLI attempt, the blocker was the selected CLI/account model route and no skill record exists to resume it. The subsequent native fixture success is separately qualified above. Current remaining conditions are an authorized usable route for the actual dirty fault experiment and a permitted controlled planner interruption/restart for real resume. No automatic retry, new trial, model substitution or permission change is authorized by this report.

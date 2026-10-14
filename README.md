@@ -6,7 +6,7 @@
 
 规划和 review 请求更强的模型，实现请求更便宜的模型。配置按角色声明；当前会话、宿主能力和路由策略决定实际可用的执行方式。Claude Code 与 Codex 的适配契约见 [runtimes.md](skills/grill-autopilot/runtimes.md)，验证范围见下方矩阵。
 
-> 状态：实验阶段。已有文档契约核对、临时 Git 实验、宿主 schema 与只读 CLI help 证据；尚未完成真实端到端试运行，不承诺总体省钱比例或加速倍数。
+> 状态：实验阶段。已有文档/Git/schema 证据和一次真实 native Python fixture 成功；dirty 失败保存与实际中断恢复仍未验证，不承诺整个产品规格完成、总体省钱比例或加速倍数。
 
 ```mermaid
 flowchart TD
@@ -180,15 +180,15 @@ roles:
 
 ## 当前验证范围
 
-[ticket 13 真实试运行](docs/verification/reliability-hardening/13/README.md) 已准备 fixture 并尝试一次 Codex CLI 主机入口；所选账户拒绝请求的模型，完整成功、失败保存与恢复仍未验证，该验证票受阻。
+[ticket 13 真实试运行](docs/verification/reliability-hardening/13/README.md) 取得一次 native Python fixture 完整成功；此前 CLI launch 与后来的 native fresh start 分别被所选路由拒绝。dirty 失败保存与实际中断恢复仍未验证，该验证票受阻。
 
 | 路径 | 已取得的证据 | 仍未验证 |
 | --- | --- | --- |
-| Codex native | [实际暴露的 schema](docs/verification/reliability-hardening/06/host-schema.md)，以及本批执行 child 的请求被接受；trusted actual model/effort 为 `unknown`。 | 完整 skill 成功、失败保留、恢复；真实取消/容量归还；schema 未暴露 metadata 删除工具。 |
+| Codex native | [实际 schema](docs/verification/reliability-hardening/06/host-schema.md) 与 [单个 Python fixture 的真实 skill success](docs/verification/reliability-hardening/13/native/README.md)：3票、14测试、最终双轴 PASS 绑定同一 SHA；后续执行续用已有 identity。另一次 fresh gpt-6.1-sol/high start 被当前 registry 拒绝；trusted actual model/effort 为 `unknown`。 | dirty tracked/untracked 失败保存、实际 planner 中断/恢复；fresh start 可用性；真实取消；metadata 删除不支持。不能由 retained identity 的 continuation 推出新派发可用或整体兼容。 |
 | Codex CLI（主机试运行；fallback 另按契约） | [version/help](docs/verification/reliability-hardening/06/cli-help.log) 与 [真实受拒 launch](docs/verification/reliability-hardening/13/README.md)：0.156.0 在本次 ChatGPT account 路由拒绝 gpt-6.1-sol/high，exit 1，owned 进程已退出；actual model/effort 为 `unknown`。 | 完整 skill 成功、dirty 工作保存、显式恢复；实际模型执行、取消/容量归还。7.454 秒仅为受拒 launch；metadata/传输 fallback 不表示换模型。 |
 | Claude native | 当前宿主未暴露 Claude Agent schema。 | 能力、actual model/effort 与完整运行均未验证。 |
 | Claude CLI fallback | 同份只读 help 记录版本 2.1.292，检查 agents/logs/stop/rm 语法。 | 模型派发和生命周期、完整运行；`rm` 可能删除 worktree，不用于常规释放。 |
-| 文档与临时 fixture | [验证目录](docs/verification/reliability-hardening/) 中分别标注 Git 操作、手动协议核对和只读捕获；[安装/渲染证据](docs/verification/reliability-hardening/12/README.md)；[三个 smoke fixture 的既有 unittest 基线](docs/verification/reliability-hardening/13/README.md) 通过、源码 clean/base 不变。 | 新需求行为与完整 agent 流程未验证；基线通过不能推出端到端通过。 |
+| 文档与临时 fixture | [验证目录](docs/verification/reliability-hardening/) 区分 Git、手动协议、raw CLI 输出、root 规范化的实际 native 事件与命令捕获；[安装/渲染](docs/verification/reliability-hardening/12/README.md)、[保留的基线/历史/原 checkout 比较](docs/verification/reliability-hardening/13/native/README.md)。 | 基线或一个 fixture success 不能推出 dirty 失败保存、恢复、整个产品规格或其他 runtime 兼容；session-only root Git/data helpers 不是生产执行引擎。 |
 
 这些是带日期的证据快照，不能证明所有宿主、模型或 companion 版本兼容。准备时仍需检查当前能力和授权；另一 runtime 无真实日志时保持未验证。
 
@@ -201,7 +201,7 @@ roles:
 
 ## 已知限制
 
-- **尚未完成真实端到端验证，也没有规模或收益 benchmark。** ticket 粒度、预算与实际成本需要真实项目数据校准。
+- **只有一个 native Python fixture 的真实成功，完整失败/恢复验收仍未完成，也没有规模或收益 benchmark。** ticket 粒度、预算与实际成本需要更多真实项目数据校准。
 - **Companion 需要通过当前契约检查。** 按相邻、项目、用户三个层级选一套完整集合，检查必要辅助文件、步骤语义和模板；同级不同指纹先选择，缺失或不兼容则在 Go 前报告。恢复前核对来源和实际内容 hash，漂移时保留现场并停止。文件名存在不代表兼容任意上游版本，规则见 [companions.md](skills/grill-autopilot/companions.md)。
 - **需要能跑的测试命令。** 没有测试的仓库不适合这种自动化方式。
 - **ticket 只存本地 markdown。** 不会写入 GitHub Issues、Jira 等外部系统。

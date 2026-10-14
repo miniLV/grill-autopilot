@@ -1,0 +1,50 @@
+[
+  {
+    "name": "native-capture-final.py",
+    "canonical_source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-capture-final.py",
+    "sha256": "951c57948c18e95c63c0f3db0689ef5698f0e8bd269dde6c7033d6011435c947",
+    "scope": "session-only root-invoked Git/data/packet capture operator tooling outside product; native dispatch remains root host calls"
+  },
+  {
+    "name": "native-close-fault.py",
+    "canonical_source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-close-fault.py",
+    "sha256": "bfa796bc40eae993caa3ad9ded443263bef70abc2a914eba964200620818b7c2",
+    "scope": "session-only root-invoked Git/data/packet capture operator tooling outside product; native dispatch remains root host calls"
+  },
+  {
+    "name": "native-close-success.py",
+    "canonical_source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-close-success.py",
+    "sha256": "2e2c00e1f162c50635930b0697612545e1de50c16923ff5b69c88f5347904591",
+    "scope": "session-only root-invoked Git/data/packet capture operator tooling outside product; native dispatch remains root host calls"
+  },
+  {
+    "name": "native-final-prepare.py",
+    "canonical_source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-final-prepare.py",
+    "sha256": "72b878d3dbf4c755e437d1431d85c74793017ec217eca7dce59989175bcc7818",
+    "scope": "session-only root-invoked Git/data/packet capture operator tooling outside product; native dispatch remains root host calls"
+  },
+  {
+    "name": "native-integrate-ticket.py",
+    "canonical_source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-integrate-ticket.py",
+    "sha256": "cbe62709a121ba822535c87f3411c5414c1f4ff93e202e33b7b286e68f55387f",
+    "scope": "session-only root-invoked Git/data/packet capture operator tooling outside product; native dispatch remains root host calls"
+  },
+  {
+    "name": "native-journal.py",
+    "canonical_source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-journal.py",
+    "sha256": "e73c45143b2d322ab0d0bd9164c5c6d2a4c85645e1ad589eea936c4b4251fee6",
+    "scope": "session-only root-invoked Git/data/packet capture operator tooling outside product; native dispatch remains root host calls"
+  },
+  {
+    "name": "native-prepare-ticket.py",
+    "canonical_source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-prepare-ticket.py",
+    "sha256": "6fed5f4406bcb3d0cff824a1ad66adf66cbbc4d822e7ece2899a8c73a7a37ed8",
+    "scope": "session-only root-invoked Git/data/packet capture operator tooling outside product; native dispatch remains root host calls"
+  },
+  {
+    "name": "native-review-ticket.py",
+    "canonical_source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-review-ticket.py",
+    "sha256": "c3e3378b8a6087f06a5a5fa422e1d5a0baf9f7defebdacc2e7a74a4d1b592102",
+    "scope": "session-only root-invoked Git/data/packet capture operator tooling outside product; native dispatch remains root host calls"
+  }
+]

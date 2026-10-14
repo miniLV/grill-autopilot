@@ -1,0 +1,374 @@
+{
+  "captured_at": "2026-10-14T02:41:22.803912+00:00",
+  "main_ticket13_status": "BLOCKED-EVIDENCE",
+  "fixture_success_qualified": true,
+  "native_delivered_sha": "ce45d2be4f6709e71c8b7e5b85e7cd7b5ebfed53",
+  "saved_native_base_sha": "027989fc6b68f4572a52d3424ee9d624f83af6d7",
+  "dirty_fault_preservation_verified": false,
+  "interrupted_recovery_verified": false,
+  "copies_verified": 121,
+  "copy_manifest_sha256": "78e12c67d3e4c95bfce4d86c00412d843e95d8662ed3e0ba0166d1756d7f9384",
+  "native_preservation_checks": [
+    {
+      "trial": "success",
+      "original_ref": "refs/heads/main",
+      "original_sha": "027989fc6b68f4572a52d3424ee9d624f83af6d7",
+      "tracked_diffs_empty": true,
+      "foreign_untracked": [],
+      "frozen_hashes_unchanged": true,
+      "integration_sha": "ce45d2be4f6709e71c8b7e5b85e7cd7b5ebfed53",
+      "integration_clean_including_ignored": true,
+      "registered_worktrees": "worktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02\nHEAD 027989fc6b68f4572a52d3424ee9d624f83af6d7\nbranch refs/heads/main\n\nworktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02.autopilot-worktrees/smoke13-native-success-02-integration\nHEAD ce45d2be4f6709e71c8b7e5b85e7cd7b5ebfed53\nbranch refs/heads/autopilot/smoke13-native-success-02/integration\n\n"
+    },
+    {
+      "trial": "fault",
+      "original_ref": "refs/heads/main",
+      "original_sha": "9ff1817467574ba9ffdcd5699b2dd22f827e570d",
+      "tracked_diffs_empty": true,
+      "foreign_untracked": [],
+      "frozen_hashes_unchanged": true,
+      "integration_sha": "9ff1817467574ba9ffdcd5699b2dd22f827e570d",
+      "integration_clean_including_ignored": true,
+      "registered_worktrees": "worktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02\nHEAD 9ff1817467574ba9ffdcd5699b2dd22f827e570d\nbranch refs/heads/main\n\nworktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02.autopilot-worktrees/smoke13-native-fault-02-01\nHEAD 9ff1817467574ba9ffdcd5699b2dd22f827e570d\nbranch refs/heads/autopilot/smoke13-native-fault-02/tickets/01\n\nworktree /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02.autopilot-worktrees/smoke13-native-fault-02-integration\nHEAD 9ff1817467574ba9ffdcd5699b2dd22f827e570d\nbranch refs/heads/autopilot/smoke13-native-fault-02/integration\n\n"
+    },
+    {
+      "trial": "recovery",
+      "original_ref": "refs/heads/main",
+      "original_sha": "992582dd95acc490caccf760506cf01db957d277",
+      "clean_including_ignored": true,
+      "tracker_exists": false,
+      "actual_interruption_or_resume": "not-exercised"
+    }
+  ],
+  "reproduction": {
+    "kind": "new fixture sources and two legacy tests per copy only; no native/model execution",
+    "lab": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13-repro-check-20261014103332",
+    "exit": 0,
+    "all_three_clean": true,
+    "evidence": "reproduction.log"
+  },
+  "local_links_checked": [
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/runtimes.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/failures.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/companions.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/resume.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/run-record.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/loop.md#setup"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification/reliability-hardening/01/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/loop.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/tickets.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/config.yaml"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/runtimes.md#fallback-gate"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/failures.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification/reliability-hardening/13/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification/reliability-hardening/06/host-schema.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification/reliability-hardening/13/native/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification/reliability-hardening/06/cli-help.log"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification/reliability-hardening/13/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification/reliability-hardening/"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification/reliability-hardening/12/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification/reliability-hardening/13/native/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/companions.md"
+    },
+    {
+      "document": "README.md",
+      "target": "skills/grill-autopilot/tickets.md"
+    },
+    {
+      "document": "README.md",
+      "target": "LICENSE"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "native/README.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "native/README.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "../../../../skills/grill-autopilot/SKILL.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "preflight/fixtures.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "host/success-launch.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "host/success.jsonl"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "host/success.stderr"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "host/success-exit.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "preflight/codex-version.log"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "prompts/success-new-run.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "host/root-liveness-check.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "host/pre-record-stop-brief.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "../06/host-schema.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "host/root-post-rejection-preservation.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "post-stop-preservation.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "preflight/"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "preflight/root-baseline-verify.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "preflight/seed-new-behavior-probe.log"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "prompts/fault-new-run.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "prompts/recovery-new-run.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "prompts/recovery-resume.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "preflight/companion-manifest.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "preflight/companion-contract.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "seed.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "preflight/fixtures.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "copied-evidence-sha256.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/README.md",
+      "target": "closeout.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "../README.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "copy-manifest.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "preflight/fixtures-v2.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "preflight/root-native-preflight.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "preflight/root-companion-manifest.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "history/success-01/"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "history/fault-01/"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "operator-tooling.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/01-launch-rejection.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "success-02/tracker/"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "success-02/tracker/runs/native-smoke13-success-20261014-02/run.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "success-02/tracker/brief.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-qualified-suite.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-qualified-diff-check.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-standards-result.txt"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-spec-result.txt"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "success-02/tracker/runs/native-smoke13-success-20261014-02/brief-before-check-attempt-supplement.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/run.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "fault-02/tracker/brief.md"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "../README.md#reproduce-fixture-inputs-without-launching-a-model"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "success-02/tracker/runs/native-smoke13-success-20261014-02/packets/final-standards.packet.json"
+    },
+    {
+      "document": "docs/verification/reliability-hardening/13/native/README.md",
+      "target": "report-verification.json"
+    }
+  ],
+  "secret_scan": "no credential-pattern matches; no auth/config dumps copied",
+  "git_diff_check_exit": 0,
+  "actual_model": "unknown",
+  "actual_effort": "unknown",
+  "tokens_cache_billing": "unknown",
+  "native_report_sha256": "70a36ff4dc6b809cdd6a3bfe6ae37110fda9409ea40c4cbc4b748bd82f503e87",
+  "operator_tooling_sha256": "3ff6efbac7bde2086828db7730c7de533d124f9586fbbc56f4896407b410972a",
+  "qualified_final_verification": {
+    "attempt_id": "final-verification-02",
+    "start": "2026-10-14T02:33:42.346361+00:00",
+    "deadline": "2026-10-14T02:34:42.346361+00:00",
+    "bound_seconds": 60,
+    "checks": [
+      {
+        "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/final-qualified-suite.json",
+        "sha": "ce45d2be4f6709e71c8b7e5b85e7cd7b5ebfed53",
+        "exit": 0
+      },
+      {
+        "evidence": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/final-qualified-diff-check.json",
+        "sha": "ce45d2be4f6709e71c8b7e5b85e7cd7b5ebfed53",
+        "exit": 0
+      }
+    ],
+    "historical_deadline_incomplete_checks_preserved": true,
+    "budget_reset": false
+  },
+  "direct_source_byte_copies_verified": 120,
+  "json_wrapped_original_packets_verified": 1,
+  "all_preserved_source_bytes_match": true,
+  "initial_staged_diff_check_exit": 2,
+  "initial_diff_issue": "exact original final-standards packet extra EOF blank line",
+  "resolution": "JSON-wrapped original text; decoded UTF-8 source bytes/hash identical; no check suppression",
+  "gitattributes_added": false
+}

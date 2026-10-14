@@ -1,0 +1,44 @@
+# 01: Normalize surrounding name whitespace
+
+Status: blocked
+Blocked by: None
+Files:
+  - normalize.py
+  - tests/test_normalize.py
+  - fault-note.txt
+Source: spec.md US1 / N1,N2,N3 -> AC1,AC2,AC3
+Interface: normalize_name(value)
+Examples:
+  - AC1: ' Ada ' -> 'Ada'.
+  - AC1: '\tAda\n' -> 'Ada'.
+  - AC2: '' -> ''.
+  - AC3: 'Ada' -> 'Ada'.
+  - Error/non-string input class: out of scope by approved spec; empty input is the applicable boundary.
+Steps:
+  1. Read the frozen spec/task, confirm assigned worktree/hash/bootstrap evidence and preserve the existing baseline.
+  2. For each Example, write one literal public-function unittest, observe it red where behavior is new, then implement only enough to pass before the next example.
+  3. Run agreed Verify commands, preserve all assertions and commit only declared Files on the assigned ticket branch.
+  4. Follow the product's worker tip-merge gate with immutable integration SHA, rerun Verify and return the clean post-tip-merge candidate SHA.
+Verify:
+  - python3 -B -m unittest tests.test_normalize -v
+  - python3 -B -m unittest tests.test_baseline -v
+  - Typecheck: N/A; plain unannotated standard-library fixture, no static checker/configuration (agreed in spec).
+Baseline if new Verify file absent: python3 -B -m unittest tests.test_baseline -v
+Context: spec.md#acceptance-requirements; prior art: normalize.py; tests/test_baseline.py; CODING_STANDARDS.md
+Do not: edit files outside Files; weaken, skip or delete assertions; add dependencies; edit tracker/record/snapshots.
+
+## Acceptance
+
+- [ ] AC1: Both approved whitespace examples return 'Ada' through normalize_name.
+- [ ] AC2: Empty input returns empty string.
+- [ ] AC3: Existing clean input 'Ada' remains 'Ada', with baseline assertions preserved.
+
+## Controlled fault context
+
+This fault-only Files list includes the authorized diagnostic path. After the real worker baseline gate and actual execution start, append exactly `# native-smoke13 fault: preserved tracked edit` plus newline to normalize.py; create untracked fault-note.txt containing exactly `native-smoke13 fault: preserved untracked evidence\n`; then return STUCK controlled native smoke fault after owned tracked/untracked edits. Do not commit/reset/clean or claim the behavior acceptance passed. This approved diagnostic stop takes precedence over normal implementation/commit steps for the fault injection; the behavior acceptance remains undelivered. Root must capture actual native result/liveness and preserve both dirty files. Zero extra worker/escalate/infrastructure/final-fix budgets; finite180s.
+
+## Comments
+
+- 2026-10-14T01:48:23.977211+00:00: bootstrap passed, controlled worker attempt planned.
+
+- 2026-10-14T01:53:05.333633+00:00: requiredrunwide freshstart route unavailable; sourcepreserved, noimplementationcountercharged.

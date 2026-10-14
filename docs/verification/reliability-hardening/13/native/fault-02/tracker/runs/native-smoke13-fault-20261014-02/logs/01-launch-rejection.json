@@ -1,0 +1,17 @@
+{
+  "tool": "collaboration.spawn_agent",
+  "requested": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "task_name": "native_fault_01",
+    "fork_turns": "none"
+  },
+  "host_result": "Unknown model gpt-6.1-sol for spawn_agent. Available models: zhipu/glm-5.3, zhipu/glm-5.3-flash, zhipu/glm-5.3-flashx",
+  "implementation_started": false,
+  "counters": {
+    "worker": 0,
+    "escalate": 0,
+    "infrastructure": 0,
+    "reviewer": 0
+  }
+}

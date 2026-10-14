@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "git",
+    "worktree",
+    "add",
+    "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02.autopilot-worktrees/smoke13-native-fault-02-01",
+    "-b",
+    "autopilot/smoke13-native-fault-02/tickets/01",
+    "9ff1817467574ba9ffdcd5699b2dd22f827e570d"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02",
+  "started_at": "2026-10-14T01:48:23.761976+00:00",
+  "ended_at": "2026-10-14T01:48:23.783459+00:00",
+  "exit": 0,
+  "stdout": "HEAD is now at 9ff1817 Configure independent native fault fixture\n",
+  "stderr": "Preparing worktree (new branch 'autopilot/smoke13-native-fault-02/tickets/01')\n"
+}

@@ -1,0 +1,734 @@
+{
+  "captured_at": "2026-10-14T02:35:48.773103+00:00",
+  "stage": "latest terminal native success including bounded final-verification-02 bookkeeping correction; other trials unchanged",
+  "files": [
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/brief.md",
+      "copy": "fault-02/tracker/brief.md",
+      "sha256": "fe61543709331c86578866f4fbac1e0a9de2dd8eba851f30be7bfea7abdacc85",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/coverage.md",
+      "copy": "fault-02/tracker/coverage.md",
+      "sha256": "2d4eff9466224ff28515f711ea256fa040cc597a5db48ae9837dbeb77825a7aa",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/issues/01-normalize-name.md",
+      "copy": "fault-02/tracker/issues/01-normalize-name.md",
+      "sha256": "326290bdc3c39540277c0890c0fa22e1a9935c6289739e35573b9768211886fc",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/issues/02-parse-limit.md",
+      "copy": "fault-02/tracker/issues/02-parse-limit.md",
+      "sha256": "11f46b8ac0e5ed9a4e2a00311c34d0c3da95d2ef41d789832dde79657fb7632d",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/issues/03-render-message.md",
+      "copy": "fault-02/tracker/issues/03-render-message.md",
+      "sha256": "21cb493d8fb7e1ece6cba52e2ea0d14390e876a4b9a2d8e7177668ad60fae44e",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/baseline/staged.diff",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/baseline/staged.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/baseline/tracked.diff",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/baseline/tracked.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/baseline/untracked.nul",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/baseline/untracked.nul",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/01-baseline.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/01-baseline.json",
+      "sha256": "8156eb29609cff845863818d499b0c02ebcc5ba9f889cb382b21c90d28140878",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/01-create.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/01-create.json",
+      "sha256": "356c0ef449e3fef5e2171f156257d686c9541ecd9c3b31eec02b0a1194c41957",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/01-launch-rejection.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/01-launch-rejection.json",
+      "sha256": "8a62e006b89c8f7b4078632f4380b0c9a2d265dd6b094b486a95110ec975fe9b",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/integration-baseline.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/integration-baseline.json",
+      "sha256": "81c5f78b2f1cbbde6ff92736223b60f9a77e1a3be71a136ab4d43f37008f725b",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/integration-create.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/integration-create.json",
+      "sha256": "18c287ec680aac73ad18c5b6eff3a26c038a9ab9a783080997788b4fd7f7924b",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/preflight-base.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/preflight-base.json",
+      "sha256": "e20a644692134112ac3946f4d989dacadb3aa51d88d8162bed3560686885643d",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/preflight-existing-refs.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/preflight-existing-refs.json",
+      "sha256": "c090d7409683495d6f0b90c9dbdeed8ae83b89d5d260365a904600e2bd0e1e5b",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/preflight-ref-0.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/preflight-ref-0.json",
+      "sha256": "e865dcc292ded847229001a2948bfd985251135698820f4f0747cf191f6aa5a7",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/preflight-ref-1.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/preflight-ref-1.json",
+      "sha256": "e4c732f38fc41ec18a2cbe68119e8ca06d7399df66a9da2cddce08dfcf700e56",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/preflight-ref-2.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/preflight-ref-2.json",
+      "sha256": "46ca21b1caedd2fb4364a9586824acce63fa56d62a7772420f6c6c6b916a96c5",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/preflight-ref-3.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/preflight-ref-3.json",
+      "sha256": "be680abc67307327914a30b5a663b2cfda4f279c80a8b9618d608d0d9ed62e8c",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/preflight-worktrees.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/preflight-worktrees.json",
+      "sha256": "e23b5add91b06d3610ae97b59d99b4e63a8ce296e735e03ba52eca50350da867",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/logs/root-stop-full-suite.json",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/logs/root-stop-full-suite.json",
+      "sha256": "667a2ccdb65278225c4b586cc54bf3848f8f26da02d85a5fd9f6198c9358c810",
+      "provenance": "root structured command capture or normalized native-host rejection; not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/packets/01-worker.txt",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/packets/01-worker.txt",
+      "sha256": "fb0ca2be69514a4c07e1eeb42ad20588029afda95f816b650c9059b95750ac2d",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/run.md",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/run.md",
+      "sha256": "e87ed944e851611150241aaf727fa44fec3ff3a0c4f19357b35ea779f51c3579",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/snapshots/spec.md",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/snapshots/spec.md",
+      "sha256": "5dd0405ed61fbbf52074e6ec9806082f5b4f9dd994acebc1893de6cb39b63d1a",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/snapshots/tickets/01.md",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/snapshots/tickets/01.md",
+      "sha256": "2221d61de7365fc036a91c63d5ddad92372a69fc6c477ff87881f253c91dcf90",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/snapshots/tickets/02.md",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/snapshots/tickets/02.md",
+      "sha256": "99a00a03d4f9e89658de02606352ad516e3fc6e06679d3aafc0f6de558ceb88c",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/runs/native-smoke13-fault-20261014-02/snapshots/tickets/03.md",
+      "copy": "fault-02/tracker/runs/native-smoke13-fault-20261014-02/snapshots/tickets/03.md",
+      "sha256": "049fb0fd6e64125014e8931886ade6bbcd470c87276c7ad44fb2b08c95a8a92a",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault-02/.scratch/smoke13-native-fault-02/spec.md",
+      "copy": "fault-02/tracker/spec.md",
+      "sha256": "5dd0405ed61fbbf52074e6ec9806082f5b4f9dd994acebc1893de6cb39b63d1a",
+      "provenance": "root-authored record/input/brief"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault/.scratch/smoke13-native-fault/runs/native-smoke13-fault-20261014-01/baseline/staged.diff",
+      "copy": "history/fault-01/baseline/staged.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "initial baseline capture retained including ordering mistake"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault/.scratch/smoke13-native-fault/runs/native-smoke13-fault-20261014-01/baseline/tracked.diff",
+      "copy": "history/fault-01/baseline/tracked.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "initial baseline capture retained including ordering mistake"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault/.scratch/smoke13-native-fault/runs/native-smoke13-fault-20261014-01/baseline/untracked.nul",
+      "copy": "history/fault-01/baseline/untracked.nul",
+      "sha256": "50c23100aef6d2f8c42abff3f7cec225728b59bd264aff3827864ed3a9450066",
+      "provenance": "initial baseline capture retained including ordering mistake"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault/.scratch/smoke13-native-fault/brief.md",
+      "copy": "history/fault-01/brief.md",
+      "sha256": "0985769cf79c93aae94923845c14d10a5058013c4e423a3a5f4074fad2be30fa",
+      "provenance": "root-authored handled preparation-stop brief; no model dispatch"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-fault/.scratch/smoke13-native-fault/runs/native-smoke13-fault-20261014-01/run.md",
+      "copy": "history/fault-01/run.md",
+      "sha256": "9a94cf12fd7294c84ee35c03a5a64f2f20a8a7ef213d287b1fb200f863f07d6d",
+      "provenance": "root-authored terminal preparation record"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success/.scratch/smoke13-native-success/runs/native-smoke13-success-20261014-01/baseline/staged.diff",
+      "copy": "history/success-01/baseline/staged.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "initial baseline capture retained including ordering mistake"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success/.scratch/smoke13-native-success/runs/native-smoke13-success-20261014-01/baseline/tracked.diff",
+      "copy": "history/success-01/baseline/tracked.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "initial baseline capture retained including ordering mistake"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success/.scratch/smoke13-native-success/runs/native-smoke13-success-20261014-01/baseline/untracked.nul",
+      "copy": "history/success-01/baseline/untracked.nul",
+      "sha256": "41d11bfa9335d14a7250d1e8431505eda77367f13cf6d679a79518818256061e",
+      "provenance": "initial baseline capture retained including ordering mistake"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success/.scratch/smoke13-native-success/brief.md",
+      "copy": "history/success-01/brief.md",
+      "sha256": "0985769cf79c93aae94923845c14d10a5058013c4e423a3a5f4074fad2be30fa",
+      "provenance": "root-authored handled preparation-stop brief; no model dispatch"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success/.scratch/smoke13-native-success/runs/native-smoke13-success-20261014-01/run.md",
+      "copy": "history/success-01/run.md",
+      "sha256": "a3e8af3a73dd8de200463231631d5184b208728c660b144fcdbc2a2644b76c04",
+      "provenance": "root-authored terminal preparation record"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/fixtures-v2.json",
+      "copy": "preflight/fixtures-v2.json",
+      "sha256": "10daeaab82d770f9ac20b77276e89b403448737bcb9c018d35932840e7c05bed",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/fixtures.json",
+      "copy": "preflight/fixtures.json",
+      "sha256": "70160d1863c219060519328d7e18d89b0ab7d3b30f95515a6a5d55e61f58073d",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-fault-baseline.log",
+      "copy": "preflight/native-fault-baseline.log",
+      "sha256": "f1c9feb31b88c7f09f765e5225981a2e31febf0c3f39c6ad27f4be786c725c6d",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-fault-full-suite.log",
+      "copy": "preflight/native-fault-full-suite.log",
+      "sha256": "dad991396382d7baed721ec9b5b950b3b4bb85876d64bd3d393547b44f89e689",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-recovery-baseline.log",
+      "copy": "preflight/native-recovery-baseline.log",
+      "sha256": "34be6922bb6edde959a405b96d936de6e8dec82bd7b00e5d62ac7c527452ec00",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-recovery-full-suite.log",
+      "copy": "preflight/native-recovery-full-suite.log",
+      "sha256": "c3594c5492711a96eb157bcdef48b20340e39ce30e17c6c0d74705fceb58236b",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-success-baseline.log",
+      "copy": "preflight/native-success-baseline.log",
+      "sha256": "83a15cc854c95850a53924bbdab1af56d5ed2ac92da2a1f33ce3dace09947ba3",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/native-success-full-suite.log",
+      "copy": "preflight/native-success-full-suite.log",
+      "sha256": "0b52dc01fb504783e7034a59757ca46cf9c97a3d9ad9f4a12ee10c55888eb92b",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/root-companion-manifest.json",
+      "copy": "preflight/root-companion-manifest.json",
+      "sha256": "91bb4c54127164c8b40e48a827ee66b44439d5dd665508b7ab58cdbad595ca2c",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/preflight/root-native-preflight.md",
+      "copy": "preflight/root-native-preflight.md",
+      "sha256": "98516a7078b83e934f831b66f2daa0bcd43c2702bd0ba2526e1567b859f17954",
+      "provenance": "root/preparer captured preparation evidence; no model behavior inferred"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/brief.md",
+      "copy": "success-02/tracker/brief.md",
+      "sha256": "3b25f9cd6f50c51bda680989f0b198de23e71ed0826bf274fbcf292dc7f286ed",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/coverage.md",
+      "copy": "success-02/tracker/coverage.md",
+      "sha256": "2d4eff9466224ff28515f711ea256fa040cc597a5db48ae9837dbeb77825a7aa",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/issues/01-normalize-name.md",
+      "copy": "success-02/tracker/issues/01-normalize-name.md",
+      "sha256": "197198e55ca09a86f564b2653c2463a91d0a60b289175d0fc7f634813f3a68df",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/issues/02-parse-limit.md",
+      "copy": "success-02/tracker/issues/02-parse-limit.md",
+      "sha256": "d3f3ba8f05443c0860224bb5909c981515473e5dc22dffc4ef52559e67a36649",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/issues/03-render-message.md",
+      "copy": "success-02/tracker/issues/03-render-message.md",
+      "sha256": "02694527d8f8300b531cfaed44bb72f96c4248cfb8a278b98fbfb93c1afb207f",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/baseline/staged.diff",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/baseline/staged.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/baseline/tracked.diff",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/baseline/tracked.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/baseline/untracked.nul",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/baseline/untracked.nul",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/brief-before-check-attempt-supplement.md",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/brief-before-check-attempt-supplement.md",
+      "sha256": "ac73b840df334e776291233331eee377fcf9ac5e3b78c28a94c2600368f506f6",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-baseline.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-baseline.json",
+      "sha256": "fc8caab3d1457cc29c52ef6b57ca5dbca74a53821c74ff2365b8d1fcad950d40",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-cleanup-branch.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-cleanup-branch.json",
+      "sha256": "cc393a122e0de7d199bfc3a9ed5f6a8902cdea887b443f7e2d71af024242ae35",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-cleanup-worktree.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-cleanup-worktree.json",
+      "sha256": "8c4d3507c0c6772526d881c11bd5e7f766f93ec59fbdbb564b6ca31fae0360e7",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-create.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-create.json",
+      "sha256": "0d12d697aa9a91bc7e90543dd6ac3fb4225f38f37143e96331973913a7659652",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-existing-refs.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-existing-refs.json",
+      "sha256": "938322dd8d79256bac8cbf722206fb36194d5044f8c9b0ed5032cb44598db661",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-integration-baseline.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-integration-baseline.json",
+      "sha256": "dcf8a2a3f1ae1b4183a6884675ea777011282f96ca50165b8e8e9f55962ab05a",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-integration-merge.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-integration-merge.json",
+      "sha256": "5cdfe144743d89e80aface44f7186e1afaa3b770cce6ef1b1966799a9ad9d60d",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-integration-normalize.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-integration-normalize.json",
+      "sha256": "35678620cc4d1ea861d2b18bb54808d2cb1762ac353800ea8357f085030d5e41",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-ref-recheck.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-ref-recheck.json",
+      "sha256": "2598c91ac08293f1128774e51130a4fe8c2782a4ef224fef9079824f09542f1f",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-review-result.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-review-result.txt",
+      "sha256": "c8a892cd9bc03e4db87cdf3c3cd00d6817825c0b14e1efd5fcdf89b20c8dac80",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/01-worker-result.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/01-worker-result.txt",
+      "sha256": "2abceee3b30a55770a0a6911f3ce5e93d47e53416498f526d3ab9a67135ed320",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-baseline.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-baseline.json",
+      "sha256": "a09f30b4a9a7512e88b682dce0dfe8d1a8efe693b39fda8b0de9fe887da7a455",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-cleanup-ancestor.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-cleanup-ancestor.json",
+      "sha256": "b0684f60f437985ff2f8843a8d5109b6349540f4d439332883304b2cd3a11b78",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-cleanup-branch.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-cleanup-branch.json",
+      "sha256": "521ade6c81744c4d46a5ba7456be95885debfb087d5ba14321de89ccedf3ce2f",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-cleanup-worktree.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-cleanup-worktree.json",
+      "sha256": "dbf30e101ed38f016c04103dad2c751280fad8fd5bbf2b338f8f32b10a6ee36c",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-create.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-create.json",
+      "sha256": "d938273a8438007e3bbcadbe02f1cbb5e825d1dcff2de0153d6dba8642ecbe43",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-existing-refs.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-existing-refs.json",
+      "sha256": "703af83179ae88735183f0da5612e91ab68ff4056ad884234eb2ea467aed79c5",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-integration-baseline.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-integration-baseline.json",
+      "sha256": "0c9b4f32541fc107f24740a8bc06c48e861b6bf388adeef87489bda1e684be1a",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-integration-merge.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-integration-merge.json",
+      "sha256": "fa6268dcc5d81b9ada2b50f115f451c78357bb6baa94431caf11bb0de4f3213a",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-integration-module.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-integration-module.json",
+      "sha256": "38227fa54ed59c77b15add51b38597b434893e6d9bb5d6d67df0227d2f63b0a0",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-ref-recheck.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-ref-recheck.json",
+      "sha256": "75d5663640cc9262742ae0f7828adf0b529747a11c3ef2148d5116dc9fa32fed",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-review-result.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-review-result.txt",
+      "sha256": "93d83b67ac558b623b736e2c15b7632cde915c936945bdd52d03d1ee0b47ed23",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/02-worker-result.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/02-worker-result.txt",
+      "sha256": "ec25ce92bdf6e06e547e064df986a7c4811f4afbd45c614de8738f26406a3128",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-baseline.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-baseline.json",
+      "sha256": "bd2ae2e4561dce7700f021d4069cdab3358ae9b791e8fc8fcd8a1ca9adf02134",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-cleanup-ancestor.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-cleanup-ancestor.json",
+      "sha256": "195bd3fda6b269039ccf019ee8a2d8d2e4f804476e52045a4733e289577f9905",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-cleanup-branch.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-cleanup-branch.json",
+      "sha256": "85a89ba4bf044e21c1c0fd93884898d7b45871852f85e62aaf6d1d116092c152",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-cleanup-worktree.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-cleanup-worktree.json",
+      "sha256": "51ff0e4b9ef310e481cddc297eeef8e621ffb3d6f2f4c4d4ac59554fc976e685",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-create.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-create.json",
+      "sha256": "688fee47ea59759bebad378ea2268996fcca29140ac979f2c79db3f7dc854dff",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-existing-refs.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-existing-refs.json",
+      "sha256": "1e71f87f63b316209a4d60c8e3d74b7b672fe9b8bc31e0d976aa2f509d298dc1",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-integration-baseline.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-integration-baseline.json",
+      "sha256": "b06d4c196edebd88bc23b40252f3e2f04be2c09b6381dbfbbd9a9e636baec57a",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-integration-merge.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-integration-merge.json",
+      "sha256": "ef0a92df14a5208671a882052d58a0f329f7cdcc26e4a8b7608b915cd0fed362",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-integration-module.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-integration-module.json",
+      "sha256": "c45c1b4d5032a7e1cfc810b705a0300f042d56a8976fe4b02cdd449bd30cd7a3",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-ref-recheck.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-ref-recheck.json",
+      "sha256": "da81c590d9266f9fbf5c541bad1a51222000d1009b257148520dc073e4b4c575",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-review-result.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-review-result.txt",
+      "sha256": "d73a514387c1b2d4018544591a22f6e01cf4808186cbc25ad385518e4a1ba9bd",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/03-worker-result.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/03-worker-result.txt",
+      "sha256": "4a28d15539457c70ee2b68c42d1da4f7d6137150db75a733cd5220a974abe1f8",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/final-diff-check.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-diff-check.json",
+      "sha256": "91e3b36ac044cb9ba237f54b07f3c30c1bdfeb9c2e0637b65062e0964b9c1bb5",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/final-full-suite.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-full-suite.json",
+      "sha256": "03d02c548717de67f6d1d694c056e1d7af8e9c9df9f7dcd5144b158556c47680",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/final-qualified-diff-check.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-qualified-diff-check.json",
+      "sha256": "2e9b9e48a3f83b477ad79ec1d367bb280d94e9464c6ba31e5a967510c5270ba9",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/final-qualified-suite.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-qualified-suite.json",
+      "sha256": "0bacf0f86682377baff2edf8da80c197d17fbd8d809dc16312bd78fe28481624",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/final-spec-result.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-spec-result.txt",
+      "sha256": "62711f99b7810fe9550b3c23496e2160c741c4b231a18cb8e9d3702522fe2a94",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/final-standards-result.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/final-standards-result.txt",
+      "sha256": "291a30c81f00e1312b71a6475c9c76590aa1e3342950a5ca82ef5f24715483d0",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/integration-baseline.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/integration-baseline.json",
+      "sha256": "2a16801ac0af61aacc89171c99fb2e398fbe1c3bd59314cbaa476bd013ec1075",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/integration-create.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/integration-create.json",
+      "sha256": "c3995d870c46bb80edda6b07f9accdfcb5bb03c8f28d61b58f7c743a79f9d304",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/preflight-base.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/preflight-base.json",
+      "sha256": "c10edbc30e9814f86657962c046ceb92926f61e16442b2de79d361a8d91f0a7c",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/preflight-existing-refs.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/preflight-existing-refs.json",
+      "sha256": "30ae5287279b8b316d118b920077ff0ac8cc77f973072b741b3460e14dfbd650",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/preflight-ref-01.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/preflight-ref-01.json",
+      "sha256": "33c2292d78f5c3bb365851bc851343cfafc082b7f3707ecd2f42f229279c1eee",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/preflight-ref-02.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/preflight-ref-02.json",
+      "sha256": "d3e894c652c77affafb20ea9747dba33aa7f7cebd3eab9ef0880a694203b0a2d",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/preflight-ref-03.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/preflight-ref-03.json",
+      "sha256": "6802f950a809ef05322cfe15e7a2f417b546423b6dcb43b056a940c428e3be14",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/preflight-ref-integration.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/preflight-ref-integration.json",
+      "sha256": "99fe59783e12e67da621163b0a3971dd87fd3606da5f3d574c928d7c439977af",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/logs/preflight-worktrees.json",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/logs/preflight-worktrees.json",
+      "sha256": "002cecf9b3147c26ee8c6d207ebf34c0d48a37fca03d462e43193a49f9ac9dd0",
+      "provenance": "structured command capture; result.txt files are root-normalized native events, not raw host export"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/packets/01-review.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/packets/01-review.txt",
+      "sha256": "bcc13caadc3c978574e74bb55cb550f1decb8ce6eea1766e379aeb20350534b1",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/packets/01-worker.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/packets/01-worker.txt",
+      "sha256": "ccfc56c97a0f8eb43b252d24c7e16b0aaa42835ab7ece4434c3ea07c222926bb",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/packets/02-review.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/packets/02-review.txt",
+      "sha256": "06eb038b3ad143c3fbd980e977ac17e58045eada99b052b2ad7d8e2070a809b3",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/packets/02-worker.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/packets/02-worker.txt",
+      "sha256": "885cc62c7d1d4bb9b3fd02c6722536f0adfaf521dbc5e92644ec1a626e7db7bb",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/packets/03-review.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/packets/03-review.txt",
+      "sha256": "cc0497ab1891064471add375254dcd7d4abd914e72b75eae99b80eadf9e5135d",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/packets/03-worker.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/packets/03-worker.txt",
+      "sha256": "1af43f0a55a3ee21cbebb32f5c045bd11e1ccb38f1135efb48254ff28fc4fefd",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/packets/final-spec.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/packets/final-spec.txt",
+      "sha256": "a2f449d5473ff1222187ead8f7e8839cc22fd8318d32d84b39cbcb5faa4386c9",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/packets/final-standards.txt",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/packets/final-standards.packet.json",
+      "sha256": "2e8834f39d447afd78e3ac94ac37317e959c0648c0672eeeb197d0454bdbc2f2",
+      "provenance": "root-authored packet retained exactly as JSON-escaped text; external source untouched; source and wrapper hashes both recorded",
+      "source_sha256": "6e2771c4a313ea2a2f7941b13e455df707e0683e646818c4097ef66af5f17ab7",
+      "encoding": "JSON wrapper; original_text UTF-8 bytes reconstruct exact source"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/run.md",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/run.md",
+      "sha256": "e6e5b27af59a294871eab2c2660121d6dce293ca5dd3fad4f9d2aad5d093b085",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/snapshots/spec.md",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/snapshots/spec.md",
+      "sha256": "094b0f45c87c3d79632ef91b000ce7226c0c1eebf19ed711318cc67aed74a33b",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/snapshots/tickets/01.md",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/snapshots/tickets/01.md",
+      "sha256": "e1a1fea65c55077a1fe36f1b51f6e490dd98a7de1c2ae0c1ec9de5ead8ebbec9",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/snapshots/tickets/02.md",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/snapshots/tickets/02.md",
+      "sha256": "99a00a03d4f9e89658de02606352ad516e3fc6e06679d3aafc0f6de558ceb88c",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/runs/native-smoke13-success-20261014-02/snapshots/tickets/03.md",
+      "copy": "success-02/tracker/runs/native-smoke13-success-20261014-02/snapshots/tickets/03.md",
+      "sha256": "049fb0fd6e64125014e8931886ade6bbcd470c87276c7ad44fb2b08c95a8a92a",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    },
+    {
+      "source": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02/.scratch/smoke13-native-success-02/spec.md",
+      "copy": "success-02/tracker/spec.md",
+      "sha256": "094b0f45c87c3d79632ef91b000ce7226c0c1eebf19ed711318cc67aed74a33b",
+      "provenance": "root-authored canonical tracker/input/current brief; operator bookkeeping supplement retained"
+    }
+  ]
+}

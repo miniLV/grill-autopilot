@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "git",
+    "branch",
+    "-d",
+    "autopilot/smoke13-native-success-02/tickets/01"
+  ],
+  "cwd": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/native-smoke13/native-success-02.autopilot-worktrees/smoke13-native-success-02-integration",
+  "started_at": "2026-10-14T01:59:55.924455+00:00",
+  "ended_at": "2026-10-14T01:59:55.936354+00:00",
+  "exit": 0,
+  "stdout": "Deleted branch autopilot/smoke13-native-success-02/tickets/01 (was 39bca54).\n",
+  "stderr": ""
+}
