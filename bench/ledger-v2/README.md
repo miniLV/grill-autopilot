@@ -25,4 +25,6 @@ bash bench/ledger-v2/run.sh
 
 不会复制原始会话记录。跑完后按脚本最后一行提示 commit 并 push。
 
+默认仍使用 `workspace-write`。Codex 会保护仓库的 `.git`，仅授权父目录不能让 Git 创建分支或提交。脚本在启动每组会话前，额外用 `--add-dir <该组仓库>/.git` 显式授权该组的共享 Git 元数据；worktree 的提交也写入这个目录。A、B 使用相同授权，不需要复制 Git 元数据或关闭整个沙箱。权限仍被拒时保留失败结果，不自动扩大权限或重跑。
+
 可选环境变量：`ARMS="b"` 只跑一组；`BENCH_ROOT` 换目录；`MODEL`、`EFFORT` 换模型；`SANDBOX` 换沙箱。如果 commit 因 `.git` 不可写而失败，在一次性机器上用 `SANDBOX=danger-full-access` 重跑（换一个新的 `BENCH_ROOT`）。

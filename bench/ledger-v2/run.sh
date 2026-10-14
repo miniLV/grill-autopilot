@@ -51,8 +51,11 @@ run_arm() {
   echo "== arm $key: $name (started $(date -u +%H:%M:%SZ))"
   date -u +%Y-%m-%dT%H:%M:%SZ > "$bench/arm-$key-start.txt"
   set +e
+  # workspace-write protects .git even beneath the writable bench root.
+  # Grant this arm's shared Git metadata explicitly for worktrees and commits.
   codex exec -m "$model" -c model_reasoning_effort="$effort" -s "$sandbox" \
-    --add-dir "$bench" -C "$bench/$name" --json -o "$bench/arm-$key-last.md" \
+    --add-dir "$bench" --add-dir "$bench/$name/.git" \
+    -C "$bench/$name" --json -o "$bench/arm-$key-last.md" \
     "$(cat "$bench/$name.md")" > "$bench/arm-$key-events.jsonl" 2> "$bench/arm-$key-stderr.log"
   echo $? > "$bench/arm-$key-exit.txt"
   set -e

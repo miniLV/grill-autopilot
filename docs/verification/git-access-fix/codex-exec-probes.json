@@ -1,0 +1,315 @@
+{
+  "baseline": {
+    "session_id": "01a13a36-3882-7433-a731-136af082b203",
+    "last_message": "FAILED\n\n```text\nPreparing worktree (new branch 'codex/probe/integration')\nfatal: cannot lock ref 'refs/heads/codex/probe/integration': unable to create directory for .git/refs/heads/codex/probe/integration\n```",
+    "commands": [
+      {
+        "id": "item_3",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"git worktree add /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/integration -b codex/probe/integration main && printf 'verified\\\\n' > /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/integration/verified.txt && git -C /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/integration add verified.txt && git -C /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/integration commit -m 'Verify sandbox Git access' && git -C /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/integration rev-parse HEAD\"",
+        "aggregated_output": "Preparing worktree (new branch 'codex/probe/integration')\nfatal: cannot lock ref 'refs/heads/codex/probe/integration': unable to create directory for .git/refs/heads/codex/probe/integration\n",
+        "exit_code": 255,
+        "status": "failed"
+      }
+    ],
+    "requested_model": "gpt-6.1-sol",
+    "effort": "high",
+    "sandbox_policy": {
+      "type": "workspace-write",
+      "writable_roots": [
+        "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline"
+      ],
+      "network_access": false,
+      "exclude_tmpdir_env_var": false,
+      "exclude_slash_tmp": false
+    },
+    "file_system_sandbox_policy": {
+      "kind": "restricted",
+      "entries": [
+        {
+          "path": {
+            "type": "special",
+            "value": {
+              "kind": "root"
+            }
+          },
+          "access": "read"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/repo"
+          },
+          "access": "write"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline"
+          },
+          "access": "write"
+        },
+        {
+          "path": {
+            "type": "special",
+            "value": {
+              "kind": "slash_tmp"
+            }
+          },
+          "access": "write"
+        },
+        {
+          "path": {
+            "type": "special",
+            "value": {
+              "kind": "tmpdir"
+            }
+          },
+          "access": "write"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/repo/.git"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/.git"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/repo/.agents"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/.agents"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/repo/.codex"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/.codex"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/repo/.aws"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/baseline/.aws"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        }
+      ]
+    }
+  },
+  "explicit-git": {
+    "session_id": "01a13a36-3882-7ce0-b892-95c42b70e425",
+    "last_message": "PASSED\n\nNew commit SHA: `5d20efdb9e9b6b673608a2330b6674ceeeb4c351`",
+    "commands": [
+      {
+        "id": "item_3",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"git worktree add /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/integration -b codex/probe/integration main && printf 'verified\\\\n' > /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/integration/verified.txt && git -C /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/integration add verified.txt && git -C /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/integration commit -m 'Verify sandbox Git access' && git -C /Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/integration rev-parse HEAD\"",
+        "aggregated_output": "Preparing worktree (new branch 'codex/probe/integration')\nHEAD is now at 7601a00 Seed\n[codex/probe/integration 5d20efd] Verify sandbox Git access\n 1 file changed, 1 insertion(+)\n create mode 100644 verified.txt\n5d20efdb9e9b6b673608a2330b6674ceeeb4c351\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    ],
+    "requested_model": "gpt-6.1-sol",
+    "effort": "high",
+    "sandbox_policy": {
+      "type": "workspace-write",
+      "writable_roots": [
+        "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git",
+        "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.git"
+      ],
+      "network_access": false,
+      "exclude_tmpdir_env_var": false,
+      "exclude_slash_tmp": false
+    },
+    "file_system_sandbox_policy": {
+      "kind": "restricted",
+      "entries": [
+        {
+          "path": {
+            "type": "special",
+            "value": {
+              "kind": "root"
+            }
+          },
+          "access": "read"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo"
+          },
+          "access": "write"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git"
+          },
+          "access": "write"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.git"
+          },
+          "access": "write"
+        },
+        {
+          "path": {
+            "type": "special",
+            "value": {
+              "kind": "slash_tmp"
+            }
+          },
+          "access": "write"
+        },
+        {
+          "path": {
+            "type": "special",
+            "value": {
+              "kind": "tmpdir"
+            }
+          },
+          "access": "write"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.git"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/.git"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.git/.git"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.agents"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/.agents"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.git/.agents"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.codex"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/.codex"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.git/.codex"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.aws"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/.aws"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        },
+        {
+          "path": {
+            "type": "path",
+            "path": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.git/.aws"
+          },
+          "access": "read",
+          "missing_path_behavior": "skip"
+        }
+      ]
+    },
+    "verified_sha": "5d20efdb9e9b6b673608a2330b6674ceeeb4c351",
+    "integration_status": "",
+    "git_common_dir": "/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/execution-notes/git-access-probe-xvgr2x_9/explicit-git/repo/.git"
+  }
+}
