@@ -1,0 +1,26 @@
+# 04: Monthly summary
+
+Status: blocked
+Blocked by: None
+Implementer: worker
+Files:
+  - ledger/query.py
+  - tests/test_summary.py
+Interface: summarize(entries) -> dict[str, dict[str, int]]
+Examples:
+  - AC4.1: Entries food 1250 and food 250 in 2026-01, rent 90000 in 2026-02 give {"2026-01":{"food":1500},"2026-02":{"rent":90000}}
+  - AC4.2: Input 2026-02 rent 90000; 2026-01 zebra 100; 2026-01 food 250 gives month keys ["2026-01","2026-02"] and January category keys ["food","zebra"]
+  - Edge: summarize([]) == {}; food -250 and food 250 in 2026-01 gives {"2026-01":{"food":0}}
+Verify:
+  - python3 -B -m unittest tests.test_summary -v
+  - N/A: typecheck; standard-library fixture has no type checker configured.
+Context: spec.md#s4; prior art: tests/test_store.py
+Do not: edit files outside Files · weaken, skip or delete assertions · add dependencies
+
+## Acceptance
+- [ ] AC4.1: Sum cents by month and category.
+- [ ] AC4.2: Months and categories iterate in sorted order.
+
+## Comments
+
+- 2026-10-14T11:27:47.284292+00:00 Blocked by run-wide integration preparation failure; no implementation or review started.

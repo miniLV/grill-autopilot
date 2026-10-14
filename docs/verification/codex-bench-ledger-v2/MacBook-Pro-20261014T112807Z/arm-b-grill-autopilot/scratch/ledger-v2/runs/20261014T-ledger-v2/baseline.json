@@ -1,0 +1,36 @@
+{
+  "ref": "refs/heads/main",
+  "base_sha": "76dd680740e0559ef189e2a3483c615a2487f4f3",
+  "non_run_untracked": [
+    {
+      "path": "ledger/__pycache__/__init__.cpython-313.pyc",
+      "type": "file",
+      "mode": 420,
+      "sha256_or_target": "491d152ea3170b159ba64dd92f9f9c209e26d0951166d40639f67c6ee79bc074"
+    },
+    {
+      "path": "ledger/__pycache__/__main__.cpython-313.pyc",
+      "type": "file",
+      "mode": 420,
+      "sha256_or_target": "44a895de7bba9c5b671b2c6ba2d7b081fca1092ed55ebf0551824665f51991f6"
+    },
+    {
+      "path": "ledger/__pycache__/cli.cpython-313.pyc",
+      "type": "file",
+      "mode": 420,
+      "sha256_or_target": "20fc3e040af79b0461b7b60c2f3e0b2d287154a311aa2e7e9fde921ced858332"
+    },
+    {
+      "path": "ledger/__pycache__/models.cpython-313.pyc",
+      "type": "file",
+      "mode": 420,
+      "sha256_or_target": "52d45eb70fa5cf36eff39dc9e91b88918a1bc4a6dd15dd945b73d84f0fd7ada0"
+    },
+    {
+      "path": "ledger/__pycache__/store.cpython-313.pyc",
+      "type": "file",
+      "mode": 420,
+      "sha256_or_target": "66864c22f44f8e791d432c5b1e5259ea94eab97230f31aa0dc1dd1d6ec1b8490"
+    }
+  ]
+}

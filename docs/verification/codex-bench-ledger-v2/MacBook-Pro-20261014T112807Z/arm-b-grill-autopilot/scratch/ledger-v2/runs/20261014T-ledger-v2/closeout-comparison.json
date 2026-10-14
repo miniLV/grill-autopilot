@@ -1,0 +1,152 @@
+{
+  "baseline": {
+    "ref": "refs/heads/main",
+    "base_sha": "76dd680740e0559ef189e2a3483c615a2487f4f3",
+    "non_run_untracked": [
+      {
+        "path": "ledger/__pycache__/__init__.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "491d152ea3170b159ba64dd92f9f9c209e26d0951166d40639f67c6ee79bc074"
+      },
+      {
+        "path": "ledger/__pycache__/__main__.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "44a895de7bba9c5b671b2c6ba2d7b081fca1092ed55ebf0551824665f51991f6"
+      },
+      {
+        "path": "ledger/__pycache__/cli.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "20fc3e040af79b0461b7b60c2f3e0b2d287154a311aa2e7e9fde921ced858332"
+      },
+      {
+        "path": "ledger/__pycache__/models.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "52d45eb70fa5cf36eff39dc9e91b88918a1bc4a6dd15dd945b73d84f0fd7ada0"
+      },
+      {
+        "path": "ledger/__pycache__/store.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "66864c22f44f8e791d432c5b1e5259ea94eab97230f31aa0dc1dd1d6ec1b8490"
+      }
+    ]
+  },
+  "observed": {
+    "ref": "refs/heads/main",
+    "base_sha": "76dd680740e0559ef189e2a3483c615a2487f4f3",
+    "non_run_untracked": [
+      {
+        "path": "ledger/__pycache__/__init__.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "491d152ea3170b159ba64dd92f9f9c209e26d0951166d40639f67c6ee79bc074"
+      },
+      {
+        "path": "ledger/__pycache__/__main__.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "44a895de7bba9c5b671b2c6ba2d7b081fca1092ed55ebf0551824665f51991f6"
+      },
+      {
+        "path": "ledger/__pycache__/cli.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "20fc3e040af79b0461b7b60c2f3e0b2d287154a311aa2e7e9fde921ced858332"
+      },
+      {
+        "path": "ledger/__pycache__/models.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "52d45eb70fa5cf36eff39dc9e91b88918a1bc4a6dd15dd945b73d84f0fd7ada0"
+      },
+      {
+        "path": "ledger/__pycache__/store.cpython-313.pyc",
+        "type": "file",
+        "mode": 420,
+        "sha256_or_target": "66864c22f44f8e791d432c5b1e5259ea94eab97230f31aa0dc1dd1d6ec1b8490"
+      }
+    ]
+  },
+  "ref_unchanged": true,
+  "base_sha_unchanged": true,
+  "unstaged_diff_unchanged": true,
+  "staged_diff_unchanged": true,
+  "non_run_untracked_unchanged": true,
+  "frozen_inputs": [
+    {
+      "input": "spec",
+      "sha256": "f47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    },
+    {
+      "input": "01",
+      "sha256": "7eb5431607515ef9379e7a69b39486aae4d3a0dd852187f17d4e804cc3032032",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    },
+    {
+      "input": "02",
+      "sha256": "b9cb549c356d3b4736b5fe4742ae2de69b6a362456c2a3248c8c0a59f396b2b5",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    },
+    {
+      "input": "03",
+      "sha256": "ca6283cd80c49f8e522c6b1e22f762f65bb632166656f8287b418b8b5af5789b",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    },
+    {
+      "input": "04",
+      "sha256": "ac9366400081f16e46b9888c7b78d0785b8f1f3019e7e3368865aa08aae44759",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    },
+    {
+      "input": "05",
+      "sha256": "8882ac9bd768de28f7ce40171cd08d045f57527328513a2a7060bfd4d564fcd4",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    },
+    {
+      "input": "06",
+      "sha256": "921a3e068631a34fac8a83866e1da26c0ef943d3141784aaa4180253365b6530",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    },
+    {
+      "input": "07",
+      "sha256": "9e442f80f96b13f852ccbb611b6bbe6590b9f547a5770185d8f7b8c311394aac",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    },
+    {
+      "input": "08",
+      "sha256": "c889606f2ede14d910012c338b57823e8eeab67fa653889afbf492415146177a",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    },
+    {
+      "input": "09",
+      "sha256": "ea2c791d24a837b0760f0012f8a7abe4cee0974fc9a9ba919faba4e70f3a1877",
+      "snapshot_unchanged": true,
+      "source_task_unchanged": true,
+      "read_only": true
+    }
+  ],
+  "drift": []
+}

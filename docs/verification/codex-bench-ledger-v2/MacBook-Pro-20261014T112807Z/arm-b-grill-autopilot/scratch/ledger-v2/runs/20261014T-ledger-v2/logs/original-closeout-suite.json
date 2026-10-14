@@ -1,0 +1,22 @@
+{
+  "command": "python3 -B -m unittest discover -s tests -v",
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-rerun-20261014T105939Z/arm-b-grill-autopilot",
+  "started_at": "2026-10-14T11:27:47.285099+00:00",
+  "ended_at": "2026-10-14T11:27:47.534815+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_add_then_list (test_cli.CliTest.test_add_then_list) ... ok\ntest_append_then_load_round_trips (test_store.StoreTest.test_append_then_load_round_trips) ... ok\ntest_missing_file_is_empty (test_store.StoreTest.test_missing_file_is_empty) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.057s\n\nOK\n",
+  "before": {
+    "head": "76dd680740e0559ef189e2a3483c615a2487f4f3",
+    "ref": "refs/heads/main",
+    "diff": "",
+    "cached_diff": ""
+  },
+  "after": {
+    "head": "76dd680740e0559ef189e2a3483c615a2487f4f3",
+    "ref": "refs/heads/main",
+    "diff": "",
+    "cached_diff": ""
+  },
+  "qualification": "Original source only. NOT an integration/final suite pass."
+}

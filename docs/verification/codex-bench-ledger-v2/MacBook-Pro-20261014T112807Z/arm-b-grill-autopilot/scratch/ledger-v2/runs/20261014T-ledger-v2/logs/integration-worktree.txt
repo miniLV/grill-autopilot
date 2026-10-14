@@ -1,0 +1,2 @@
+Preparing worktree (new branch 'autopilot/ledger-v2/integration')
+fatal: cannot lock ref 'refs/heads/autopilot/ledger-v2/integration': unable to create directory for .git/refs/heads/autopilot/ledger-v2/integration

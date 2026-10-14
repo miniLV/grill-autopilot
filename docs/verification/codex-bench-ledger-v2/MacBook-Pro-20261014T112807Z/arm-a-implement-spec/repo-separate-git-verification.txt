@@ -1,0 +1,12 @@
+The bundle contains these 8 refs:
+0c35451d57cc04f5286d4b780890c09045f9d3e2 refs/heads/ledger-v2/01-money-categories-v2
+482ebb82217deebe237227eb4823c47449701658 refs/heads/ledger-v2/02-safe-storage
+1b89d25a8831039a5ddb72211febe60927389d33 refs/heads/ledger-v2/03-monthly-reports
+f904c8e4be28c12557623560c96186acc323ddd4 refs/heads/ledger-v2/04-csv-exchange
+99329f2926da08187b81df4b8c0cd3083efbb787 refs/heads/ledger-v2/integration
+7d0b34a309d5591ef8faf1d49a5d67527a793ed0 refs/heads/ledger-v2/review-fixes
+76dd680740e0559ef189e2a3483c615a2487f4f3 refs/heads/main
+99329f2926da08187b81df4b8c0cd3083efbb787 HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+/Users/tyrion/Github/grill-autopilot.autopilot-worktrees/reliability-hardening-integration/docs/verification/codex-bench-ledger-v2/MacBook-Pro-20261014T112807Z/arm-a-implement-spec/repo-separate-git.bundle is okay

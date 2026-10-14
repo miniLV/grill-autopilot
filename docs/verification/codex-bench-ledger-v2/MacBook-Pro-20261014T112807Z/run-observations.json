@@ -1,0 +1,21 @@
+{
+  "benchmark_root": "/Users/tyrion/autopilot-bench-ledger-v2-rerun-20261014T105939Z",
+  "invocation": "BENCH_ROOT=\"$HOME/autopilot-bench-ledger-v2-rerun-20261014T105939Z\" bash bench/ledger-v2/run.sh",
+  "sandbox": "workspace-write",
+  "repository_commit": "418f94a87c8f733503814b62358b59566dafd608",
+  "script_exit": 0,
+  "interrupted": false,
+  "manual_session_assistance": false,
+  "retry_count": 0,
+  "retry_decision": "No commit failure was recorded. B stopped on branch/worktree creation; A used separate Git metadata. The specified commit-failure-only sandbox retry was not triggered.",
+  "supplemental_collection": {
+    "arm": "a",
+    "final_sha": "99329f2926da08187b81df4b8c0cd3083efbb787",
+    "git_dir": "/Users/tyrion/autopilot-bench-ledger-v2-rerun-20261014T105939Z/arm-a-implement-spec.worktrees/git-admin",
+    "bundle": "arm-a-implement-spec/repo-separate-git.bundle",
+    "sha256": "d1b829c4fdc13bee374b3a54298858833a07a1b0dac4d09d4ed926679d39d1ad",
+    "reason": "Original collector uses the original .git, which contains only the seed. The implementation refs are in the separate Git metadata directory selected by arm A. Original collected files are preserved.",
+    "graph_format": "git log --all --oneline --graph with trailing display whitespace removed; original script-collected graph and bundle unchanged"
+  },
+  "errors": "diagnostic-events.json contains selected error events only; full event transcripts were not copied."
+}

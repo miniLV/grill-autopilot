@@ -1,0 +1,35 @@
+* 99329f2 Resolve all ledger-v2 tickets and record final verification
+*   5d80366 Merge ledger-v2 final review fixes
+|\
+| * 7d0b34a Fix CSV parser validation and preserve import diagnostics
+|/
+* e3961ea Record parallel Standards and Spec review findings
+*   53a2477 Merge ledger-v2 ticket 04: CSV exchange
+|\
+| *   f904c8e Merge branch 'ledger-v2/integration' into ledger-v2/04-csv-exchange
+| |\
+| * | 2fe5bc6 Implement ledger-v2 ticket 04 CSV exchange
+* | |   bb9b060 Merge ledger-v2 ticket 03: monthly reports
+|\ \ \
+| |_|/
+|/| |
+| * | 1b89d25 Record monthly summary integration verification
+| * |   143209b Merge branch 'ledger-v2/integration' into ledger-v2/03-monthly-reports
+| |\ \
+| |/ /
+|/| |
+* | |   8062de4 Merge ledger-v2 ticket 02: safe storage
+|\ \ \
+| |_|/
+|/| |
+| * | 482ebb8 Implement atomic snapshots and serialized concurrent append
+|/ /
+| * c5c95f6 Implement date-filtered monthly summaries
+|/
+* 8790fdb Resolve ledger-v2 ticket 01 after integration verification
+*   52ede8f Merge ledger-v2 ticket 01: money, categories and v2 format
+|\
+| * 0c35451 Implement exact money, category validation and v2 migration
+|/
+* eb5f5f5 Publish ledger-v2 spec and tracer-bullet tickets
+* 76dd680 Seed ledger benchmark

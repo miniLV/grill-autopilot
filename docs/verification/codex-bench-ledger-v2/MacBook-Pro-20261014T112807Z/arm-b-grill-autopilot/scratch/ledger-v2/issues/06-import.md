@@ -1,0 +1,26 @@
+# 06: CSV import
+
+Status: blocked
+Blocked by: 01, 02
+Implementer: worker
+Files:
+  - ledger/csv_io.py
+  - tests/test_import.py
+Interface: import_csv(text) -> list[Entry]; CsvImportError.errors -> list[str]
+Examples:
+  - AC6.1: import_csv("date,wrong,category,note\n") raises CsvImportError with errors == ["line 1: bad header"]
+  - AC6.2: Input "date,amount,category,note\n2026-01-01,abc,food,bad\n2026-01-02,12.50, Food  Out ,good\n2026-01-03,1.234,food,bad\n" raises errors == ["line 2: invalid amount: abc","line 4: invalid amount: 1.234"]; valid row alone returns [Entry("2026-01-02",1250,"food-out","good")]
+  - Edge: Header-only CSV returns []; category "9lives" on line 2 gives ["line 2: invalid category: 9lives"]; multiline quoted notes preserve physical line numbers. Validate invalid ISO dates with "invalid date: <text>" and row arity with "expected 4 fields". Keep every problem in file/column order.
+Verify:
+  - python3 -B -m unittest tests.test_import -v
+  - N/A: typecheck; standard-library fixture has no type checker configured.
+Context: spec.md#s6; prior art: tests/test_store.py
+Do not: edit files outside Files · weaken, skip or delete assertions · add dependencies
+
+## Acceptance
+- [ ] AC6.1: Reject any nonexact header with the specified one-element errors list.
+- [ ] AC6.2: Parse amounts and normalize categories; aggregate all row problems and return no partial result.
+
+## Comments
+
+- 2026-10-14T11:27:47.284475+00:00 Blocked by run-wide integration preparation failure; no implementation or review started.

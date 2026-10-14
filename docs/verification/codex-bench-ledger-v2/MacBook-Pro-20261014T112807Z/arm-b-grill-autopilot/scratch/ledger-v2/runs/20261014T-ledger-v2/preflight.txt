@@ -1,0 +1,8 @@
+Base 76dd680740e0559ef189e2a3483c615a2487f4f3
+refs/heads/main 76dd680740e0559ef189e2a3483c615a2487f4f3
+worktree /Users/tyrion/autopilot-bench-ledger-v2-rerun-20261014T105939Z/arm-b-grill-autopilot
+HEAD 76dd680740e0559ef189e2a3483c615a2487f4f3
+branch refs/heads/main
+
+
+All 10 refs validate literally, no collisions/prefixes/residual same-slug state. All 10 canonical worktree paths absent.

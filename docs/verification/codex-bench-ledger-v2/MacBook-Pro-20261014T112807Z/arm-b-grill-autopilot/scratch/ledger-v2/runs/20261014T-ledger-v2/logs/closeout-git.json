@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-14T11:27:47.614063+00:00",
+  "worktrees": "worktree /Users/tyrion/autopilot-bench-ledger-v2-rerun-20261014T105939Z/arm-b-grill-autopilot\nHEAD 76dd680740e0559ef189e2a3483c615a2487f4f3\nbranch refs/heads/main\n\n",
+  "refs": "refs/heads/main 76dd680740e0559ef189e2a3483c615a2487f4f3\n",
+  "integration_path_exists": false,
+  "all_ticket_paths_absent": true,
+  "host_status": "list_agents returned root only, no children",
+  "original_head": "76dd680740e0559ef189e2a3483c615a2487f4f3"
+}
