@@ -9,8 +9,8 @@ concurrency: 3         # worker ceiling; ALL child roles also consume host slots
 timeouts:
   attempt_seconds: 1800 # bounded wait deadline includes preparation and role execution
 retry:
-  worker: 2            # extra business retries after initial worker: 3 total by default
-  escalate: 1          # total escalate implementation attempts after worker exhaustion
+  worker: 1            # extra business retries after initial worker: 2 total by default
+  escalate: 1          # escalate attempts after worker exhaustion; an Implementer: escalate ticket gets 1 + this
   infrastructure: 1    # extra retry of SAME logical attempt; deadline/counters do not reset
   final_review: 2      # TOTAL final correction rounds beyond initial review; final-review.md
 
@@ -18,5 +18,5 @@ retry:
 roles:
   planner:  { claude: opus,   codex: gpt-6.1-sol, effort: high }    # grill, spec, tickets, scheduling
   reviewer: { claude: opus,   codex: gpt-6.1-sol, effort: high }    # per-ticket gate, final code-review
-  worker:   { claude: haiku,  codex: gpt-6-luna,  effort: medium }  # implements one ticket
-  escalate: { claude: sonnet, codex: gpt-6.1-sol, effort: high }    # retries a failed ticket, applies review fixes
+  worker:   { claude: haiku,  codex: gpt-6-luna,  effort: medium }  # implements Implementer: worker tickets
+  escalate: { claude: sonnet, codex: gpt-6.1-sol, effort: high }    # implements Implementer: escalate tickets, retries failed worker tickets, applies final fixes

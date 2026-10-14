@@ -14,7 +14,7 @@ Read this before the first tracker write, before filling a worker/reviewer packe
 
 ## Packet paths
 
-Fill every file/directory pointer in both packets with a canonical absolute path: frozen spec/task, mutable tracker ticket, run record, assigned worktree, required companion SKILL.md files, and log capture/evidence destinations. Paths with spaces must be quoted in commands. Children use the frozen task for requirements and the mutable tracker only for reading status; they return events to the planner instead of editing it. Repository-relative Files/Context entries inside the frozen task resolve under the explicitly assigned worktree, never the child's current directory. Run-data or external Context pointers are expanded to absolute paths by the planner and included in the packet.
+Fill every file/directory pointer each packet uses with a canonical absolute path: frozen spec/task, mutable tracker ticket, run record, assigned worktree, required companion SKILL.md files, and log capture/evidence destinations. Paths with spaces must be quoted in commands. Children use the frozen task for requirements and the mutable tracker only for reading status; they return events to the planner instead of editing it. Repository-relative Files/Context entries inside the frozen task resolve under the explicitly assigned worktree, never the child's current directory. Run-data or external Context pointers are expanded to absolute paths by the planner and included in the packet.
 
 ## Minimum record template
 
@@ -90,7 +90,7 @@ preparations:
     baselines: [{command: <exact stage baseline/check>, result: <exit and evidence path or agreed N/A with reason>}]
     status: <ready/environment-error/not-recorded reason>
 push_selected: <true/false from grill>
-budgets: {worker_extra: <configured retry.worker>, escalate_total: <configured retry.escalate>, infrastructure_extra_per_attempt: <configured retry.infrastructure>, attempt_seconds: <configured timeouts.attempt_seconds>, final_fix_limit: <configured retry.final_review; total correction rounds>}
+budgets: {worker_extra: <configured retry.worker>, escalate_after_worker: <configured retry.escalate>, escalate_implementer_total: <1 + retry.escalate>, infrastructure_extra_per_attempt: <configured retry.infrastructure>, attempt_seconds: <configured timeouts.attempt_seconds>, final_fix_limit: <configured retry.final_review; total correction rounds>}
 closeout:
   counters: {reviewer: <logical final-review axis calls>, infrastructure: <extra final-stage invocations>, final_fix: <started logical correction rounds>}
   delivered_sha: <current qualified integration commit or not-qualified reason>
@@ -114,6 +114,7 @@ tickets:
     branch: <actual branch>
     worktree: <canonical absolute path>
     starting_integration_sha: <saved SHA>
+    implementer: <worker/escalate with the failed grading item, from the frozen ticket>
     counters: {worker: <logical implementation starts>, escalate: <logical implementation starts>, infrastructure: <aggregate extra invocations>, reviewer: <logical review calls>}
     blocked_reason: <last classification/reason or None>
     blocked_by: [<upstream blocked ticket IDs>]
@@ -139,7 +140,8 @@ tickets:
         invocations:
           - {number: <initial 1 or infrastructure retry 2>, planned_at: <UTC timestamp>, started_at: <timestamp/not-started/unknown>, ended_at: <timestamp/unknown>, identity: <agent/session/PID or reason>, classification: <runtime classification>, reason: <detail>, counts_before: <relevant counters>, counts_after: <reconciled counters>, remaining_seconds: <at decision>, evidence: [<canonical paths>]}
         candidate_sha: <SHA or not-recorded reason>
-        review_base_sha: <fixed integration tip the worker merged, with evidence, or not-recorded reason>
+        done_check: <pass/fail with failed item and evidence, or not-recorded reason>
+        review_base_sha: <fixed integration tip the planner merged, with evidence, or not-recorded reason>
         reviewed_sha: <SHA or not-recorded reason>
         review_evidence: <canonical captured fixed-base/candidate verdict/check log or not-recorded reason>
         merge_before_sha: <SHA or not-recorded reason>

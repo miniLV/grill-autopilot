@@ -5,14 +5,16 @@ disable-model-invocation: true
 argument-hint: "A new topic or requirement, or resume <run-id>"
 ---
 
-One human checkpoint, then **autopilot** within the confirmed scope. After Go, use recorded assumptions or blocked tickets for new questions and continue to the **PR brief**. Handleable failures also end with a brief under [failures.md](failures.md), with bounded attempts and preserved work. A crashed session cannot guarantee an immediate brief or background continuation; explicit resume reconciles retained state first. This is a host-interpreted protocol, not an independent execution engine; current evidence and runtime limits are recorded in [the README](../../README.md#当前验证范围).
+One human checkpoint, then **autopilot** within the confirmed scope. After Go, use recorded assumptions or blocked tickets for new questions and continue to the **brief**. Handleable failures also end with a brief under [failures.md](failures.md), with bounded attempts and preserved work. A crashed session cannot guarantee an immediate brief or background continuation; explicit resume reconciles retained state first. This is a host-interpreted protocol, not an independent execution engine; current evidence and runtime limits are recorded in [the README](../../README.md#当前验证范围).
 
 Work is split by **role**, never by hard-coded model:
 
 - **planner**: this session. Grills, writes the spec and tickets, schedules the loop.
-- **worker**: implements one ticket in its own worktree.
+- **worker**: cheap model; implements one `Implementer: worker` ticket in its own worktree.
 - **reviewer**: gates each ticket before merge, and runs the final code-review.
-- **escalate**: retries a ticket the worker failed and performs bounded final corrections.
+- **escalate**: strong model; implements `Implementer: escalate` tickets, retries a ticket the worker failed and performs bounded final corrections.
+
+The planner grades every ticket while writing it ([tickets.md](tickets.md#grading)), so cheap work goes to the worker and hard work goes straight to escalate.
 
 The tracker is always local markdown under the original checkout's `.scratch/<slug>/` (conventions in the `issue-tracker-local.md` file of the companion `setup-matt-pocock-skills`), whatever `docs/agents/` says. Before the first tracker write and before filling any child packet, read [run-record.md](run-record.md): it defines planner ownership, canonical paths, frozen inputs and the minimum run record.
 
@@ -43,7 +45,7 @@ Read and follow the companion `grilling` skill on the user's topic. Add these br
 - **Commands**: initialization command(s) for each new worktree, or explicit `None`; the single-ticket Verify command, full suite, and typecheck. Record an inapplicable check as `N/A` with a reason agreed here, rather than an invented pass; applicable behavior checks must still run. Choose an existing baseline check at the agreed seam if a ticket's new test file will not exist yet. Record these choices in run-record.md. Known missing tools/credentials are preparation blockers before Go; a failed or unavailable check is not `N/A`.
 - **Delivery**: the feature slug, the base branch, and the integration branch (recommend `autopilot/<slug>/integration`; tickets use `autopilot/<slug>/tickets/<NN>`). Assign a unique run ID separately from the slug. Apply the read-only branch preflight in [loop.md](loop.md#setup) to the known refs and paths before Go; report any invalid base/name or existing-run conflict. Ask whether to push and open a draft PR at the end (recommend: no, local branch only).
 
-Close with one question: "Shared understanding reached. From here I run unattended until the PR brief. Go?"
+Close with one question: "Shared understanding reached. From here I run unattended until the brief. Go?"
 
 Done when: the user says yes. From this point on, ask nothing. An open question becomes a recorded assumption in the spec's Further Notes before freezing inputs, then in the run record afterward, or a blocked ticket.
 
@@ -61,11 +63,11 @@ Done when: `spec.md` exists with every template section filled.
 
 Read and follow the companion `to-tickets` skill with these overrides:
 
-- Write **worker-grade** tickets as [tickets.md](tickets.md) defines. Its template replaces the local ticket template, and its path rule replaces the "avoid file paths" rule.
+- Write **worker-grade** tickets as [tickets.md](tickets.md) defines, and grade each one to set its Implementer. Grading may split a ticket further; to-tickets itself stays unchanged. Its template replaces the local ticket template, and its path rule replaces the "avoid file paths" rule.
 - Replace the human approval of ticket granularity and blocking edges, located by meaning as companions.md describes, with the self-check in [tickets.md](tickets.md).
 - The planner publishes to the original checkout's canonical `.scratch/<slug>/issues/<NN>-<slug>.md` paths. Freeze the spec and ticket task bodies using run-record.md before dispatch; mutable Status/Comments stay in these source ticket files.
 
-Done when: every ticket file exists and the recorded whole-set self-check passes [tickets.md](tickets.md), including coverage of every approved story and acceptance item (only spec-approved exclusions), concrete examples and business dependencies independently of Files isolation. Until then the set is not ready for dispatch. The record points to the coverage table and read-only spec/task snapshots with saved hashes.
+Done when: every ticket file exists and passes the self-check in [tickets.md](tickets.md#self-check). Until then the set is not ready for dispatch. The record points to the read-only spec/task snapshots with saved hashes.
 
 ### 4. Implement loop
 
@@ -79,12 +81,12 @@ Read [final-review.md](final-review.md) and follow its exact-tip check, two-axis
 
 Done when: final-review.md's current-tip qualification or finite failed stop is recorded, with both-axis verdicts, check evidence and remaining findings ready for result classification. Every handled stop proceeds to the brief.
 
-### 6. PR brief
+### 6. Brief
 
 The planner compares the original checkout with its baseline using run-record.md, records the evidence, writes the original checkout's canonical `.scratch/<slug>/brief.md`, and shows it to the user:
 
 - **Result**: `success`, `partial` or `failed` under failures.md, stop reason if any, integration branch and delivered SHA, `git diff <saved-base-sha>...<delivered-sha> --stat`, both Standards/Spec verdicts with reviewed/base SHAs and evidence, and suite/typecheck statuses with checked SHAs/evidence (including an agreed N/A reason or unavailable evidence). Apply final-review.md's unchanged-tip gate before delivery.
-- **Done**: each done ticket by title, with its attempts and the model that finished it.
+- **Done**: each done ticket by title, with its Implementer, attempts and the model that finished it. Add one line: worker tickets that finished on the worker vs needed escalate, to calibrate grading.
 - **Blocked**: each blocked ticket with its last classified reason and available reviewer findings. Write "none" if empty.
 - **Assumptions**: assumptions from the frozen spec plus later run-record entries.
 - **Roles and runtime**: requested/observed model and effort plus match/mismatch/unknown for each role and finishing attempt; capability/capacity evidence and any retained identities or unconfirmed stop/resource release. Unknown values remain unknown.

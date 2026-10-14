@@ -34,8 +34,8 @@ The planner prepares **each** newly created integration/ticket worktree before d
 ## Each dispatch
 
 1. **Pick.** Take frontier tickets in number order. Skip a ticket whose Files overlap the Files of any `claimed` or `in-review` ticket. Prioritize queued reviews, then respect both `concurrency` running workers and confirmed free all-role host slots. Unknown capacity uses one child at a time. Capacity rejection queues the role until new availability evidence; unresolved release stops new dispatch as runtimes.md defines.
-2. **Dispatch.** Recheck the new ticket's target as Setup describes, save the starting integration SHA, then create its worktree at that SHA and pass its environment gate before spawning a worker (see [runtimes.md](runtimes.md)). A retry or explicit reconciled resume uses its recorded worktree instead of creating another one; check its recorded preparation and rerun the gate if the environment changed. Save capability/route/model facts, logical attempt/budget and intended counter changes before launch and retain the attempt deadline set before preparation; a prepared worktree does not reset that deadline. Set the ticket to `claimed`. Send the worker packet below only through the permitted adapter route; capture identity, actual start/counter outcome and observations afterward. Launch errors and capacity queues follow failures.md instead of repeated spawn.
-3. **Review.** When the worker or escalate role reports `DONE`, capture its full result and model status, set the ticket to `in-review`, then confirm inactivity and release/availability through runtimes.md before starting the reviewer. Save the review's own logical attempt/deadline before its call; queue it ahead of new workers and count it against host slots. A mismatch cannot pass as DONE/PASS. Apply the same bounded wait, result, stop and release semantics to reviewers, escalate roles and final-review seats. Classify `ENVIRONMENT_ERROR`, `STUCK`, reviewer timeout/invalid/unobservable result and scope expansion through failures.md; failed review infrastructure must reach a terminal exit rather than remain `in-review` or charge a business retry.
+2. **Dispatch.** Recheck the new ticket's target as Setup describes, save the starting integration SHA, then create its worktree at that SHA and pass its environment gate before spawning the ticket's **Implementer** role (see [tickets.md](tickets.md#grading) and [runtimes.md](runtimes.md)): `worker` starts on the worker role, `escalate` starts directly on the escalate role. Verify the frozen snapshot hashes yourself before every launch; the implementer does not. A retry or explicit reconciled resume uses its recorded worktree instead of creating another one; check its recorded preparation and rerun the gate if the environment changed. Save capability/route/model facts, logical attempt/budget and intended counter changes before launch and retain the attempt deadline set before preparation; a prepared worktree does not reset that deadline. Set the ticket to `claimed`. Send the worker packet below only through the permitted adapter route; capture identity, actual start/counter outcome and observations afterward. Launch errors and capacity queues follow failures.md instead of repeated spawn.
+3. **Review.** When the worker or escalate role reports `DONE`, capture its full result and model status, then confirm it is inactive and run the **DONE check** in its worktree: HEAD is the ticket branch and equals the reported SHA, `git status --porcelain --untracked-files=all` is empty, `git rev-list --count <packet-starting-sha>..<reported-sha>` is at least 1, and every path in `git diff --name-only <ticket-base>...<reported-sha>` is under Files. `<ticket-base>` is the ticket's starting integration SHA, or the review base of its last planner tip merge on a retry. A failed check is a business failure with the failed item as its reason. Then do the **planner tip merge** in [integration.md](integration.md#planner-tip-merge) to produce the candidate SHA. Set the ticket to `in-review`, then confirm inactivity and release/availability through runtimes.md before starting the reviewer. Save the review's own logical attempt/deadline before its call; queue it ahead of new workers and count it against host slots. A mismatch cannot pass as DONE/PASS. Apply the same bounded wait, result, stop and release semantics to reviewers, escalate roles and final-review seats. Classify `ENVIRONMENT_ERROR`, `STUCK`, reviewer timeout/invalid/unobservable result and scope expansion through failures.md; failed review infrastructure must reach a terminal exit rather than remain `in-review` or charge a business retry.
 4. **On PASS**: follow [integration.md](integration.md) to qualify the fixed review base/candidate, then serialize **merge → Verify → record result**. Queue other PASS results until that transaction completes or safely rolls back; an uncertain transaction stops further integration. Only the verified current integration SHA permits `done`, followed by the separate retention/cleanup gate below. Use that reference for merge conflicts, red checks, artifact ownership and exact rollback; a mutable branch name or earlier PASS never bypasses its gate.
 5. **On FAIL/error.** Apply failures.md's event decision and counter limits. For a permitted business retry, append the last reasons and preserve previous HEAD, tracked/untracked state and diagnostics in the same worktree; reconcile ownership/activity/capacity before continuing. After exhaustion, block and propagate dependencies. Environment, route and infrastructure errors use their own exits; they do not silently become implementation FAIL.
 6. **Refill.** After every completed role, reconcile its activity/capacity, handle queued reviews first, then recompute the frontier and dispatch only into confirmed available capacity. Record retained identities separately from released execution slots.
@@ -52,30 +52,23 @@ The loop ends when no ticket is `ready-for-agent`, `claimed` or `in-review`, inc
 
 ## Worker packet
 
-Fill the placeholders with canonical absolute paths from the run record, then send this as written. Both packets use the same frozen spec/task and saved hashes; companion and external Context pointers are expanded before dispatch.
+Fill the placeholders with canonical absolute paths from the run record, then send this as written. Both packets use the same frozen spec/task; the planner checks their saved hashes before launch. The worker packet is short on purpose so the cheap model can follow it: the planner owns hashes, preparation evidence, the DONE check and the tip merge.
 
 ```text
 You are a worker. Implement exactly one ticket.
-Task snapshot: <canonical absolute frozen ticket path>    Spec snapshot: <canonical absolute frozen spec path>
-Input SHA-256: task=<hash> spec=<hash>
-Mutable tracker ticket (read only): <canonical absolute source ticket path>
-Run record (read only): <canonical absolute run.md path>
-Companions: <canonical absolute required SKILL.md paths>
-External/run Context: <canonical absolute pointers or None>
-Log capture: <canonical absolute log path; planner/host writes>
-Worktree: <canonical absolute path>    Branch: <ticket-branch>    Integration branch: <integration-branch>
-Starting integration SHA: <integration-sha>
-Preparation evidence: <canonical absolute record/log pointers for this worktree and starting SHA>
-Initialization choice: <agreed commands or explicit None>
-Baseline commands: <agreed existing baseline and applicable typecheck, or N/A with reason>
-Attempt context: <new/retry/explicit resume>    Previous attempt evidence: <canonical pointers or None>
-<Reviewer reasons from the last attempt, if any>
+Task: <canonical absolute frozen ticket path>    Spec: <canonical absolute frozen spec path>
+TDD skill: <canonical absolute tdd SKILL.md path>
+Context: <canonical absolute pointers or None>
+Worktree: <canonical absolute path>    Branch: <ticket-branch>
+Starting SHA: <integration-sha, or the recorded previous HEAD on retry/resume>
+Attempt: <new/retry/explicit resume>    Previous attempt evidence: <canonical pointers or None>
+<Reviewer or DONE-check reasons from the last attempt, if any>
 
-1. Confirm the assigned worktree/branch and this run's ownership. For a new worktree, verify its clean starting state at the recorded integration SHA. For retry/explicit resume, verify the recorded previous HEAD and tracked/untracked state and continue known prior-attempt edits; do not reset it to the current integration tip. Any unexpected state is preserved and reported STUCK for planner reconciliation.
-2. Verify the snapshot hashes and read the frozen task/spec; resolve repository Files/Context under the assigned worktree. Report missing/changed inputs or scope expansion to the planner. The mutable tracker and run record are read only.
-3. Confirm this worktree's initialization and applicable baseline checks passed at the recorded starting SHA before TDD. If evidence is absent/stale or an environment failure appears, preserve it and report ENVIRONMENT_ERROR; stop implementation rather than fixing business code. Once the gate is satisfied, read and follow the tdd skill at <canonical absolute tdd SKILL.md path>, at the agreed seam. The seam is already agreed; do not ask to confirm it. For each Example, write a test asserting its literal expected output, see it fail, then make it pass.
-4. Edit only the paths under Files. Run applicable Verify commands until all pass; retain agreed N/A reasons. Preparation installs existing locked dependencies; dependency declaration changes still require this ticket's authorization.
-5. Commit on <ticket-branch>. Follow <canonical absolute integration.md path> under “Worker tip merge”: save the exact current integration tip and your pre-merge HEAD/state before merging that SHA into this ticket; capture/abort a conflict safely and report STUCK. After a successful merge, rerun Verify, require unchanged clean HEAD/content, and return that **post-tip-merge candidate SHA**. Every changed candidate goes back through review.
+1. Work only in the Worktree, on the Branch. HEAD must equal the Starting SHA. On retry, keep the edits already there; do not reset. If the state is different, stop and reply STUCK.
+2. Read the Task and Spec. Do not edit the tracker. If a needed change is outside Files, stop and reply STUCK.
+3. Follow the TDD skill at the agreed seam; do not ask to confirm it. For each Example, write a test that asserts its literal expected output, see it fail, then make it pass.
+4. Edit only the paths under Files. Run every Verify command until all pass. Do not add or change dependencies unless Files lists the dependency file. If a command fails because a tool, dependency or credential is missing, stop and reply ENVIRONMENT_ERROR.
+5. Commit all your changes on the Branch. Do not merge, rebase, reset or switch branches.
 6. Reply with one line only:
    DONE <commit sha> <changed paths, comma-separated>
    or ENVIRONMENT_ERROR <command and exit code/missing prerequisite reason>
@@ -95,8 +88,8 @@ External/run Context: <canonical absolute pointers or None>
 Log capture: <canonical absolute log path; planner/host writes>
 Worktree: <canonical absolute path>
 Branch: <ticket-branch>
-Review base SHA: <fixed integration tip SHA from worker tip-merge evidence>
-Candidate SHA: <immutable worker DONE SHA after its tip merge>
+Review base SHA: <fixed integration tip SHA from planner tip-merge evidence>
+Candidate SHA: <immutable post-tip-merge SHA from planner tip-merge evidence>
 Review evidence: <canonical declared output/log path; planner/host captures>
 Diff: git -C "<canonical absolute worktree path>" diff <review-base-sha>...<candidate-sha>
 

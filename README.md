@@ -13,27 +13,34 @@ flowchart LR
     subgraph plan["① 你确认一次"]
         direction TB
         P["Planner<br/>澄清需求 · Go"] --> T["Spec + Tickets<br/>冻结输入 · 依赖"]
+        T --> G{"逐票分级"}
     end
     subgraph implement["② 按票执行"]
         direction TB
-        W["Worker<br/>独立 worktree · TDD"] --> R["Reviewer<br/>固定候选 SHA"]
+        W["Worker 便宜模型<br/>简单票 · TDD · commit"]
+        E["Escalate 强模型<br/>复杂票 · 失败重试"]
+        W & E --> D["Planner<br/>DONE 检查 · tip merge"]
+        D --> R["Reviewer<br/>固定候选 SHA"]
         R -->|PASS| M["Integration<br/>串行合并 · Verify"]
     end
     subgraph close["③ 留下可追溯结果"]
         direction TB
         F["最终检查<br/>当前 SHA · 两轴"] --> B["Brief<br/>success / partial / failed"]
     end
-    plan --> implement
+    G -->|全部满足| W
+    G -->|拆不开| E
     implement --> close
     classDef planning fill:#eaf3ff,stroke:#5383b6,color:#18344f
     classDef executing fill:#eaf7ef,stroke:#5b9770,color:#20472d
     classDef closing fill:#fff4dc,stroke:#b38b37,color:#54421d
-    class P,T planning
-    class W,R,M executing
+    class P,T,G planning
+    class W,E,D,R,M executing
     class F,B closing
 ```
 
-失败按预算重试或交给 **escalate**；耗尽后 blocked 并保留现场。最终修复后重跑检查和双轴审查。规则见 [失败处理](skills/grill-autopilot/failures.md) 与 [最终审查](skills/grill-autopilot/final-review.md)。协议由当前会话执行，依赖可用宿主能力。
+planner 写票时按[分级清单](skills/grill-autopilot/tickets.md#grading)给每票定 `Implementer`：单模块、有样例可抄、无并发/迁移/安全等风险的走 worker（haiku / luna），否则先拆，拆不开直接走 escalate（sonnet / sol）。worker 只写代码和 commit；DONE 检查和合并 integration tip 由 planner 做。
+
+失败按预算重试（worker 2 次 → escalate 1 次；escalate 票 2 次）；耗尽后 blocked 并保留现场。最终修复后重跑检查和双轴审查。规则见 [失败处理](skills/grill-autopilot/failures.md) 与 [最终审查](skills/grill-autopilot/final-review.md)。协议由当前会话执行，依赖可用宿主能力。
 
 ## 快速开始
 
@@ -110,6 +117,8 @@ flowchart LR
 
 2026-10-14：已交付协议在 [8d947f5](https://github.com/miniLV/grill-autopilot/commit/8d947f583d31f47dd19833fe36f612dd55f0fc08) 通过 Standards / Spec 双轴审查；8 组隔离 Git/layout/install 检查通过。真实 native 成功只覆盖一个 Python fixture；指定模型的新启动曾被拒绝，其他 runtime 的完整流程仍未验证。实际模型/effort 元数据、完整运行成本与速度收益保持 unknown。
 
+**下一步验收（未完成）**：在真实小仓库上，Claude Code（haiku / sonnet）与 Codex（luna / sol）各跑一次，≥3 票、并发 ≥2、至少一张 escalate 票；用下方工具量主窗口上下文和 token。若 planner 跳过 worktree / DONE 检查 / 合并，再把这些 Git 步骤抽成脚本。
+
 [执行索引](.scratch/reliability-hardening/README.md) · [真实试运行与缺口](docs/verification/reliability-hardening/13/README.md) · [全部验证证据](docs/verification/reliability-hardening/)
 
 ## 配置与详细规则
@@ -118,12 +127,26 @@ flowchart LR
 
 | 想了解 | 阅读 |
 | --- | --- |
-| 依赖、worktree、逐票 review 与合并 | [实现循环](skills/grill-autopilot/loop.md) · [ticket 契约](skills/grill-autopilot/tickets.md) |
+| 用词 · 设计决定 | [GLOSSARY](GLOSSARY.md) · [ADR](docs/adr/) |
+| 分级、依赖、worktree、逐票 review 与合并 | [实现循环](skills/grill-autopilot/loop.md) · [ticket 契约与分级](skills/grill-autopilot/tickets.md) |
 | 宿主能力、模型事实与全部角色容量 | [runtime 契约](skills/grill-autopilot/runtimes.md) |
 | 输入快照、tracker 所有权与留存记录 | [run record](skills/grill-autopilot/run-record.md) |
 | 超时、重试、恢复与最终结果 | [失败处理](skills/grill-autopilot/failures.md) · [恢复](skills/grill-autopilot/resume.md) · [最终审查](skills/grill-autopilot/final-review.md) |
 
 产品修改在专用 worktree，原 checkout 的 tracker 写入受明确所有权约束。blocked 保留 dirty 文件、分支与诊断；**只有 success 且事先授权才自动 push / draft PR**，partial / failed 默认留在本地，从不 force push。
+
+## 测量上下文与成本
+
+```bash
+python3 tools/context-report.py ~/.claude/projects/<项目>/<session-id>.jsonl
+python3 tools/context-report.py ~/.codex/sessions/YYYY/MM/DD/rollout-<id>.jsonl
+```
+
+输出主窗口每轮上下文、峰值、累计发送量和增长曲线；Claude Code 另列每个子代理用量。实现阶段曲线应接近平坦。
+
+![子代理隔离上下文，worktree 隔离代码](docs/images/context-flow.png)
+
+[两个省钱杠杆](docs/images/levers.png)是估算示意，其中 −68% 未实测；以下一步验收的实测数据为准。
 
 ## 卸载
 

@@ -1,31 +1,35 @@
 # Worker-grade tickets
 
-A ticket is **worker-grade** when the cheapest configured model can finish it from the ticket alone, with no design decision left to make. to-tickets' vertical-slice rules still hold; a worker-grade ticket is a thin slice with every decision written down.
+Follow to-tickets as written. This file lists only where autopilot differs from it; to-tickets itself is never edited.
 
-## Rules
+## Overrides
 
-- **One behaviour, one seam.** Aim for at most 3 production files plus their test file as a size heuristic. Keep a complete, independently verifiable behavior together even if it needs more files; split only into independently verifiable slices. Resolve design decisions in the spec before dispatch. An unresolved decision blocks ticket preparation; return to the spec under run-record.md's scope-change gate rather than assigning the choice to a worker.
-- **Files** lists every path the worker may create or edit. The scheduler uses it to keep parallel workers apart, and the reviewer rejects any change outside it, so make it complete.
-- **Source** maps approved spec user stories and acceptance items to this ticket's acceptance IDs. If the spec lacks IDs, use a section pointer plus the exact criterion. Keep a set-level coverage table: every approved story and acceptance item → delivering ticket/acceptance IDs, or an explicit exclusion already approved in the spec with its pointer. A ticket-local exclusion cannot drop an in-scope requirement.
-- **Blocked by** names business prerequisites: if B needs an interface, artifact or behavior delivered by A, record A on B even when their Files are disjoint. Files overlap is a separate scheduling constraint; disjoint files alone do not make tickets independent.
-- **Interface** names the exact signature, endpoint, or CLI shape the slice adds or changes.
-- **Examples** name acceptance IDs and give concrete inputs with literal expected observable results, at least one per acceptance item plus one edge case, covering applicable boundary and error inputs too (values, error messages, exit codes or state changes). Explain any inapplicable input class. They are the independent source of truth: the worker's behavior checks assert them, and the reviewer checks the evidence against them.
-- **Steps** are at most 5 imperative actions. Words such as "decide", "choose" or "design" mean the ticket is not worker-grade yet.
-- **Verify** gives the exact single-test-file command and typecheck command from grill (or its agreed N/A reason). If the new test file does not yet exist, record the agreed existing seam baseline used before implementation.
-- **Context** holds pointers only: the spec section, plus 1–3 existing files to imitate.
-- Write real paths. Tickets run right away, so paths do not go stale; this replaces to-tickets' "avoid file paths" rule.
+1. **No quiz.** Replace to-tickets' human approval of granularity and blocking edges with the [self-check](#self-check).
+2. **Real paths.** Write `Files` and `Context` as real repo paths; this replaces "avoid file paths". The scheduler keeps tickets with overlapping Files apart, and the DONE check rejects changes outside them.
+3. **Extra fields.** Use the [template](#template): it adds `Implementer`, `Files`, `Interface`, `Examples`, `Verify` and `Context`. Examples give literal inputs and expected results, at least one per acceptance item plus one edge case; the worker's tests assert them and the reviewer checks against them.
+
+## Grading
+
+Before the self-check, the planner sets each ticket's Implementer. A ticket goes to `worker` (cheap model) only when **all** of these hold:
+
+- One module: at most 3 production files plus their test file.
+- Interface and Examples are literal; nothing is left to decide.
+- Context names at least one existing file in the repo to imitate.
+- No concurrency, ordering, async timing or state shared across modules.
+- Not a data migration, not a wide-refactor batch, not a bug fix without a reproduction.
+- Not security, authorization or performance-sensitive code.
+
+If an item fails, split the ticket along independently verifiable behaviours and grade each part again. Do not split below one behaviour just to reach `worker`: every ticket costs one reviewer call. If it cannot split further, set `escalate (<failed item>)` (strong model).
 
 ## Self-check
 
-This replaces to-tickets' human approval of ticket granularity and blocking edges, located by meaning rather than step number (see [companions.md](companions.md)). Check the whole set and every ticket, record failures, fix them and repeat. Publish the set as ready-for-agent only when all checks pass:
+Check every ticket, fix what fails, and repeat until all pass:
 
-- [ ] Every template field is filled.
-- [ ] The coverage table accounts for every approved spec user story **and** acceptance item; each delivery mapping names an existing ticket and acceptance ID. Every ticket Source mapping agrees with it. Only spec-approved exclusions pass; missing or unexplained coverage fails the set.
-- [ ] Every acceptance ID has at least one linked concrete input and literal observable expectation, plus at least one edge case for the ticket; applicable error and boundary inputs are covered, or their inapplicability is explained. Vague results such as “works normally” fail.
-- [ ] No step asks the worker to decide something.
-- [ ] Every path the slice touches is in Files.
-- [ ] Every required interface/artifact/behavior is already available at the agreed baseline or supplied by a named Blocked-by ticket. Check this independently of Files overlap; separately keep overlapping writers apart during scheduling.
-- [ ] Every Blocked-by ID exists and the graph is acyclic, including self-dependencies. Report missing IDs or the cycle's ticket chain; correct the graph before readiness. A genuine prerequisite cycle needs a settled spec/slice change, not removal of a required edge to pass the check.
+- [ ] Every template field is filled; Verify uses the commands agreed in grill (or their agreed N/A reason).
+- [ ] The Implementer matches Grading, and every `escalate` names the failed item.
+- [ ] Every acceptance item has an Example with literal values.
+- [ ] Every path the ticket touches is in Files.
+- [ ] Nothing asks the implementer to decide; an open design decision goes back to the spec.
 
 ## Template
 
@@ -34,15 +38,13 @@ This replaces to-tickets' human approval of ticket granularity and blocking edge
 
 Status: ready-for-agent
 Blocked by: <NN, NN> | None
+Implementer: worker | escalate (<failed grading item>)
 Files:
   - <path>
-Source: <spec story/acceptance IDs or exact criterion pointers> → <AC1, AC2>
 Interface: <signature / endpoint / CLI shape>
 Examples:
-  - AC1: <concrete input> → <literal observable result>
-  - AC1: <boundary/error input> → <literal result, or reason inapplicable>
-Steps:
-  1. <imperative action>
+  - AC1: <concrete input> → <literal expected result>
+  - AC1: <edge or error input> → <literal expected result>
 Verify:
   - <single-test-file command>
   - <typecheck command or agreed N/A with reason>
