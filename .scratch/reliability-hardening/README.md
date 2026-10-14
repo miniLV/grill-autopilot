@@ -1,6 +1,6 @@
 # reliability-hardening：规格与执行索引
 
-Status: implementing — 2026-10-14：01–12 已在 integration 分支完成；13 正在收集真实运行证据，尚未满足完整验收。
+Status: partial — 2026-10-14：01–12 已在 integration 分支完成；13 已提交真实成功与拒绝证据，因 dirty 故障和实际中断恢复缺口保持 blocked。
 
 用户已选择本地 Markdown tracker。规格在 [spec.md](spec.md)，每个 issue 独立放在 [issues](issues/) 中；所有文件仅属于当前仓库。无需为了本批任务运行 setup skill 或修改 plexus/global 配置。
 
@@ -41,7 +41,7 @@ Status: implementing — 2026-10-14：01–12 已在 integration 分支完成；
 
 给执行模型的任务说明：
 
-> 阅读本索引、spec 和指定 issue；确认批次已批准，且该 issue 的 blockers 全部 done。只完成该 issue，遵守现有设计决定。列出实际修改范围，逐项验收并保留命令和结果。证据不足就 blocked，不能自行扩大范围。完成后更新该 issue 的 Status 和 Comments，停止等待下一张。不要写 plexus，不要 push 或发布。
+> 阅读本索引、spec 和指定 issue；确认批次已批准，且该 issue 的 blockers 全部 done。只完成该 issue，遵守现有设计决定。列出实际修改范围，逐项验收并保留命令和结果。证据不足就 blocked，不能自行扩大范围。实现者报告结果，由 planner 更新 Status/Comments 并继续推进 frontier。不要写 plexus，不要 push 或发布。
 
 这些票按 to-tickets 的本地模板编写，使用行为与文档模块定位，不把当前源文件布局变成票据契约。它们可以交给执行模型逐票处理；不是当前尚未修好的 grill-autopilot 的输入。不要用待修复的流程自举执行这批修复。
 
@@ -83,4 +83,4 @@ Status: implementing — 2026-10-14：01–12 已在 integration 分支完成；
 
 01–12 已实现并逐票验收，包含真实临时 Git/worktree 实验、安装/卸载操作、文档图渲染及明确标记的协议演练。真实模型验证单独记录于 13；完整运行状态以该 issue 和验证报告为准。
 
-最后还须完成 integration 分支固定基线的 Standards / Spec 两轴审查。未满足的验收项保持未勾选，当前不声称整份规格完成。
+integration 分支固定基线的 Standards / Spec 两轴审查及最终验证记录保存在分支外的 `grill-autopilot.autopilot-worktrees/execution-notes/`，最终结果以其中的 `brief.md` 为准，避免写入报告后使已审查提交失效。未满足的验收项保持未勾选，不声称整份规格完成。

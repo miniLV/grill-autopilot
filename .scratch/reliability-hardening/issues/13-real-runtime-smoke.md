@@ -4,7 +4,7 @@
 
 **Blocked by:** 08, 12
 
-**Status:** ready-for-agent
+**Status:** blocked
 
 Priority: P1 · 发布前验证，不是benchmark
 Spec decisions: D12
@@ -40,10 +40,10 @@ User stories: US19
 ## Acceptance criteria
 
 - [ ] 成功、失败和恢复各有独立run身份与真实日志。
-- [ ] 报告区分Git实验、协议演练与实际模型执行。
-- [ ] 实际模型不可观测字段为unknown，不声称匹配已验证。
-- [ ] 验证矩阵仅据证据更新；未验证runtime仍标未验证。
-- [ ] 成本/耗时只记录能拿到的真实数据，无比较收益结论；不push/PR/发布。
+- [x] 报告区分Git实验、协议演练与实际模型执行。
+- [x] 实际模型不可观测字段为unknown，不声称匹配已验证。
+- [x] 验证矩阵仅据证据更新；未验证runtime仍标未验证。
+- [x] 成本/耗时只记录能拿到的真实数据，无比较收益结论；不push/PR/发布。
 
 ## Verify
 
@@ -56,6 +56,11 @@ User stories: US19
 验收项全部满足且证据可重现后才改为 done。有环境或设计阻碍则改为 blocked，并写明原因、现场和下一步所需条件。未取得真实模型证据时，不使用“端到端通过”的表述。
 
 ## Comments
+
+- 2026-10-14：证据候选 `70fa6350afb096af91463bd303ea1c97781511e9` 已合并为 `48dde0f07768e212ee8f001bc428448a15977b1e`，报告见 [13 验证报告](../../../docs/verification/reliability-hardening/13/README.md)。root 独立校验 121 份 native 复制/编码证据；merger 校验候选范围、历史证据和链接，合并及全批次 diff check 均 exit 0。
+- 2026-10-14：实际 native 成功样本三票按依赖完成，最终 SHA `ce45d2be4f6709e71c8b7e5b85e7cd7b5ebfed53` 的 14 项 unittest 通过，独立 Standards/Spec 均 PASS、0 findings，原 main 与冻结输入保留。模型按用户要求配置为 gpt-6.1-sol/high，可信实际模型/effort 元数据仍为 unknown。
+- 2026-10-14：真实 dirty 故障保留和 planner 中断后的显式恢复仍未验证。CLI 指定模型启动被账户路由拒绝；native 新建同模型角色也被当前 registry 拒绝，未改用其他模型、重试拒绝路由或制造 dirty 结果。当前 planner 自动中断能力不可用；Codex 电脑控制明确拒绝，人工中断问题尚无答复。恢复 fixture 保持准备状态，故本票 blocked，首项验收不勾选。
+- 2026-10-14：保留 CLI 拒绝、最初 preparation ordering 失误、最终检查 deadline 记录修正的历史，并在提前记录完整 deadline 后重新通过检查。blocked 工作树、原始 labs 与现场保留；成功票工作树已安全清理。后续所需条件是获授权且可用的指定模型启动能力，以及真实 planner 中断/显式恢复能力；不以 Git 演练或逻辑暂停替代。
 
 - 2026-10-13：根据架构审查编写；尚未实现，待批次确认。
 - 2026-10-13：用户授权架构师决策，批次已定稿；状态改为 ready-for-agent。仍须等待执行指令，且只在前置票全部 done 后执行。
