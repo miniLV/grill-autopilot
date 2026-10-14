@@ -1,0 +1,53 @@
+{
+  "skill_commit": "ae824f3c6e07370db5c2b3c43aede89eb6fe5a32",
+  "arms": {
+    "arm-a-implement-spec": {
+      "start": "2026-10-14T09:29:39Z",
+      "end": "2026-10-14T09:29:44Z",
+      "exit": "1",
+      "sessions": 1,
+      "tokens_by_model": {},
+      "session_details": [
+        {
+          "file": "rollout-2026-10-14T17-29-39-01a139be-faf1-7e63-9f61-8df78be1d138.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2/arm-a-implement-spec"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {},
+          "first": "2026-10-14T09:29:39.974Z",
+          "last": "2026-10-14T09:29:43.570Z",
+          "id": "01a139be-faf1-7e63-9f61-8df78be1d138",
+          "source": "exec",
+          "thread_source": "user"
+        }
+      ]
+    },
+    "arm-b-grill-autopilot": {
+      "start": "2026-10-14T09:29:44Z",
+      "end": "2026-10-14T09:29:49Z",
+      "exit": "1",
+      "sessions": 1,
+      "tokens_by_model": {},
+      "session_details": [
+        {
+          "file": "rollout-2026-10-14T17-29-45-01a139bf-0fda-7283-aea2-a5dac49f9939.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {},
+          "first": "2026-10-14T09:29:45.319Z",
+          "last": "2026-10-14T09:29:48.349Z",
+          "id": "01a139bf-0fda-7283-aea2-a5dac49f9939",
+          "source": "exec",
+          "thread_source": "user"
+        }
+      ]
+    }
+  }
+}
