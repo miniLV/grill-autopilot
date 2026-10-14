@@ -1,0 +1,38 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-02",
+  "started_at": "2026-10-14T13:00:18.312260+00:00",
+  "ended_at": "2026-10-14T13:00:18.458750+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_add_then_list (test_cli.CliTest.test_add_then_list) ... ok\ntest_append_then_load_round_trips (test_store.StoreTest.test_append_then_load_round_trips) ... ok\ntest_missing_file_is_empty (test_store.StoreTest.test_missing_file_is_empty) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.056s\n\nOK\n",
+  "before": {
+    "head": "6380caf932906eb22e6384a0f2d6cd571547b725",
+    "ref": "refs/heads/autopilot/ledger-v2/tickets/02",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "6380caf932906eb22e6384a0f2d6cd571547b725",
+    "ref": "refs/heads/autopilot/ledger-v2/tickets/02",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/02-impl-1-baseline.json"
+}

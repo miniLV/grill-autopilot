@@ -1,0 +1,26 @@
+Complete reviewer08 evidence parts1+2 PASS no findings. Baseba80142544092242b75bd0dc187805121093f8fb candidate98ac0481a10845fc3a9ee2ed5ac99526e661e211. Taskhasha76dcedb37db996986d2290e64f707f347630cbb77492ca04b368324d0ad87c0 spechashf47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3 before/after. All gate cwd canonical ledger-v2-08. git revparseHEAD before/after exactcandidate, branchautopilot/ledger-v2/tickets/08; objectscommit; ancestor exit0. status --porcelain --untracked-files=all --ignored and diff--check before/after exit0 empty; diffnames exactlystore/test_store. Full source/diff inspected, oldassertions intact, stdlibonly, no skips/deps/scopecreep. All pendingGitoperations false; full inventories unchanged. Host08implementer completed before/after, no unknown writer. ps PermissionError Operationnotpermitted, diagnostic script initialexit1 only optionalps; no bypass. N/A no typechecker.
+Verify PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_store -v exit0 stdoutempty, stderr:
+test_append_migrates_v1_without_deadlock (tests.test_store.StoreTest) ... ok
+test_append_then_load_round_trips (tests.test_store.StoreTest) ... ok
+test_failed_replace_cleans_up_temporary_file (tests.test_store.StoreTest) ... ok
+test_failed_save_preserves_existing_entries (tests.test_store.StoreTest) ... ok
+test_independent_processes_append_all_entries (tests.test_store.StoreTest) ... ok
+test_legacy_fractional_cents_round_half_up (tests.test_store.StoreTest) ... ok
+test_load_migrates_v1_and_preserves_original_backup (tests.test_store.StoreTest) ... ok
+test_load_v2_preserves_bytes_without_backup (tests.test_store.StoreTest) ... ok
+test_missing_file_is_empty (tests.test_store.StoreTest) ... ok
+test_negative_cents_round_trip (tests.test_store.StoreTest) ... ok
+test_reader_sees_complete_ledgers_during_saves (tests.test_store.StoreTest) ... ok
+test_simultaneous_first_appends_preserve_both_entries (tests.test_store.StoreTest) ... ok
+----------------------------------------------------------------------
+Ran 12 tests in 0.346s
+OK
+Additional discover exit0 all44tests in0.437s OK. Independent interpreter probes with explicit readiness/start barriers, processcommunicate15s, readiness10s, temporarydirectoriescleaned, original-v1bytesexact checked; publicload plus RAW json.load readers prove atomicreplace, rather than only lock serialization. Complete probe stdout (outer python3 -B inline envPYTHONDONTWRITEBYTECODE=1 exit0 stderrempty):
+{"scenario": "append", "writer_pids": [33225, 33226], "reader_pid": 33224, "writers": ["DONE", "DONE"], "reader": "READS 849", "final_count": 100, "v2_preserved": true, "sidecar_persists": true}
+{"scenario": "save", "writer_pids": [33228], "reader_pid": 33227, "writers": ["DONE"], "reader": "READS 502", "final_count": 100, "v2_preserved": true, "sidecar_persists": true}
+{"scenario": "first", "writer_pids": [33229, 33230], "reader_pid": null, "writers": ["DONE", "DONE"], "reader": "N/A", "final_count": 2, "v2_preserved": true, "sidecar_persists": true}
+{"scenario": "migration", "writer_pids": [33231, 33232], "reader_pid": null, "writers": ["DONE", "DONE"], "reader": "N/A", "final_count": 101, "v2_preserved": true, "sidecar_persists": true}
+INDEPENDENT_PROCESS_PROBES_PASS
+Source requirements verified fcntl stable sidecar fullappend lock, sharedload/save/migrate with privateunlocked helpers, same-dir mkstemp, close thenos.replace, finallytempcleanup, lockpersists. Error cleanup preservingledger/replacefailurecovered; missingload[] andv2bytesunchanged. No writes byreviewer toworktree/tracker. Complete finalverdict follows. Events supplied by ticket08_review captured by planner.
+
+PASS 98ac0481a10845fc3a9ee2ed5ac99526e661e211 /Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/08-review-1-result.txt

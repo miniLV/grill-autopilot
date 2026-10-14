@@ -1,0 +1,36 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "tests.test_money",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:13:22.841174+00:00",
+  "ended_at": "2026-10-14T13:13:22.926600+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration/tests/test_money.py:38: SyntaxWarning: invalid escape sequence '\\+'\n  with self.assertRaisesRegex(ValueError, \"^invalid amount: \\+1$\"):\ntest_formats_negative_cents (tests.test_money.MoneyTest.test_formats_negative_cents) ... ok\ntest_formats_positive_cents (tests.test_money.MoneyTest.test_formats_positive_cents) ... ok\ntest_formats_zero_cents (tests.test_money.MoneyTest.test_formats_zero_cents) ... ok\ntest_parses_decimal_amount (tests.test_money.MoneyTest.test_parses_decimal_amount) ... ok\ntest_parses_grouped_thousands (tests.test_money.MoneyTest.test_parses_grouped_thousands) ... ok\ntest_parses_grouped_thousands_with_leading_zeroes (tests.test_money.MoneyTest.test_parses_grouped_thousands_with_leading_zeroes) ... ok\ntest_parses_grouped_thousands_with_multiple_leading_zeroes (tests.test_money.MoneyTest.test_parses_grouped_thousands_with_multiple_leading_zeroes) ... ok\ntest_parses_grouped_thousands_with_zero_prefix (tests.test_money.MoneyTest.test_parses_grouped_thousands_with_zero_prefix) ... ok\ntest_parses_negative_decimal (tests.test_money.MoneyTest.test_parses_negative_decimal) ... ok\ntest_parses_negative_whole_amount (tests.test_money.MoneyTest.test_parses_negative_whole_amount) ... ok\ntest_parses_one_decimal_digit (tests.test_money.MoneyTest.test_parses_one_decimal_digit) ... ok\ntest_rejects_malformed_text_with_original_value (tests.test_money.MoneyTest.test_rejects_malformed_text_with_original_value) ... ok\ntest_rejects_plus_sign (tests.test_money.MoneyTest.test_rejects_plus_sign) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.000s\n\nOK\n",
+  "before": {
+    "head": "245c5cc6333bdd01e2946d79389b55ad034db1b4",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "245c5cc6333bdd01e2946d79389b55ad034db1b4",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/01-integration-verify.json"
+}

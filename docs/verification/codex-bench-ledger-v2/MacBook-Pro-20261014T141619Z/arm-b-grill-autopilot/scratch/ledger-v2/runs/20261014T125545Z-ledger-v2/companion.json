@@ -1,0 +1,72 @@
+{
+  "root": "/Users/tyrion/.config/plexus/personal/skills",
+  "discovery_tier": "user",
+  "source_commit": "unavailable: no enclosing source Git metadata",
+  "fingerprint": [
+    {
+      "name": "code-review/SKILL.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/code-review/SKILL.md",
+      "sha256": "09eb147f793e4647949edd32dbad278f0554dfb56e0d46b699cd4c2c55bf0357"
+    },
+    {
+      "name": "grilling/SKILL.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/grilling/SKILL.md",
+      "sha256": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15"
+    },
+    {
+      "name": "setup-matt-pocock-skills/SKILL.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/setup-matt-pocock-skills/SKILL.md",
+      "sha256": "f148858ffb7f63c03c06fca06e6fdb1d91a35c6b293244b8fdfacd5f4cc028c4"
+    },
+    {
+      "name": "setup-matt-pocock-skills/issue-tracker-local.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/setup-matt-pocock-skills/issue-tracker-local.md",
+      "sha256": "7dcda20a2eb4bdc89b95d1143423c0691309921cadae3132e6424f371030506e"
+    },
+    {
+      "name": "setup-matt-pocock-skills/triage-labels.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/setup-matt-pocock-skills/triage-labels.md",
+      "sha256": "ae512af838c78b8750471c42cd2b20fa32319553e61d84c9a23d171b40ce14aa"
+    },
+    {
+      "name": "tdd/SKILL.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/tdd/SKILL.md",
+      "sha256": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0"
+    },
+    {
+      "name": "tdd/mocking.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/tdd/mocking.md",
+      "sha256": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef"
+    },
+    {
+      "name": "tdd/tests.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/tdd/tests.md",
+      "sha256": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a"
+    },
+    {
+      "name": "to-spec/SKILL.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/to-spec/SKILL.md",
+      "sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088"
+    },
+    {
+      "name": "to-tickets/SKILL.md",
+      "canonical": "/Users/tyrion/.config/plexus/personal/skills/to-tickets/SKILL.md",
+      "sha256": "56ec23c5b2782785d4e65bff9e315b6d3aeb4ef977c174a219e99489fada1995"
+    }
+  ],
+  "skills": {
+    "grilling": "/Users/tyrion/.config/plexus/personal/skills/grilling/SKILL.md",
+    "to-spec": "/Users/tyrion/.config/plexus/personal/skills/to-spec/SKILL.md",
+    "to-tickets": "/Users/tyrion/.config/plexus/personal/skills/to-tickets/SKILL.md",
+    "tdd": "/Users/tyrion/.config/plexus/personal/skills/tdd/SKILL.md",
+    "code-review": "/Users/tyrion/.config/plexus/personal/skills/code-review/SKILL.md",
+    "setup-matt-pocock-skills": "/Users/tyrion/.config/plexus/personal/skills/setup-matt-pocock-skills/SKILL.md"
+  },
+  "helpers": {
+    "setup-matt-pocock-skills/issue-tracker-local.md": "/Users/tyrion/.config/plexus/personal/skills/setup-matt-pocock-skills/issue-tracker-local.md",
+    "setup-matt-pocock-skills/triage-labels.md": "/Users/tyrion/.config/plexus/personal/skills/setup-matt-pocock-skills/triage-labels.md",
+    "tdd/mocking.md": "/Users/tyrion/.config/plexus/personal/skills/tdd/mocking.md",
+    "tdd/tests.md": "/Users/tyrion/.config/plexus/personal/skills/tdd/tests.md"
+  },
+  "contract_evidence": "All six read; agreed-decision rounds, seven-section synthesis, vertical slices with blocking edges, public-seam red-before-green, separate fixed-base Standards/Spec, local markdown helper and triage map qualified. Spec synthesis explicitly replaced by verbatim approved spec per user. Adjacent lacks all six; project roots absent; user .codex aliases one canonical complete collection; other configured user/plugin roots have no companion candidates."
+}

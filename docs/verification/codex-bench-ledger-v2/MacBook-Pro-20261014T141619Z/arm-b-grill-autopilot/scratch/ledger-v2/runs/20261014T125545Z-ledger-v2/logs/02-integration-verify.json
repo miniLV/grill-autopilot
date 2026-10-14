@@ -1,0 +1,36 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "tests.test_categories",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:06:11.684957+00:00",
+  "ended_at": "2026-10-14T13:06:11.764208+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_accepts_thirty_characters_and_rejects_thirty_one (tests.test_categories.CategoryTest.test_accepts_thirty_characters_and_rejects_thirty_one) ... ok\ntest_rejects_invalid_categories_with_original_text (tests.test_categories.CategoryTest.test_rejects_invalid_categories_with_original_text) ... ok\ntest_replaces_tabs_with_hyphens (tests.test_categories.CategoryTest.test_replaces_tabs_with_hyphens) ... ok\ntest_strips_lowercases_and_collapses_whitespace (tests.test_categories.CategoryTest.test_strips_lowercases_and_collapses_whitespace) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+  "before": {
+    "head": "d30d78b3a13b12e4afd987511e6df9b2892a80f6",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "d30d78b3a13b12e4afd987511e6df9b2892a80f6",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/02-integration-verify.json"
+}

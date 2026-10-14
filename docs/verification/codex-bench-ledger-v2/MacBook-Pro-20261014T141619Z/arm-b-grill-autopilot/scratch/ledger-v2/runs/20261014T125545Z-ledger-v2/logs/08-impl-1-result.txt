@@ -1,0 +1,1 @@
+DONE 98ac0481a10845fc3a9ee2ed5ac99526e661e211 ledger/store.py,tests/test_store.py

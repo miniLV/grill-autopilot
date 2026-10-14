@@ -1,0 +1,8 @@
+{
+  "ref": "refs/heads/main",
+  "base_sha": "6380caf932906eb22e6384a0f2d6cd571547b725",
+  "tracked_diff": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/tracked.diff",
+  "staged_diff": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/staged.diff",
+  "untracked_list": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/untracked.z",
+  "non_run_untracked": []
+}

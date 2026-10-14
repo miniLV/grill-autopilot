@@ -1,0 +1,33 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "62f80af6537254af2b34f44b47bc099b56d582d9...7b0a2d8365c6ae9ea5f7030760f0c8acab94d3f2"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:59:26.583001+00:00",
+  "ended_at": "2026-10-14T13:59:26.600176+00:00",
+  "exit": 0,
+  "stdout": "diff --git a/ledger/csv_io.py b/ledger/csv_io.py\nindex e520c8b..6daf826 100644\n--- a/ledger/csv_io.py\n+++ b/ledger/csv_io.py\n@@ -61,8 +61,17 @@ def import_csv(text: str) -> list[Entry]:\n \n def export_csv(entries) -> str:\n     output = io.StringIO()\n-    writer = csv.writer(output, lineterminator=\"\\n\")\n-    writer.writerow([\"date\", \"amount\", \"category\", \"note\"])\n+    writer = csv.writer(output)\n+    rows = []\n+\n+    def write_row(row):\n+        output.seek(0)\n+        output.truncate(0)\n+        writer.writerow(row)\n+        # Replace only the record separator, preserving newlines inside fields.\n+        rows.append(output.getvalue()[:-2] + \"\\n\")\n+\n+    write_row([\"date\", \"amount\", \"category\", \"note\"])\n     for entry in sorted(entries, key=lambda entry: entry.date):\n-        writer.writerow([entry.date, format_amount(entry.amount), entry.category, entry.note])\n-    return output.getvalue()\n+        write_row([entry.date, format_amount(entry.amount), entry.category, entry.note])\n+    return \"\".join(rows)\ndiff --git a/tests/test_csv_io.py b/tests/test_csv_io.py\nindex 051603a..266f0d2 100644\n--- a/tests/test_csv_io.py\n+++ b/tests/test_csv_io.py\n@@ -161,6 +161,31 @@ class CsvExportTest(unittest.TestCase):\n     def test_export_empty_input_contains_only_header(self):\n         self.assertEqual(export_csv([]), \"date,amount,category,note\\n\")\n \n+    def test_export_quotes_carriage_return_and_roundtrips_note(self):\n+        entry = Entry(\"2026-01-05\", 1250, \"food\", \"first\\rsecond\")\n+        text = export_csv([entry])\n+        self.assertEqual(\n+            text,\n+            'date,amount,category,note\\n2026-01-05,12.50,food,\"first\\rsecond\"\\n',\n+        )\n+        self.assertEqual(import_csv(text), [entry])\n+\n+    def test_export_preserves_lf_crlf_and_mixed_newlines_inside_notes(self):\n+        cases = [\n+            (\"first\\nsecond\",\n+             'date,amount,category,note\\n2026-01-05,12.50,food,\"first\\nsecond\"\\n'),\n+            (\"first\\r\\nsecond\",\n+             'date,amount,category,note\\n2026-01-05,12.50,food,\"first\\r\\nsecond\"\\n'),\n+            (\"first\\rsecond\\nthird\\r\\nfourth\",\n+             'date,amount,category,note\\n2026-01-05,12.50,food,\"first\\rsecond\\nthird\\r\\nfourth\"\\n'),\n+        ]\n+        for note, expected in cases:\n+            with self.subTest(note=note):\n+                entry = Entry(\"2026-01-05\", 1250, \"food\", note)\n+                text = export_csv([entry])\n+                self.assertEqual(text, expected)\n+                self.assertEqual(import_csv(text), [entry])\n+\n     def test_export_negative_cents(self):\n         self.assertEqual(\n             export_csv([Entry(\"2026-01-05\", -5, \"food\", \"refund\")]),\n",
+  "stderr": "",
+  "before": {
+    "head": "7b0a2d8365c6ae9ea5f7030760f0c8acab94d3f2",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "7b0a2d8365c6ae9ea5f7030760f0c8acab94d3f2",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/final-fix-1-diff.json"
+}

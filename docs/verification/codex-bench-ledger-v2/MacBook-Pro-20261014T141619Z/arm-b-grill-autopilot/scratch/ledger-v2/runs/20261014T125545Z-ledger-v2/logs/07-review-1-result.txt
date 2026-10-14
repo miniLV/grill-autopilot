@@ -1,0 +1,20 @@
+Complete reviewer07 evidence PASS no findings. Base5e768749ba71bb6289746020d47f63ba44dde258 candidatedf02c7c071649144c23cbcab357527849d2cb08c. Hashes task34fc167fff30b7b8665aaca6d11f3aa72ac60a7f1fc370349766bc62494a9606 specf47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3 exact verified. Both objects commit and ancestor exit0. Name-status exactly M ledger/cli.py models.py store.py tests/test_cli.py tests/test_store.py under Files. No deps/skips/deleted/reduced assertions; float literals changed to required cents, original CLI stdout retained plus cents assertion. All gates cwd canonical ledger-v2-07. Before/after HEADdf02c7c071649144c23cbcab357527849d2cb08c branchautopilot/ledger-v2/tickets/07; status/diff/staged/untracked/ignored/diff--check exit0 empty. Native host writer07 completed before/after, no active/unknown writer. ps exit127 zsh:1: operation not permitted: ps; host lifecycle and stable exact commit used.
+PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_store -v exit0:
+test_append_then_load_round_trips (tests.test_store.StoreTest) ... ok
+test_legacy_fractional_cents_round_half_up (tests.test_store.StoreTest) ... ok
+test_load_migrates_v1_and_preserves_original_backup (tests.test_store.StoreTest) ... ok
+test_load_v2_preserves_bytes_without_backup (tests.test_store.StoreTest) ... ok
+test_missing_file_is_empty (tests.test_store.StoreTest) ... ok
+test_negative_cents_round_trip (tests.test_store.StoreTest) ... ok
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+OK
+PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_cli -v exit0:
+test_add_then_list (tests.test_cli.CliTest) ... ok
+test_list_negative_cents (tests.test_cli.CliTest) ... ok
+----------------------------------------------------------------------
+Ran 2 tests in 0.091s
+OK
+After repeated gates unchanged; MERGE_HEAD revparse128 fatal Needed a single revision expected absent; metadata probe exit0 confirms gitdir original .git/worktrees/ledger-v2-07 no merge/indexlock/rebase status/untracked/ignored empty. Exact original byte backup/version2 int1250; v2 unchanged/no backup; CLI exact lunch stdout int1250; missing[],negative-5 and Decimal1.005->101,-1.005->-101 covered. S8 locks/atomic and S9 new commands explicitly deferred. N/A no checker. Companion/inputs/prior art read. Event supplied by ticket07_review captured by planner.
+
+PASS df02c7c071649144c23cbcab357527849d2cb08c /Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/07-review-1-result.txt

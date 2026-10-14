@@ -1,0 +1,17 @@
+Complete reviewer09 evidence PASS no findings. Base1dfb77139d4933cf25e173b156f4f3d79752bf37 candidateb88b1a975693991c39d91d2c52856035bc8437f5; taskhash45392e9f94b4797f0fb769aa2ecd8f7f595cec499c51abad5c0538d1dd6295c7 spechashf47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3 beforeafter exact. All gatescwd canonical ledger-v2-09. Both commitsresolve, baseancestor, HEAD/refcandidate/ticket09; beforeafter statusincludingignored/untrackedempty, afterdiff/stagedempty, inventoriesidentical/no pendingGitoperations. Host implementer09completed beforeafter, no unknownwriter. Allgitexit0 stderrempty. Names onlycli.py/test_cli.py, fixedSHA fullsource/diff examined. AllAC pass, realpublicmodulecallsguarantee money/categories, summarysortedbounds, exportend='', validateallCSVbeforeappend .errorsprintedstderr1. Prioradd/listassertionsunchanged, helper timeout strengthensboundedcommands, no skips/deps/scopecreep. N/A initializationNone/typecheckstandardlibno checker.
+PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_cli -v exit0 stdoutempty stderr:
+test_add_normalizes_category (tests.test_cli.CliTest) ... ok
+test_add_rejects_invalid_amount_and_category_without_appending (tests.test_cli.CliTest) ... ok
+test_add_then_list (tests.test_cli.CliTest) ... ok
+test_export_writes_exact_csv (tests.test_cli.CliTest) ... ok
+test_import_appends_all_rows_and_preserves_multiline_notes (tests.test_cli.CliTest) ... ok
+test_import_reports_every_error_without_appending_valid_rows (tests.test_cli.CliTest) ... ok
+test_list_negative_cents (tests.test_cli.CliTest) ... ok
+test_summary_rejects_reversed_date_range (tests.test_cli.CliTest) ... ok
+test_summary_sorted_with_inclusive_date_bounds (tests.test_cli.CliTest) ... ok
+----------------------------------------------------------------------
+Ran 9 tests in 1.107s
+OK
+Fullsuite sameenv/cwd discoverexit0 all64tests in1.475s OK. Supplemental independentCLIliteralchecks timeout10 temporaryfixturesremoved exit0 stdoutSUPPLEMENTAL_LITERAL_CHECKS_PASS: empty summary/export, normalizedadd/list, invalidabc/9livesstderr2 ledgerBYTESunchanged, badCSVlines2/4 stderr1 originalBYTESunchanged/interveningvalidrowunappended, validimportallappend; mixedsorted summary coffee-0.05/food2.50/food-out12.50/Febrent900.00, equalboundsJan15 coffee/food, reversedrangeerrorstderr2. Allcommandrecordsbyteassertionspassed. Candidate/hash/state unchanged aftersupplement. Completeverdictandevidenceevents suppliedby ticket09_review, plannercaptured.
+
+PASS b88b1a975693991c39d91d2c52856035bc8437f5 /Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/09-review-1-result.txt

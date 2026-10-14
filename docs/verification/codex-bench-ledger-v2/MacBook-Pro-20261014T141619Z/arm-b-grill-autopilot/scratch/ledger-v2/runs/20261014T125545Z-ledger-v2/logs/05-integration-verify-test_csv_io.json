@@ -1,0 +1,36 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "tests.test_csv_io",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:22:20.086527+00:00",
+  "ended_at": "2026-10-14T13:22:20.171653+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_export_does_not_mutate_input_list (tests.test_csv_io.CsvExportTest.test_export_does_not_mutate_input_list) ... ok\ntest_export_empty_input_contains_only_header (tests.test_csv_io.CsvExportTest.test_export_empty_input_contains_only_header) ... ok\ntest_export_negative_cents (tests.test_csv_io.CsvExportTest.test_export_negative_cents) ... ok\ntest_export_one_entry_with_formatted_cents_and_lf (tests.test_csv_io.CsvExportTest.test_export_one_entry_with_formatted_cents_and_lf) ... ok\ntest_export_sorts_dates_stably_and_quotes_notes (tests.test_csv_io.CsvExportTest.test_export_sorts_dates_stably_and_quotes_notes) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+  "before": {
+    "head": "f0f079d479be622a83e1312b7f152a6dd916a124",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "f0f079d479be622a83e1312b7f152a6dd916a124",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/05-integration-verify-test_csv_io.json"
+}

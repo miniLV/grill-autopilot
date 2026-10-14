@@ -1,0 +1,72 @@
+{
+  "a_result": "../MacBook-Pro-20261014T112807Z",
+  "b_result": "MacBook-Pro-20261014T141619Z",
+  "same_seed_tree": "b00723c45b02a42659b1dd9c0ca7cb60760b2384",
+  "same_spec_sha256": "f47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3",
+  "skill_seed_and_prompts_unchanged_between_versions": true,
+  "launcher_change": "Explicit own .git writable root; A had relocated metadata, B uses normal shared metadata.",
+  "a": {
+    "result": "reported complete",
+    "seconds": 1256,
+    "completed_tickets": 4,
+    "tests": 38,
+    "sessions": 9,
+    "totals": {
+      "input_tokens": 7694390,
+      "cached_input_tokens": 7361024,
+      "output_tokens": 58327,
+      "reasoning_output_tokens": 7934,
+      "uncached_input_tokens": 333366
+    },
+    "tokens_by_model": {
+      "gpt-6.1-sol": {
+        "input_tokens": 7694390,
+        "cached_input_tokens": 7361024,
+        "output_tokens": 58327,
+        "reasoning_output_tokens": 7934
+      }
+    }
+  },
+  "b": {
+    "result": "success",
+    "seconds": 5032,
+    "completed_tickets": 9,
+    "tests": 66,
+    "sessions": 26,
+    "totals": {
+      "input_tokens": 34004028,
+      "cached_input_tokens": 32893824,
+      "output_tokens": 212959,
+      "reasoning_output_tokens": 33752,
+      "uncached_input_tokens": 1110204
+    },
+    "tokens_by_model": {
+      "gpt-6.1-sol": {
+        "input_tokens": 32511962,
+        "cached_input_tokens": 31480448,
+        "output_tokens": 200678,
+        "reasoning_output_tokens": 31185
+      },
+      "gpt-6-luna": {
+        "input_tokens": 1492066,
+        "cached_input_tokens": 1413376,
+        "output_tokens": 12281,
+        "reasoning_output_tokens": 2567
+      }
+    }
+  },
+  "b_over_a": {
+    "wall_clock": 4.006369426751593,
+    "input": 4.419327328092286,
+    "uncached_input": 3.330285632008063,
+    "output": 3.65112212183037
+  },
+  "limitations": [
+    "Single runs at different times; elapsed time includes transport stalls, review, corrections and report generation.",
+    "Different ticket granularity and test suites; 66 versus 38 tests does not prove higher quality.",
+    "No unified hidden acceptance or bill/price data was supplied.",
+    "Token model labels are rollout attribution, not independent proof of the provider executed model.",
+    "Do not add cached input to input or blindly add reasoning output to output.",
+    "This completed B run is separate from all historical interrupted/failed B runs; their costs are not included here."
+  ]
+}

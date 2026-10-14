@@ -1,0 +1,35 @@
+{
+  "command": [
+    "git",
+    "merge",
+    "--no-ff",
+    "--no-edit",
+    "321d3b183d7a34c5ecabff61f6c14d9afe3f408f"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:07:46.598519+00:00",
+  "ended_at": "2026-10-14T13:07:46.625102+00:00",
+  "exit": 0,
+  "stdout": "Merge made by the 'ort' strategy.\n ledger/query.py     |  8 ++++++++\n tests/test_query.py | 58 +++++++++++++++++++++++++++++++++++++++++++++++++++++\n 2 files changed, 66 insertions(+)\n create mode 100644 ledger/query.py\n create mode 100644 tests/test_query.py\n",
+  "stderr": "",
+  "before": {
+    "head": "d30d78b3a13b12e4afd987511e6df9b2892a80f6",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "0de76fabf581f097f0d87d547378c316929eb020",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/03-integration-merge.json"
+}

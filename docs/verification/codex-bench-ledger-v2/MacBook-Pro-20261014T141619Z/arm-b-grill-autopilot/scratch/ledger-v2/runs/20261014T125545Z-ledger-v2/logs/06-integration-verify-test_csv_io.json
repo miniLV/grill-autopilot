@@ -1,0 +1,36 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "tests.test_csv_io",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:35:05.646390+00:00",
+  "ended_at": "2026-10-14T13:35:05.732135+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_export_does_not_mutate_input_list (tests.test_csv_io.CsvExportTest.test_export_does_not_mutate_input_list) ... ok\ntest_export_empty_input_contains_only_header (tests.test_csv_io.CsvExportTest.test_export_empty_input_contains_only_header) ... ok\ntest_export_negative_cents (tests.test_csv_io.CsvExportTest.test_export_negative_cents) ... ok\ntest_export_one_entry_with_formatted_cents_and_lf (tests.test_csv_io.CsvExportTest.test_export_one_entry_with_formatted_cents_and_lf) ... ok\ntest_export_sorts_dates_stably_and_quotes_notes (tests.test_csv_io.CsvExportTest.test_export_sorts_dates_stably_and_quotes_notes) ... ok\ntest_collects_amount_and_category_errors_in_one_row (tests.test_csv_io.CsvImportTest.test_collects_amount_and_category_errors_in_one_row) ... ok\ntest_collects_errors_across_rows_without_partial_import (tests.test_csv_io.CsvImportTest.test_collects_errors_across_rows_without_partial_import) ... ok\ntest_collects_malformed_csv_and_other_row_errors (tests.test_csv_io.CsvImportTest.test_collects_malformed_csv_and_other_row_errors) ... ok\ntest_csv_syntax_error_does_not_prevent_later_row_validation (tests.test_csv_io.CsvImportTest.test_csv_syntax_error_does_not_prevent_later_row_validation) ... ok\ntest_empty_input_rejects_header (tests.test_csv_io.CsvImportTest.test_empty_input_rejects_header) ... ok\ntest_errors_use_physical_record_start_lines (tests.test_csv_io.CsvImportTest.test_errors_use_physical_record_start_lines) ... ok\ntest_header_names_are_exact_and_malformed_header_is_rejected (tests.test_csv_io.CsvImportTest.test_header_names_are_exact_and_malformed_header_is_rejected) ... ok\ntest_header_only_is_empty_import (tests.test_csv_io.CsvImportTest.test_header_only_is_empty_import) ... ok\ntest_import_parses_cents_and_normalizes_categories (tests.test_csv_io.CsvImportTest.test_import_parses_cents_and_normalizes_categories) ... ok\ntest_import_preserves_multiline_notes_and_quoted_amounts (tests.test_csv_io.CsvImportTest.test_import_preserves_multiline_notes_and_quoted_amounts) ... ok\ntest_rejects_bad_header (tests.test_csv_io.CsvImportTest.test_rejects_bad_header) ... ok\ntest_rejects_invalid_dates_and_non_iso_shapes (tests.test_csv_io.CsvImportTest.test_rejects_invalid_dates_and_non_iso_shapes) ... ok\ntest_rejects_records_without_exactly_four_fields (tests.test_csv_io.CsvImportTest.test_rejects_records_without_exactly_four_fields) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.000s\n\nOK\n",
+  "before": {
+    "head": "1dfb77139d4933cf25e173b156f4f3d79752bf37",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "1dfb77139d4933cf25e173b156f4f3d79752bf37",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/06-integration-verify-test_csv_io.json"
+}

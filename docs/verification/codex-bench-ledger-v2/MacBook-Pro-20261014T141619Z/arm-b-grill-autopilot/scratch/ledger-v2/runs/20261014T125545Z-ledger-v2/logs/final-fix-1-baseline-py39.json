@@ -1,0 +1,38 @@
+{
+  "command": [
+    "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:54:49.646940+00:00",
+  "ended_at": "2026-10-14T13:54:51.131648+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_accepts_thirty_characters_and_rejects_thirty_one (test_categories.CategoryTest) ... ok\ntest_rejects_invalid_categories_with_original_text (test_categories.CategoryTest) ... ok\ntest_replaces_tabs_with_hyphens (test_categories.CategoryTest) ... ok\ntest_strips_lowercases_and_collapses_whitespace (test_categories.CategoryTest) ... ok\ntest_add_normalizes_category (test_cli.CliTest) ... ok\ntest_add_rejects_invalid_amount_and_category_without_appending (test_cli.CliTest) ... ok\ntest_add_then_list (test_cli.CliTest) ... ok\ntest_export_writes_exact_csv (test_cli.CliTest) ... ok\ntest_import_appends_all_rows_and_preserves_multiline_notes (test_cli.CliTest) ... ok\ntest_import_reports_every_error_without_appending_valid_rows (test_cli.CliTest) ... ok\ntest_list_negative_cents (test_cli.CliTest) ... ok\ntest_summary_rejects_reversed_date_range (test_cli.CliTest) ... ok\ntest_summary_sorted_with_inclusive_date_bounds (test_cli.CliTest) ... ok\ntest_export_does_not_mutate_input_list (test_csv_io.CsvExportTest) ... ok\ntest_export_empty_input_contains_only_header (test_csv_io.CsvExportTest) ... ok\ntest_export_negative_cents (test_csv_io.CsvExportTest) ... ok\ntest_export_one_entry_with_formatted_cents_and_lf (test_csv_io.CsvExportTest) ... ok\ntest_export_sorts_dates_stably_and_quotes_notes (test_csv_io.CsvExportTest) ... ok\ntest_collects_amount_and_category_errors_in_one_row (test_csv_io.CsvImportTest) ... ok\ntest_collects_errors_across_rows_without_partial_import (test_csv_io.CsvImportTest) ... ok\ntest_collects_malformed_csv_and_other_row_errors (test_csv_io.CsvImportTest) ... ok\ntest_csv_syntax_error_does_not_prevent_later_row_validation (test_csv_io.CsvImportTest) ... ok\ntest_empty_input_rejects_header (test_csv_io.CsvImportTest) ... ok\ntest_errors_use_physical_record_start_lines (test_csv_io.CsvImportTest) ... ok\ntest_header_names_are_exact_and_malformed_header_is_rejected (test_csv_io.CsvImportTest) ... ok\ntest_header_only_is_empty_import (test_csv_io.CsvImportTest) ... ok\ntest_import_parses_cents_and_normalizes_categories (test_csv_io.CsvImportTest) ... ok\ntest_import_preserves_multiline_notes_and_quoted_amounts (test_csv_io.CsvImportTest) ... ok\ntest_rejects_bad_header (test_csv_io.CsvImportTest) ... ok\ntest_rejects_invalid_dates_and_non_iso_shapes (test_csv_io.CsvImportTest) ... ok\ntest_rejects_records_without_exactly_four_fields (test_csv_io.CsvImportTest) ... ok\ntest_formats_negative_cents (test_money.MoneyTest) ... ok\ntest_formats_positive_cents (test_money.MoneyTest) ... ok\ntest_formats_zero_cents (test_money.MoneyTest) ... ok\ntest_parses_decimal_amount (test_money.MoneyTest) ... ok\ntest_parses_grouped_thousands (test_money.MoneyTest) ... ok\ntest_parses_grouped_thousands_with_leading_zeroes (test_money.MoneyTest) ... ok\ntest_parses_grouped_thousands_with_multiple_leading_zeroes (test_money.MoneyTest) ... ok\ntest_parses_grouped_thousands_with_zero_prefix (test_money.MoneyTest) ... ok\ntest_parses_negative_decimal (test_money.MoneyTest) ... ok\ntest_parses_negative_whole_amount (test_money.MoneyTest) ... ok\ntest_parses_one_decimal_digit (test_money.MoneyTest) ... ok\ntest_rejects_malformed_text_with_original_value (test_money.MoneyTest) ... ok\ntest_rejects_plus_sign (test_money.MoneyTest) ... ok\ntest_combined_bounds_unbounded_and_empty_inputs (test_query.FilterEntriesTest) ... ok\ntest_end_bound_is_inclusive (test_query.FilterEntriesTest) ... ok\ntest_reversed_range_is_rejected (test_query.FilterEntriesTest) ... ok\ntest_start_bound_is_inclusive (test_query.FilterEntriesTest) ... ok\ntest_empty_input_has_no_months (test_query.SummarizeTest) ... ok\ntest_groups_cent_totals_by_month_and_category (test_query.SummarizeTest) ... ok\ntest_months_and_categories_iterate_in_sorted_order (test_query.SummarizeTest) ... ok\ntest_refunds_can_leave_a_zero_category_total (test_query.SummarizeTest) ... ok\ntest_append_migrates_v1_without_deadlock (test_store.StoreTest) ... ok\ntest_append_then_load_round_trips (test_store.StoreTest) ... ok\ntest_failed_replace_cleans_up_temporary_file (test_store.StoreTest) ... ok\ntest_failed_save_preserves_existing_entries (test_store.StoreTest) ... ok\ntest_independent_processes_append_all_entries (test_store.StoreTest) ... ok\ntest_legacy_fractional_cents_round_half_up (test_store.StoreTest) ... ok\ntest_load_migrates_v1_and_preserves_original_backup (test_store.StoreTest) ... ok\ntest_load_v2_preserves_bytes_without_backup (test_store.StoreTest) ... ok\ntest_missing_file_is_empty (test_store.StoreTest) ... ok\ntest_negative_cents_round_trip (test_store.StoreTest) ... ok\ntest_reader_sees_complete_ledgers_during_saves (test_store.StoreTest) ... ok\ntest_simultaneous_first_appends_preserve_both_entries (test_store.StoreTest) ... ok\n\n----------------------------------------------------------------------\nRan 64 tests in 1.422s\n\nOK\n",
+  "before": {
+    "head": "62f80af6537254af2b34f44b47bc099b56d582d9",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "62f80af6537254af2b34f44b47bc099b56d582d9",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/final-fix-1-baseline-py39.json"
+}

@@ -1,0 +1,22 @@
+62f80af Merge commit 'b88b1a975693991c39d91d2c52856035bc8437f5' into autopilot/ledger-v2/integration
+b88b1a9 Add ledger v2 CLI reports and validated CSV import
+1dfb771 Merge commit '4dc048d94e21e0b748255a2779ef192dd411fe36' into autopilot/ledger-v2/integration
+0c70269 Merge commit '98ac0481a10845fc3a9ee2ed5ac99526e661e211' into autopilot/ledger-v2/integration
+4dc048d Add validated all-or-nothing CSV import
+98ac048 Serialize ledger storage and write files atomically
+ba80142 Merge commit 'df02c7c071649144c23cbcab357527849d2cb08c' into autopilot/ledger-v2/integration
+f0f079d Merge commit '0778eb9e6ae72b2c398ff01354ef36b76a8eac15' into autopilot/ledger-v2/integration
+df02c7c Merge commit '5e768749ba71bb6289746020d47f63ba44dde258' into autopilot/ledger-v2/tickets/07
+0778eb9 Merge commit '5e768749ba71bb6289746020d47f63ba44dde258' into autopilot/ledger-v2/tickets/05
+f05d594 Store ledger entries as cents and migrate v1 data
+75f438a Add stable CSV export with formatted cents
+5e76874 Merge commit '70283febaa458112fff9f2297a1b35d19630cd12' into autopilot/ledger-v2/integration
+245c5cc Merge commit 'd78da4bbe443e1249acb161777bacbdd26e47769' into autopilot/ledger-v2/integration
+70283fe Add sorted monthly cent summaries
+d78da4b Merge commit '0de76fabf581f097f0d87d547378c316929eb020' into autopilot/ledger-v2/tickets/01
+c5972d9 Accept leading zeroes in grouped amounts
+0de76fa Merge commit '321d3b183d7a34c5ecabff61f6c14d9afe3f408f' into autopilot/ledger-v2/integration
+d30d78b Merge commit '25a4700ba35d0fe48b22d78ad5ff8a4d47b35c36' into autopilot/ledger-v2/integration
+321d3b1 Add inclusive date filtering for ledger entries
+324dc67 Implement exact money parsing and formatting
+25a4700 Implement category normalization

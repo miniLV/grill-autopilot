@@ -1,0 +1,34 @@
+{
+  "command": [
+    "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+    "-B",
+    "-c",
+    "from ledger.csv_io import export_csv, import_csv, CsvImportError\nfrom ledger.models import Entry\nimport sys\nprint(sys.executable, sys.version)\ne=Entry(\"2026-01-05\",1250,\"food\",\"first\"+chr(13)+\"second\")\ns=export_csv([e]); print(repr(s))\ntry: print(import_csv(s))\nexcept CsvImportError as error: print(error.errors)\n"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:54:15.222810+00:00",
+  "ended_at": "2026-10-14T13:54:15.249190+00:00",
+  "exit": 0,
+  "stdout": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 3.9.6 (default, Dec  2 2025, 07:27:58) \n[Clang 17.0.0 (clang-1700.6.3.2)]\n'date,amount,category,note\\n2026-01-05,12.50,food,first\\rsecond\\n'\n['line 3: expected 4 fields']\n",
+  "stderr": "",
+  "before": {
+    "head": "62f80af6537254af2b34f44b47bc099b56d582d9",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "62f80af6537254af2b34f44b47bc099b56d582d9",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/csv-cr-python39-reproduction.json"
+}

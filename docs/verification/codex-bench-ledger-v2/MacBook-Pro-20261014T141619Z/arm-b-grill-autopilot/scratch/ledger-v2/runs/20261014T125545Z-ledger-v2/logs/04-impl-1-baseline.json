@@ -1,0 +1,38 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-04",
+  "started_at": "2026-10-14T13:07:47.708927+00:00",
+  "ended_at": "2026-10-14T13:07:47.860990+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_accepts_thirty_characters_and_rejects_thirty_one (test_categories.CategoryTest.test_accepts_thirty_characters_and_rejects_thirty_one) ... ok\ntest_rejects_invalid_categories_with_original_text (test_categories.CategoryTest.test_rejects_invalid_categories_with_original_text) ... ok\ntest_replaces_tabs_with_hyphens (test_categories.CategoryTest.test_replaces_tabs_with_hyphens) ... ok\ntest_strips_lowercases_and_collapses_whitespace (test_categories.CategoryTest.test_strips_lowercases_and_collapses_whitespace) ... ok\ntest_add_then_list (test_cli.CliTest.test_add_then_list) ... ok\ntest_combined_bounds_unbounded_and_empty_inputs (test_query.FilterEntriesTest.test_combined_bounds_unbounded_and_empty_inputs) ... ok\ntest_end_bound_is_inclusive (test_query.FilterEntriesTest.test_end_bound_is_inclusive) ... ok\ntest_reversed_range_is_rejected (test_query.FilterEntriesTest.test_reversed_range_is_rejected) ... ok\ntest_start_bound_is_inclusive (test_query.FilterEntriesTest.test_start_bound_is_inclusive) ... ok\ntest_append_then_load_round_trips (test_store.StoreTest.test_append_then_load_round_trips) ... ok\ntest_missing_file_is_empty (test_store.StoreTest.test_missing_file_is_empty) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.060s\n\nOK\n",
+  "before": {
+    "head": "0de76fabf581f097f0d87d547378c316929eb020",
+    "ref": "refs/heads/autopilot/ledger-v2/tickets/04",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "0de76fabf581f097f0d87d547378c316929eb020",
+    "ref": "refs/heads/autopilot/ledger-v2/tickets/04",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/04-impl-1-baseline.json"
+}

@@ -1,0 +1,38 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-07",
+  "started_at": "2026-10-14T13:13:24.525015+00:00",
+  "ended_at": "2026-10-14T13:13:24.668343+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-07/tests/test_money.py:38: SyntaxWarning: invalid escape sequence '\\+'\n  with self.assertRaisesRegex(ValueError, \"^invalid amount: \\+1$\"):\ntest_accepts_thirty_characters_and_rejects_thirty_one (test_categories.CategoryTest.test_accepts_thirty_characters_and_rejects_thirty_one) ... ok\ntest_rejects_invalid_categories_with_original_text (test_categories.CategoryTest.test_rejects_invalid_categories_with_original_text) ... ok\ntest_replaces_tabs_with_hyphens (test_categories.CategoryTest.test_replaces_tabs_with_hyphens) ... ok\ntest_strips_lowercases_and_collapses_whitespace (test_categories.CategoryTest.test_strips_lowercases_and_collapses_whitespace) ... ok\ntest_add_then_list (test_cli.CliTest.test_add_then_list) ... ok\ntest_formats_negative_cents (test_money.MoneyTest.test_formats_negative_cents) ... ok\ntest_formats_positive_cents (test_money.MoneyTest.test_formats_positive_cents) ... ok\ntest_formats_zero_cents (test_money.MoneyTest.test_formats_zero_cents) ... ok\ntest_parses_decimal_amount (test_money.MoneyTest.test_parses_decimal_amount) ... ok\ntest_parses_grouped_thousands (test_money.MoneyTest.test_parses_grouped_thousands) ... ok\ntest_parses_grouped_thousands_with_leading_zeroes (test_money.MoneyTest.test_parses_grouped_thousands_with_leading_zeroes) ... ok\ntest_parses_grouped_thousands_with_multiple_leading_zeroes (test_money.MoneyTest.test_parses_grouped_thousands_with_multiple_leading_zeroes) ... ok\ntest_parses_grouped_thousands_with_zero_prefix (test_money.MoneyTest.test_parses_grouped_thousands_with_zero_prefix) ... ok\ntest_parses_negative_decimal (test_money.MoneyTest.test_parses_negative_decimal) ... ok\ntest_parses_negative_whole_amount (test_money.MoneyTest.test_parses_negative_whole_amount) ... ok\ntest_parses_one_decimal_digit (test_money.MoneyTest.test_parses_one_decimal_digit) ... ok\ntest_rejects_malformed_text_with_original_value (test_money.MoneyTest.test_rejects_malformed_text_with_original_value) ... ok\ntest_rejects_plus_sign (test_money.MoneyTest.test_rejects_plus_sign) ... ok\ntest_combined_bounds_unbounded_and_empty_inputs (test_query.FilterEntriesTest.test_combined_bounds_unbounded_and_empty_inputs) ... ok\ntest_end_bound_is_inclusive (test_query.FilterEntriesTest.test_end_bound_is_inclusive) ... ok\ntest_reversed_range_is_rejected (test_query.FilterEntriesTest.test_reversed_range_is_rejected) ... ok\ntest_start_bound_is_inclusive (test_query.FilterEntriesTest.test_start_bound_is_inclusive) ... ok\ntest_append_then_load_round_trips (test_store.StoreTest.test_append_then_load_round_trips) ... ok\ntest_missing_file_is_empty (test_store.StoreTest.test_missing_file_is_empty) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.055s\n\nOK\n",
+  "before": {
+    "head": "245c5cc6333bdd01e2946d79389b55ad034db1b4",
+    "ref": "refs/heads/autopilot/ledger-v2/tickets/07",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "245c5cc6333bdd01e2946d79389b55ad034db1b4",
+    "ref": "refs/heads/autopilot/ledger-v2/tickets/07",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/07-impl-1-baseline.json"
+}

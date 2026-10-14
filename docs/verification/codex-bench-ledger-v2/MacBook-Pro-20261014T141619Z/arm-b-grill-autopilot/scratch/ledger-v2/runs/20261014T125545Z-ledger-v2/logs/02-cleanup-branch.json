@@ -1,0 +1,34 @@
+{
+  "command": [
+    "git",
+    "branch",
+    "-d",
+    "autopilot/ledger-v2/tickets/02"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:06:35.133997+00:00",
+  "ended_at": "2026-10-14T13:06:35.145669+00:00",
+  "exit": 0,
+  "stdout": "Deleted branch autopilot/ledger-v2/tickets/02 (was 25a4700).\n",
+  "stderr": "",
+  "before": {
+    "head": "d30d78b3a13b12e4afd987511e6df9b2892a80f6",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "d30d78b3a13b12e4afd987511e6df9b2892a80f6",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/02-cleanup-branch.json"
+}

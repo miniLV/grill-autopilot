@@ -1,0 +1,447 @@
+{
+  "command": [
+    "git",
+    "worktree",
+    "add",
+    "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-02",
+    "-b",
+    "autopilot/ledger-v2/tickets/02",
+    "6380caf932906eb22e6384a0f2d6cd571547b725"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot",
+  "started_at": "2026-10-14T13:00:18.130829+00:00",
+  "ended_at": "2026-10-14T13:00:18.156323+00:00",
+  "exit": 0,
+  "stdout": "HEAD is now at 6380caf Seed ledger benchmark\n",
+  "stderr": "Preparing worktree (new branch 'autopilot/ledger-v2/tickets/02')\n",
+  "before": {
+    "head": "6380caf932906eb22e6384a0f2d6cd571547b725",
+    "ref": "refs/heads/main",
+    "status": "?? .scratch/ledger-v2/control.py\n?? .scratch/ledger-v2/issues/01-money.md\n?? .scratch/ledger-v2/issues/02-categories.md\n?? .scratch/ledger-v2/issues/03-date-filter.md\n?? .scratch/ledger-v2/issues/04-monthly-summary.md\n?? .scratch/ledger-v2/issues/05-csv-export.md\n?? .scratch/ledger-v2/issues/06-csv-import.md\n?? .scratch/ledger-v2/issues/07-storage-v2.md\n?? .scratch/ledger-v2/issues/08-concurrent-append.md\n?? .scratch/ledger-v2/issues/09-cli.md\n?? .scratch/ledger-v2/ownership.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/staged.diff\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/tracked.diff\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/untracked.z\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/companion.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/01-impl-1-baseline.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/01-impl-1-create.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/integration-preparation-baseline.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/integration-preparation-create.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/run.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/runtime.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/spec.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/01.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/02.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/03.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/04.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/05.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/06.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/07.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/08.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/09.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/ticket-self-check.md\n?? .scratch/ledger-v2/spec.md",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/control.py",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "8d43e86eafcc5354a5c4b9937e531702198257b99fed9123a8dd1a34841c2431"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/01-money.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "5857f4a72de897821352a6002b2e2134c4009fce47ff1928f7583ddd1dec65ed"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/02-categories.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "0839d8df045a6070b5a97b54029174bd2dd4c7b3a7db6363e28f95d1e1fb3c16"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/03-date-filter.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "bd483df4f019d3d1d2caa0856508388c2a1c392c27423058bb4318b41b721ca1"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/04-monthly-summary.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "90d3c622864cabcf655ad3399d3f4a3b0712eaf4161498954936626d0a2923ee"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/05-csv-export.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "b0e88a80c0e55005a3239b7528c46ff3346b438f0abb5266f8d40656edfad292"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/06-csv-import.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "6fef319daac41fe9f669882f6482a16b397c282bc87dfc79f2fb813becd8f771"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/07-storage-v2.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "4d97d6a18c3bbbfbe2d0c5b9f65d0c88cade1cb5f435b3d9122bba0134994278"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/08-concurrent-append.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "9793db29ef446849e1863f0aa06f5303b9aefcb6e0df5c4c507e3738fa127956"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/09-cli.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "be74ec9cef691a44dd665dcbbb8a4e4bd0eedfb67b379d4b1c89494171a71345"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/ownership.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "e2fbe2b8cf224117f7fcbb2fe5bcb2e0cad67055eece23cd2a417ffb6a474782"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "aa23c5e33bd7afff4a37246aaef0afd693fb24bea496518b28ccb49e0ed5f9bc"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/staged.diff",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/tracked.diff",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/untracked.z",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/companion.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "d950d49d98c60efac91509a7a1a9284dfa586e3064f150b08e1308f3b7810f7c"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/01-impl-1-baseline.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "d3290e00aec4b464bad84b3061ba2ab51fe86015d60b6da8c200f4349afc127b"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/01-impl-1-create.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "dfe806302010850135435068bdc248996ee1fde1798f26924ced0e4b9e69ecec"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/integration-preparation-baseline.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "a444df05ff4a9e0fb5d8503a9f1508c66fa0512a7d67c35240bff21dbb04c869"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/integration-preparation-create.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "8e059d4a176eb046161501af175c905bba54818a52dd46ae56208b8468ea7c61"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/run.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "5843b2de278f8372279de0274457cf37062ee1a00c5af2728d06be74a7712b1b"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/runtime.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "65f36142ebb20bae3a2ee8028576613a5e982c315184ad61cdae6a8cbdc1fb25"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/spec.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "f47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/01.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "8236382bc27834f7b4136c39042e16e76beccf3bc7704043dc56f2f082e9dae3"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/02.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "f372e6d3cd0f6ec1ec8d9b6c8da7d38d3f6f39a3482e69aaff1c85de1779cc24"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/03.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "7148f918212e359c5685250ed54ebcb340d9f51a1f608f92d6ecac5278f55369"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/04.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "7c4b67d0101953ee3de879cdf978d0185e0358e77ca0e092d2e771fba996076e"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/05.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "857300235c440f4b2d5149fbb98db98cdc950fe4c006a5272593e73b6b56bd57"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/06.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "d525679e937ed23a7669794e7386c17e138a3c23581e23236287a65e16b4c51b"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/07.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "34fc167fff30b7b8665aaca6d11f3aa72ac60a7f1fc370349766bc62494a9606"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/08.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "a76dcedb37db996986d2290e64f707f347630cbb77492ca04b368324d0ad87c0"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/09.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "45392e9f94b4797f0fb769aa2ecd8f7f595cec499c51abad5c0538d1dd6295c7"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/ticket-self-check.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "70bdcde16a9ba615eb3b530645fbd3183b283a6866570cff82df4ce5ba53fdae"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/spec.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "f47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3"
+      }
+    ],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "6380caf932906eb22e6384a0f2d6cd571547b725",
+    "ref": "refs/heads/main",
+    "status": "?? .scratch/ledger-v2/control.py\n?? .scratch/ledger-v2/issues/01-money.md\n?? .scratch/ledger-v2/issues/02-categories.md\n?? .scratch/ledger-v2/issues/03-date-filter.md\n?? .scratch/ledger-v2/issues/04-monthly-summary.md\n?? .scratch/ledger-v2/issues/05-csv-export.md\n?? .scratch/ledger-v2/issues/06-csv-import.md\n?? .scratch/ledger-v2/issues/07-storage-v2.md\n?? .scratch/ledger-v2/issues/08-concurrent-append.md\n?? .scratch/ledger-v2/issues/09-cli.md\n?? .scratch/ledger-v2/ownership.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/staged.diff\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/tracked.diff\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/untracked.z\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/companion.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/01-impl-1-baseline.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/01-impl-1-create.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/integration-preparation-baseline.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/integration-preparation-create.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/run.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/runtime.json\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/spec.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/01.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/02.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/03.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/04.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/05.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/06.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/07.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/08.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/09.md\n?? .scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/ticket-self-check.md\n?? .scratch/ledger-v2/spec.md",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/control.py",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "8d43e86eafcc5354a5c4b9937e531702198257b99fed9123a8dd1a34841c2431"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/01-money.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "5857f4a72de897821352a6002b2e2134c4009fce47ff1928f7583ddd1dec65ed"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/02-categories.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "0839d8df045a6070b5a97b54029174bd2dd4c7b3a7db6363e28f95d1e1fb3c16"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/03-date-filter.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "bd483df4f019d3d1d2caa0856508388c2a1c392c27423058bb4318b41b721ca1"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/04-monthly-summary.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "90d3c622864cabcf655ad3399d3f4a3b0712eaf4161498954936626d0a2923ee"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/05-csv-export.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "b0e88a80c0e55005a3239b7528c46ff3346b438f0abb5266f8d40656edfad292"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/06-csv-import.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "6fef319daac41fe9f669882f6482a16b397c282bc87dfc79f2fb813becd8f771"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/07-storage-v2.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "4d97d6a18c3bbbfbe2d0c5b9f65d0c88cade1cb5f435b3d9122bba0134994278"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/08-concurrent-append.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "9793db29ef446849e1863f0aa06f5303b9aefcb6e0df5c4c507e3738fa127956"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/issues/09-cli.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "be74ec9cef691a44dd665dcbbb8a4e4bd0eedfb67b379d4b1c89494171a71345"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/ownership.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "e2fbe2b8cf224117f7fcbb2fe5bcb2e0cad67055eece23cd2a417ffb6a474782"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "aa23c5e33bd7afff4a37246aaef0afd693fb24bea496518b28ccb49e0ed5f9bc"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/staged.diff",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/tracked.diff",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/baseline/untracked.z",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/companion.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "d950d49d98c60efac91509a7a1a9284dfa586e3064f150b08e1308f3b7810f7c"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/01-impl-1-baseline.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "d3290e00aec4b464bad84b3061ba2ab51fe86015d60b6da8c200f4349afc127b"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/01-impl-1-create.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "dfe806302010850135435068bdc248996ee1fde1798f26924ced0e4b9e69ecec"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/integration-preparation-baseline.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "a444df05ff4a9e0fb5d8503a9f1508c66fa0512a7d67c35240bff21dbb04c869"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/integration-preparation-create.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "8e059d4a176eb046161501af175c905bba54818a52dd46ae56208b8468ea7c61"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/run.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "e47ae2ab6bb034c78e9a70aae87e9866b567d4bf20f1bf602ba6a7fdcf13798f"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/runtime.json",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "65f36142ebb20bae3a2ee8028576613a5e982c315184ad61cdae6a8cbdc1fb25"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/spec.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "f47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/01.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "8236382bc27834f7b4136c39042e16e76beccf3bc7704043dc56f2f082e9dae3"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/02.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "f372e6d3cd0f6ec1ec8d9b6c8da7d38d3f6f39a3482e69aaff1c85de1779cc24"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/03.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "7148f918212e359c5685250ed54ebcb340d9f51a1f608f92d6ecac5278f55369"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/04.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "7c4b67d0101953ee3de879cdf978d0185e0358e77ca0e092d2e771fba996076e"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/05.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "857300235c440f4b2d5149fbb98db98cdc950fe4c006a5272593e73b6b56bd57"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/06.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "d525679e937ed23a7669794e7386c17e138a3c23581e23236287a65e16b4c51b"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/07.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "34fc167fff30b7b8665aaca6d11f3aa72ac60a7f1fc370349766bc62494a9606"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/08.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "a76dcedb37db996986d2290e64f707f347630cbb77492ca04b368324d0ad87c0"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/snapshots/tickets/09.md",
+        "type": "file",
+        "mode": 292,
+        "hash_or_target": "45392e9f94b4797f0fb769aa2ecd8f7f595cec499c51abad5c0538d1dd6295c7"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/ticket-self-check.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "70bdcde16a9ba615eb3b530645fbd3183b283a6866570cff82df4ce5ba53fdae"
+      },
+      {
+        "path": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/spec.md",
+        "type": "file",
+        "mode": 420,
+        "hash_or_target": "f47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3"
+      }
+    ],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/02-impl-1-create.json"
+}

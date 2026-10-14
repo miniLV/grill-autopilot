@@ -1,0 +1,9 @@
+All CLI TDD commands PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_cli.CliTest.<test> -v, agreed realsubprocess seam.
+1 normalizecategory RED1 actual Food Out rawdisplay, GREEN0 expected2026-01-05 12.50 food-out lunch newline.
+2 invalidamountcategory RED1 exit1 vs2, GREEN0 parserValueError handlers exacterrorstderrabc/9lives and empty stdout, originalentryunmodified.
+3 sortedsummarybounds RED1 unsupportedcode2, GREEN0 exactfullJanfood15.00 Febrent900.00, startFebonly, endJanfull15, equalJan15only2.50, empty''.
+4 reversedrange RED1 exit1 vs2 GREEN0 exacterror:startafterend stderr2.
+5 export RED1 unsupported2 GREEN0 emptyheader/lunchcompleteCSV LF noextrablank.
+6 validimport RED1 unsupported2 GREEN0 validateall thenappend, stdout/stderrempty, existinglunchplusnormalizedsnack250 andrent90000, CRLFmultilinenotespreserved via newline=''.
+7 invalidimport RED1 tracebacknotliteral GREEN0 .errorsstderrline2abc,line4category9lives exit1 andno interveningvalidrowappend; exportunchanged.
+Final tests.test_cli Verify exit0 9tests, discoverexit0 64tests, diff--checkexit0, no deps, N/A no checker. Only cli.py/test_cli.py.

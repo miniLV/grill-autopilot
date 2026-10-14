@@ -1,0 +1,36 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "tests.test_store",
+    "-v"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:22:21.113537+00:00",
+  "ended_at": "2026-10-14T13:22:21.215090+00:00",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_append_then_load_round_trips (tests.test_store.StoreTest.test_append_then_load_round_trips) ... ok\ntest_legacy_fractional_cents_round_half_up (tests.test_store.StoreTest.test_legacy_fractional_cents_round_half_up) ... ok\ntest_load_migrates_v1_and_preserves_original_backup (tests.test_store.StoreTest.test_load_migrates_v1_and_preserves_original_backup) ... ok\ntest_load_v2_preserves_bytes_without_backup (tests.test_store.StoreTest.test_load_v2_preserves_bytes_without_backup) ... ok\ntest_missing_file_is_empty (tests.test_store.StoreTest.test_missing_file_is_empty) ... ok\ntest_negative_cents_round_trip (tests.test_store.StoreTest.test_negative_cents_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n",
+  "before": {
+    "head": "ba80142544092242b75bd0dc187805121093f8fb",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "ba80142544092242b75bd0dc187805121093f8fb",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/07-integration-verify-test_store.json"
+}

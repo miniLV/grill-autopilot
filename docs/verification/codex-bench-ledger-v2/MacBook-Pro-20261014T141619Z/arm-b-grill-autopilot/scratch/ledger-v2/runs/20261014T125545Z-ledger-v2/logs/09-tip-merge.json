@@ -1,0 +1,34 @@
+{
+  "command": [
+    "git",
+    "merge",
+    "--no-edit",
+    "1dfb77139d4933cf25e173b156f4f3d79752bf37"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-09",
+  "started_at": "2026-10-14T13:41:56.194276+00:00",
+  "ended_at": "2026-10-14T13:41:56.208325+00:00",
+  "exit": 0,
+  "stdout": "Already up to date.\n",
+  "stderr": "",
+  "before": {
+    "head": "b88b1a975693991c39d91d2c52856035bc8437f5",
+    "ref": "refs/heads/autopilot/ledger-v2/tickets/09",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "b88b1a975693991c39d91d2c52856035bc8437f5",
+    "ref": "refs/heads/autopilot/ledger-v2/tickets/09",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/09-tip-merge.json"
+}

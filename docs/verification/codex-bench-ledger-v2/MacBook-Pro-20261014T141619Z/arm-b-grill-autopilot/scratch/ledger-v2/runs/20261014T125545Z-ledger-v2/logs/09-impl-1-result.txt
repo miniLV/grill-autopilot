@@ -1,0 +1,1 @@
+DONE b88b1a975693991c39d91d2c52856035bc8437f5 ledger/cli.py,tests/test_cli.py

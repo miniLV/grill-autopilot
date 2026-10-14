@@ -1,0 +1,13 @@
+Complete reviewer05 evidence PASS no findings. Base5e768749ba71bb6289746020d47f63ba44dde258 candidate0778eb9e6ae72b2c398ff01354ef36b76a8eac15 implementer75f438ac93b8a80883a5158ca3328afed1418476. Hashes task857300235c440f4b2d5149fbb98db98cdc950fe4c006a5272593e73b6b56bd57 specf47c1fcc60946943d796acc186cf102a5a2a077912b3f4e62dd856f2e3f61fe3 shasum exit0 exact. Canonical ledger-v2-05 cwd all gates. git log -3 shows candidate merge saved base, implementation CSV export, base summary integration. Ancestor exit0 empty. Before/after status --branch shows only ## autopilot/ledger-v2/tickets/05; untracked/ignored empty; after HEAD/branch rev-parse both candidate. Name-status A ledger/csv_io.py A tests/test_csv_io.py. Diff --check exit0 empty. All git stderr empty. Host05 writer completed before and after, no unknown writer; clean candidate unchanged, no process claim (ps unavailable noted).
+Verify PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_csv_io -v exit0:
+test_export_does_not_mutate_input_list (tests.test_csv_io.CsvExportTest) ... ok
+test_export_empty_input_contains_only_header (tests.test_csv_io.CsvExportTest) ... ok
+test_export_negative_cents (tests.test_csv_io.CsvExportTest) ... ok
+test_export_one_entry_with_formatted_cents_and_lf (tests.test_csv_io.CsvExportTest) ... ok
+test_export_sorts_dates_stably_and_quotes_notes (tests.test_csv_io.CsvExportTest) ... ok
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+OK
+Full SHA diff and prior art inspected. Only standard csv/io and existing format_amount; all literal exact CSV examples/quote/stable ties/LF/header/-0.05/nonmutation asserted; no dependencies, prior assertion changes/skips, scope creep or import implementation. TDD events read. N/A typecheck no checker. Diagnostic initial status read wrong original cwd corrected before every gate; read-only. Initial broad run read truncated then corrected structured ticket05/event JSON; no missing gate evidence. Event supplied by ticket05_review, planner captured.
+
+PASS 0778eb9e6ae72b2c398ff01354ef36b76a8eac15 /Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/05-review-1-result.txt

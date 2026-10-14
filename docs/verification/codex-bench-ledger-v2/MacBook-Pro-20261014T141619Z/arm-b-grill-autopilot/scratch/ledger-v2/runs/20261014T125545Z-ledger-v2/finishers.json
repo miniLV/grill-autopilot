@@ -1,0 +1,209 @@
+[
+  {
+    "ticket": "01",
+    "title": "Money parsing",
+    "implementer": "worker",
+    "finisher_role": "worker",
+    "finisher_agent": "/root/ticket01_worker_retry",
+    "requested": {
+      "model": "gpt-6-luna",
+      "effort": "medium"
+    },
+    "observed": {
+      "model": "unknown",
+      "effort": "unknown"
+    },
+    "model_status": "unknown",
+    "counters": {
+      "worker": 2,
+      "escalate": 0,
+      "infrastructure": 0,
+      "reviewer": 2
+    },
+    "finished_commit": "c5972d9863e8db0eaeb1f917195c84d7662a0fca"
+  },
+  {
+    "ticket": "02",
+    "title": "Categories",
+    "implementer": "worker",
+    "finisher_role": "worker",
+    "finisher_agent": "/root/ticket02_worker",
+    "requested": {
+      "model": "gpt-6-luna",
+      "effort": "medium"
+    },
+    "observed": {
+      "model": "unknown",
+      "effort": "unknown"
+    },
+    "model_status": "unknown",
+    "counters": {
+      "worker": 1,
+      "escalate": 0,
+      "infrastructure": 0,
+      "reviewer": 1
+    },
+    "finished_commit": "25a4700ba35d0fe48b22d78ad5ff8a4d47b35c36"
+  },
+  {
+    "ticket": "03",
+    "title": "Date filter",
+    "implementer": "escalate (ordering: must preserve original entry order)",
+    "finisher_role": "escalate",
+    "finisher_agent": "/root/ticket03_escalate",
+    "requested": {
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    "observed": {
+      "model": "unknown",
+      "effort": "unknown"
+    },
+    "model_status": "unknown",
+    "counters": {
+      "worker": 0,
+      "escalate": 1,
+      "infrastructure": 0,
+      "reviewer": 1
+    },
+    "finished_commit": "321d3b183d7a34c5ecabff61f6c14d9afe3f408f"
+  },
+  {
+    "ticket": "04",
+    "title": "Monthly summary",
+    "implementer": "escalate (ordering: sorted months and categories)",
+    "finisher_role": "escalate",
+    "finisher_agent": "/root/ticket04_escalate",
+    "requested": {
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    "observed": {
+      "model": "unknown",
+      "effort": "unknown"
+    },
+    "model_status": "unknown",
+    "counters": {
+      "worker": 0,
+      "escalate": 1,
+      "infrastructure": 0,
+      "reviewer": 1
+    },
+    "finished_commit": "70283febaa458112fff9f2297a1b35d19630cd12"
+  },
+  {
+    "ticket": "05",
+    "title": "CSV export",
+    "implementer": "escalate (ordering: stable date sort)",
+    "finisher_role": "escalate",
+    "finisher_agent": "/root/ticket05_escalate",
+    "requested": {
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    "observed": {
+      "model": "unknown",
+      "effort": "unknown"
+    },
+    "model_status": "unknown",
+    "counters": {
+      "worker": 0,
+      "escalate": 1,
+      "infrastructure": 0,
+      "reviewer": 1
+    },
+    "finished_commit": "75f438ac93b8a80883a5158ca3328afed1418476"
+  },
+  {
+    "ticket": "06",
+    "title": "CSV import",
+    "implementer": "escalate (cross-module validation and all-or-nothing aggregate errors)",
+    "finisher_role": "escalate",
+    "finisher_agent": "/root/ticket06_escalate",
+    "requested": {
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    "observed": {
+      "model": "unknown",
+      "effort": "unknown"
+    },
+    "model_status": "unknown",
+    "counters": {
+      "worker": 0,
+      "escalate": 1,
+      "infrastructure": 0,
+      "reviewer": 1
+    },
+    "finished_commit": "4dc048d94e21e0b748255a2779ef192dd411fe36"
+  },
+  {
+    "ticket": "07",
+    "title": "Storage format v2",
+    "implementer": "escalate (data migration and shared representation across modules)",
+    "finisher_role": "escalate",
+    "finisher_agent": "/root/ticket07_escalate",
+    "requested": {
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    "observed": {
+      "model": "unknown",
+      "effort": "unknown"
+    },
+    "model_status": "unknown",
+    "counters": {
+      "worker": 0,
+      "escalate": 1,
+      "infrastructure": 0,
+      "reviewer": 1
+    },
+    "finished_commit": "f05d5940e96b398e5c1739749fd6388227e3bb6a"
+  },
+  {
+    "ticket": "08",
+    "title": "Concurrent append",
+    "implementer": "escalate (concurrency and atomic shared storage)",
+    "finisher_role": "escalate",
+    "finisher_agent": "/root/ticket08_escalate",
+    "requested": {
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    "observed": {
+      "model": "unknown",
+      "effort": "unknown"
+    },
+    "model_status": "unknown",
+    "counters": {
+      "worker": 0,
+      "escalate": 1,
+      "infrastructure": 0,
+      "reviewer": 1
+    },
+    "finished_commit": "98ac0481a10845fc3a9ee2ed5ac99526e661e211"
+  },
+  {
+    "ticket": "09",
+    "title": "CLI ledger v2",
+    "implementer": "escalate (cross-module integration and transactional validation)",
+    "finisher_role": "escalate",
+    "finisher_agent": "/root/ticket09_escalate",
+    "requested": {
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    "observed": {
+      "model": "unknown",
+      "effort": "unknown"
+    },
+    "model_status": "unknown",
+    "counters": {
+      "worker": 0,
+      "escalate": 1,
+      "infrastructure": 0,
+      "reviewer": 1
+    },
+    "finished_commit": "b88b1a975693991c39d91d2c52856035bc8437f5"
+  }
+]

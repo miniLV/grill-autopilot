@@ -1,0 +1,849 @@
+{
+  "skill_commit": "a6553820d658bb2533a9211e8c4490d10d738a24",
+  "arms": {
+    "arm-b-grill-autopilot": {
+      "start": "2026-10-14T12:52:27Z",
+      "end": "2026-10-14T14:16:19Z",
+      "exit": "0",
+      "sessions": 26,
+      "tokens_by_model": {
+        "gpt-6.1-sol": {
+          "input_tokens": 32511962,
+          "cached_input_tokens": 31480448,
+          "output_tokens": 200678,
+          "reasoning_output_tokens": 31185
+        },
+        "gpt-6-luna": {
+          "input_tokens": 1492066,
+          "cached_input_tokens": 1413376,
+          "output_tokens": 12281,
+          "reasoning_output_tokens": 2567
+        }
+      },
+      "session_details": [
+        {
+          "file": "rollout-2026-10-14T20-52-27-01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 21288557,
+              "cached_input_tokens": 21061504,
+              "output_tokens": 87490,
+              "reasoning_output_tokens": 19640
+            }
+          },
+          "first": "2026-10-14T12:52:27.972Z",
+          "last": "2026-10-14T14:16:11.913Z",
+          "id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+          "source": "exec",
+          "thread_source": "user"
+        },
+        {
+          "file": "rollout-2026-10-14T21-00-59-01a13a80-7405-7e72-bbea-ffcdb4c49d3f.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6-luna": "medium"
+          },
+          "usage": {
+            "gpt-6-luna": {
+              "input_tokens": 801418,
+              "cached_input_tokens": 752128,
+              "output_tokens": 6996,
+              "reasoning_output_tokens": 1469
+            }
+          },
+          "first": "2026-10-14T13:00:59.401Z",
+          "last": "2026-10-14T13:02:46.168Z",
+          "id": "01a13a80-7405-7e72-bbea-ffcdb4c49d3f",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket01_worker",
+                "agent_nickname": "Kuhn",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-01-18-01a13a80-be40-7273-a72a-9e9bd8280e3f.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6-luna": "medium"
+          },
+          "usage": {
+            "gpt-6-luna": {
+              "input_tokens": 357390,
+              "cached_input_tokens": 343296,
+              "output_tokens": 2762,
+              "reasoning_output_tokens": 792
+            }
+          },
+          "first": "2026-10-14T13:01:18.405Z",
+          "last": "2026-10-14T13:02:05.770Z",
+          "id": "01a13a80-be40-7273-a72a-9e9bd8280e3f",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket02_worker",
+                "agent_nickname": "Gauss",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-01-39-01a13a81-11fd-7793-b7de-c0c6101a88ef.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 284017,
+              "cached_input_tokens": 253056,
+              "output_tokens": 4449,
+              "reasoning_output_tokens": 670
+            }
+          },
+          "first": "2026-10-14T13:01:39.848Z",
+          "last": "2026-10-14T13:04:12.437Z",
+          "id": "01a13a81-11fd-7793-b7de-c0c6101a88ef",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket03_escalate",
+                "agent_nickname": "Dalton",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-03-13-01a13a82-8049-7593-98ba-874ebaf35fc0.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 366950,
+              "cached_input_tokens": 341504,
+              "output_tokens": 2847,
+              "reasoning_output_tokens": 492
+            }
+          },
+          "first": "2026-10-14T13:03:13.602Z",
+          "last": "2026-10-14T13:05:40.473Z",
+          "id": "01a13a82-8049-7593-98ba-874ebaf35fc0",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket02_review",
+                "agent_nickname": "Volta",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-04-08-01a13a83-56c7-7721-8133-5e45158dc9fe.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 318172,
+              "cached_input_tokens": 293760,
+              "output_tokens": 3534,
+              "reasoning_output_tokens": 528
+            }
+          },
+          "first": "2026-10-14T13:04:08.527Z",
+          "last": "2026-10-14T13:06:40.156Z",
+          "id": "01a13a83-56c7-7721-8133-5e45158dc9fe",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket01_review",
+                "agent_nickname": "Helmholtz",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-05-04-01a13a84-3128-7740-8504-a10896a604ce.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 270125,
+              "cached_input_tokens": 246656,
+              "output_tokens": 2455,
+              "reasoning_output_tokens": 210
+            }
+          },
+          "first": "2026-10-14T13:05:04.428Z",
+          "last": "2026-10-14T13:06:58.527Z",
+          "id": "01a13a84-3128-7740-8504-a10896a604ce",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket03_review",
+                "agent_nickname": "Avicenna",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-08-18-01a13a87-2875-7c70-9586-2849909364f9.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6-luna": "medium"
+          },
+          "usage": {
+            "gpt-6-luna": {
+              "input_tokens": 333258,
+              "cached_input_tokens": 317952,
+              "output_tokens": 2523,
+              "reasoning_output_tokens": 306
+            }
+          },
+          "first": "2026-10-14T13:08:18.816Z",
+          "last": "2026-10-14T13:08:59.809Z",
+          "id": "01a13a87-2875-7c70-9586-2849909364f9",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket01_worker_retry",
+                "agent_nickname": "Boole",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-08-38-01a13a87-77b0-7151-98d2-e6a1611bb5ab.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 522651,
+              "cached_input_tokens": 475776,
+              "output_tokens": 3713,
+              "reasoning_output_tokens": 403
+            }
+          },
+          "first": "2026-10-14T13:08:39.105Z",
+          "last": "2026-10-14T13:11:32.729Z",
+          "id": "01a13a87-77b0-7151-98d2-e6a1611bb5ab",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket04_escalate",
+                "agent_nickname": "Bernoulli",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-09-50-01a13a88-8fdf-7de3-a887-f0b6a5fda7e8.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 275085,
+              "cached_input_tokens": 247680,
+              "output_tokens": 3751,
+              "reasoning_output_tokens": 203
+            }
+          },
+          "first": "2026-10-14T13:09:50.827Z",
+          "last": "2026-10-14T13:11:59.262Z",
+          "id": "01a13a88-8fdf-7de3-a887-f0b6a5fda7e8",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket01_review_retry",
+                "agent_nickname": "Tesla",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-12-47-01a13a8b-4230-75d0-9091-73891381eed2.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 430638,
+              "cached_input_tokens": 403456,
+              "output_tokens": 3497,
+              "reasoning_output_tokens": 158
+            }
+          },
+          "first": "2026-10-14T13:12:47.541Z",
+          "last": "2026-10-14T13:15:25.573Z",
+          "id": "01a13a8b-4230-75d0-9091-73891381eed2",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket04_review",
+                "agent_nickname": "Confucius",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-13-55-01a13a8c-4d7b-7de2-b098-cd430fadd166.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 587862,
+              "cached_input_tokens": 572288,
+              "output_tokens": 3611,
+              "reasoning_output_tokens": 86
+            }
+          },
+          "first": "2026-10-14T13:13:55.967Z",
+          "last": "2026-10-14T13:17:31.721Z",
+          "id": "01a13a8c-4d7b-7de2-b098-cd430fadd166",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket05_escalate",
+                "agent_nickname": "Schrodinger",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-14-21-01a13a8c-b1d1-7563-879a-e7c8c9134c2a.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 453576,
+              "cached_input_tokens": 434560,
+              "output_tokens": 4511,
+              "reasoning_output_tokens": 312
+            }
+          },
+          "first": "2026-10-14T13:14:21.652Z",
+          "last": "2026-10-14T13:17:32.509Z",
+          "id": "01a13a8c-b1d1-7563-879a-e7c8c9134c2a",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket07_escalate",
+                "agent_nickname": "Mencius",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-18-41-01a13a90-a92d-72a2-bcca-b0b9648800f0.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 400386,
+              "cached_input_tokens": 361984,
+              "output_tokens": 4214,
+              "reasoning_output_tokens": 420
+            }
+          },
+          "first": "2026-10-14T13:18:41.588Z",
+          "last": "2026-10-14T13:21:08.673Z",
+          "id": "01a13a90-a92d-72a2-bcca-b0b9648800f0",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket05_review",
+                "agent_nickname": "Heisenberg",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-19-05-01a13a91-071a-7892-afc6-331d9ea0caa9.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 419872,
+              "cached_input_tokens": 390272,
+              "output_tokens": 3676,
+              "reasoning_output_tokens": 239
+            }
+          },
+          "first": "2026-10-14T13:19:05.642Z",
+          "last": "2026-10-14T13:21:20.339Z",
+          "id": "01a13a91-071a-7892-afc6-331d9ea0caa9",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket07_review",
+                "agent_nickname": "Sartre",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-22-59-01a13a94-979e-79a1-b900-db5c8a162c51.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 1264572,
+              "cached_input_tokens": 1218048,
+              "output_tokens": 8967,
+              "reasoning_output_tokens": 619
+            }
+          },
+          "first": "2026-10-14T13:22:59.247Z",
+          "last": "2026-10-14T13:29:52.459Z",
+          "id": "01a13a94-979e-79a1-b900-db5c8a162c51",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket06_escalate",
+                "agent_nickname": "Darwin",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-23-26-01a13a95-0437-7bb2-88ed-aadffb8069bb.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 464286,
+              "cached_input_tokens": 444288,
+              "output_tokens": 6547,
+              "reasoning_output_tokens": 1586
+            }
+          },
+          "first": "2026-10-14T13:23:27.046Z",
+          "last": "2026-10-14T13:27:34.251Z",
+          "id": "01a13a95-0437-7bb2-88ed-aadffb8069bb",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket08_escalate",
+                "agent_nickname": "Pauli",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-28-56-01a13a9a-0b8e-7b01-879b-26f5e652718c.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 462882,
+              "cached_input_tokens": 430848,
+              "output_tokens": 7887,
+              "reasoning_output_tokens": 780
+            }
+          },
+          "first": "2026-10-14T13:28:56.607Z",
+          "last": "2026-10-14T13:33:19.797Z",
+          "id": "01a13a9a-0b8e-7b01-879b-26f5e652718c",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket08_review",
+                "agent_nickname": "Herschel",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-31-24-01a13a9c-4e3b-74a3-95e3-4bfc19664c76.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 382634,
+              "cached_input_tokens": 352000,
+              "output_tokens": 4975,
+              "reasoning_output_tokens": 259
+            }
+          },
+          "first": "2026-10-14T13:31:24.746Z",
+          "last": "2026-10-14T13:34:04.150Z",
+          "id": "01a13a9c-4e3b-74a3-95e3-4bfc19664c76",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket06_review",
+                "agent_nickname": "Curie",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-36-04-01a13aa0-9267-7001-838a-cfd1516c5349.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 1025222,
+              "cached_input_tokens": 971136,
+              "output_tokens": 8317,
+              "reasoning_output_tokens": 849
+            }
+          },
+          "first": "2026-10-14T13:36:04.341Z",
+          "last": "2026-10-14T13:41:20.046Z",
+          "id": "01a13aa0-9267-7001-838a-cfd1516c5349",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket09_escalate",
+                "agent_nickname": "Hume",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-42-20-01a13aa6-5177-7f81-81b3-23fc31e565d0.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 661585,
+              "cached_input_tokens": 617728,
+              "output_tokens": 7022,
+              "reasoning_output_tokens": 571
+            }
+          },
+          "first": "2026-10-14T13:42:20.928Z",
+          "last": "2026-10-14T13:46:14.041Z",
+          "id": "01a13aa6-5177-7f81-81b3-23fc31e565d0",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/ticket09_review",
+                "agent_nickname": "Copernicus",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-48-22-01a13aab-d552-7771-9e7c-478b3e5e3919.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 420095,
+              "cached_input_tokens": 367872,
+              "output_tokens": 5631,
+              "reasoning_output_tokens": 644
+            }
+          },
+          "first": "2026-10-14T13:48:22.346Z",
+          "last": "2026-10-14T13:51:19.808Z",
+          "id": "01a13aab-d552-7771-9e7c-478b3e5e3919",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/final_standards",
+                "agent_nickname": "Fermat",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-49-00-01a13aac-6be8-71d0-b0e4-f121de40117d.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 501560,
+              "cached_input_tokens": 445568,
+              "output_tokens": 6137,
+              "reasoning_output_tokens": 955
+            }
+          },
+          "first": "2026-10-14T13:49:00.899Z",
+          "last": "2026-10-14T13:52:26.713Z",
+          "id": "01a13aac-6be8-71d0-b0e4-f121de40117d",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/final_spec",
+                "agent_nickname": "Boyle",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T21-55-31-01a13ab2-63b3-7a12-8ccc-cf0993887c45.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 565999,
+              "cached_input_tokens": 516480,
+              "output_tokens": 4432,
+              "reasoning_output_tokens": 444
+            }
+          },
+          "first": "2026-10-14T13:55:32.019Z",
+          "last": "2026-10-14T13:58:19.824Z",
+          "id": "01a13ab2-63b3-7a12-8ccc-cf0993887c45",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/final_correction_1",
+                "agent_nickname": "Huygens",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T22-01-21-01a13ab7-b8e2-72c3-b5cb-4b5d967bff28.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 487809,
+              "cached_input_tokens": 428672,
+              "output_tokens": 6260,
+              "reasoning_output_tokens": 535
+            }
+          },
+          "first": "2026-10-14T14:01:21.514Z",
+          "last": "2026-10-14T14:04:42.445Z",
+          "id": "01a13ab7-b8e2-72c3-b5cb-4b5d967bff28",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/final_standards_1",
+                "agent_nickname": "Franklin",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        },
+        {
+          "file": "rollout-2026-10-14T22-02-41-01a13ab8-efcd-7a11-b630-dcfae70be6ab.jsonl",
+          "cwds": [
+            "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot"
+          ],
+          "models": {
+            "gpt-6.1-sol": "high"
+          },
+          "usage": {
+            "gpt-6.1-sol": {
+              "input_tokens": 657427,
+              "cached_input_tokens": 605312,
+              "output_tokens": 6755,
+              "reasoning_output_tokens": 582
+            }
+          },
+          "first": "2026-10-14T14:02:41.113Z",
+          "last": "2026-10-14T14:06:18.432Z",
+          "id": "01a13ab8-efcd-7a11-b630-dcfae70be6ab",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "01a13a78-a3ec-7ec0-9fa3-ac7abaab7a40",
+                "depth": 1,
+                "agent_path": "/root/final_spec_1",
+                "agent_nickname": "James",
+                "agent_role": null
+              }
+            }
+          },
+          "thread_source": "subagent"
+        }
+      ]
+    }
+  }
+}

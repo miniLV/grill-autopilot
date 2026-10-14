@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-14T14:09:17.389942+00:00",
+  "original_ref": "refs/heads/main",
+  "original_head": "6380caf932906eb22e6384a0f2d6cd571547b725",
+  "base_ref_sha": "6380caf932906eb22e6384a0f2d6cd571547b725",
+  "unstaged_equal": true,
+  "staged_equal": true,
+  "non_run_untracked": [],
+  "non_run_untracked_equal": true,
+  "excluded_only_exact_owned_paths": 144,
+  "companion_fingerprint_unchanged": true,
+  "integration_final_state": {
+    "head": "7b0a2d8365c6ae9ea5f7030760f0c8acab94d3f2",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "host": {
+    "final_standards_1": "completed",
+    "final_spec_1": "completed",
+    "final_correction_1": "completed",
+    "all_recorded_children": "inactive",
+    "free_child_slots": 3
+  },
+  "passed": true
+}

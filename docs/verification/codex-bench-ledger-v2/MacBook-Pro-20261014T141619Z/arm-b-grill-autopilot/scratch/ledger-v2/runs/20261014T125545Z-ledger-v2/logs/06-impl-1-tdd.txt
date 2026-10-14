@@ -1,0 +1,10 @@
+TDD06 public import_csv/CsvImportError, all focused commands PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_csv_io.CsvImportTest.<test> -v.
+Badheader literal wrong header -> line1badheader RED1 missing CsvImportError GREEN0.
+Valid row cents1250 food-out literal RED1 returned[] GREEN0 real publicparsers.
+Errors lines2abc and4category9lives RED1 rawValueError GREEN0 aggregate rows.
+Same-row abc/9lives errors2amount+2category RED1 onlyamount GREEN0 independent validations.
+Fourfields literal3fieldline2/5fieldline3/blankline4 RED1 unpackValueError GREEN0 exactexpected4fields.
+Date invalidshapes 2026-02-30,2026-1-05,20260105,timestamp,empty with amount/category errors RED1 missing dateerrors GREEN0 canonicaldate.fromisoformat equality.
+Physical record starts multiline validlines2-3, invalidamountcatlines4-5, shortrecordline6 RED1 numbered3,3,4 GREEN0 uses reader.line_num+1 before read.
+Malformed unterminated note plus precedingbadamount RED1 missingCSVerror GREEN0 strictreader csv.Error aggregate invalidCSV unexpectedendofdata.
+Already-green regression tests empty/headeronly, malformedheader/exactnames, CRLFmultiline/quotedgroupedamount, recoverable malformedCSV+badrow; no extraimplementation. Final tests.test_csv_io Verify exit0 18tests fiveexportassertionspreserved; full discover exit0 51tests; diff--checkexit0; typecheckN/A; scopeonlycsv_io/test_csv_io and exportunchanged.

@@ -1,0 +1,28 @@
+{
+  "host": "Codex native collaboration",
+  "version": "unknown: version not exposed",
+  "route": {
+    "selected": "native",
+    "authorization": "User explicit task-local model choices override saved default routing. Root GPT-6 OpenAI and requested GPT children are native OpenAI model family per host model list. No route rejection or CLI bypass.",
+    "reason": "spawn_agent schema accepts model, reasoning_effort, fork_turns none, message"
+  },
+  "capabilities": {
+    "start": "supported: spawn_agent",
+    "read_result": "supported: complete delivered final result messages",
+    "is_alive": "supported: list_agents",
+    "bounded_wait": "supported: wait_agent bounded 10-60s; commands exec yield <=10s and subprocess deadlines",
+    "cancel": "supported: interrupt_agent plus list_agents reconciliation",
+    "release": "execution capacity observable from active agents; identity deletion unsupported; metadata retained"
+  },
+  "capacity": {
+    "limit": 4,
+    "includes_planner": true,
+    "basis": "active execution per developer concurrency-slot contract",
+    "active_or_reserved": [
+      "/root"
+    ],
+    "available": 3,
+    "evidence": "host advertises 4 slots; list_agents showed only /root running"
+  },
+  "schema_help_evidence": "Current collaboration schema: spawn(model,reasoning_effort,fork_turns,message); list_agents statuses; wait_agent timeout_ms; interrupt_agent leaves identity available. Actual model and effort absent from schema/status until host metadata supplies them."
+}

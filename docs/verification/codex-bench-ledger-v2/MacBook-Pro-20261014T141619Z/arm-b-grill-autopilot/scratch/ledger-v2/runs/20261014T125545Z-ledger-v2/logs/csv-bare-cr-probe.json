@@ -1,0 +1,34 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-c",
+    "from ledger.csv_io import export_csv, import_csv, CsvImportError\nfrom ledger.models import Entry\nentry = Entry(\"2026-01-05\", 1250, \"food\", \"first\\rsecond\")\ntext = export_csv([entry])\nprint(repr(text))\ntry:\n    print(import_csv(text))\nexcept CsvImportError as error:\n    print(error.errors)\n"
+  ],
+  "cwd": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot.autopilot-worktrees/ledger-v2-integration",
+  "started_at": "2026-10-14T13:44:15.378878+00:00",
+  "ended_at": "2026-10-14T13:44:15.478913+00:00",
+  "exit": 0,
+  "stdout": "'date,amount,category,note\\n2026-01-05,12.50,food,\"first\\rsecond\"\\n'\n[Entry(date='2026-01-05', amount=1250, category='food', note='first\\rsecond')]\n",
+  "stderr": "",
+  "before": {
+    "head": "1dfb77139d4933cf25e173b156f4f3d79752bf37",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "after": {
+    "head": "1dfb77139d4933cf25e173b156f4f3d79752bf37",
+    "ref": "refs/heads/autopilot/ledger-v2/integration",
+    "status": "",
+    "unstaged": "",
+    "staged": "",
+    "untracked_ignored": [],
+    "pending_merge": false
+  },
+  "generated_artifacts": [],
+  "log": "/Users/tyrion/autopilot-bench-ledger-v2-b-fresh-20261014T125159Z/arm-b-grill-autopilot/.scratch/ledger-v2/runs/20261014T125545Z-ledger-v2/logs/csv-bare-cr-probe.json"
+}
