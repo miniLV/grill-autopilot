@@ -1,6 +1,6 @@
 # reliability-hardening：规格与执行索引
 
-Status: ready-for-agent — 2026-10-13 用户授权架构决策后定稿。当前未开始实现。
+Status: implementing — 2026-10-14：01–12 已在 integration 分支完成；13 正在收集真实运行证据，尚未满足完整验收。
 
 用户已选择本地 Markdown tracker。规格在 [spec.md](spec.md)，每个 issue 独立放在 [issues](issues/) 中；所有文件仅属于当前仓库。无需为了本批任务运行 setup skill 或修改 plexus/global 配置。
 
@@ -33,9 +33,11 @@ Status: ready-for-agent — 2026-10-13 用户授权架构决策后定稿。当�
 | [12](issues/12-honest-install-and-docs.md) | 安装、图文和收益声明与证据一致 | 03、10、11 |
 | [13](issues/13-real-runtime-smoke.md) | 真实成功、失败保存和恢复证据 | 08、12 |
 
-## 切便宜模型后的执行方式
+## 执行方式与当前进度
 
-本批已经定稿，无需再次询问测试 seam 或拆分。切换模型后发出执行指令，一次一张票，按编号执行；第一次从 01 开始。当前 frontier 为 01、03、11，但三者可能触碰相同 skill 文档，默认串行即可。依赖未完成的票不能抢跑。
+本批已定稿，用户选择 gpt-6.1-sol / high，并授权继续执行到完成，不使用 Luna 5.6。实现集中在 `codex/reliability-hardening/integration`，保存的审查基线为 `89246ffdcbc1efcdc2142610d7d52a62ac5520b4`。原 checkout 保持 master 与该基线，未 push、创建 PR 或发布。
+
+01–12 的具体提交和验收证据见各 issue Comments。13 的成功样本通过现有原配置 native identity 执行；新的同模型启动被宿主拒绝，实际模型/effort 元数据仍为 unknown。完整故障与中断恢复证据尚缺，不将协议/Git 实验等同于真实模型全流程。
 
 给执行模型的任务说明：
 
@@ -79,4 +81,6 @@ Status: ready-for-agent — 2026-10-13 用户授权架构决策后定稿。当�
 
 ## 验证记录
 
-本批只验证文档结构、19 条用户故事覆盖、13 张票的依赖存在性与无环性、索引链接和状态一致性。没有运行这些票的实现验收，也没有进行真实模型 smoke run。原仓库源码保持不变。
+01–12 已实现并逐票验收，包含真实临时 Git/worktree 实验、安装/卸载操作、文档图渲染及明确标记的协议演练。真实模型验证单独记录于 13；完整运行状态以该 issue 和验证报告为准。
+
+最后还须完成 integration 分支固定基线的 Standards / Spec 两轴审查。未满足的验收项保持未勾选，当前不声称整份规格完成。
