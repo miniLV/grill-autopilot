@@ -6,7 +6,7 @@
 
 规划和 review 请求更强的模型，实现请求更便宜的模型。配置按角色声明；当前会话、宿主能力和路由策略决定实际可用的执行方式。Claude Code 与 Codex 的适配契约见 [runtimes.md](skills/grill-autopilot/runtimes.md)，验证范围见下方矩阵。
 
-> 状态：实验阶段。已有文档/Git/schema 证据和一次真实 native Python fixture 成功；dirty 失败保存与实际中断恢复仍未验证，不承诺整个产品规格完成、总体省钱比例或加速倍数。
+> 状态：实验阶段。可靠性加固已完成 12/13 张票，已交付范围通过 Standards / Spec 双轴审查。真实 native Python fixture 成功；第 13 票的 dirty 失败保存与实际中断恢复仍未验证。成本与速度收益尚无对照数据。
 
 ```mermaid
 flowchart TD
@@ -179,6 +179,8 @@ roles:
 尚未取得完整运行的成本、token、缓存、review 费用、重试分布与总耗时数据，这些值目前是 `unknown`。没有同任务、同验收范围的对照基线，就不报告节省百分比或加速倍数。
 
 ## 当前验证范围
+
+截至 2026-10-14，[可靠性加固执行索引](.scratch/reliability-hardening/README.md) 中 01–12 已完成，13 保持 blocked。协议改动在提交 [8d947f5](https://github.com/miniLV/grill-autopilot/commit/8d947f583d31f47dd19833fe36f612dd55f0fc08) 完成独立 Standards / Spec 审查，已交付范围均为 0 项待修复问题；8 组隔离 Git/layout/install 检查、依赖图和本地链接检查通过。这些检查与下方真实模型试运行分别记证。
 
 [ticket 13 真实试运行](docs/verification/reliability-hardening/13/README.md) 取得一次 native Python fixture 完整成功；此前 CLI launch 与后来的 native fresh start 分别被所选路由拒绝。dirty 失败保存与实际中断恢复仍未验证，该验证票受阻。
 
